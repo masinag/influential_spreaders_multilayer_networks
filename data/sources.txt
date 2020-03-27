@@ -1,0 +1,2 @@
+Syntetic Multilayer: https://snap.stanford.edu/data
+Multiplex: https://comunelab.fbk.eu/data.php
