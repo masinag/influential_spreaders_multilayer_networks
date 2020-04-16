@@ -38,7 +38,7 @@ def extract_dataset(name, edges):
             if not row.startswith("#"):
                 layer, a, b, _ = map(int, row.split())
                 # make indexes start from 0
-                extracted.write("%d %d %d\n" % (layer-1, a-1, b-1))
+                extracted.write("%d %d %d %d\n" % (a-1, layer-1, b-1, layer-1))
 
         
 def main():
