@@ -4,5 +4,6 @@
 using namespace std;
 
 vector<int> sort_nodes(vector<double> &scores);
+vector<int> sort_nodes(vector<int> &scores);
 
 #endif

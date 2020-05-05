@@ -33,7 +33,6 @@ class Graph:
             if ccv[v] == -1:
                 self.dfs_cc(ccv, count, v, i)
         
-
     def cc(self):
         i = 0
         ccv = {n: -1 for n in self.g}
@@ -95,7 +94,6 @@ class Multiplex:
                 if node in nn:
                     for v in vv:
                         if v in nn:
-                            
                             ng.add_edge(node, v, l)
         return ng
 
@@ -116,8 +114,7 @@ class Multiplex:
     @staticmethod
     def extract(dir, g, nn, combo):
         L, N, E = dd[dir]['L'], dd[dir]['N'], dd[dir]['E']
-        ng = g.crop(nn, combo)
-   
+        ng = g.crop(nn, combo)   
         # print(g.nodes(), '--->', ng.nodes())
         found = ng.nodes() < g.nodes()
         g = ng
@@ -135,9 +132,9 @@ class Multiplex:
                 max_cc = j
         useful_nodes = [j for j, k in cc.items() if k == max_cc]
         g = g.crop(useful_nodes, combo)
-        # print('#####', g.nodes(), '--->', ng.nodes())
+
         print('Nodes extracted: (%d - expected %d)' % (g.nodes(), N))
-        print('Edges extracted: (%d - expected %d)' % (g.edges(), E))
+        print('Edges extracted: (%d - expected %d)\n' % (g.edges(), E))
         return g
 
 
@@ -154,17 +151,11 @@ def extract_dataset(dir, name, edges):
     for combo in combinations([i+1 for i in range(g.layers())], L):
         nn = g.nodes_in_combo(combo)
         if len(nn) >= N:
-            print(list(combo), len(nn), N)
+            # print(list(combo), len(nn), N)
             break
 
     g = Multiplex.extract(dir, g, nn, combo)
-    print(g.layers(), L)
-    assert(g.layers() == L)
-    # cin >> l >> n >> m;
-    # MultilayerNetwork res(l, n, m);
-    # while (cin >> a >> la >> b >> lb){
-    #     res.addEdge(a, la, b, lb);
-    # }
+
     layer_i = {l : i for i, l in enumerate(g.net)}
     node_i = {n : i for i, n in enumerate(g.nn)}
     # print(g.nodes())
@@ -177,9 +168,6 @@ def extract_dataset(dir, name, edges):
                 layer = layer_i[l]
                 for v in vv:
                     f.write('%d %d %d %d\n' % (node, layer, node_i[v], layer))   
-
-
-    
         
 def main():
     dirs = ([element for element in os.listdir() if not isfile(element)])

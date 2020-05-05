@@ -32,9 +32,19 @@ Graph readAggregate(){
     int l, n, m, a, la, b, lb;
     cin >> l >> n >> m;
     Graph res(n);
-    
+     
     while (cin >> a >> la >> b >> lb){
         res.addEdge(a, b);
     }
+
     return res;
+}
+
+vector<int> Graph::in_deg(){
+    vector<int> in_deg(size(), 0);
+    for(int i = 0; i < size(); i++){
+        for(int v : adj(i))
+            in_deg[v]++;
+    }
+    return in_deg;
 }
