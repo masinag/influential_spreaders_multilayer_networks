@@ -1,14 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <cassert>
-#include "../utils/Aggregate.h"
-#include "../utils/common.h"
+#include <cmath>
+#include "aggPR.h"
 
 #define EPSILON 0.0001
 
 using namespace std;
-
-
 
 double difference(vector<double> &v, vector<double> &w){
     double res = 0;
@@ -17,7 +12,7 @@ double difference(vector<double> &v, vector<double> &w){
     return abs(res);
 }
 
-vector<double> pageRank(Graph &out_edges, double alpha = 0.85){
+vector<double> pageRank(Graph &out_edges, double alpha){
     vector<double> rank(out_edges.size(), 1.0L/out_edges.size());
     Graph in_edges = out_edges.transpose();
     bool done = false;
@@ -38,14 +33,3 @@ vector<double> pageRank(Graph &out_edges, double alpha = 0.85){
 }
 
 
-int main() {
-    Graph g = readAggregate();
-    vector<double> rank = pageRank(g);
-    vector<int> sorted = sort_nodes(rank);
-    assert(rank.size() == sorted.size());
-    for(int i = 0; i < rank.size(); i++) {
-        assert(sorted[i] < rank.size());
-        cout << sorted[i] << ", score: " << rank[sorted[i]] << endl;
-    }
-    return 0;
-}

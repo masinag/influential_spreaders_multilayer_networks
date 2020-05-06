@@ -48,3 +48,11 @@ vector<int> Graph::in_deg(){
     }
     return in_deg;
 }
+
+vector<int> Graph::out_deg(){
+    vector<int> out_deg(size(), 0);
+    for(int i = 0; i < size(); i++){
+        out_deg[i] = g[i].size();
+    }
+    return out_deg;
+}

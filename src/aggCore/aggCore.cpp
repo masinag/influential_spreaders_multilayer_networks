@@ -3,12 +3,9 @@
  * http://arXiv.org/abs/cs/0310049v1
  */
 
-#include <iostream>
 #include <algorithm>
-#include <cassert>
 #include <queue>
-#include "../utils/Aggregate.h"
-#include "../utils/common.h"
+#include "aggCore.h"
 using namespace std;
 typedef pair<int, int> ii;
 
@@ -67,9 +64,7 @@ vector<int> fast_k_core(Graph& g){
             }
         }
     }
-
     return deg;
-    
 }
 
 // O(m*log(n)) algorithm with priority queue
@@ -98,19 +93,4 @@ vector<int> k_core(Graph& g){
     }
     return core;
     
-}
-
-int main(int argc, char const *argv[]) {
-    Graph g = readAggregate();
-    vector<int> core = k_core(g);
-    vector<int> fcore = fast_k_core(g);
-    vector<int> sorted = sort_nodes(core);
-    assert(core.size() == sorted.size());
-    for(int i = 0; i < core.size(); i++) {
-        if(core[i] != fcore[i])
-            printf("%d: %d vs %d\n", i, core[i], fcore[i]);
-    //     assert(sorted[i] < core.size());
-    //     cout << sorted[i] << ", score: " << core[sorted[i]] << endl;
-    }
-    return 0;
 }

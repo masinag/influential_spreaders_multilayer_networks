@@ -56,3 +56,16 @@ Graph MultilayerNetwork::getAggregate(){
     }
     return res;
 }
+
+vector<Graph> MultilayerNetwork::to_vector(){
+    vector<Graph> res(layers(), Graph(nodes()));
+    for(int l = 0; l < layers(); l++){ 
+        for(int n = 0; n < nodes(); n++) {
+            for (Edge e : g[n][l]){
+                if(e.layer == l)
+                    res[l].addEdge(n, e.node);
+            }
+        }
+    }
+    return res;
+}

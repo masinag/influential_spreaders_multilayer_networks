@@ -24,6 +24,7 @@ class MultilayerNetwork {
         
 
         Graph getAggregate();
+        vector<Graph> to_vector();
 };
 
 MultilayerNetwork readMultilayer();

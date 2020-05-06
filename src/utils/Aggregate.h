@@ -15,6 +15,7 @@ class Graph{
         int size();
         Graph transpose();
         vector<int> in_deg();
+        vector<int> out_deg();
 };
 
 Graph readAggregate();
