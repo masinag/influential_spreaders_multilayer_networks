@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <iostream>
 #include "common.h"
+#define DOUBLE_EPS 1.0e-6
 
 using namespace std;
 
@@ -23,4 +24,8 @@ vector<int> sort_nodes(vector<int> &scores){
         return scores[a] > scores[b];
     });
     return res;
+}
+
+bool almost_eq(double a, double b){
+    return abs(a-b) <= DOUBLE_EPS;
 }

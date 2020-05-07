@@ -16,6 +16,9 @@ class Graph{
         Graph transpose();
         vector<int> in_deg();
         vector<int> out_deg();
+        vector<double> multiply_as_adj_matrix(vector<double> &x);
+        vector<double> eigenvector();
+        double eigenvalue();
 };
 
 Graph readAggregate();

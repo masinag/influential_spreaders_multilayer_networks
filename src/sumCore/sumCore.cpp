@@ -1,4 +1,3 @@
-#include <iostream>
 #include "sumCore.h"
 #include "../aggCore/aggCore.h"
 using namespace std;
