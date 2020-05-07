@@ -12,14 +12,14 @@ Edge::Edge(int n, int l){
 MultilayerNetwork readMultilayer(){
     int l, n, m, a, la, b, lb;
     cin >> l >> n >> m;
-    MultilayerNetwork res(l, n, m);
+    MultilayerNetwork res(l, n);
     while (cin >> a >> la >> b >> lb){
         res.addEdge(a, la, b, lb);
     }
     return res;
 }
 
-MultilayerNetwork::MultilayerNetwork(int l, int n, int m){
+MultilayerNetwork::MultilayerNetwork(int l, int n){
     this -> n = n;
     this -> l = l;
     this -> g.resize(n, vector< vector < Edge > > (l));
@@ -65,6 +65,30 @@ vector<Graph> MultilayerNetwork::to_vector(){
                 if(e.layer == l)
                     res[l].addEdge(n, e.node);
             }
+        }
+    }
+    return res;
+}
+
+vector<vector<int>> MultilayerNetwork::in_degree(){
+    vector<vector<int>> deg(nodes(), vector<int>(layers(), 0));
+    for(int i = 0; i < nodes(); i++){
+        for(int l = 0; l < layers(); l++){
+            for(Edge &e : g[i][l]) {
+                deg[e.node][e.layer]++;
+            }
+        }
+    }
+    return deg;
+}
+
+
+MultilayerNetwork MultilayerNetwork::transpose(){
+    MultilayerNetwork res(layers(), nodes());
+    for(int i = 0; i < nodes(); i++) {
+        for(int l = 0; l < layers(); l++) {
+            for(Edge &e : g[i][l]){
+                res.addEdge(e.node, e.layer, i, l);}
         }
     }
     return res;

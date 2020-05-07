@@ -14,8 +14,8 @@ class Edge{
 class MultilayerNetwork {
     vector<vector< vector< Edge > > >g;    
     public:
-        int l, n, m;
-        MultilayerNetwork(int l, int n, int m);
+        int l, n;
+        MultilayerNetwork(int l, int n);
         void addEdge(int a, int la, int b, int lb);
         void addNode(int n, int l);
         vector<Edge> adj(int n, int l);
@@ -25,6 +25,8 @@ class MultilayerNetwork {
 
         Graph getAggregate();
         vector<Graph> to_vector();
+        vector<vector<int>> in_degree();
+        MultilayerNetwork transpose();
 };
 
 MultilayerNetwork readMultilayer();
