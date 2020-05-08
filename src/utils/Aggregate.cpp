@@ -71,6 +71,10 @@ vector<double> Graph::multiply_as_adj_matrix(vector<double> &x){
     return res;
 }
 
+/**
+ * Computes the eigenvector of the adjacency matrix associated to the 
+ * maximum eigenvalue through the power iteration method.
+ */
 vector<double> Graph::eigenvector(){
     vector<double> x(size(), 1.0L/double(size()));
     vector<double> xlast(size());

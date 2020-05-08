@@ -1,8 +1,6 @@
 #include <cmath>
 #include "aggPR.h"
 
-#define EPSILON 0.0001
-
 using namespace std;
 
 double difference(vector<double> &v, vector<double> &w){
@@ -11,7 +9,10 @@ double difference(vector<double> &v, vector<double> &w){
         res += v[i] - w[i];
     return abs(res);
 }
-
+/**
+ * PageRank original paper: http://ilpubs.stanford.edu:8090/422/1/1999-66.pdf
+ * the number of iterations is proportional to log(n)
+ */
 vector<double> pageRank(Graph &out_edges, double alpha){
     vector<double> rank(out_edges.size(), 1.0L/out_edges.size());
     Graph in_edges = out_edges.transpose();
@@ -25,7 +26,7 @@ vector<double> pageRank(Graph &out_edges, double alpha){
             }
         }
         rank = new_rank;
-        done = difference(rank, new_rank) < EPSILON;
+        done = difference(rank, new_rank) < DIFF_EPSILON;
     }
     
     return rank;

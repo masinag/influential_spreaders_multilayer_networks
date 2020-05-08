@@ -5,7 +5,7 @@ aggPR:
 		-o aggPageRank/aggPR.out
 addPR:
 	g++ addPageRank/main.cpp addPageRank/addPR.cpp utils/Aggregate.cpp \
-		utils/common.cpp \
+		utils/Multilayer.cpp aggPageRank/aggPR.cpp utils/common.cpp \
 		-o addPageRank/addPR.out
 
 aggKCore:
