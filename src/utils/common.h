@@ -9,5 +9,6 @@ void normalize(vector<double> &x);
 void stochasticize(vector<double> &x);
 bool almost_eq(double a, double b);
 bool almost_eq(vector<double> &a, vector<double> &b);
+bool almost_eq(vector<vector<double>> &a, vector<vector<double>> &b);
 
 #endif

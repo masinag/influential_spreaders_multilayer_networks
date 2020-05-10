@@ -10,7 +10,8 @@ vector<double> layerPageRank(Graph &out_edges, vector<double> bias, double alpha
 
 
     vector<double> rank(out_edges.size(), 1.0L/out_edges.size());
-    Graph in_edges = out_edges.transpose();
+    Graph in_edges(out_edges.size());
+    out_edges.transpose(in_edges);
     vector<double> pows(out_edges.size());             // bias[i]^gamma
     vector<double> out_biases(out_edges.size(), 0.0L); // sum of biases of nodes reachable from i
     double sum = 0; // sum of bias vector
@@ -40,7 +41,7 @@ vector<double> layerPageRank(Graph &out_edges, vector<double> bias, double alpha
         done = almost_eq(rank, new_rank);
         rank = new_rank;
     }
-    // printf("%d iterations\n", j);
+    printf("%d iterations\n", j);
     return rank;
 
 }
@@ -49,7 +50,7 @@ vector<double> layerPageRank(Graph &out_edges, vector<double> bias, double alpha
  * Implementation of doi:10.1371/journal.pone.0078293
  */
 vector<double> multiplexPageRank(MultilayerNetwork &m, double alpha, double beta, double gamma) {
-    vector<double> x(m.nodes());
+    vector<double> x(m.nodes(), 1.0L);
     vector<Graph> ll = m.to_vector();           // layers of the network
     vector<double> eigenvalues(m.layers());     // eigenvalues of layer_i
     vector<int> indexes(ll.size());             // indexes of layers
@@ -62,9 +63,8 @@ vector<double> multiplexPageRank(MultilayerNetwork &m, double alpha, double beta
     sort(indexes.begin(), indexes.end(), [eigenvalues](int i, int j){
         return eigenvalues[i] > eigenvalues[j];
     });
-    x = pageRank(ll[indexes[0]]);
-    for(int j = 1; j < indexes.size(); j++) {
-        int i = indexes[j];
+    
+    for(int i : indexes) {
         x = layerPageRank(ll[i], x, alpha, beta, gamma);
         // stochasticize(x);
     }

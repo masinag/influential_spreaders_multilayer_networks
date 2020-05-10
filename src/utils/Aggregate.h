@@ -13,7 +13,7 @@ class Graph{
         void addEdge(int a, int b);
         vector<int>& adj(int x);
         int size();
-        Graph transpose();
+        void transpose(Graph &t);
         vector<int> in_deg();
         vector<int> out_deg();
         vector<double> multiply_as_adj_matrix(vector<double> &x);

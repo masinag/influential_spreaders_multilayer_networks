@@ -83,13 +83,11 @@ vector<vector<int>> MultilayerNetwork::in_degree(){
 }
 
 
-MultilayerNetwork MultilayerNetwork::transpose(){
-    MultilayerNetwork res(layers(), nodes());
+void MultilayerNetwork::transpose(MultilayerNetwork &gt){
     for(int i = 0; i < nodes(); i++) {
         for(int l = 0; l < layers(); l++) {
             for(Edge &e : g[i][l]){
-                res.addEdge(e.node, e.layer, i, l);}
+                gt.addEdge(e.node, e.layer, i, l);}
         }
     }
-    return res;
 }

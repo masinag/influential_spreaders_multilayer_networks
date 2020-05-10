@@ -8,6 +8,11 @@ addPR:
 		utils/Multilayer.cpp aggPageRank/aggPR.cpp utils/common.cpp \
 		-o addPageRank/addPR.out
 
+verPR:
+	g++ verPageRank/main.cpp verPageRank/verPR.cpp utils/Multilayer.cpp \
+		utils/Aggregate.cpp utils/common.cpp \
+		-o verPageRank/verPR.out
+
 aggKCore:
 	g++ aggCore/main.cpp aggCore/aggCore.cpp utils/Aggregate.cpp \
 		utils/common.cpp \

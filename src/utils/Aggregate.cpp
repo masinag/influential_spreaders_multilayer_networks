@@ -22,13 +22,10 @@ vector<int>& Graph::adj(int x){
 
 int Graph::size(){ return n; }
 
-Graph Graph::transpose(){
-    Graph t(n);
+void Graph::transpose(Graph &t){
     for(int i = 0; i < n; i++)
         for (int v : adj(i))
             t.addEdge(v, i);
-    
-    return t;
 }
 
 Graph readAggregate(){

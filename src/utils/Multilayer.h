@@ -26,7 +26,7 @@ class MultilayerNetwork {
         Graph getAggregate();
         vector<Graph> to_vector();
         vector<vector<int>> in_degree();
-        MultilayerNetwork transpose();
+        void transpose(MultilayerNetwork &gt);
 };
 
 MultilayerNetwork readMultilayer();

@@ -11,7 +11,8 @@ using namespace std;
  */
 vector<double> pageRank(Graph &out_edges, double alpha, int max_iter){
     vector<double> rank(out_edges.size(), 1.0L/out_edges.size());
-    Graph in_edges = out_edges.transpose();
+    Graph in_edges(out_edges.size());
+    out_edges.transpose(in_edges);
     bool done = false;
     int j;
 

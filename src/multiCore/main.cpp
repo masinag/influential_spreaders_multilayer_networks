@@ -4,7 +4,8 @@
 
 int main(int argc, char const *argv[]){
     MultilayerNetwork g = readMultilayer();
-    MultilayerNetwork t = g.transpose();
+    MultilayerNetwork t(g.layers(), g.nodes());
+    g.transpose(t);
     vector<int> core = multiCore(g);
     vector<int> sorted = sort_nodes(core);
     for(int i = 0; i < core.size(); i++) {
