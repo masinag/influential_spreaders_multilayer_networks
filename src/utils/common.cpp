@@ -1,8 +1,10 @@
 #include <vector>
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include "common.h"
 #define DOUBLE_EPS 1.0e-6
+#define VECTOR_EPS 1.0e-3
 
 using namespace std;
 
@@ -28,4 +30,35 @@ vector<int> sort_nodes(vector<int> &scores){
 
 bool almost_eq(double a, double b){
     return abs(a-b) <= DOUBLE_EPS;
+}
+
+void normalize(vector<double> &x){
+    double mag = 0;
+    for(double v : x)
+        mag += v*v;
+    mag = sqrt(mag);
+    if (mag > 0) {
+        for(double &v : x)
+            v /= mag;
+    }
+}
+
+void stochasticize(vector<double> &x){
+    double sum = 0;
+    for(double v : x)
+        sum += v;
+    printf("Sum: %.5f\n", sum);
+    if (sum > 0) {
+        for(double &v : x)
+            v /= sum;
+    }   
+}
+
+bool almost_eq(vector<double> &a, vector<double> &b){
+    double err = 0;
+    for(int i = 0; i < a.size(); i++){
+        err += abs(a[i] - b[i]);
+    }
+    // printf("err: %.5f < %.5f\n", err, VECTOR_EPS * a.size());
+    return err <= DOUBLE_EPS * a.size();
 }

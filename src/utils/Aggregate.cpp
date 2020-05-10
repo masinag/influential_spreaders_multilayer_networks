@@ -5,7 +5,6 @@
 #include <iostream>
 #include "Aggregate.h"
 #include "common.h"
-#define TOL 1.0e-10
 
 using namespace std;
 
@@ -75,27 +74,17 @@ vector<double> Graph::multiply_as_adj_matrix(vector<double> &x){
  * Computes the eigenvector of the adjacency matrix associated to the 
  * maximum eigenvalue through the power iteration method.
  */
-vector<double> Graph::eigenvector(){
+vector<double> Graph::eigenvector(int max_iter){
     vector<double> x(size(), 1.0L/double(size()));
     vector<double> xlast(size());
     double s = 1.0L;
     bool found = false;
 
-    while(!found) {
+    for(int j = 0; j < max_iter && !found; j++) {
         xlast = x;
         x = multiply_as_adj_matrix(xlast);
-        double mag = 0;
-        for(double v : x)
-            mag += v*v;
-        mag = sqrt(mag);
-        if (mag > 0) {
-            for(double &v : x)
-                v /= mag;
-        }
-        double err = 0;
-        for(int i = 0; i < size(); i++)
-            err += abs(x[i] - xlast[i]);
-        found = err < g.size()*TOL;
+        normalize(x);
+        found = almost_eq(x, xlast);
     }
     return x;
 }

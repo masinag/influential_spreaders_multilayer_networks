@@ -17,7 +17,7 @@ class Graph{
         vector<int> in_deg();
         vector<int> out_deg();
         vector<double> multiply_as_adj_matrix(vector<double> &x);
-        vector<double> eigenvector();
+        vector<double> eigenvector(int max_iter = 100);
         double eigenvalue();
 };
 

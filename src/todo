@@ -1,0 +1,2 @@
+# in pagerank, maybe the rank of a node depends from its out-neighbors
+    instead of its in-neighbors divided by its out-degree
