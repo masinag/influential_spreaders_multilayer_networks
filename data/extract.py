@@ -168,6 +168,11 @@ def extract_dataset(dir, name, edges):
             for n, vv in g.net[l].items():
                 node = node_i[n]
                 layer = layer_i[l]
+                # a node is connected to its counterparts in all layers
+                for j in g.net:
+                    layer_dest = layer_i[j]
+                    if not layer_dest == layer:
+                        f.write('%d %d %d %d\n' % (node, layer, node, layer_dest))
                 for v in vv:
                     f.write('%d %d %d %d\n' % (node, layer, node_i[v], layer))   
         
