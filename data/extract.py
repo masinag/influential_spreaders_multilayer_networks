@@ -4,14 +4,16 @@ from itertools import combinations
 import sys
 sys.setrecursionlimit(20000)
 
-EXTRACTED_DIR = "extracted"
+DATA_DIR = "multiplex/"
+EXTRACTED_DIR = "extracted/"
 
-dd = {'SacchPomb_Multiplex_Genetic' : {'N' : 875, 'E': 18214, 'L' : 3},
-      'Drosophila_Multiplex_Genetic' : {'N' : 1364, 'E': 7267, 'L' : 2},
-      'SacchCere_Multiplex_Genetic' : {'N' : 3096, 'E': 185849, 'L' : 5},
-      'Homo_Multiplex_Genetic' : {'N' : 3859, 'E': 77483, 'L' : 3},
-      'NYClimateMarch2014_Multiplex_Social' : {'N' : 4150, 'E': 45334, 'L' : 3},
-      'MoscowAthletics2013_Multiplex_Social' : {'N' : 4370, 'E': 33411, 'L' : 3}}
+
+dd = {f'{DATA_DIR}SacchPomb_Multiplex_Genetic' : {'N' : 875, 'E': 18214, 'L' : 3},
+      f'{DATA_DIR}Drosophila_Multiplex_Genetic' : {'N' : 1364, 'E': 7267, 'L' : 2},
+      f'{DATA_DIR}SacchCere_Multiplex_Genetic' : {'N' : 3096, 'E': 185849, 'L' : 5},
+      f'{DATA_DIR}Homo_Multiplex_Genetic' : {'N' : 3859, 'E': 77483, 'L' : 3},
+      f'{DATA_DIR}NYClimateMarch2014_Multiplex_Social' : {'N' : 4150, 'E': 45334, 'L' : 3},
+      f'{DATA_DIR}MoscowAthletics2013_Multiplex_Social' : {'N' : 4370, 'E': 33411, 'L' : 3}}
 
 class Graph:
     def __init__(self):
@@ -160,7 +162,7 @@ def extract_dataset(dir, name, edges):
     node_i = {n : i for i, n in enumerate(g.nn)}
     # print(g.nodes())
     # print(len(node_i))
-    with open(EXTRACTED_DIR + '/' + name, 'w+') as f:
+    with open(DATA_DIR + EXTRACTED_DIR + name, 'w+') as f:
         f.write('%d %d %d\n' % (g.layers(), g.nodes(), g.edges()))
         for l in g.net:
             for n, vv in g.net[l].items():
@@ -170,15 +172,16 @@ def extract_dataset(dir, name, edges):
                     f.write('%d %d %d %d\n' % (node, layer, node_i[v], layer))   
         
 def main():
-    dirs = ([element for element in os.listdir() if not isfile(element)])
+    dirs = ([element for element in os.listdir(DATA_DIR) if not isfile(element)])
     for dir in dirs:
-        if not dir == EXTRACTED_DIR:
+        if not dir == EXTRACTED_DIR.rstrip('/'):
             edges, name = None, None
-            for f in os.listdir(dir + "/Dataset"):
+            print('#', dir, EXTRACTED_DIR)
+            for f in os.listdir(DATA_DIR + dir + "/Dataset"):
                 if f.endswith(".edges"):
-                    edges = dir + "/Dataset/" + f
+                    edges = DATA_DIR + dir + "/Dataset/" + f
                     name = f
-            extract_dataset(dir, name, edges)
+            extract_dataset(DATA_DIR + dir, name, edges)
         
 
 if __name__ == "__main__":
