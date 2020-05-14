@@ -31,6 +31,27 @@ aggDeg:
 		utils/common.cpp \
 		-o aggDegree/aggDeg.out
 
+mlPowerCommunityIndex:
+	g++ mlPCI/main.cpp mlPCI/mlPCI.cpp \
+		utils/Multilayer.cpp utils/Aggregate.cpp utils/common.cpp \
+		-o mlPCI/mlPCI.out
+
+laPowerCommunityIndex:
+	g++ laPCI/main.cpp laPCI/laPCI.cpp \
+		utils/Multilayer.cpp utils/Aggregate.cpp utils/common.cpp \
+		-o laPCI/laPCI.out
+
+alPowerCommunityIndex:
+	g++ alPCI/main.cpp alPCI/alPCI.cpp \
+		utils/Multilayer.cpp utils/Aggregate.cpp utils/common.cpp \
+		-o alPCI/alPCI.out
+
+lsPowerCommunityIndex:
+	g++ lsPCI/main.cpp lsPCI/lsPCI.cpp \
+		utils/Multilayer.cpp utils/Aggregate.cpp utils/common.cpp \
+		-o lsPCI/lsPCI.out
+
+
 spread:
 	g++ spread_process/spread_process.cpp utils/Aggregate.cpp \
 		utils/common.cpp utils/Multilayer.cpp \

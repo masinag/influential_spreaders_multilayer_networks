@@ -1,16 +1,12 @@
 #include <algorithm>
 #include <iostream>
 #include <cassert>
-#include "mlPCI.h"
+#include "lsPCI.h"
 // Definition in doi: 10.1109/TNSE.2017.2775152
-// The mlPCI n index of a node v is the maximum number k, such that there are
-// at least k direct neighbors of v with the number of links towards at least n 
+// The lsPCI index of a node v is the maximum number k, such that there are
+// at least k direct neighbors of v with the number of links towards at least k 
 // layers greater than or equal to k.
-// To combine the distinct n values of mlPCI n into a single dimension,
-// we propose a simple aggregation. In particular, for a node v
-// we define mlPCI(v) as follows:
-// mlPCI(v) = sum_n(mlPCI_n(v))
-vector<int> mlPCI(MultilayerNetwork &m){
+vector<int> lsPCI(MultilayerNetwork &m){
     // compute the number of links towards each layer for each node
     vector<vector<vector<pair<int, int>>>> count (m.nodes(), 
         vector< vector <pair<int, int> > > (m.layers(), vector <pair<int, int> > (m.layers())));
@@ -36,6 +32,7 @@ vector<int> mlPCI(MultilayerNetwork &m){
 
             v.resize(m.adj(i, l).size(), 0);
             // for each n
+            int k_max = 0;
             for(int n = 0; n < m.layers(); n++){
                 // v[k] contains the number of links that the ith neighbor of i,j 
                 // called x, y
@@ -55,8 +52,12 @@ vector<int> mlPCI(MultilayerNetwork &m){
                 int k = 0;
                 for(int j = 0; j < v.size(); j++)
                     k = max(k, min(j+1, v[j]));
-                score[i] += k;
+                // since for lsPC k should account also for the number of 
+                // layers the links are directed to, we have to take the minimum
+                // between k and the number of layers n
+                k_max = max(k_max, min(k, n));
             }            
+            score[i] += k_max;
         }
     }
     return score;

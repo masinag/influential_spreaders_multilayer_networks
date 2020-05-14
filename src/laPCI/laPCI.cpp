@@ -23,15 +23,14 @@ vector<int> laPCI(MultilayerNetwork &m){
                 index++;
             }
             //sort them in increasing order
-            sort(v.begin(), v.end());
-            
-            // the maximum v[j] for which v[j] >= v.size() - j represents the alPCI of i,l
-            // i.e. the maximum number k for which k = (v.size() - j) neighbors of i,l have at least k 
-            // out-links
-            int j = v.size() - 1;
-            while(j >= 0 && v[j] < v.size() - j)
-                j--;
-            score[i] += j >= 0 ? v[j] : 0;
+            sort(v.begin(), v.end(), greater<int>());
+
+            // k = max_j(min(j+1, v[j])) represents the maximum number
+            // k for which at least k neighbors have at least k out-links
+            int k = 0;
+            for(int j = 0; j < v.size(); j++)
+                k = max(k, min(j+1, v[j]));
+            score[i] += k;
         }
     }
     return score;
