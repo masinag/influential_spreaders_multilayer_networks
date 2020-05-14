@@ -81,6 +81,15 @@ vector<vector<int>> MultilayerNetwork::in_degree(){
     }
     return deg;
 }
+vector<vector<int>> MultilayerNetwork::out_degree(){
+    vector<vector<int>> deg(nodes(), vector<int>(layers(), 0));
+    for(int i = 0; i < nodes(); i++){
+        for(int l = 0; l < layers(); l++){
+            deg[i][l] = adj(i, l).size();
+        }
+    }
+    return deg;
+}
 
 
 void MultilayerNetwork::transpose(MultilayerNetwork &gt){
@@ -91,3 +100,4 @@ void MultilayerNetwork::transpose(MultilayerNetwork &gt){
         }
     }
 }
+
