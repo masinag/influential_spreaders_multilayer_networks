@@ -5,7 +5,12 @@
 using namespace std;
 int main(int argc, char const *argv[]){
     
-    MultilayerNetwork g = readMultilayer();
+    if(argc < 2) {
+        cerr << "File name not found" << endl;
+        exit(EXIT_FAILURE);
+    }
+    string file = argv[1];
+    MultilayerNetwork g = readMultilayer(file);
 
     vector<double> rank = additivePageRank(g);
     vector<int> sorted = sort_nodes(rank);

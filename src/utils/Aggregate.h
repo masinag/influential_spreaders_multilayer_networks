@@ -1,6 +1,7 @@
 #ifndef AGGREGATE_H
 #define AGGREGATE_H
 #include <vector>
+#include <string>
 using namespace std;
 
 
@@ -21,7 +22,7 @@ class Graph{
         double eigenvalue();
 };
 
-Graph readAggregate();
+Graph readAggregate(string &file);
 
 
 #endif

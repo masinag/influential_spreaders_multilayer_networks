@@ -1,8 +1,7 @@
-#include <vector>
 #include <cmath>
 #include <cassert>
 #include <algorithm>
-#include <iostream>
+#include <fstream>
 #include "Aggregate.h"
 #include "common.h"
 
@@ -28,12 +27,13 @@ void Graph::transpose(Graph &t){
             t.addEdge(v, i);
 }
 
-Graph readAggregate(){
+Graph readAggregate(string &file){
     int l, n, m, a, la, b, lb;
-    cin >> l >> n >> m;
+    ifstream in(file);
+    in >> l >> n >> m;
     Graph res(n);
      
-    while (cin >> a >> la >> b >> lb){
+    while (in >> a >> la >> b >> lb){
         res.addEdge(a, b);
     }
 

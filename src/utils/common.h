@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+vector<int> sort_nodes(vector<double> &scores, vector<int>& tie_break);
+vector<int> sort_nodes(vector<int> &scores, vector<int>& tie_break);
 vector<int> sort_nodes(vector<double> &scores);
 vector<int> sort_nodes(vector<int> &scores);
 void normalize(vector<double> &x);

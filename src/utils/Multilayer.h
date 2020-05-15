@@ -1,6 +1,7 @@
 #ifndef MULTILAYER_H
 #define MULTILAYER_H
 #include <vector>
+#include <string>
 #include "Aggregate.h"
 
 using namespace std;
@@ -30,6 +31,6 @@ class MultilayerNetwork {
         void transpose(MultilayerNetwork &gt);
 };
 
-MultilayerNetwork readMultilayer();
+MultilayerNetwork readMultilayer(string &file);
 
 #endif

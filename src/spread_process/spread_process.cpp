@@ -4,6 +4,7 @@
 #include <cassert>
 #include "../utils/Multilayer.h"
 #include "../utils/Aggregate.h"
+#include "../utils/common.h"
 
 #define PROCESSES 1
 #define S 0
@@ -16,82 +17,39 @@ uniform_real_distribution<double> random_double(0, 1);
 default_random_engine re;
 
 // lamda = avg(deg_i) / avg(deg_i^2)
-double getEpidemicThreshold(Graph &g){
+double get_epidemic_threshold(Graph &g){
     // calculate in_degree of each node
-    vector<int> in_deg(g.size(), 0);
-    for (int i = 0; i < g.size(); i++){
-        for(int v : g.adj(i))
-            in_deg[v]++;
-    }
+    vector<int> in_deg = g.in_deg();
     int sum_deg = 0, sum_sq_deg = 0;
     for(int d : in_deg) {
         sum_deg += d;
-        sum_sq_deg += d*d;
+        sum_sq_deg += d*(d-1);
     }
     return (double(sum_deg) / double(g.size()))  / 
            (double(sum_sq_deg) / double(g.size()));
 }
 
 // around epidemic threshold of each layer
-vector<double> getIntraLayerEP(MultilayerNetwork &g){
-    
-}
-double spread(Graph &g, int node, double lambda){
-    vector<int> status(g.size(), S);
-    int infected_number = 0;
-    queue<int> infected;
-    infected.push(node);
-    status[node] = I;
-    while(!infected.empty()){
-        // pick a node and spread the infection to its neighbors in all layers 
-        int e = infected.front();
-        infected.pop();
-        status[e] = R;
-        infected_number++;
-        for(int v : g.adj(e)){
-            if(status[v] == S){
-                double inf_prob = random_double(re);
-                if (inf_prob <= lambda) {
-                    status[v] = I;
-                    infected.push(v);
-                }
-            }
-        }
-        
+vector<double> get_intra_layer_ep(MultilayerNetwork &g){
+    vector<Graph> layers = g.to_vector();
+    vector<double> intra_layer_ep(g.layers(), 0);
+    // cout << "intra-layer: ";
+    for(int i = 0; i < g.layers(); i++){
+        intra_layer_ep[i] = get_epidemic_threshold(layers[i]) + 0.0L;
+        // cout << "[" << i << "] : " << intra_layer_ep[i] << " ";
     }
-    // cout << infected_number << endl;
-    return double(infected_number) / double(g.size());
+    // cout << endl;
+    
+    return intra_layer_ep;
 }
 
-double avg_spread(Graph &g, double lambda){
-    double sum = 0, m = 0;
-    for(int i = 0; i < g.size(); i++){
-        double s = spread(g, i, lambda);
-        sum += s;
-        m = max(m, s);
-    }
-    return sum / g.size();
-    // return m;
-}
 
 // around epidemic threshold of aggregated network
-double getInterLayerEP(MultilayerNetwork &g){
+double get_inter_layer_ep(MultilayerNetwork &g){
     Graph agg = g.getAggregate();
-    
-    double lambda = getEpidemicThreshold(agg);
-    cout << lambda << endl;   
-    cout << "lambda: " << avg_spread(agg, lambda) << endl;
-    cout << "lambda+0.1: " << avg_spread(agg, lambda+0.1) << endl;
-    cout << "lambda+0.2: " << avg_spread(agg, lambda+0.2) << endl;
-    cout << "lambda+0.3: " << avg_spread(agg, lambda+0.3) << endl;
-    cout << "lambda+0.3: " << avg_spread(agg, lambda+0.3) << endl;
-    cout << "lambda+0.4: " << avg_spread(agg, lambda+0.4) << endl;
-    cout << "lambda+0.5: " << avg_spread(agg, lambda+0.5) << endl;
-    cout << "lambda+0.6: " << avg_spread(agg, lambda+0.6) << endl;
-    cout << "lambda+0.7: " << avg_spread(agg, lambda+0.7) << endl;
-    cout << "lambda+0.8: " << avg_spread(agg, lambda+0.8) << endl;
-    cout << "lambda+0.9: " << avg_spread(agg, lambda+0.9) << endl;
-    cout << "lambda+1: " << avg_spread(agg, lambda+1) << endl;
+    double lambda = get_epidemic_threshold(agg) + 0.0L;
+    // cout << "inter-layer: " << lambda << endl;
+    return lambda;
 
 }
 
@@ -102,35 +60,36 @@ double getInterLayerEP(MultilayerNetwork &g){
 // R state at the end of a diffusion process.
 double spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
     double inter_layer_ep, int node){
-    vector<int> status(g.nodes(), S);
-    int infected_number = 0;
-    queue<int> infected;
-    infected.push(node);
-    status[node] = I;
+    vector<vector<int>> status(g.nodes(), vector<int>(g.layers(), S));
+    queue<pair<int, int>> infected;
+    for(int l = 0; l < g.layers(); l++){
+        infected.push(make_pair(node, l));
+        status[node][l] = I;
+    }
+    int recovered_number = g.layers();
     while(!infected.empty()){
         // pick a node and spread the infection to its neighbors in all layers 
-        int e = infected.front();
+        int node = infected.front().first;
+        int layer = infected.front().second;
         infected.pop();
-        status[e] = R;
-        infected_number++;
-        assert(infected_number <= g.nodes());
-        for (int l = 0; l < g.layers(); l++){
-            for(Edge v : g.adj(e, l)){
-                if(status[v.node] == S){
-                    double inf_prob = random_double(re);
-                    if ((v.layer == l && inf_prob <= intra_layer_ep[l]) || // intra-layer link
-                        (v.layer != l && inf_prob <= inter_layer_ep)){ // inter-layer link
-                        status[v.node] = I;
-                        infected.push(v.node);
-                    }
+        status[node][layer] = R;
+        recovered_number++;
+        for(Edge v : g.adj(node, layer)){
+            if(status[v.node][v.layer] == S){
+                double inf_prob = random_double(re);
+                if ((v.layer == layer && inf_prob <= intra_layer_ep[layer]) || // intra-layer link
+                    (v.layer != layer && inf_prob <= inter_layer_ep)){ // inter-layer link
+                    status[v.node][v.layer] = I;
+                    infected.push(make_pair(v.node, v.layer));
                 }
             }
         }
+        
     }
-    return double(infected_number) / double(g.nodes());
+    return double(recovered_number) / double(g.nodes() * g.layers());
 }
 
-vector<double> spreading_processesSIR(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
+vector<double> spreading_processes_SIR(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
     double inter_layer_ep, int processes){
     vector<double> infected_percentage(g.nodes(), 0);
     // average of #processes infectious processes
@@ -145,11 +104,18 @@ vector<double> spreading_processesSIR(MultilayerNetwork &g, vector<double> &intr
 }
 
 int main(int argc, char const *argv[]){
-    printf("Reading multiplex\n");
-    MultilayerNetwork g = readMultilayer();
-    printf("Multiplex read\n");
-    // vector<double> intra_layer_ep = getIntraLayerEP(g);
-    double inter_layer_ep = getInterLayerEP(g);
-    //vector<double> sp = spreading_processesSIR(g, intra_layer_ep, inter_layer_ep, PROCESSES);
+    if(argc < 2) {
+        cerr << "File name not found" << endl;
+        exit(EXIT_FAILURE);
+    }
+    string file = argv[1];
+    MultilayerNetwork g = readMultilayer(file);
+    vector<double> intra_layer_ep = get_intra_layer_ep(g);
+    double inter_layer_ep = get_inter_layer_ep(g);
+    vector<double> sp = spreading_processes_SIR(g, intra_layer_ep, inter_layer_ep, PROCESSES);
+    vector<int> sorted = sort_nodes(sp);
+    for(int i : sorted){
+        cout << i << " score: " << sp[i] << endl; 
+    }
     return 0;
 }

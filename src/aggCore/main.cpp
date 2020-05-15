@@ -4,7 +4,12 @@
 #include "../utils/common.h"
 
 int main(int argc, char const *argv[]) {
-    Graph g = readAggregate();
+    if(argc < 2) {
+        cerr << "File name not found" << endl;
+        exit(EXIT_FAILURE);
+    }
+    string file = argv[1];
+    Graph g = readAggregate(file);
     vector<int> core = k_core(g);
     vector<int> fcore = fast_k_core(g);
     vector<int> sorted = sort_nodes(core);

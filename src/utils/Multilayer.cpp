@@ -1,5 +1,4 @@
-#include <vector>
-#include <iostream>
+#include <fstream>
 #include "Multilayer.h"
 
 using namespace std;
@@ -9,11 +8,12 @@ Edge::Edge(int n, int l){
     layer = l;
 }
 
-MultilayerNetwork readMultilayer(){
+MultilayerNetwork readMultilayer(string &file){
     int l, n, m, a, la, b, lb;
-    cin >> l >> n >> m;
+    ifstream in(file);
+    in >> l >> n >> m;
     MultilayerNetwork res(l, n);
-    while (cin >> a >> la >> b >> lb){
+    while (in >> a >> la >> b >> lb){
         res.addEdge(a, la, b, lb);
     }
     return res;
