@@ -11,7 +11,6 @@ int main(int argc, char const *argv[]){
     }
     string file = argv[1];
     MultilayerNetwork g = readMultilayer(file);
-
     vector<double> rank = additivePageRank(g);
     vector<int> sorted = sort_nodes(rank);
     for(int i = 0; i < rank.size(); i++) {

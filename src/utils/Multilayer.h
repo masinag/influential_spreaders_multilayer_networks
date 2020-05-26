@@ -2,6 +2,7 @@
 #define MULTILAYER_H
 #include <vector>
 #include <string>
+#include <unordered_set>
 #include "Graph.h"
 
 using namespace std;
@@ -14,6 +15,7 @@ class Edge{
 
 class MultilayerNetwork {
     vector<vector< vector< Edge > > >g;    
+    vector<unordered_set<int>> layer_nodes, node_layers;
     public:
         int l, n;
         MultilayerNetwork(int l, int n);
@@ -21,7 +23,9 @@ class MultilayerNetwork {
         void addNode(int n, int l);
         vector<Edge> adj(int n, int l);
         int nodes();
+        unordered_set<int>& nodes(int layer);
         int layers();
+        unordered_set<int>& layers(int node);
         
 
         Graph getGraph();

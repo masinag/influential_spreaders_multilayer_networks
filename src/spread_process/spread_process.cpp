@@ -46,7 +46,7 @@ vector<double> get_intra_layer_ep(MultilayerNetwork &g){
 
 // around epidemic threshold of aggregated network
 double get_inter_layer_ep(MultilayerNetwork &g){
-    Graph agg = g.getGraph();
+    Graph agg = g.getAggregate();
     double lambda = get_epidemic_threshold(agg) + 0.0L;
     // cout << "inter-layer: " << lambda << endl;
     return lambda;

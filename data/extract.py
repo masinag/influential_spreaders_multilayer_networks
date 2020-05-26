@@ -78,7 +78,7 @@ def write_multiplex(g, file_name):
     layer_i = {l : i for i, l in enumerate(g.net)}
     node_i = {n : i for i, n in enumerate(g.nn)}
     with open(file_name, 'w+') as f:
-        f.write(f'{g.layers()} {g.nodes()} {g.edges}\n')
+        f.write(f'{g.layers()} {g.nodes()} {g.edges()}\n')
         for l in g.net:
             for n, vv in g.net[l].items():
                 node = node_i[n]

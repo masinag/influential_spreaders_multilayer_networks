@@ -11,7 +11,7 @@ class Graph{
         vector< vector<int> > g;
     public:
         vector<int> node_name;
-
+        Graph();
         Graph(int v);
         void addEdge(int a, int b);
         vector<int>& adj(int x);

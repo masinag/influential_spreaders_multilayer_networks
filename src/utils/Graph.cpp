@@ -7,6 +7,7 @@
 
 using namespace std;
 
+Graph::Graph(){}
 Graph::Graph(int v){
     this -> n = v;
     g.resize(v);
@@ -27,6 +28,7 @@ void Graph::transpose(Graph &t){
     for(int i = 0; i < n; i++)
         for (int v : adj(i))
             t.addEdge(v, i);
+    t.node_name = node_name;
 }
 
 Graph readAggregate(string &file){
