@@ -1,3 +1,5 @@
+all: aggPR addPR verPR aggKCore sumKCore multiKCore aggDeg mlPowerCommunityIndex \
+	laPowerCommunityIndex alPowerCommunityIndex lsPowerCommunityIndex
 
 aggPR:
 	g++ aggPageRank/main.cpp aggPageRank/aggPR.cpp utils/Graph.cpp \

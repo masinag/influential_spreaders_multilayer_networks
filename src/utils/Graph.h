@@ -24,7 +24,7 @@ class Graph{
         double eigenvalue();
 };
 
-Graph readGraph(string &file);
+Graph readAggregate(string &file);
 
 
 #endif

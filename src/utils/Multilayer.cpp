@@ -45,7 +45,7 @@ void MultilayerNetwork::addEdge(int a, int la, int b, int lb){
 }
 
 
-Graph MultilayerNetwork::getAggregate(){
+Graph MultilayerNetwork::getGraph(){
     Graph res(this->n);
     for(int n = 0; n < nodes(); n++){
         for(int l = 0; l < layers(); l++){

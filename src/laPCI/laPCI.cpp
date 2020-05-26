@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cassert>
-#include "alPCI.h"
+#include "laPCI.h"
 
 // Definition in doi: 10.1109/TNSE.2017.2775152
 // The laPCI of a node v is the maximum number k, such that there are

@@ -2,7 +2,7 @@
 #define MULTILAYER_H
 #include <vector>
 #include <string>
-#include "Aggregate.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ class MultilayerNetwork {
         int layers();
         
 
-        Graph getAggregate();
+        Graph getGraph();
         vector<Graph> to_vector();
         vector<vector<int>> in_degree();
         vector<vector<int>> out_degree();
