@@ -2,7 +2,7 @@
 #define AGG_CORE_H
 
 #include <vector>
-#include "../utils/Aggregate.h"
+#include "../utils/Graph.h"
 using namespace std;
 
 vector<int> fast_k_core(Graph& g);

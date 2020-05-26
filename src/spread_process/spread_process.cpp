@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cassert>
 #include "../utils/Multilayer.h"
-#include "../utils/Aggregate.h"
+#include "../utils/Graph.h"
 #include "../utils/common.h"
 
 #define PROCESSES 1
@@ -46,7 +46,7 @@ vector<double> get_intra_layer_ep(MultilayerNetwork &g){
 
 // around epidemic threshold of aggregated network
 double get_inter_layer_ep(MultilayerNetwork &g){
-    Graph agg = g.getAggregate();
+    Graph agg = g.getGraph();
     double lambda = get_epidemic_threshold(agg) + 0.0L;
     // cout << "inter-layer: " << lambda << endl;
     return lambda;

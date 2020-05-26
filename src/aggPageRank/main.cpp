@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
     string file = argv[1];
-    Graph g = readAggregate(file);
+    Graph g = readGraph(file);
     vector<double> rank = pageRank(g);
     vector<int> sorted = sort_nodes(rank);
     for(int i = 0; i < rank.size(); i++) {

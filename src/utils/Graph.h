@@ -1,5 +1,5 @@
-#ifndef AGGREGATE_H
-#define AGGREGATE_H
+#ifndef GRAPH_H
+#define GRAPH_H
 #include <vector>
 #include <string>
 using namespace std;
@@ -10,6 +10,8 @@ class Graph{
         int n;
         vector< vector<int> > g;
     public:
+        vector<int> node_name;
+
         Graph(int v);
         void addEdge(int a, int b);
         vector<int>& adj(int x);
@@ -22,7 +24,7 @@ class Graph{
         double eigenvalue();
 };
 
-Graph readAggregate(string &file);
+Graph readGraph(string &file);
 
 
 #endif

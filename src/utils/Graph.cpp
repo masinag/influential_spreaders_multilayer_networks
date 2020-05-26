@@ -2,7 +2,7 @@
 #include <cassert>
 #include <algorithm>
 #include <fstream>
-#include "Aggregate.h"
+#include "Graph.h"
 #include "common.h"
 
 using namespace std;
@@ -10,6 +10,8 @@ using namespace std;
 Graph::Graph(int v){
     this -> n = v;
     g.resize(v);
+    node_name.resize(v);
+    
 }
 void Graph::addEdge(int a, int b){
     if (find(g[a].begin(), g[a].end(), b) == g[a].end())
@@ -27,7 +29,7 @@ void Graph::transpose(Graph &t){
             t.addEdge(v, i);
 }
 
-Graph readAggregate(string &file){
+Graph readGraph(string &file){
     int l, n, m, a, la, b, lb;
     ifstream in(file);
     in >> l >> n >> m;

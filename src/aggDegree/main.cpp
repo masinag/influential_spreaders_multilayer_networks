@@ -8,7 +8,7 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
     string file = argv[1];
-    Graph g = readAggregate(file);
+    Graph g = readGraph(file);
     vector<int> deg = degree(g);
     vector<int> sorted = sort_nodes(deg);
     for(int i = 0; i < deg.size(); i++) {

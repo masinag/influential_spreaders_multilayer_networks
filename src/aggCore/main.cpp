@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
     string file = argv[1];
-    Graph g = readAggregate(file);
+    Graph g = readGraph(file);
     vector<int> core = k_core(g);
     vector<int> fcore = fast_k_core(g);
     vector<int> sorted = sort_nodes(core);
