@@ -2,7 +2,9 @@ import random
 import bisect 
 import math 
 from functools import reduce
-from multilayer import Multilayer, save_stats
+from stats_multilayer import save_stats
+from data_structures import Graph, Multilayer
+
 DATA_DIR = 'multilayer/'
 GENERATE_DIR = 'generated/'
 
@@ -17,26 +19,15 @@ class ZipfGenerator:
         # return the position of u in the sorted list
         return bisect.bisect(self.distMap, u) - 1
 
-class Graph:
-    def __init__(self, nodes):
-        self.g = [[] for node in range(nodes)]
-    def add_edge(self, a, b):
-        self.g[a].append(b)
-    def nodes(self):
-        return len(self.g)
-    def adj(self, n):
-        return self.g[n]
 
 def read_graph(file_name):
     nn = {}
     count = 0
+    g = Graph()
+
     with open(DATA_DIR + file_name, 'r') as f:
         for row in f:
-            if row.startswith('#'):
-                if row.startswith('# Nodes'):
-                    nodes = int(row.split()[2])
-                    g = Graph(nodes)
-            else:
+            if not row.startswith('#'):
                 a, b = map(int, row.split())
                 if a not in nn:
                     nn[a] = count
@@ -53,6 +44,7 @@ def generate_multilayer(files, d, s_degree, s_layer, s_node):
     layers = [read_graph(file_name) for file_name in files]
     total_nodes = sum((g.nodes() for g in layers))
     max_interconnections = int(d * math.log2(total_nodes))
+    print('#', int(d * math.log2(total_nodes)))
     
     degree_generator = ZipfGenerator(max_interconnections, s_degree)
     layer_generator = ZipfGenerator(len(layers), s_layer)
@@ -66,6 +58,7 @@ def generate_multilayer(files, d, s_degree, s_layer, s_node):
     for n_l_index in n_index:
         random.shuffle(n_l_index)
 
+    degrees = []
     for l in range(len(layers)):
         for n in range(layers[l].nodes()):
             # intra-connections
@@ -73,6 +66,7 @@ def generate_multilayer(files, d, s_degree, s_layer, s_node):
                 m.add_edge(n, l, v, l)
             # generate inter-connections
             degree = degree_generator.next()
+            degrees.append(degree)
             for _ in range(degree):
                 added = False
                 while not added :
@@ -82,6 +76,7 @@ def generate_multilayer(files, d, s_degree, s_layer, s_node):
                         
                     n_dest = n_index[l_dest][node_generators[l_dest].next()]
                     added = m.add_edge(n, l, n_dest, l_dest)
+    print('>', max(degrees))
     return m
 
 
@@ -98,8 +93,8 @@ def write_multilayer(m, output_name):
 if __name__ == "__main__":
     SLN_files = ['p2p-Gnutella04.txt', 'p2p-Gnutella05.txt', 'p2p-Gnutella06.txt', 'p2p-Gnutella08.txt']
     DLN_files = ['Wiki-Vote.txt', 'Cit-HepTh.txt', 'p2p-Gnutella04.txt']
-    networks = {'SLN' : SLN_files}
-    dd = [1, 2, 3, 4]
+    networks = {'SLN' : SLN_files, 'DLN' : DLN_files}
+    dd = list(range(1, 5))
     ss = [0.3, 0.8]
 
     for name, files in networks.items():
@@ -110,5 +105,6 @@ if __name__ == "__main__":
                         m = generate_multilayer(files, d, s_degree, s_layer, s_node)
 
                         output_name = f"{name}_{d}_{s_degree}_{s_layer}_{s_node}"
-                        write_multilayer(m, output_name + ".edges")
+                        write_multilayer(m, f'{output_name}.edges')
+                        print(f'Generated {output_name}.edges')
                         save_stats(m, output_name)

@@ -2,22 +2,6 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 IMG_DIR = 'multilayer/plots/'
-class Multilayer:
-    def __init__(self, nodes, layers):
-        self.n = [ [ set() for layer in range(layers)] for node in range(nodes)]
-    def add_edge(self, a, la, b, lb):
-        if not (b, lb) in self.n[a][la]:
-            self.n[a][la].add((b, lb))
-            return True
-        return False
-    def nodes(self):
-        return len(self.n)
-    def layers(self):
-        return len(self.n[0])
-    def edges(self):
-        return sum((len(node_layer_adj) for node_adj in self.n for node_layer_adj in node_adj))
-    def adj(self, node, layer):
-        return self.n[node][layer]
 
 def save_plot(values, name, output_name):
     count = {}
