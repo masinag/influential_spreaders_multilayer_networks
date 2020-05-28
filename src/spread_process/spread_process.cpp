@@ -62,7 +62,7 @@ double spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep,
     double inter_layer_ep, int node){
     vector<vector<int>> status(g.nodes(), vector<int>(g.layers(), S));
     queue<pair<int, int>> infected;
-    for(int l = 0; l < g.layers(); l++){
+    for(int l : g.layers(node)){
         infected.push(make_pair(node, l));
         status[node][l] = I;
     }

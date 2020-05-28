@@ -44,6 +44,14 @@ unordered_set<int>& MultilayerNetwork::layers(int node){
     return node_layers[node];
 }
 
+int MultilayerNetwork::total_nodes(){
+    int tot = 0;
+    for(int l = 0; l < layers(); l++)
+        tot += nodes(l).size();
+    return tot;
+}
+
+
 vector<Edge> MultilayerNetwork::adj(int n, int l){
     return g[n][l];
 }
@@ -58,7 +66,7 @@ void MultilayerNetwork::addEdge(int a, int la, int b, int lb){
 }
 
 
-Graph MultilayerNetwork::getGraph(){
+Graph MultilayerNetwork::getAggregate(){
     Graph res(this->n);
     for(int n = 0; n < nodes(); n++){
         for(int l : layers(n)){
@@ -94,9 +102,8 @@ vector<Graph> MultilayerNetwork::to_vector(){
 }
 
 vector<vector<int>> MultilayerNetwork::in_degree(){
-    vector<vector<int>> deg(nodes());
-    for(int i = 0; i < nodes(); i++)
-        deg[i] = vector<int>(layers(i).size(), 0);
+    vector<vector<int>> deg(nodes(), vector<int> (layers(), 0));
+   
     for(int i = 0; i < nodes(); i++){
         for(int l : layers(i)){
             for(Edge &e : g[i][l]) {
@@ -107,9 +114,7 @@ vector<vector<int>> MultilayerNetwork::in_degree(){
     return deg;
 }
 vector<vector<int>> MultilayerNetwork::out_degree(){
-    vector<vector<int>> deg(nodes());
-    for(int i = 0; i < nodes(); i++)
-        deg[i] = vector<int>(layers(i).size(), 0);
+    vector<vector<int>> deg(nodes(), vector<int>(layers(), 0));
     for(int i = 0; i < nodes(); i++){
         for(int l : layers(i)){
             deg[i][l] = adj(i, l).size();

@@ -27,8 +27,9 @@ class MultilayerNetwork {
         int layers();
         unordered_set<int>& layers(int node);
         
+        int total_nodes();
 
-        Graph getGraph();
+        Graph getAggregate();
         vector<Graph> to_vector();
         vector<vector<int>> in_degree();
         vector<vector<int>> out_degree();

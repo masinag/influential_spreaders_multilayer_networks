@@ -11,7 +11,7 @@ vector<int> sumCore(MultilayerNetwork& g){
     for(Graph &l : m){
         vector<int> layer_core = fast_k_core(l);
         for(int i = 0; i < layer_core.size(); i++)
-            core[i] += layer_core[i];
+            core[l.node_name[i]] += layer_core[i];
     }
     return core;
 }

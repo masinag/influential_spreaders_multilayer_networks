@@ -1,6 +1,6 @@
 import os, subprocess, glob
 if __name__ == "__main__":
-    algs = ['addPageRank']
+    # algs = ['addPageRank']
     # , 'verPageRank', 'laPCI', 
     #     'mlPCI', 'lsPCI', 'aggPageRank', 'multiCore', 'sumCore', 'aggCore', 
     #     'alPCI', 'aggDegree']
