@@ -16,7 +16,7 @@ using namespace std;
 uniform_real_distribution<double> random_double(0, 1);
 default_random_engine re;
 
-// lamda = avg(deg_i) / avg(deg_i^2)
+// lambda = avg(deg_i) / avg(deg_i^2)
 double get_epidemic_threshold(Graph &g){
     // calculate in_degree of each node
     vector<int> in_deg = g.in_deg();

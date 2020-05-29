@@ -1,4 +1,5 @@
-#include "evaluation.h"
+#include "ranking.h"
+#include "common.h"
 /**
  * numer := 0
  * for i := 2..N do
@@ -10,7 +11,7 @@
  */
 
 int sign(double x){
-    return x == 0 ? 0 : x > 0 ? 1 : -1;
+    return almost_eq(x, 0) ? 0 : x > 0 ? 1 : -1;
 }
 
 double kendallsTau(vector<double> &x, vector<double> &y){
@@ -19,6 +20,13 @@ double kendallsTau(vector<double> &x, vector<double> &y){
         for(int j = 0; j < i; j++)
             count += sign(x[i] - x[j]) * sign(y[i] - y[j]);
     return double(2 * count) / double((x.size()) * (x.size() - 1));
+}
+
+double kendallsTau(vector<int> &x, vector<double> &y){
+    vector<double> new_x(x.size());
+    for(int i = 0; i < x.size(); i++)
+        new_x[i] = double(x[i]);
+    return kendallsTau(new_x, y);
 }
 
 double imprecision(vector<int> &rank_sim, vector<int> &rank_alg, vector<double> &sp, double p){
