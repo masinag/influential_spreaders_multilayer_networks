@@ -7,21 +7,21 @@
 
 using namespace std;
 
-class Edge{
+class Node{
     public:
         int node, layer;
-        Edge(int n, int l);
+        Node(int n, int l);
 };
 
 class MultilayerNetwork {
-    vector<vector< vector< Edge > > >g;    
+    vector<vector< vector< Node > > >g;    
     vector<unordered_set<int>> layer_nodes, node_layers;
     public:
         int l, n;
         MultilayerNetwork(int l, int n);
         void addEdge(int a, int la, int b, int lb);
         void addNode(int n, int l);
-        vector<Edge> adj(int n, int l);
+        vector<Node>& adj(int n, int l);
         int nodes();
         unordered_set<int>& nodes(int layer);
         int layers();

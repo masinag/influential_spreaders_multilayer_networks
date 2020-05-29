@@ -15,7 +15,7 @@ vector<int> lsPCI(MultilayerNetwork &m){
         for(int l = 0; l < m.layers(); l++) {
             for(int j = 0; j < m.layers(); j++)
                 count[i][l][j] = make_pair(j, 0);
-            for(Edge &e : m.adj(i, l)) {
+            for(Node &e : m.adj(i, l)) {
                 count[i][l][e.layer].second++;
             }
             sort(count[i][l].begin(), count[i][l].end(), [](auto &a, auto &b){
@@ -39,7 +39,7 @@ vector<int> lsPCI(MultilayerNetwork &m){
                 // has towards at least n layers, i.e. count[x][y][n-1] contains the 
                 // number of links that x, y has towards at least n layers
                 int index = 0;
-                for(Edge &e : m.adj(i, l)){
+                for(Node &e : m.adj(i, l)){
                     v[index] = count[e.node][e.layer][n].second;
                     index++;
                 }

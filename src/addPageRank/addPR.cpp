@@ -55,7 +55,7 @@ vector<double> layerPageRank(Graph &out_edges, vector<double> bias, double alpha
         done = almost_eq(rank, new_rank);
         rank = new_rank;
     }
-    printf("%d iterations\n", j);
+    // printf("%d iterations\n", j);
     return rank;
 
 }

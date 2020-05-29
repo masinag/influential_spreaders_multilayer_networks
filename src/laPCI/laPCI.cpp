@@ -18,7 +18,7 @@ vector<int> laPCI(MultilayerNetwork &m){
         for(int l : m.layers(i)) {
             v.resize(m.adj(i, l).size(), 0);
             int index = 0;
-            for(Edge &e : m.adj(i, l)){
+            for(Node &e : m.adj(i, l)){
                 v[index] = count[e.node][e.layer];
                 index++;
             }

@@ -22,8 +22,8 @@ vector<double> verPageRank(MultilayerNetwork& g, double alpha, int max_iter){
         for(int i = 0; i < g.nodes(); i++){
             for(int l : g.layers(i)) {
                 new_rank[i][l] = c;
-                for(Edge v : gt.adj(i, l)) {
-                // for(Edge v : g.adj(i, l)) {
+                for(Node v : gt.adj(i, l)) {
+                // for(Node v : g.adj(i, l)) {
                     new_rank[i][l] += alpha * rank[v.node][v.layer] / g.adj(v.node, v.layer).size();
                     // new_rank[i][l] += alpha * rank[v.node][v.layer] / g.adj(i, l).size();
                 }
@@ -32,7 +32,7 @@ vector<double> verPageRank(MultilayerNetwork& g, double alpha, int max_iter){
         done = almost_eq(rank, new_rank);
         rank = new_rank;
     }
-    printf("%d iterations\n", j);
+    // printf("%d iterations\n", j);
     vector<double> agg_rank(g.nodes(), 0.0L);
     for(int i = 0; i < g.nodes(); i++){
         for(int j = 0; j < g.layers(); j++) {

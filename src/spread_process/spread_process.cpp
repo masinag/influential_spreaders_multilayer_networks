@@ -74,7 +74,7 @@ double spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep,
         infected.pop();
         status[node][layer] = R;
         recovered_number++;
-        for(Edge v : g.adj(node, layer)){
+        for(Node v : g.adj(node, layer)){
             if(status[v.node][v.layer] == S){
                 double inf_prob = random_double(re);
                 if ((v.layer == layer && inf_prob <= intra_layer_ep[layer]) || // intra-layer link

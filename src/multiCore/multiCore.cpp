@@ -37,7 +37,7 @@ vector<int> multiCore(MultilayerNetwork& m) {
                 core[node] = c;
                 // remove it and its outgoing edges
                 for(int l : m.layers(node)) {
-                    for(Edge &e : m.adj(node, l)) {
+                    for(Node &e : m.adj(node, l)) {
                         if(min_deg[e.node] > min_deg[node]){ // if the neighbor was not removed yet
                             in_deg[e.node][e.layer]--;
                             if(in_deg[e.node][e.layer] < min_deg[e.node]){

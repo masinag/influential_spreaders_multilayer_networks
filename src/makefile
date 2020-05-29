@@ -1,5 +1,5 @@
 all: aggPR addPR verPR aggKCore sumKCore multiKCore aggDeg mlPowerCommunityIndex \
-	laPowerCommunityIndex alPowerCommunityIndex lsPowerCommunityIndex
+	laPowerCommunityIndex alPowerCommunityIndex lsPowerCommunityIndex verBC
 
 aggPR:
 	g++ aggPageRank/main.cpp aggPageRank/aggPR.cpp utils/Graph.cpp \
@@ -52,6 +52,11 @@ lsPowerCommunityIndex:
 	g++ lsPCI/main.cpp lsPCI/lsPCI.cpp \
 		utils/Multilayer.cpp utils/Graph.cpp utils/common.cpp \
 		-o lsPCI/lsPCI.out
+
+verBC:
+	g++ verBetweenness/main.cpp verBetweenness/verBC.cpp utils/Multilayer.cpp \
+		utils/Graph.cpp utils/common.cpp \
+		-o verBetweenness/verBC.out
 
 
 spread:

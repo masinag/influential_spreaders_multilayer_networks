@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Edge::Edge(int n, int l){
+Node::Node(int n, int l){
     node = n;
     layer = l;
 }
@@ -23,7 +23,7 @@ MultilayerNetwork readMultilayer(string &file){
 MultilayerNetwork::MultilayerNetwork(int l, int n){
     this -> n = n;
     this -> l = l;
-    this -> g.resize(n, vector< vector < Edge > > (l));
+    this -> g.resize(n, vector< vector < Node > > (l));
     node_layers.resize(n);
     layer_nodes.resize(l);
     //g.resize(n, vector<vector<vector<int>>>(l, vector<vector<int>>(n, vector<int>(l, 0))));
@@ -52,13 +52,13 @@ int MultilayerNetwork::total_nodes(){
 }
 
 
-vector<Edge> MultilayerNetwork::adj(int n, int l){
+vector<Node>& MultilayerNetwork::adj(int n, int l){
     return g[n][l];
 }
 
 
 void MultilayerNetwork::addEdge(int a, int la, int b, int lb){
-    g[a][la].push_back(Edge(b, lb));
+    g[a][la].push_back(Node(b, lb));
     node_layers[a].insert(la);
     node_layers[b].insert(lb);
     layer_nodes[la].insert(a);
@@ -70,7 +70,7 @@ Graph MultilayerNetwork::getAggregate(){
     Graph res(this->n);
     for(int n = 0; n < nodes(); n++){
         for(int l : layers(n)){
-            for(Edge e : g[n][l]) {
+            for(Node e : g[n][l]) {
                 res.addEdge(n, e.node);
             }
         }
@@ -92,7 +92,7 @@ vector<Graph> MultilayerNetwork::to_vector(){
         }
         // add the edges using the ids
         for(int n : nodes(l)) {
-            for (Edge e : g[n][l]){
+            for (Node e : g[n][l]){
                 if(e.layer == l)
                     res[l].addEdge(id_map[n], id_map[e.node]);
             }
@@ -106,7 +106,7 @@ vector<vector<int>> MultilayerNetwork::in_degree(){
    
     for(int i = 0; i < nodes(); i++){
         for(int l : layers(i)){
-            for(Edge &e : g[i][l]) {
+            for(Node &e : g[i][l]) {
                 deg[e.node][e.layer]++;
             }
         }
@@ -127,7 +127,7 @@ vector<vector<int>> MultilayerNetwork::out_degree(){
 void MultilayerNetwork::transpose(MultilayerNetwork &gt){
     for(int i = 0; i < nodes(); i++) {
         for(int l : layers(i)) {
-            for(Edge &e : g[i][l]){
+            for(Node &e : g[i][l]){
                 gt.addEdge(e.node, e.layer, i, l);}
         }
     }
