@@ -40,8 +40,10 @@ def read_graph(file_name):
                 g.add_edge(a, b)
     return g
 
-def generate_multilayer(files, d, s_degree, s_layer, s_node):
-    layers = [read_graph(file_name) for file_name in files]
+def read_layers(files):
+    return [read_graph(file_name) for file_name in files]
+
+def generate_multilayer(layers, l_index, n_index, d, s_degree, s_layer, s_node):
     total_nodes = sum((g.nodes() for g in layers))
     max_interconnections = int(d * math.log2(total_nodes))
     print('#', int(d * math.log2(total_nodes)))
@@ -51,12 +53,6 @@ def generate_multilayer(files, d, s_degree, s_layer, s_node):
     node_generators = [ZipfGenerator(g.nodes(), s_node) for g in layers]
 
     m = Multilayer(max((g.nodes() for g in layers)), len(layers))
-    l_index = list(range(m.layers()))
-    n_index = [list(range(layers[i].nodes())) for i in l_index]
-
-    random.shuffle(l_index)
-    for n_l_index in n_index:
-        random.shuffle(n_l_index)
 
     degrees = []
     for l in range(len(layers)):
@@ -99,11 +95,19 @@ if __name__ == "__main__":
     ss = [0.3, 0.8]
 
     for name, files in networks.items():
+        layers = read_layers(files)
+        l_index = list(range(len(layers)))
+        n_index = [list(range(layers[i].nodes())) for i in l_index]
+
+        random.shuffle(l_index)
+        for n_l_index in n_index:
+            random.shuffle(n_l_index)
+
         for d in dd:
             for s_degree in ss:
                 for s_layer in ss:
                     for s_node in ss:
-                        m = generate_multilayer(files, d, s_degree, s_layer, s_node)
+                        m = generate_multilayer(layers, l_index, n_index, d, s_degree, s_layer, s_node)
 
                         output_name = f"{name}_{d}_{s_degree}_{s_layer}_{s_node}"
                         write_multilayer(m, f'{output_name}.edges')
