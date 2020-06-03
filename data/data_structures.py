@@ -19,6 +19,10 @@ class Graph:
     def nodes(self):
         return len(self.g)
 
+
+    def nodes_set(self):
+        return set(self.g.keys())
+
     def bfs_cc(self, ccv, count, n, i):
         q = deque([n])
         while q:

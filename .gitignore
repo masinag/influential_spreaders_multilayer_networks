@@ -505,9 +505,9 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/c++,linux,python,visualstudio
 
 
-data/multilayer/generated/
+# data/multilayer/generated/
 data/multilayer/plots/
-data/multiplex/extracted/
+# data/multiplex/extracted/
 
 src/questions
 

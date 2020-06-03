@@ -60,6 +60,10 @@ def generate_multilayer(layers, l_index, n_index, d, s_degree, s_layer, s_node):
             # intra-connections
             for v in layers[l].adj(n):
                 m.add_edge(n, l, v, l)
+            # inter-connections with other counterparts
+            for j in range(len(layers)):
+                if j != l and n in layers[j].nodes_set():
+                    m.add_edge(n, l, n, j)
             # generate inter-connections
             degree = degree_generator.next()
             degrees.append(degree)
