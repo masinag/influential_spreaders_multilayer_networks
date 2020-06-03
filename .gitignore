@@ -510,3 +510,5 @@ data/multilayer/plots/
 data/multiplex/extracted/
 
 src/questions
+
+!*.sim.log

@@ -2,19 +2,22 @@
 #include <random>
 #include <iostream>
 #include <cassert>
+#include <filesystem>
 #include "../utils/Multilayer.h"
 #include "../utils/Graph.h"
 #include "../utils/common.h"
+#include "io.h"
 
-#define PROCESSES 1
 #define S 0
 #define I 1
 #define R 2
 
 using namespace std;
 
+
 uniform_real_distribution<double> random_double(0, 1);
-default_random_engine re;
+random_device rd;  //Will be used to obtain a seed for the random number engine
+std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
 
 // lambda = avg(deg_i) / avg(deg_i^2)
 double get_epidemic_threshold(Graph &g){
@@ -35,7 +38,7 @@ vector<double> get_intra_layer_ep(MultilayerNetwork &g){
     vector<double> intra_layer_ep(g.layers(), 0);
     // cout << "intra-layer: ";
     for(int i = 0; i < g.layers(); i++){
-        intra_layer_ep[i] = get_epidemic_threshold(layers[i]) + 0.0L;
+        intra_layer_ep[i] = get_epidemic_threshold(layers[i]);
         // cout << "[" << i << "] : " << intra_layer_ep[i] << " ";
     }
     // cout << endl;
@@ -47,7 +50,7 @@ vector<double> get_intra_layer_ep(MultilayerNetwork &g){
 // around epidemic threshold of aggregated network
 double get_inter_layer_ep(MultilayerNetwork &g){
     Graph agg = g.getAggregate();
-    double lambda = get_epidemic_threshold(agg) + 0.0L;
+    double lambda = get_epidemic_threshold(agg);
     // cout << "inter-layer: " << lambda << endl;
     return lambda;
 
@@ -58,64 +61,85 @@ double get_inter_layer_ep(MultilayerNetwork &g){
 // The diffusion process ends when there are no nodes left in the I state.
 // Hence, influence is measured by the number of nodes in the
 // R state at the end of a diffusion process.
-double spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
+int spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
     double inter_layer_ep, int node){
     vector<vector<int>> status(g.nodes(), vector<int>(g.layers(), S));
-    queue<pair<int, int>> infected;
+    queue<Node> infected;
     for(int l : g.layers(node)){
-        infected.push(make_pair(node, l));
         status[node][l] = I;
+        infected.push(Node(node, l));
     }
     int recovered_number = g.layers();
     while(!infected.empty()){
         // pick a node and spread the infection to its neighbors in all layers 
-        int node = infected.front().first;
-        int layer = infected.front().second;
+        int node = infected.front().node;
+        int layer = infected.front().layer;
         infected.pop();
         status[node][layer] = R;
         recovered_number++;
-        for(Node v : g.adj(node, layer)){
+        for(Node &v : g.adj(node, layer)){
             if(status[v.node][v.layer] == S){
-                double inf_prob = random_double(re);
+                double inf_prob = random_double(gen);
                 if ((v.layer == layer && inf_prob <= intra_layer_ep[layer]) || // intra-layer link
                     (v.layer != layer && inf_prob <= inter_layer_ep)){ // inter-layer link
                     status[v.node][v.layer] = I;
-                    infected.push(make_pair(v.node, v.layer));
+                    infected.push(Node(v.node, v.layer));
                 }
             }
         }
         
     }
-    return double(recovered_number) / double(g.nodes() * g.layers());
+    return recovered_number;
 }
 
-vector<double> spreading_processes_SIR(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
-    double inter_layer_ep, int processes){
-    vector<double> infected_percentage(g.nodes(), 0);
-    // average of #processes infectious processes
-    for(int p = 0; p < processes; p++){
-        for(int n = 0; n < g.nodes(); n++){
-            infected_percentage[n] += spreading_process(g, intra_layer_ep, inter_layer_ep, n);
-        }
+vector<int> spreading_processes_SIR(MultilayerNetwork &g, vector<double> &intra_layer_ep, 
+    double inter_layer_ep){
+    vector<int> infected_number(g.nodes(), 0);
+    for(int n = 0; n < g.nodes(); n++){
+        infected_number[n] += spreading_process(g, intra_layer_ep, inter_layer_ep, n);
     }
-    for(int i = 0; i < g.nodes(); i++)
-        infected_percentage[i] /= processes;
-    return infected_percentage;
+    return infected_number;
 }
 
 int main(int argc, char const *argv[]){
+    string dirs[2] = {"../../data/multilayer/generated/", "../../data/multiplex/extracted/"};    
+    vector<string> files;
+
+    string argv_str(argv[0]);
+    string base = argv_str.substr(0, argv_str.find_last_of("/"));
+    
     if(argc < 2) {
-        cerr << "File name not found" << endl;
-        exit(EXIT_FAILURE);
+        for (string &dataset: dirs){
+            string path = base + "/" + dataset;
+            read_directory(path, files);
+        }
+    } else {
+        files.push_back (argv[1]);
     }
-    string file = argv[1];
-    MultilayerNetwork g = readMultilayer(file);
-    vector<double> intra_layer_ep = get_intra_layer_ep(g);
-    double inter_layer_ep = get_inter_layer_ep(g);
-    vector<double> sp = spreading_processes_SIR(g, intra_layer_ep, inter_layer_ep, PROCESSES);
-    vector<int> sorted = sort_nodes(sp);
-    for(int i : sorted){
-        cout << i << " score: " << sp[i] << endl; 
+
+    int ns;
+    cout << "Number of simulations per network: ";
+    cin >> ns;
+    string log_file = get_log_file(base);
+
+    for (string& network_path: files){
+        string network_name = network_path.substr(network_path.find_last_of("/") + 1, 
+            string::npos);
+        network_name = network_name.substr(0, network_name.rfind(".edges"));
+        
+        write_log(log_file, "# " + network_name);
+
+        MultilayerNetwork g = readMultilayer(network_path);
+        vector<double> intra_layer_ep = get_intra_layer_ep(g);
+        double inter_layer_ep = get_inter_layer_ep(g);
+        write_log(log_file, "Network read");
+        for(int i = 0; i < ns; i++){
+            vector<int> sp = spreading_processes_SIR(g, intra_layer_ep, inter_layer_ep);
+            // vector<double> sp;
+            write_simulation_results(g.total_nodes(), sp, base, network_name, "1.0", i);
+            write_log(log_file, "Simulation " + to_string(i +1) + " out of " + 
+                to_string(ns) + " done");
+        }
     }
     return 0;
 }

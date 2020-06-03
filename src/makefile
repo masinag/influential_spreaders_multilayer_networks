@@ -61,5 +61,5 @@ verBC:
 
 spread:
 	g++ spread_process/spread_process.cpp utils/Graph.cpp \
-		utils/common.cpp utils/Multilayer.cpp \
+		utils/common.cpp utils/Multilayer.cpp spread_process/io.cpp \
 		-o spread_process/spread.out
