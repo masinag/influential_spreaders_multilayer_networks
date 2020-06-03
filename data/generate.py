@@ -94,7 +94,8 @@ if __name__ == "__main__":
     SLN_files = ['p2p-Gnutella04.txt', 'p2p-Gnutella05.txt', 'p2p-Gnutella06.txt', 'p2p-Gnutella08.txt']
     DLN_files = ['Wiki-Vote.txt', 'Cit-HepTh.txt', 'p2p-Gnutella04.txt']
     networks = {'SLN' : SLN_files, 'DLN' : DLN_files}
-    dd = list(range(1, 5))
+    # dd = list(range(1, 5))
+    dd = [2]
     ss = [0.3, 0.8]
 
     for name, files in networks.items():

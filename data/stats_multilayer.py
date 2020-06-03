@@ -14,14 +14,14 @@ def save_plot(values, name, output_name):
     plt.plot(x, y)
     Path(IMG_DIR + output_name).mkdir(parents=True, exist_ok=True)
 
-    plt.savefig(IMG_DIR + output_name + '/' + name + '.png')
+    plt.savefig(IMG_DIR + output_name + '/' + name + '.svg')
 
 def save_hist(values, name, output_name):
     plt.clf()
     plt.title(name)
     plt.hist(values)
     Path(IMG_DIR + output_name).mkdir(parents=True, exist_ok=True)
-    plt.savefig(IMG_DIR + output_name + '/' + name + '.png')
+    plt.savefig(IMG_DIR + output_name + '/' + name + '.svg')
 
 
 def save_stats(m, output_name):

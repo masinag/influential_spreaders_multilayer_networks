@@ -54,4 +54,72 @@ vector<int> multiCore(MultilayerNetwork& m) {
     return core;
 }
 
+// O(m + n) algorithm with bin-sort
+vector<int> fastMultiCore(MultilayerNetwork& g){
+    int n, md, start, num;
+    vector<vector<int>> in_deg = g.in_degree();
 
+    n = g.nodes();
+    vector<int> vert(g.nodes()),  // will contain the nodes sorted by their in_deg
+                pos(g.nodes()),   // will cointain the position of node i in vert
+    // deg will contain the minimum in_degree of i in any layer
+                deg(g.nodes()); // will contain the core of node i
+    for(int i = 0; i < g.nodes(); i++)
+        deg[i] = *min_element(in_deg[i].begin(), in_deg[i].end());
+
+    md = *max_element(deg.begin(), deg.end()); // max degree
+    vector<int> bin(md + 1, 0); // will contain the position in vert of the first
+                                // vertex with degree i
+
+    // sort the vertices in increasing order of their degrees using bin-sort
+    // compute values of bin
+    for(int v = 0; v < n; v++)
+        bin[deg[v]]++;
+    start = 0;
+    for (int d = 0; d <= md; d++){
+        num = bin[d];
+        bin[d] = start;
+        start += num;
+    }
+    // put nodes in vert
+    for(int v = 0; v < n; v++){
+        pos[v] = bin[deg[v]];
+        vert[pos[v]] = v;
+        bin[deg[v]]++;
+    }
+
+    // restore correct values of bin
+    for(int d = md; d > 0; d--)
+        bin[d] = bin[d-1];
+
+    // Core decomposition: the core number of current vertex v is the current 
+    // degree of that vertex.
+    bin[0] = 1;
+    for(int i = 0; i < n; i++){
+        int v = vert[i];
+        for(int l : g.layers(v)){
+            for(Node &u : g.adj(v, l)) {
+                if (deg[u.node] > deg[v]) { // u is not visited yet
+                    // decrement its in_degree in this layer
+                    in_deg[u.node][u.layer]--;
+                    // if it has become the minimum over all layers, update the vectors
+                    if(in_deg[u.node][u.layer] < deg[u.node]){
+                        // decrement degree of u and move it to the previous bin
+                        int du = deg[u.node], pu = pos[u.node];
+                        int pw = bin[du];
+                        int w = vert[pw];
+                        if (u.node != w) { // if u is not the first node of its bin, switch
+                            pos[u.node] = pw;
+                            vert[pu] = w;
+                            pos[w] = pu;
+                            vert[pw] = u.node;
+                        }
+                        bin[du]++; // bin[du] has one node less -> increase start
+                        deg[u.node]--;  // u is the last of the previous bin
+                    }
+                }
+            }
+        }
+    }
+    return deg;
+}

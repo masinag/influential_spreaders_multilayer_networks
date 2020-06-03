@@ -12,9 +12,12 @@ int main(int argc, char const *argv[]) {
     MultilayerNetwork t(m.layers(), m.nodes());
     m.transpose(t);
     vector<int> core = multiCore(m);
+    vector<int> fcore = fastMultiCore(m);
     vector<int> sorted = sort_nodes(core);
     for(int i = 0; i < core.size(); i++) {
-        cout << sorted[i] << ", score: " << core[sorted[i]] << endl;
+        if (fcore[i] != core[i])
+            cout << "error!" << endl;
+        // cout << sorted[i] << ", score: " << core[sorted[i]] << endl;
     }
     return 0;
 }

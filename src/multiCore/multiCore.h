@@ -4,5 +4,6 @@
 using namespace std;
 
 vector<int> multiCore(MultilayerNetwork& m);
+vector<int> fastMultiCore(MultilayerNetwork& g);
 
 #endif

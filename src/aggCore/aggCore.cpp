@@ -10,6 +10,7 @@ using namespace std;
 typedef pair<int, int> ii;
 
 // O(m + n) algorithm with bin-sort
+// https://arxiv.org/pdf/cs/0310049.pdf
 vector<int> fast_k_core(Graph& g){
     int n, md, start, num;
     n = g.size();
