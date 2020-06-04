@@ -1,5 +1,5 @@
-#ifndef AGG_PR_H
-#define AGG_PR_H
+#ifndef SUM_CORE_H
+#define SUM_CORE_H
 
 #include <vector>
 #include "../utils/Multilayer.h"

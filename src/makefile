@@ -60,6 +60,15 @@ verBC:
 
 
 spread:
-	g++ -std=c++14 spread_process/spread_process.cpp utils/Graph.cpp \
-		utils/common.cpp utils/Multilayer.cpp spread_process/io.cpp \
-		-o spread_process/spread.out
+	g++ -std=c++14 evaluation/spread_process.cpp utils/Graph.cpp \
+		utils/common.cpp utils/Multilayer.cpp evaluation/io.cpp \
+		-o evaluation/spread.out
+
+run_alg:
+	g++ -std=c++14 evaluation/run_algorithms.cpp utils/Graph.cpp \
+		utils/common.cpp utils/Multilayer.cpp evaluation/io.cpp \
+		addPageRank/addPR.cpp aggCore/aggCore.cpp aggDegree/aggDeg.cpp \
+		aggPageRank/aggPR.cpp alPCI/alPCI.cpp laPCI/laPCI.cpp lsPCI/lsPCI.cpp \
+		mlPCI/mlPCI.cpp multiCore/multiCore.cpp sumCore/sumCore.cpp verBetweenness/verBC.cpp \
+		verPageRank/verPR.cpp \
+		-o evaluation/run_alg.out

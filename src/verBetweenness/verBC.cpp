@@ -1,5 +1,6 @@
 #include <stack>
 #include <queue>
+#include <iostream>
 #include <cassert>
 #include "verBC.h"
 
@@ -24,6 +25,7 @@ vector<double> verBetweennessCentrality(MultilayerNetwork &m){
     vector<unordered_set<int>>v_order(m.nodes());
 
     for(int s = 0; s < m.nodes(); s++){
+        cerr << "\t\tStart from " << s << "/" << (m.nodes() -1) << endl;
         // initialize data_structures
         for(int i = 0; i < m.nodes(); i++){
             for(int l : m.layers(i)){

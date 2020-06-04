@@ -30,7 +30,7 @@ vector<int> alPCI(MultilayerNetwork &m){
     // for each node in each layer
     for(int i = 0; i < m.nodes(); i++) {
         for(int l : m.layers(i)) {
-            v.resize(m.adj(i, l).size(), 0);
+            v.assign(m.adj(i, l).size(), 0);
             int n = m.layers() - 1;
             
             // v[k] contains the number of links that the ith neighbor of i,j 

@@ -34,7 +34,7 @@ vector<int> mlPCI(MultilayerNetwork &m){
     for(int i = 0; i < m.nodes(); i++) {
         for(int l : m.layers(i)) {
 
-            v.resize(m.adj(i, l).size(), 0);
+            v.assign(m.adj(i, l).size(), 0);
             // for each n
             for(int n = 0; n < m.layers(); n++){
                 // v[k] contains the number of links that the ith neighbor of i,j 

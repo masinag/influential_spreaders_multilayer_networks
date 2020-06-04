@@ -101,14 +101,13 @@ vector<int> spreading_processes_SIR(MultilayerNetwork &g, vector<double> &intra_
 }
 
 int main(int argc, char const *argv[]){
-    string dirs[2] = {"../../data/multilayer/generated/", "../../data/multiplex/extracted/"};    
     vector<string> files;
 
     string argv_str(argv[0]);
     string base = argv_str.substr(0, argv_str.find_last_of("/"));
     
     if(argc < 2) {
-        for (string &dataset: dirs){
+        for (string &dataset: data_dirs){
             string path = base + "/" + dataset;
             read_directory(path, files);
         }
@@ -122,9 +121,7 @@ int main(int argc, char const *argv[]){
     string log_file = get_log_file(base);
 
     for (string& network_path: files){
-        string network_name = network_path.substr(network_path.find_last_of("/") + 1, 
-            string::npos);
-        network_name = network_name.substr(0, network_name.rfind(".edges"));
+        string network_name = get_network_name(network_path);
         
         write_log(log_file, "# " + network_name);
 
