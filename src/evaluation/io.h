@@ -5,8 +5,9 @@
 #include <vector> 
 
 using namespace std;
-extern string data_dirs[2]; 
-
+extern string data_dirs[2];
+ 
+string getTimestamp();
 void read_directory(string &name, vector<string>& v);
 string get_log_file(string &base);
 void write_log(string &log_file, string log_message);
