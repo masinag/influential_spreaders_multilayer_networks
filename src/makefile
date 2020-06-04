@@ -72,3 +72,21 @@ run_alg:
 		mlPCI/mlPCI.cpp multiCore/multiCore.cpp sumCore/sumCore.cpp verBetweenness/verBC.cpp \
 		verPageRank/verPR.cpp \
 		-o evaluation/run_alg.out
+
+
+# dataset extraction/generation
+
+extract: remove_extracted
+	mkdir ../data/multiplex/extracted
+	python3 extract.py
+
+remove_extracted:
+	rm -rf ../data/multiplex/extracted
+
+generate: remove_generated
+	mkdir ../data/multilayer/generated
+	python3 generate.py
+
+remove_generated:
+	rm -rf ../data/multilayer/generated
+	rm -rf ../data/multilayer/plots

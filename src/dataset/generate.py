@@ -5,8 +5,8 @@ from functools import reduce
 from stats_multilayer import save_stats
 from data_structures import Graph, Multilayer
 
-DATA_DIR = 'multilayer/'
-GENERATE_DIR = 'generated/'
+DATA_DIR = '../data/multilayer/'
+GENERATE_DIR = '../data/generated/'
 
 class ZipfGenerator: 
     def __init__(self, n, s): 

@@ -515,3 +515,4 @@ pyvenv.cfg
 
 !*.sim.log
 !*.alg.log
+lib64

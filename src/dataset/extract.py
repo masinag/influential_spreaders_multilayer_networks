@@ -4,8 +4,8 @@ from itertools import combinations
 import sys
 from data_structures import Multiplex
 
-DATA_DIR = "multiplex/"
-EXTRACTED_DIR = "extracted/"
+DATA_DIR = "../data/multiplex/"
+EXTRACTED_DIR = "../data/extracted/"
 
 dd = {f'{DATA_DIR}SacchPomb_Multiplex_Genetic' : {'N' : 875, 'E': 18214, 'L' : 3},
       f'{DATA_DIR}Drosophila_Multiplex_Genetic' : {'N' : 1364, 'E': 7267, 'L' : 2},

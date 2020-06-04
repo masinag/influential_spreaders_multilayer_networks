@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-IMG_DIR = 'multilayer/plots/'
+IMG_DIR = '../data/multilayer/plots/'
 
 def save_plot(values, name, output_name):
     count = {}
