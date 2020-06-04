@@ -514,3 +514,4 @@ src/questions
 pyvenv.cfg
 
 !*.sim.log
+!*.alg.log

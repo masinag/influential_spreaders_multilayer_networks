@@ -65,7 +65,7 @@ spread:
 		-o evaluation/spread.out
 
 run_alg:
-	g++ -std=c++14 evaluation/run_algorithms.cpp utils/Graph.cpp \
+	g++ -std=c++14 -O2 evaluation/run_algorithms.cpp utils/Graph.cpp \
 		utils/common.cpp utils/Multilayer.cpp evaluation/io.cpp \
 		addPageRank/addPR.cpp aggCore/aggCore.cpp aggDegree/aggDeg.cpp \
 		aggPageRank/aggPR.cpp alPCI/alPCI.cpp laPCI/laPCI.cpp lsPCI/lsPCI.cpp \
