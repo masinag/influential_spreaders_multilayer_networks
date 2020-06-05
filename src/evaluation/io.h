@@ -8,6 +8,8 @@ using namespace std;
 extern string data_dirs[2];
  
 string getTimestamp();
+bool dir_exists(string &path);
+void create_dir(string &path);
 void read_directory(string &name, vector<string>& v);
 string get_log_file(string &base);
 void write_log(string &log_file, string log_message);

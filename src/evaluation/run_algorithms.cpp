@@ -23,9 +23,13 @@ int main(int argc, char const *argv[]) {
     string base = argv_str.substr(0, argv_str.find_last_of("/"));
     
     if(argc < 2) {
+        int i = 0;
         for (string &dataset: data_dirs){
             string path = base + "/" + dataset;
             read_directory(path, files);
+            for(; i < files.size(); i++){
+                files[i] = path + files[i]; 
+            }
         }
     } else {
         files.push_back (argv[1]);
@@ -35,13 +39,25 @@ int main(int argc, char const *argv[]) {
     for (string& network_path: files){
         string network_name = get_network_name(network_path);
         cerr << getTimestamp() << " - " << "Analyzing " << network_name << endl;
+        cerr << network_path << endl;
         MultilayerNetwork m = readMultilayer(network_path);
+
+        MultilayerNetwork mt(m.layers(), m.nodes());
+        m.transpose(mt);
         Graph g = m.getAggregate();
+        Graph gt(g.size());
+        g.transpose(gt);
+
 
         // algorithms on aggregate graph
         cerr << getTimestamp() << " - " << "\tComputing aggCore" << endl;
         vector<int> score_i = fast_k_core(g); // aggCore 
         write_algorithm_results(score_i, "aggCore", base, network_name);
+
+        // --- transposed
+        cerr << getTimestamp() << " - " << "\tComputing aggCore_T" << endl;
+        vector<int> score_i = fast_k_core(gt); // aggCore 
+        write_algorithm_results(score_i, "aggCore_T", base, network_name);
 
         cerr << getTimestamp() << " - " << "\tComputing aggDeg" << endl;
         score_i = degree(g); // aggDeg 
@@ -51,16 +67,33 @@ int main(int argc, char const *argv[]) {
         vector<double> score_d = pageRank(g); // aggPR
         write_algorithm_results(score_d, "aggPR", base, network_name);
 
+        // --- transposed
+        cerr << getTimestamp() << " - " << "\tComputing aggPR_T" << endl;
+        vector<double> score_d = pageRank(gt); // aggPR
+        write_algorithm_results(score_d, "aggPR_T", base, network_name);
+
+
 
         // additive algorithms 
         cerr << getTimestamp() << " - " << "\tComputing addPR" << endl;
         score_d = additivePageRank(m); // addPR
         write_algorithm_results(score_d, "addPR", base, network_name);
 
+        // --- transposed
+
+        cerr << getTimestamp() << " - " << "\tComputing addPR_T" << endl;
+        score_d = additivePageRank(mt); // addPR
+        write_algorithm_results(score_d, "addPR_T", base, network_name);
+
         cerr << getTimestamp() << " - " << "\tComputing sumCore" << endl;
         score_i = sumCore(m); // sumCore 
         write_algorithm_results(score_i, "sumCore", base, network_name);
 
+        // --- transposed
+
+        cerr << getTimestamp() << " - " << "\tComputing sumCore_T" << endl;
+        score_i = sumCore(mt); // sumCore 
+        write_algorithm_results(score_i, "sumCore_T", base, network_name);
 
         // multilayer algorithms
         cerr << getTimestamp() << " - " << "\tComputing mlPCI" << endl;
@@ -82,6 +115,12 @@ int main(int argc, char const *argv[]) {
         cerr << getTimestamp() << " - " << "\tComputing multiCore" << endl;
         score_i = multiCore(m); // multiCore
         write_algorithm_results(score_i, "multiCore", base, network_name);
+
+        // --- transposed
+        cerr << getTimestamp() << " - " << "\tComputing multiCore_T" << endl;
+        score_i = multiCore(mt); // multiCore
+        write_algorithm_results(score_i, "multiCore_T", base, network_name);
+
         
         cerr << getTimestamp() << " - " << "\tComputing verBC" << endl;
         score_d = verBetweennessCentrality(m); // verBC
@@ -90,6 +129,12 @@ int main(int argc, char const *argv[]) {
         cerr << getTimestamp() << " - " << "\tComputing verPR" << endl;
         score_d = verPageRank(m); // verPR
         write_algorithm_results(score_d, "verPR", base, network_name);
+
+        // --- transposed
+
+        cerr << getTimestamp() << " - " << "\tComputing verPR_T" << endl;
+        score_d = verPageRank(mt); // verPR
+        write_algorithm_results(score_d, "verPR_T", base, network_name);
 
 
     }

@@ -36,7 +36,7 @@ void read_directory(string &name, vector<string>& v){
     struct dirent * dp;
     while ((dp = readdir(dirp)) != NULL) {
         if(strcmp(dp -> d_name, ".") && strcmp(dp -> d_name, "..")){
-            string file_path = name + dp->d_name;
+            string file_path = dp->d_name;
             v.push_back(file_path);
         }
     }
