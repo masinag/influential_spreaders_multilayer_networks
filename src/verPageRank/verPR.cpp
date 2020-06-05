@@ -35,7 +35,7 @@ vector<double> verPageRank(MultilayerNetwork& g, double alpha, int max_iter){
     // printf("%d iterations\n", j);
     vector<double> agg_rank(g.nodes(), 0.0L);
     for(int i = 0; i < g.nodes(); i++){
-        for(int j = 0; j < g.layers(); j++) {
+        for(int j : g.layers(i)) {
             agg_rank[i] += rank[i][j];
         }
     }

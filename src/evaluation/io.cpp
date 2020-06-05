@@ -98,11 +98,10 @@ void write_simulation_results(int total_nodes, vector<int> &sp, string &base, st
     string timestamp = getTimestamp() + "#" + to_string(i);
     // printf("current time: %s \n", currentTime);
 
-
     string res_path = base + "/" + RES_DIR;
     string res_sim_path = res_path + SIM_DIR;
     string res_sim_net_path = res_sim_path + network_name + "/";
-    string res_sim_net_lambda_path = res_sim_net_lambda_path + LOG_DIR + lambda_coeff + "lambda/";
+    string res_sim_net_lambda_path = res_sim_net_path + lambda_coeff + "lambda/";
     
     if(!dir_exists(res_path)){
         create_dir(res_path);
@@ -116,7 +115,6 @@ void write_simulation_results(int total_nodes, vector<int> &sp, string &base, st
     if(!dir_exists(res_sim_net_lambda_path)){
         create_dir(res_sim_net_lambda_path);
     }
-
     ofstream out(res_sim_net_lambda_path + timestamp + ".sim");
 
     out << sp.size() << " " << total_nodes << endl;

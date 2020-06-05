@@ -107,9 +107,13 @@ int main(int argc, char const *argv[]){
     string base = argv_str.substr(0, argv_str.find_last_of("/"));
     
     if(argc < 2) {
+        int i = 0;
         for (string &dataset: data_dirs){
             string path = base + "/" + dataset;
             read_directory(path, files);
+            for(; i < files.size(); i++){
+                files[i] = path + files[i]; 
+            }
         }
     } else {
         files.push_back (argv[1]);

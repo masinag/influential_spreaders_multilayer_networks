@@ -56,7 +56,7 @@ int main(int argc, char const *argv[]) {
 
         // --- transposed
         cerr << getTimestamp() << " - " << "\tComputing aggCore_T" << endl;
-        vector<int> score_i = fast_k_core(gt); // aggCore 
+        score_i = fast_k_core(gt); // aggCore 
         write_algorithm_results(score_i, "aggCore_T", base, network_name);
 
         cerr << getTimestamp() << " - " << "\tComputing aggDeg" << endl;
@@ -69,7 +69,7 @@ int main(int argc, char const *argv[]) {
 
         // --- transposed
         cerr << getTimestamp() << " - " << "\tComputing aggPR_T" << endl;
-        vector<double> score_d = pageRank(gt); // aggPR
+        score_d = pageRank(gt); // aggPR
         write_algorithm_results(score_d, "aggPR_T", base, network_name);
 
 

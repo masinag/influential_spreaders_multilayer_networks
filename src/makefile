@@ -74,7 +74,7 @@ run_alg:
 		-o evaluation/run_alg.out
 
 evaluate:
-	g++ -std=c++14 -O2 evaluation/evaluate.cpp evaluation/io.cpp \
+	g++ -std=c++14 -O3 evaluation/evaluate.cpp evaluation/io.cpp \
 		evaluation/ranking.cpp utils/common.cpp \
 		-o evaluation/evaluate.out 
 

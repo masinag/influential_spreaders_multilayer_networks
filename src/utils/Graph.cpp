@@ -15,7 +15,8 @@ Graph::Graph(int v){
 
 }
 void Graph::addEdge(int a, int b){
-    if (find(g[a].begin(), g[a].end(), b) == g[a].end())
+    
+    if (a != b && find(g[a].begin(), g[a].end(), b) == g[a].end())
         g[a].push_back(b);
 }
 vector<int>& Graph::adj(int x){
