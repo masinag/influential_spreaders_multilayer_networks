@@ -8,6 +8,14 @@
 #include "../laPCI/laPCI.h"
 #include "../lsPCI/lsPCI.h"
 #include "../mlPCI/mlPCI.h"
+#include "../alPCI/alPCI_2.h"
+#include "../laPCI/laPCI_2.h"
+#include "../lsPCI/lsPCI_2.h"
+#include "../mlPCI/mlPCI_2.h"
+#include "../alPCI/alPCI_3.h"
+#include "../laPCI/laPCI_3.h"
+#include "../lsPCI/lsPCI_3.h"
+#include "../mlPCI/mlPCI_3.h"
 #include "../multiCore/multiCore.h"
 #include "../sumCore/sumCore.h"
 #include "../verBetweenness/verBC.h"
@@ -49,55 +57,55 @@ int main(int argc, char const *argv[]) {
         g.transpose(gt);
 
 
-        // algorithms on aggregate graph
-        cerr << getTimestamp() << " - " << "\tComputing aggCore" << endl;
-        vector<int> score_i = fast_k_core(g); // aggCore 
-        write_algorithm_results(score_i, "aggCore", base, network_name);
+        // // algorithms on aggregate graph
+        // cerr << getTimestamp() << " - " << "\tComputing aggCore" << endl;
+        // vector<int> score_i = fast_k_core(g); // aggCore 
+        // write_algorithm_results(score_i, "aggCore", base, network_name);
 
-        // --- transposed
-        cerr << getTimestamp() << " - " << "\tComputing aggCore_T" << endl;
-        score_i = fast_k_core(gt); // aggCore 
-        write_algorithm_results(score_i, "aggCore_T", base, network_name);
+        // // --- transposed
+        // cerr << getTimestamp() << " - " << "\tComputing aggCore_T" << endl;
+        // score_i = fast_k_core(gt); // aggCore 
+        // write_algorithm_results(score_i, "aggCore_T", base, network_name);
 
-        cerr << getTimestamp() << " - " << "\tComputing aggDeg" << endl;
-        score_i = degree(g); // aggDeg 
-        write_algorithm_results(score_i, "aggDeg", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing aggDeg" << endl;
+        // score_i = degree(g); // aggDeg 
+        // write_algorithm_results(score_i, "aggDeg", base, network_name);
 
-        cerr << getTimestamp() << " - " << "\tComputing aggPR" << endl;
-        vector<double> score_d = pageRank(g); // aggPR
-        write_algorithm_results(score_d, "aggPR", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing aggPR" << endl;
+        // vector<double> score_d = pageRank(g); // aggPR
+        // write_algorithm_results(score_d, "aggPR", base, network_name);
 
-        // --- transposed
-        cerr << getTimestamp() << " - " << "\tComputing aggPR_T" << endl;
-        score_d = pageRank(gt); // aggPR
-        write_algorithm_results(score_d, "aggPR_T", base, network_name);
+        // // --- transposed
+        // cerr << getTimestamp() << " - " << "\tComputing aggPR_T" << endl;
+        // score_d = pageRank(gt); // aggPR
+        // write_algorithm_results(score_d, "aggPR_T", base, network_name);
 
 
 
-        // additive algorithms 
-        cerr << getTimestamp() << " - " << "\tComputing addPR" << endl;
-        score_d = additivePageRank(m); // addPR
-        write_algorithm_results(score_d, "addPR", base, network_name);
+        // // additive algorithms 
+        // cerr << getTimestamp() << " - " << "\tComputing addPR" << endl;
+        // score_d = additivePageRank(m); // addPR
+        // write_algorithm_results(score_d, "addPR", base, network_name);
 
-        // --- transposed
+        // // --- transposed
 
-        cerr << getTimestamp() << " - " << "\tComputing addPR_T" << endl;
-        score_d = additivePageRank(mt); // addPR
-        write_algorithm_results(score_d, "addPR_T", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing addPR_T" << endl;
+        // score_d = additivePageRank(mt); // addPR
+        // write_algorithm_results(score_d, "addPR_T", base, network_name);
 
-        cerr << getTimestamp() << " - " << "\tComputing sumCore" << endl;
-        score_i = sumCore(m); // sumCore 
-        write_algorithm_results(score_i, "sumCore", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing sumCore" << endl;
+        // score_i = sumCore(m); // sumCore 
+        // write_algorithm_results(score_i, "sumCore", base, network_name);
 
-        // --- transposed
+        // // --- transposed
 
-        cerr << getTimestamp() << " - " << "\tComputing sumCore_T" << endl;
-        score_i = sumCore(mt); // sumCore 
-        write_algorithm_results(score_i, "sumCore_T", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing sumCore_T" << endl;
+        // score_i = sumCore(mt); // sumCore 
+        // write_algorithm_results(score_i, "sumCore_T", base, network_name);
 
-        // multilayer algorithms
+        // // multilayer algorithms
         cerr << getTimestamp() << " - " << "\tComputing mlPCI" << endl;
-        score_i = mlPCI(m); // mlPCI
+        vector<int> score_i = mlPCI(m); // mlPCI
         write_algorithm_results(score_i, "mlPCI", base, network_name);
 
         cerr << getTimestamp() << " - " << "\tComputing alPCI" << endl;
@@ -112,29 +120,64 @@ int main(int argc, char const *argv[]) {
         score_i = lsPCI(m); // lsPCI
         write_algorithm_results(score_i, "lsPCI", base, network_name);
 
-        cerr << getTimestamp() << " - " << "\tComputing multiCore" << endl;
-        score_i = multiCore(m); // multiCore
-        write_algorithm_results(score_i, "multiCore", base, network_name);
+        // --------------------- 2 -----------------------------
 
-        // --- transposed
-        cerr << getTimestamp() << " - " << "\tComputing multiCore_T" << endl;
-        score_i = multiCore(mt); // multiCore
-        write_algorithm_results(score_i, "multiCore_T", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing mlPCI_2" << endl;
+        // score_i = mlPCI2(m); // mlPCI
+        // write_algorithm_results(score_i, "mlPCI2", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing alPCI_2" << endl;
+        // score_i = alPCI2(m); // alPCI
+        // write_algorithm_results(score_i, "alPCI2", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing laPCI_2" << endl;
+        // score_i = laPCI2(m); // laPCI
+        // write_algorithm_results(score_i, "laPCI2", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing lsPCI_2" << endl;
+        // score_i = lsPCI2(m); // lsPCI
+        // write_algorithm_results(score_i, "lsPCI2", base, network_name);
+
+        // // --------------------- 3 -----------------------------
+        // cerr << getTimestamp() << " - " << "\tComputing mlPCI_3" << endl;
+        // score_i = mlPCI3(m); // mlPCI
+        // write_algorithm_results(score_i, "mlPCI3", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing alPCI_3" << endl;
+        // score_i = alPCI3(m); // alPCI
+        // write_algorithm_results(score_i, "alPCI3", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing laPCI_3" << endl;
+        // score_i = laPCI3(m); // laPCI
+        // write_algorithm_results(score_i, "laPCI3", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing lsPCI_3" << endl;
+        // score_i = lsPCI3(m); // lsPCI
+        // write_algorithm_results(score_i, "lsPCI3", base, network_name);
+
+        // cerr << getTimestamp() << " - " << "\tComputing multiCore" << endl;
+        // score_i = multiCore(m); // multiCore
+        // write_algorithm_results(score_i, "multiCore", base, network_name);
+
+        // // --- transposed
+        // cerr << getTimestamp() << " - " << "\tComputing multiCore_T" << endl;
+        // score_i = multiCore(mt); // multiCore
+        // write_algorithm_results(score_i, "multiCore_T", base, network_name);
 
         
-        cerr << getTimestamp() << " - " << "\tComputing verBC" << endl;
-        score_d = verBetweennessCentrality(m); // verBC
-        write_algorithm_results(score_d, "verBC", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing verBC" << endl;
+        // score_d = verBetweennessCentrality(m); // verBC
+        // write_algorithm_results(score_d, "verBC", base, network_name);
         
-        cerr << getTimestamp() << " - " << "\tComputing verPR" << endl;
-        score_d = verPageRank(m); // verPR
-        write_algorithm_results(score_d, "verPR", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing verPR" << endl;
+        // score_d = verPageRank(m); // verPR
+        // write_algorithm_results(score_d, "verPR", base, network_name);
 
-        // --- transposed
+        // // --- transposed
 
-        cerr << getTimestamp() << " - " << "\tComputing verPR_T" << endl;
-        score_d = verPageRank(mt); // verPR
-        write_algorithm_results(score_d, "verPR_T", base, network_name);
+        // cerr << getTimestamp() << " - " << "\tComputing verPR_T" << endl;
+        // score_d = verPageRank(mt); // verPR
+        // write_algorithm_results(score_d, "verPR_T", base, network_name);
 
 
     }

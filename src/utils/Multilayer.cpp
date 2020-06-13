@@ -3,11 +3,21 @@
 #include <unordered_map>
 #include "Multilayer.h"
 
+#define MAX_LAYERS 100
+
 using namespace std;
 
 Node::Node(int n, int l){
     node = n;
     layer = l;
+}
+
+bool Node::operator==(const Node &n) const {
+    return this->node * MAX_LAYERS + this->layer == n.node * MAX_LAYERS + n.layer;
+}
+
+size_t NodeHash::operator()(const Node &t) const {
+    return t.node * MAX_LAYERS + t.layer;
 }
 
 MultilayerNetwork readMultilayer(string &file){

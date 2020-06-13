@@ -8,29 +8,24 @@
 // layers greater than or equal to k.
 vector<int> lsPCI(MultilayerNetwork &m){
     // compute the number of links towards each layer for each node
-    vector<vector<vector<pair<int, int>>>> count (m.nodes(), 
-        vector< vector <pair<int, int> > > (m.layers(), vector <pair<int, int> > (m.layers())));
+    vector<vector<vector<int>>> count (m.nodes(), 
+        vector< vector <int > > (m.layers(), vector <int > (m.layers(), 0)));
 
     for(int i = 0; i < m.nodes(); i++) {
         for(int l = 0; l < m.layers(); l++) {
-            for(int j = 0; j < m.layers(); j++)
-                count[i][l][j] = make_pair(j, 0);
             for(Node &e : m.adj(i, l)) {
-                count[i][l][e.layer].second++;
+                count[i][l][e.layer]++;
             }
-            sort(count[i][l].begin(), count[i][l].end(), [](auto &a, auto &b){
-                return a.second > b.second;
-            });
+            sort(count[i][l].begin(), count[i][l].end(), greater<int>());
         }
     }
     
     vector<int> score(m.nodes(), 0);
-    vector<int> v;
     // for each node in each layer
     for(int i = 0; i < m.nodes(); i++) {
         for(int l : m.layers(i)) {
 
-            v.assign(m.adj(i, l).size(), 0);
+            vector<int> v(m.adj(i, l).size(), 0);
             // for each n
             int k_max = 0;
             for(int n = 0; n < m.layers(); n++){
@@ -40,7 +35,10 @@ vector<int> lsPCI(MultilayerNetwork &m){
                 // number of links that x, y has towards at least n layers
                 int index = 0;
                 for(Node &e : m.adj(i, l)){
-                    v[index] = count[e.node][e.layer][n].second;
+                    // if(e.node != i)
+                        v[index] = count[e.node][e.layer][n];
+                    // else
+                    //     v[index] = 0;
                     index++;
                 }
                 //sort them in increasing order
@@ -55,7 +53,7 @@ vector<int> lsPCI(MultilayerNetwork &m){
                 // since for lsPC k should account also for the number of 
                 // layers the links are directed to, we have to take the minimum
                 // between k and the number of layers n
-                k_max = max(k_max, min(k, n));
+                k_max = max(k_max, min(k, n + 1));
             }            
             score[i] += k_max;
         }

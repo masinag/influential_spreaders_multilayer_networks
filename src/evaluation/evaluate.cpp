@@ -27,7 +27,7 @@ void read_alg_scores(string &net_path, vector<string> &alg_names, vector<vector<
     // cerr << "alg dir read" << endl;
     for (string &alg : files){
         if (endswith(alg, ".alg")){
-            cerr << "\t" << alg << endl; 
+            // cerr << "\t" << alg << endl; 
             ifstream in(net_path + "/" + alg);
             char t;
             int n;
@@ -50,11 +50,12 @@ void compute_avg(string &path){
     vector<int> score;
     vector<string> files;
     read_directory(path, files);
+    int num_nodes, sum_nodes;
+
     for (string &filename : files){
         if (endswith(filename, ".sim")){
             count += 1;
             ifstream in(path + "/" + filename);
-            int num_nodes, sum_nodes;
             in >> num_nodes >> sum_nodes;
             if(score.size() == 0)
                 score.resize(num_nodes, 0);
@@ -67,15 +68,15 @@ void compute_avg(string &path){
     }
     ofstream out(path + "/" + AVG_FILE);
 
-    out << score.size() << endl;
+    out << score.size() << " " << sum_nodes << endl;
     for (int s : score)
         out << (double(s) / count) << endl;
 }
 
 vector<double> read_sim_scores(string &path){
     ifstream in(path + "/" + AVG_FILE);
-    int n;
-    in >> n;
+    int n, s;
+    in >> n >> s;
     vector<double> score(n, 0);
     for(int i = 0; i < n; i++)
         in >> score[i];
@@ -83,13 +84,26 @@ vector<double> read_sim_scores(string &path){
     return score;
 }
 
-vector<double> evaluate(vector<double> &sim_score, vector<vector<double>> &alg_scores){
+vector<double> evaluate(vector<double> &sim_score, vector<vector<double>> &alg_scores, vector<string> &alg_names){
     vector<double> scores(alg_scores.size(), 0);
     int i = 0;
     for(vector<double> &s : alg_scores){
         // cout << "s:" << s.size() << ", " << "sim:" << sim_score.size() << endl;
         assert(s.size() == sim_score.size());
+        cerr << alg_names[i] << endl;
         scores[i] = kendallsTau(s, sim_score);
+        i++;
+    }   
+    return scores;
+}
+
+vector<double> evaluate(vector<double> &sim_score, vector<vector<double>> &alg_scores, int aggD_index){
+    vector<double> scores(alg_scores.size(), 0);
+    int i = 0;
+    for(vector<double> &s : alg_scores){
+        // cout << "s:" << s.size() << ", " << "sim:" << sim_score.size() << endl;
+        assert(s.size() == sim_score.size());
+        scores[i] = kendallsTau(s, sim_score, alg_scores[aggD_index]);
         i++;
     }   
     return scores;
@@ -138,6 +152,11 @@ int main(int argc, char const *argv[]) {
             vector<string> alg_names;
             vector<vector<double>> alg_scores;
             read_alg_scores(net_path, alg_names, alg_scores);
+            // for(string &s : alg_names) cout << "# " << s << endl;
+            int aggDeg_index = -1;
+            for(int i = 0; i < alg_names.size() && aggDeg_index < 0; i++)
+                if(alg_names[i] == string("aggDeg"))
+                    aggDeg_index = i;
             // cerr << "Alg scores read" << endl;
             vector<string> lambda_dirs;
             string sim_net_path = base + "/" + SIMULATIONS_DIR + net_name;
@@ -149,9 +168,11 @@ int main(int argc, char const *argv[]) {
                 compute_avg(sim_net_lambda_path);
                 // cerr << "avg computed" << endl;
                 vector<double> sim_scores = read_sim_scores(sim_net_lambda_path);
+                cerr << "nodes: " << sim_scores.size() << endl;
+                cerr << "pairs: " << (sim_scores.size())*(sim_scores.size() - 1) / 2 << endl;
                 // cerr << "dsd:" << sim_scores.size() << endl;
                 // cerr << "sim scores read" << endl;
-                vector<double> ktt = evaluate(sim_scores, alg_scores);
+                vector<double> ktt = evaluate(sim_scores, alg_scores, alg_names);
                 // cerr << "ktt got" << endl;
                 write_rankings(base, net_name, lambda_dir, alg_names, ktt);
                 // cerr << "rankings written" << endl;

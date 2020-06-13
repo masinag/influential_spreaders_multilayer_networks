@@ -11,7 +11,14 @@ class Node{
     public:
         int node, layer;
         Node(int n, int l);
+        bool operator==(const Node &n) const;
 };
+
+// class for hash function 
+class NodeHash { 
+    public: 
+        size_t operator()(const Node &t) const;
+}; 
 
 class MultilayerNetwork {
     vector<vector< vector< Node > > >g;    

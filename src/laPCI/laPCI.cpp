@@ -12,14 +12,16 @@ vector<int> laPCI(MultilayerNetwork &m){
     vector<vector<int>> count = m.out_degree();
     
     vector<int> score(m.nodes(), 0);
-    vector<int> v;
     // for each node in each layer
     for(int i = 0; i < m.nodes(); i++) {
         for(int l : m.layers(i)) {
-            v.assign(m.adj(i, l).size(), 0);
+            vector<int> v(m.adj(i, l).size(), 0);
             int index = 0;
             for(Node &e : m.adj(i, l)){
-                v[index] = count[e.node][e.layer];
+                // if (e.node != i)
+                    v[index] = count[e.node][e.layer];
+                // else
+                //     v[index] = 0;
                 index++;
             }
             //sort them in increasing order

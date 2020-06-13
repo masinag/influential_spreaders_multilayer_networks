@@ -69,6 +69,8 @@ run_alg:
 		utils/common.cpp utils/Multilayer.cpp evaluation/io.cpp \
 		addPageRank/addPR.cpp aggCore/aggCore.cpp aggDegree/aggDeg.cpp \
 		aggPageRank/aggPR.cpp alPCI/alPCI.cpp laPCI/laPCI.cpp lsPCI/lsPCI.cpp \
+		alPCI/alPCI_2.cpp laPCI/laPCI_2.cpp lsPCI/lsPCI_2.cpp mlPCI/mlPCI_2.cpp \
+		alPCI/alPCI_3.cpp laPCI/laPCI_3.cpp lsPCI/lsPCI_3.cpp mlPCI/mlPCI_3.cpp \
 		mlPCI/mlPCI.cpp multiCore/multiCore.cpp sumCore/sumCore.cpp verBetweenness/verBC.cpp \
 		verPageRank/verPR.cpp \
 		-o evaluation/run_alg.out
