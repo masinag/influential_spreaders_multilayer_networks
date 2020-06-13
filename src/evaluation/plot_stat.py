@@ -1,6 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
+import pandas as pd
 # import matplotlib.pyplot as plt
 # sns.set(style="white", context="talk")
 RESULT_DIR = '../../results/'
@@ -36,11 +37,83 @@ def show_scores(nets_cat, nets, net_scores, alg_names, rows, cols, palette_dict,
         # barlist[0].set_color('r')
         axs[i].set_title(net)
         
-    plt.savefig(RESULT_DIR + nets_cat + '10.svg', bbox_inches='tight')
+    plt.savefig(RESULT_DIR + nets_cat + '11.svg', bbox_inches='tight')
     # plt.show()
-    
 
-if __name__ == "__main__":
+def plot_lines(scores, nets, name, rows, cols, param):
+    fig, axs = plt.subplots(rows, cols, figsize=(15, 25), sharex=True, sharey=True)
+    fig.tight_layout()
+      
+    axs = axs.flatten()
+    values = ['1.0', '1.2', '1.4', '1.6']
+
+    for i, net in enumerate(sorted(nets)):
+        print(param, net)
+        # print(scores[net][param])
+        # create {l1: {A1 : scorel1, A2:scorel1}, l2: {A1:scorel2, A2:scorel2}}
+        data = {}
+        for alg in sorted(scores[net][param]):
+            for k in range(len(values)):
+                if not values[k] in data:
+                    data[values[k]] = {}
+                data[values[k]][alg] = scores[net][param][alg][k]       
+        xx = sorted(data.keys())
+        yy = [data[x] for x in xx] 
+        df = pd.DataFrame(data=yy, index=xx)
+        sns.lineplot(ax=axs[i], data=df, dashes=False)
+    handles, labels = axs[len(axs) - 1].get_legend_handles_labels()
+    fig.legend(handles, labels, loc='upper center')
+    plt.show()
+
+
+
+        
+
+
+def is_constant(name, part):
+    ii_coeff, ij_coeff = name.split('ii')
+    ij_coeff = ij_coeff.rstrip('ij')
+    return ii_coeff == '1.0' if part == 'ii' else ij_coeff == '1.0'
+
+def plot_stats2():
+    scores = {} # net : ii/ij : 'Algorithm' : scores
+    nets = os.listdir(RESULT_DIR + RANKING_DIR)
+    #plot (net, (alg, score))
+    alg_names = set()
+    for net in nets:
+        scores[net] = {'ii' : {}, 'ij' : {}}
+        for l in sorted(os.listdir(RESULT_DIR + RANKING_DIR + net)):
+            pp = [k for k in ['ii', 'ij'] if is_constant(l, k)]
+           
+            with open(RESULT_DIR + RANKING_DIR + net + '/' + l) as f:
+                for r in f:
+                    alg_name, score = r.split()
+                    for p in pp:
+                        if not alg_name in scores[net][p]:
+                            scores[net][p][alg_name] = []
+                    
+                        scores[net][p][alg_name].append(float(score))
+                    # scores[l][net][alg_name] = float(score)
+                    # alg_names.add(alg_name)
+
+    mm = [net for net in scores.keys() if 'multiplex' in net]
+    dln = [net for net in scores.keys() if net.startswith('DLN')] 
+    sln = [net for net in scores.keys() if net.startswith('SLN')] 
+    plot_lines(scores, mm, 'multiplex', 3, 2,'ii')
+    plot_lines(scores, mm, 'multiplex', 3, 2,'ij')
+    plot_lines(scores, sln, 'sln', 4, 2, 'ii')
+    plot_lines(scores, sln, 'sln', 4, 2, 'ij')
+    plot_lines(scores, dln, 'dln', 4, 2, 'ii')
+    plot_lines(scores, dln, 'dln', 4, 2, 'ij')
+    
+    # net_scores = scores['1.4ii1.0ij']
+
+    # mm = [net for net in net_scores.keys() if 'multiplex' in net]
+    # dln = [net for net in net_scores.keys() if net.startswith('DLN')] 
+    # sln = [net for net in net_scores.keys() if net.startswith('SLN')] 
+
+
+def plot_stats1():
     scores = {} # lambda : net : alg : score
     nets = os.listdir(RESULT_DIR + RANKING_DIR)
     #plot (net, (alg, score))
@@ -53,17 +126,16 @@ if __name__ == "__main__":
             with open(RESULT_DIR + RANKING_DIR + net + '/' + l) as f:
                 for r in f:
                     alg_name, score = r.split()
-                    if not alg_name.endswith('2') and not alg_name.endswith('_'):
+                    if not alg_name.endswith('_') and not alg_name.endswith('_'):
                         scores[l][net][alg_name] = float(score)
                         alg_names.add(alg_name)
 
-    net_scores = scores['1.0lambda']
+    net_scores = scores['1.4ii1.0ij']
 
     mm = [net for net in net_scores.keys() if 'multiplex' in net]
     dln = [net for net in net_scores.keys() if net.startswith('DLN')] 
     sln = [net for net in net_scores.keys() if net.startswith('SLN')] 
     alg_names = list(sorted(alg_names))
-    alg_colors = {}
 
     mm.sort()
     sln.sort()
@@ -80,6 +152,11 @@ if __name__ == "__main__":
     show_scores('sln', sln, net_scores, alg_names, 4, 2, palette_dict, sort)
     show_scores('dln', dln, net_scores, alg_names, 4, 2, palette_dict, sort)
 
+    
+
+if __name__ == "__main__":
+    plot_stats2()
+    
     
 
         # for alg, score in net_scores[net].items():

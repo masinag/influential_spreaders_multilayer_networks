@@ -119,9 +119,23 @@ int main(int argc, char const *argv[]){
         files.push_back (argv[1]);
     }
 
-    int ns;
-    cout << "Number of simulations per network: ";
-    cin >> ns;
+    vector<int> ns;
+    int tmp_n;
+    vector<string> ii;
+    vector<string> ij;
+    string add, tmp_l;
+    // cout << "Number of simulations per network: ";
+    while((cout << "More sim? [y/n] ") && (cin >> add) && add == "y"){
+        cout << "lambda ii: ";
+        cin >> tmp_l;
+        ii.push_back(tmp_l);
+        cout << "lambda ij: ";
+        cin >> tmp_l;
+        ij.push_back(tmp_l);
+        cout << "number of sim for " << ii[ii.size()-1] << "ii" << ij[ij.size() - 1] << "ij" << ": ";
+        cin >> tmp_n;
+        ns.push_back(tmp_n);
+    }
     string log_file = get_log_file(base);
 
     for (string& network_path: files){
@@ -133,12 +147,23 @@ int main(int argc, char const *argv[]){
         vector<double> intra_layer_ep = get_intra_layer_ep(g);
         double inter_layer_ep = get_inter_layer_ep(g);
         write_log(log_file, "Network read");
-        for(int i = 0; i < ns; i++){
-            vector<int> sp = spreading_processes_SIR(g, intra_layer_ep, inter_layer_ep);
-            // vector<double> sp;
-            write_simulation_results(g.total_nodes(), sp, base, network_name, "1.0", i);
-            write_log(log_file, "Simulation " + to_string(i +1) + " out of " + 
-                to_string(ns) + " done");
+        write_log(log_file, "inter_layer_ep : " +  to_string(inter_layer_ep));
+        write_log(log_file, "intra_layer_eps:");
+        for(double x : intra_layer_ep) write_log(log_file, to_string(x));
+        for(int k = 0; k < ii.size(); k++){
+            string lambda_dir = ii[k] + "ii" + ij[k] + "ij";
+            write_log(log_file, "> " + lambda_dir);
+            vector<double> tmp_intra_layer_ep(intra_layer_ep.size());
+            for(int x = 0; x < tmp_intra_layer_ep.size(); x++)
+                tmp_intra_layer_ep[x] = intra_layer_ep[x] * stod(ii[k]);
+            for(int i = 0; i < ns[k]; i++){
+                vector<int> sp = spreading_processes_SIR(g, tmp_intra_layer_ep, inter_layer_ep * stod(ij[k]));
+                // vector<double> sp;
+                write_simulation_results(g.total_nodes(), sp, base, network_name, lambda_dir, i);
+                write_log(log_file, "Simulation " + to_string(i +1) + " out of " + 
+                    to_string(ns[k]) + " done");
+            }
+
         }
     }
     return 0;

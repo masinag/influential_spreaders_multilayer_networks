@@ -91,7 +91,7 @@ vector<double> evaluate(vector<double> &sim_score, vector<vector<double>> &alg_s
         // cout << "s:" << s.size() << ", " << "sim:" << sim_score.size() << endl;
         assert(s.size() == sim_score.size());
         cerr << alg_names[i] << endl;
-        scores[i] = kendallsTau(s, sim_score);
+        scores[i] = kendall(s, sim_score);
         i++;
     }   
     return scores;
@@ -168,8 +168,8 @@ int main(int argc, char const *argv[]) {
                 compute_avg(sim_net_lambda_path);
                 // cerr << "avg computed" << endl;
                 vector<double> sim_scores = read_sim_scores(sim_net_lambda_path);
-                cerr << "nodes: " << sim_scores.size() << endl;
-                cerr << "pairs: " << (sim_scores.size())*(sim_scores.size() - 1) / 2 << endl;
+                // cerr << "nodes: " << sim_scores.size() << endl;
+                // cerr << "pairs: " << (sim_scores.size())*(sim_scores.size() - 1) / 2 << endl;
                 // cerr << "dsd:" << sim_scores.size() << endl;
                 // cerr << "sim scores read" << endl;
                 vector<double> ktt = evaluate(sim_scores, alg_scores, alg_names);

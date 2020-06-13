@@ -101,7 +101,7 @@ void write_simulation_results(int total_nodes, vector<int> &sp, string &base, st
     string res_path = base + "/" + RES_DIR;
     string res_sim_path = res_path + SIM_DIR;
     string res_sim_net_path = res_sim_path + network_name + "/";
-    string res_sim_net_lambda_path = res_sim_net_path + lambda_coeff + "lambda/";
+    string res_sim_net_lambda_path = res_sim_net_path + lambda_coeff + "/";
     
     if(!dir_exists(res_path)){
         create_dir(res_path);
