@@ -1,0 +1,95 @@
+\begin{thebibliography}{10}
+
+\bibitem{azimi:multikcore}
+N.~Azimi-Tafreshi, J.~G\'omez-Garde\~nes, and S.~N. Dorogovtsev.
+\newblock $k\text{\ensuremath{-}}\mathrm{core}$ percolation on multiplex
+  networks.
+\newblock {\em Phys. Rev. E}, 90:032816, Sep 2014.
+
+\bibitem{basaras:infspmul}
+P.~{Basaras}, G.~{Iosifidis}, D.~{Katsaros}, and L.~{Tassiulas}.
+\newblock Identifying influential spreaders in complex multilayer networks: A
+  centrality perspective.
+\newblock {\em IEEE Transactions on Network Science and Engineering},
+  6(1):31--45, Jan 2019.
+
+\bibitem{basaras:infsp}
+P.~{Basaras}, D.~{Katsaros}, and L.~{Tassiulas}.
+\newblock Detecting influential spreaders in complex, dynamic networks.
+\newblock {\em Computer}, 46(4):24--29, April 2013.
+
+\bibitem{batagelj:kcore}
+Vladimir Batagelj and Matjaz Zaversnik.
+\newblock An o(m) algorithm for cores decomposition of networks.
+\newblock {\em CoRR}, cs.DS/0310049, 2003.
+
+\bibitem{data:multiplex}
+FBK CoMuNe~Lab.
+\newblock Datasets released for reproducibility.
+\newblock \url{https://comunelab.fbk.eu/data.php}.
+
+\bibitem{dedomenico:versatile}
+Manlio De~Domenico, Albert Sol{\'e}-Ribalta, Elisa Omodei, Sergio G{\'o}mez,
+  and Alex Arenas.
+\newblock Ranking in interconnected multilayer networks reveals versatile
+  nodes.
+\newblock {\em Nature Communications}, 6(1):6868, Apr 2015.
+
+\bibitem{halu:addpagerank}
+Arda Halu, Ra{\'u}l~J. Mondrag{\'o}n, Pietro Panzarasa, and Ginestra Bianconi.
+\newblock Multiplex pagerank.
+\newblock {\em PloS one}, 8(10):e78293--e78293, Oct 2013.
+
+\bibitem{kendall:tau}
+M.~G. Kendall.
+\newblock {A new measure of rank correlation}.
+\newblock {\em Biometrika}, 30(1-2):81--93, 06 1938.
+
+\bibitem{kitsak:infsp}
+Maksim Kitsak, Lazaros~K. Gallos, Shlomo Havlin, Fredrik Liljeros, Lev Muchnik,
+  H.~Eugene Stanley, and Hern{\'a}n~A. Makse.
+\newblock Identification of influential spreaders in complex networks.
+\newblock {\em Nature Physics}, 6(11):888--893, Nov 2010.
+
+\bibitem{data:multilayer}
+Jure Leskovec and Andrej Krevl.
+\newblock {SNAP Datasets}: {Stanford} large network dataset collection.
+\newblock \url{http://snap.stanford.edu/data}, June 2014.
+
+\bibitem{page:pagerank}
+Lawrence Page, Sergey Brin, Rajeev Motwani, and Terry Winograd.
+\newblock The pagerank citation ranking: Bringing order to the web.
+\newblock Technical Report 1999-66, Stanford InfoLab, November 1999.
+
+\bibitem{pei:infsp}
+Sen Pei, Lev Muchnik, Jos{\'e}~S. Andrade~Jr., Zhiming Zheng, and Hern{\'a}n~A.
+  Makse.
+\newblock Searching for superspreaders of information in real-world social
+  media.
+\newblock {\em Scientific Reports}, 4(1):5547, Jul 2014.
+
+\bibitem{saumell:epidemicsp}
+Anna Saumell-Mendiola, M.~\'Angeles Serrano, and Mari\'an Bogu\~n\'a.
+\newblock Epidemic spreading on interconnected networks.
+\newblock {\em Phys. Rev. E}, 86:026106, Aug 2012.
+
+\bibitem{dedomenico:verbetw}
+Albert Sol\'{e}-Ribalta, Manlio De~Domenico, Sergio G\'{o}mez, and Alex Arenas.
+\newblock Centrality rankings in multiplex networks.
+\newblock In {\em Proceedings of the 2014 ACM Conference on Web Science},
+  WebSci ’14, page 149–155, New York, NY, USA, 2014. Association for
+  Computing Machinery.
+
+\bibitem{wang:eigenv}
+Yang Wang, D.~{Chakrabarti}, Chenxi Wang, and C.~{Faloutsos}.
+\newblock Epidemic spreading in real networks: an eigenvalue viewpoint.
+\newblock In {\em 22nd International Symposium on Reliable Distributed Syst
+  ems, 2003. Proceedings.}, pages 25--34, Oct 2003.
+
+\bibitem{zipf:humanb}
+George~Kingsley Zipf.
+\newblock {\em Human behavior and the principle of least effort.}
+\newblock Human behavior and the principle of least effort. Addison-Wesley
+  Press, Oxford, England, 1949.
+
+\end{thebibliography}

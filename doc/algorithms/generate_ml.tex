@@ -1,0 +1,217 @@
+% \begin{algorithm}
+%     % \title{Generate}
+%     % a = 4
+%     \DontPrintSemicolon
+%     \KwData{$G=(X,U)$ such that $G^{tc}$ is an order.}
+%     \KwResult{$G'=(X,V)$ with $V\subseteq U$ such that $G'^{tc}$ is aninterval order.}
+%     \Begin{
+%         $V \longleftarrow U$\;
+%         $S \longleftarrow \emptyset$\;
+%         \For{$x\in X$}{
+%             $NbSuccInS(x) \longleftarrow 0$\;
+%             $NbPredInMin(x) \longleftarrow 0$\;
+%             $NbPredNotInMin(x) \longleftarrow |ImPred(x)|$\;
+%         }
+%         \For{$x \in X$}{
+%             \If{$NbPredInMin(x) = 0$ {\bf and} $NbPredNotInMin(x) = 0$}{
+%                 $AppendToMin(x)$
+%             }
+%         }
+%         \nl\While{$S \neq \emptyset$}{
+%             \label{InRes1}
+%             \nlset{REM} remove $x$ from the list of $T$ of maximal index\;
+%             \label{InResR}
+%             \lnl{InRes2}
+%             \While{$|S \cap  ImSucc(x)| \neq |S|$}{
+%                 \For{$ y \in  S-ImSucc(x)$}{\{ 
+%                     remove from $V$ all the arcs $zy$ : \}\;
+%                     \For{$z \in  ImPred(y) \cap  Min$}{
+%                         remove the arc $zy$ from $V$\;
+%                         $NbSuccInS(z) \longleftarrow NbSuccInS(z) - 1$\;
+%                         move $z$ in $T$ to the list preceding its present list\;
+%                         \{i.e. If $z \in T[k]$, move $z$ from $T[k]$ to$T[k-1]$\}\;
+%                     }
+%                     $NbPredInMin(y) \longleftarrow 0$\;
+%                     $NbPredNotInMin(y) \longleftarrow 0$\;
+%                     $S \longleftarrow S - \{y\}$\;
+%                     $AppendToMin(y)$\;
+%                 }
+%             }
+%             $RemoveFromMin(x)$\;
+%         }
+%     }
+%     \caption{IntervalRestriction\label{IR}}
+% \end{algorithm}
+\SetStartEndCondition{ (}{)}{)}\SetAlgoBlockMarkers{}{\}}%
+% \SetKwProg{Fn}{dsadsadas}{dsadad}
+% \SetKwFunction{FRecurs}{generate\_multilayer}%
+\SetKwFor{For}{for }{ \textbf{do}}{}{}%
+\SetKwFor{If}{if }{ \textbf{then}}{}{}%
+\SetKwFor{While}{while }{ \textbf{do}}{}{}%
+% \SetKwIF{If}{ElseIf}{Else}{if}{\{}{elif}{else\{}{}%
+% \SetKwFor{While}{while}{\{}{}%
+% \SetKwRepeat{Repeat}{repeat\{}{until}%
+% \AlgoDisplayBlockMarkers
+% \SetAlgoNoLine%
+\begin{algorithm}   
+    \caption{Generazione multilayer networks}
+    \label{alg:generate}
+% \Fn{\FRecurs{
+%   asd  
+% }}
+    % {
+    \SetKwData{Left}{left}
+    \SetKwData{This}{this}
+    \SetKwData{Up}{up}
+    \SetKwFunction{Union}{Union}
+    \SetKwFunction{FindCompress}{FindCompress}
+    % \KwData{
+        
+    % }
+
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \SetStartEndCondition{ }{}{}%
+    \DontPrintSemicolon
+    \Input{
+        \textsc{Graph} $layers$\abracks \algcmnt{grafi usati come layers} \\ 
+        \tint\ $perm\_l$\abracks \algcmnt{posizione di ogni layer nella permutazione}\\
+        \tint\ $perm\_n$\abracks \abracks \algcmnt{posizione di un nodo nella permutazione di ogni layer}\\
+        \tint\ $d $\\
+        \tfloat\ $s\_degree$ \\
+        \tfloat\ $s\_layer$ \\
+        \tfloat\ $s\_node$ \\
+    }
+    %     these inputs can be displayed on several lines and oneinput can be wider than line’s width.}
+    % \KwResult{Same for output data}
+    % \tcc{this is a comment to tell you that we will now really start code}
+    % total\_nodes = sum((g.nodes() for g in layers))\;
+    
+    \tint\ $total\_nodes = 0$\;
+    \For{$i = 0$ \KwTo $layers.size()$} {
+            $total\_nodes = total\_nodes + layers[i].nodes().size()$\;
+    }
+    \BlankLine
+    \tint\ $max\_interconnections = d \cdot \lfloor\log_{2}{(total\_nodes)}\rfloor$\;
+    
+    \tcp{I due parametri della classe \textsc{ZipfGenerator} regolano rispettivamente \\
+    il massimo della distribuzione e il grado di asimmetria}
+    \tzgen\ $degree\_generator(max\_interconnections, s\_degree)$\;
+    \tzgen\ $layer\_generator(layers.size(), s\_layer)$\;
+    \tzgen\ $node\_generators[0\dots layers.size() - 1]$\;
+    \For{$l = 0$ \KwTo $layers.size() - 1$}{
+        $node\_generators[l] = $ \tzgen $(layers[l].size(), s\_degree)$\;
+    }
+    \BlankLine
+
+    \textsc{MultilayerNetwork} $m$\;
+
+
+    \For {$l = 0$ \KwTo $layers.size() - 1$}{
+        \ForEach {$n \in layers[l]$}{
+            \tcp*{intra-connessioni}
+            \For {$v \in layers[l].adj(n)$}{
+                $m.add\_edge(n, l, v, l)$\;
+            }
+            \tcp*{inter-connessioni tra un nodo e le sue controparti negli altri layer}
+            \For {$j = 0$ \KwTo $layers.size() - 1$}{ 
+                \If {$ j \neq l$ \textup{\textbf{and}} $n \in layers[j].nodes()$} {
+                    $m.add\_edge(n, l, n, j)$\;
+                }
+            }
+            \tcp*{Generazione inter-connessioni casuali}
+            \tint\ $degree = degree\_generator.next()$\;
+            \For {$i = 1$ \KwTo $degree$}{
+                \tbool\ $added = \False$\;
+                \While{\textup{\textbf{not}} $added$}{
+                    \tint\ $l\_dest = l\_index[layer\_generator.next()]$\;
+                    \While {$l\_dest == l$} {
+                        $l\_dest = l\_index[layer\_generator.next()]$\;
+                    }
+                    \tint\ $n\_dest= n\_index[l\_dest][node\_generators[l\_dest].next()]$\;
+                    \If{\textup{\textbf{not}} $m.has\_edge(n, l, n\_dest, l\_dest)$}{
+                        $added = \True$\;
+                        $m.add\_edge(n, l, n\_dest, l\_dest)$\;
+                    }
+                }
+            }
+        }
+    }
+    \Return{m}
+    %         for n in range(layers[l].nodes()):
+    %             # intra-connections
+    %             for v in layers[l].adj(n):
+    %                 m.add_edge(n, l, v, l)
+    %             # inter-connections with other counterparts
+    %             for j in range(len(layers)):
+    %                 if j != l and n in layers[j].nodes_set():
+    %                     m.add_edge(n, l, n, j)
+    %             # generate inter-connections
+    %             degree = degree_generator.next()
+    %             degrees.append(degree)
+    %             for _ in range(degree):
+    %                 added = False
+    %                 while not added :
+    %                     l_dest = l_index[layer_generator.next()]
+    %                     while l_dest == l:
+    %                         l_dest = l_index[layer_generator.next()]
+                            
+    %                     n_dest = n_index[l_dest][node_generators[l_dest].next()]
+    %                     added = m.add_edge(n, l, n_dest, l_dest)
+        
+\end{algorithm}
+% \begin{algorithm}
+%     \renewcommand{\thealgorithm}{}
+%     \caption {generate(\textsc{Graph} $layers$\abracks, \textbfint $l\_perm$\abracks, int $n\_perm$\abracks\abracks, 
+%         int $d$, float $s\_degree$, float $s\_layer$, float $s\_node$)}
+%     \label{alg:generate}
+%     \begin{algorithmic}[0]
+%         % \Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+%         \State $r\gets a\bmod b$
+%         \While{$r\not=0$}\Comment{We have the answer if r is 0}
+%             \State $a\gets b$
+%             \State $b\gets r$
+%             \State $r\gets a\bmod b$
+%         \EndWhile\label{euclidendwhile}
+%         \State \textbf{return} $b$\Comment{The gcd is b}
+%         \NoNumber{This line will not have a number!}
+%         % \EndProcedure
+%     \end{algorithmic}
+% \end{algorithm}
+
+
+% (layers, l_index, n_index, d, s_degree, s_layer, s_node):
+%     total_nodes = sum((g.nodes() for g in layers))
+%     max_interconnections = int(d * math.log2(total_nodes))
+%     print('#', int(d * math.log2(total_nodes)))
+    
+%     degree_generator = ZipfGenerator(max_interconnections, s_degree)
+%     layer_generator = ZipfGenerator(len(layers), s_layer)
+%     node_generators = [ZipfGenerator(g.nodes(), s_node) for g in layers]
+
+%     m = Multilayer(max((g.nodes() for g in layers)), len(layers))
+
+%     degrees = []
+%     for l in range(len(layers)):
+%         for n in range(layers[l].nodes()):
+%             # intra-connections
+%             for v in layers[l].adj(n):
+%                 m.add_edge(n, l, v, l)
+%             # inter-connections with other counterparts
+%             for j in range(len(layers)):
+%                 if j != l and n in layers[j].nodes_set():
+%                     m.add_edge(n, l, n, j)
+%             # generate inter-connections
+%             degree = degree_generator.next()
+%             degrees.append(degree)
+%             for _ in range(degree):
+%                 added = False
+%                 while not added :
+%                     l_dest = l_index[layer_generator.next()]
+%                     while l_dest == l:
+%                         l_dest = l_index[layer_generator.next()]
+                        
+%                     n_dest = n_index[l_dest][node_generators[l_dest].next()]
+%                     added = m.add_edge(n, l, n_dest, l_dest)
+%     print('>', max(degrees))
+%     return m

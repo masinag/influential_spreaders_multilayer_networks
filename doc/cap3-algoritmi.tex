@@ -1,0 +1,224 @@
+\chapter{Algoritmi utilizzati}
+Dopo una fase di ricerca, sono stati selezionati ed implementati alcuni algoritmi di centralità solitamente usati per 
+l'individuazione degli \infsp. Tali algoritmi assegnano ad ogni nodo un valore proporzionale alla sua centralità e 
+quindi all'influenza esercitata da tale nodo sulla rete.
+
+Questi possono essere divisi in tre categorie:
+\begin{itemize}
+\item algoritmi applicati sul grafo aggregato;
+\item algoritmi applicati separatamente su ogni layer;
+\item algoritmi applicati sull'intera struttura \textit{multilayer}.
+\end{itemize}
+
+\section{Algoritmi sul grafo aggregato}
+Diverse misure di centralità sono utilizzate per l'individuazione degli \infsp\ in grafi 
+`classici' ad un solo layer, detti anche \textit{monoplex}\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
+Essendo definite per grafi ad un solo layer, sono state applicate al \gragg\
+derivato da ogni \muln. 
+Le misure utilizzate sono state \textit{PageRank}\cite{page:pagerank}, 
+\textit{k-core}\cite{batagelj:kcore} e 
+\textit{Degree}.
+
+% PAGE RANK
+
+\subsection{PageRank}
+\label{alg:pagerank}
+\begin{definizione}[PageRank]
+    \label{def:pagerank}
+    Dato un grafo $G=(V, E)$, il valore di PageRank di un nodo $v$ è definito come
+    \begin{equation}
+        PR(v) = \alpha\sum_{w : v \in G.adj(w)}
+        \frac{PR(w)}{G.outdegree(w)} + 
+        (1-\alpha)\frac{1}{|V|}
+    \end{equation}
+\end{definizione}
+
+Questa misura di centralità fu originariamente definita per misurare l'importanza di una pagina web. Secondo questo 
+criterio, una pagina è tanto più importante quante più pagine importanti hanno un link verso di essa. Analogamente 
+può essere utilizzata per misurare più genericamente l'influenza di un nodo in un grafo, ed è stata applicata sia al 
+grafo originale che a quello trasposto.
+
+Questa definizione ricorsiva è stata così calcolata in modo iterativo: 
+\begin{equation}
+    PR_0(v) = \frac{1}{n} \text{, } \qquad
+    PR_i(v) = \alpha \sum_{w : v \in G.adj(w)} 
+    \frac{PR_{i-1}(w)}{G.outdegree(w)} + 
+    (1-\alpha)\frac{1}{|V|}
+\end{equation}
+finchè $||PR_{i} - PR_{i-1}||_1 < \epsilon$. Secondo \cite{page:pagerank} il numero di iterazioni 
+è proporzionale a $\log{|V|}$. Dunque, la complessità dell'algoritmo è $O((|V| + |E|)\log{|V|})$.
+
+% K-CORE
+
+\subsection{k-core}
+\begin{definizione}[k-core]
+    \label{def:kcore}
+    Dato un grafo $G=(V, E)$, un \textit{k-core} di $G$ è un sottografo $G'=(V',E')$
+    tale che 
+    \begin{equation}
+        G'.indegree(v) \geq k \quad \forall v \in V'
+    \end{equation}
+\end{definizione}
+
+Un nodo appartenente ad un \textit{k-core} con $k$ elevato è considerato un nodo centrale 
+nella rete, e quindi un potenziale \textit{influential spreader}.
+Per il calcolo di questa misura è stato utilizzato l'algoritmo definito in \cite{batagelj:kcore}
+con complessità $O(|V| + |E|)$.
+Questo algoritmo è stato applicato sia al grafo originale che a quello trasposto.
+
+\subsection{Degree}
+Questa misura di centralità assegna ad ogni nodo un valore uguale al suo \textit{outdegree}, 
+per cui un nodo con tanti vicini si assume possa avere una certa rilevanza in un 
+processo di diffusione.
+Può essere calcolata con complessità $O(|V|)$.
+
+\subsection{Algoritmi applicati su ogni layer}
+Alcune delle misure sono state estese alle reti multilayer calcolando la centralità
+dei nodi in ogni layer separatamente e poi sommando i punteggi ottenuti in ogni layer.
+In questa categoria rientrano \textit{Additive Pagerank}\cite{halu:addpagerank} 
+e \textit{SumCore}\cite{basaras:infspmul}
+
+\subsection{Additive PageRank}
+\begin{definizione}[Additive PageRank]
+    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
+    ed un ordinamento dei layer $(X_1, \dots, X_{L})$, l'\textit{Additive PageRank}
+    di un nodo $v \in V$ è il valore 
+    $addPR(v) = addPR_L(v)$, dove:
+
+    \begin{equation}
+        \begin{split}
+addPR_1(v)&= PR(v) \text{ in } X_1 \\
+addPR_l(v)&= \alpha \sum_{w : v \in X_l.adj(w)} 
+            \frac{addPR_l(w)}{X_l.outdegree(w)} + 
+            (1-\alpha)\frac{addPR_{l-1}(v)}{|V| \langle addPR_{l-1} \rangle}
+        \end{split}
+    \end{equation}
+
+\end{definizione}
+
+Questa estensione dell'algoritmo di PageRank alle reti Multilayer richiede un ordinamento
+dei layer. Come fatto in \cite{basaras:infspmul}, i layer sono stati ordinati per valore
+dell'autovalore di modulo massimo della rispettiva matrice di adiacenza. Infatti, 
+autovalore più grande significa maggiore capacità di diffusione\cite{wang:eigenv}.
+
+Come algoritmo, è stato utilizzato un approccio analogo a quello della versione classica di 
+PageRank descritto in \vref{alg:pagerank}.
+Poichè è necessario calcolare il PageRank su ogni layer, il costo dell'algoritmo è 
+$O(\sum_{i}((|V_i| + |E_i|)log(|V_i|)))$, assumendo che i layer siano già ordinati.
+
+Questa misura è stata calcolata sia sulla rete originale che su quella trasposta.
+
+\subsection{SumCore}
+Questa misura è stata ottenuta calcolando il valore di \textit{k-core} di ogni nodo in 
+ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer.
+Pertanto la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
+
+Questa misura è stata calcolata sia sulla rete originale che su quella trasposta.
+
+\subsection{Algoritmi applicati sull'intera struttura}
+Diverse misure definite originariamente per grafi \textit{monoplex} sono state estese a 
+reti \textit{multilayer}. Queste, al contrario di quelle presentate nei punti precedenti,
+tengono conto della struttura a più livelli della rete ed in particolare delle \interc.
+Quelle implementate sono \textit{versatility PageRank}\cite{dedomenico:versatile},
+\textit{versatility Betweenness Centrality}\cite{dedomenico:versatile} \cite{dedomenico:verbetw},
+\textit{multiplex k-core}\cite{azimi:multikcore},
+\textit{minimal-layers PCI}\cite{basaras:infspmul},
+\textit{layer-agnostic PCI}\cite{basaras:infspmul},
+\textit{all-layers PCI}\cite{basaras:infspmul},
+\textit{layer-symmetric PCI}\cite{basaras:infspmul}.
+
+\subsection{Versatility PageRank}
+\begin{definizione}[Versatility PageRank]
+    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$,
+    si definisce \textit{Versatility PageRank} di un nodo $v \in V_l$ in un layer $l$
+    il valore:
+
+    \begin{equation}
+        PR(v, l) = 
+        \alpha \biggl( 
+            \sum_{w : v \in G_l.adj(w)} \frac{PR(w, l)}{\mathcal{M}.outdegree(w, l)} +
+            \sum_{j \neq l}^{}\sum_{w : (w, v) \in E_{jl}} \frac{PR(w, j)}{\mathcal{M}.outdegree(w, j)} 
+        \biggr) + (1-\alpha)\frac{1}{N}
+    \end{equation}
+    dove $\mathcal{M}.outdegree(w, l)$ è la somma del numero di archi uscenti da $w$ nel layer $l$
+    e del numero di \interc\ uscenti da $w$ nel layer $l$.
+
+\end{definizione}
+
+La definizione originale in \cite{dedomenico:versatile} utilizzava un tensore 4-dimensionale per 
+rappresentata la rete. Qui è stata generalizzata, anche prevedendo che un nodo possa non comparire 
+in tutti i layer.
+
+Questa definizione è stata calcolata in modo analogo alla definizione \vref{alg:pagerank},
+dunque la complessità è $O((N + E)\log(N))$,.
+Questa misura è stata applicata sia alla rete originale che a quella trasposta.
+
+\subsection{Versatility Betweenness Centrality}
+
+\begin{definizione}[Versatility Betweenness Centrality]
+    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, la 
+    \textit{Versatility Betweenness Centrality} di un nodo $v$ è il valore 
+    \begin{equation}
+        BC(v) = \sum_{s, t \in V} \frac{\sigma_{st}(v)}{\sigma_{st}}
+    \end{equation}
+    dove $\sigma_{st}$ è il numero di percorsi minimi tra il nodo $s$ ed il nodo $t$
+    indipendentemente dal layer, e $\sigma_{st}(v)$ è il numero di questi che passa 
+    per il nodo $v$ in qualche layer.
+\end{definizione}
+
+Questa misura è stata calcolata con l'algoritmo definito in \cite{dedomenico:verbetw}, 
+con complessità $O\left(|V|\left(N+E\right)\right)$.
+
+\subsection{Multiplex k-core}
+
+\begin{definizione}[Multiplex k-core]
+    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, il \textit{k-core} è
+    il più grande sottografo per cui ogni nodo è raggiunto in ogni layer da almeno $k$ archi o
+    \interc.
+\end{definizione}
+
+Questa misura è stata calcolata estendendo l'algoritmo definito in \cite{batagelj:kcore} per 
+adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$  
+
+\subsection{Power Community Index}
+\begin{definizione}
+    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, 
+    l'indice $mlPCI_n$ di un nodo $v$ in un layer $l$ 
+    è il massimo numero $k$ tale che esistono almeno $k$ vicini di $v$ nel layer $l$ in $\mathcal{M}$
+    con numero di vicini in almeno $n$ layer maggiore o uguale a $k$.
+\end{definizione}
+
+Da questa definizione si ricavano le seguenti:
+
+\begin{definizione}[minimal-layers PCI]
+    L'indice $mlPCI$ di un nodo $v$ in un layer $l$ è definito come 
+    \begin{equation}
+        mlPCI(v, l) = \sum_{n=1}^L mlPCI_n(v, l)
+    \end{equation}
+\end{definizione}
+
+\begin{definizione}[all-layers PCI]
+    L'indice $alPCI$ di un nodo $v$ in un layer $l$ è definito come 
+    \begin{equation}
+        alPCI(v, l) = mlPCI_L(v, l)
+    \end{equation}
+\end{definizione}
+
+
+\begin{definizione}[layer-symmetric PCI]
+    L'indice $lsPCI$ di un nodo $v$ in un layer $l$ è il massimo numero $k$ 
+    tale che esistono almeno $k$ vicini di $v$ nel layer $l$ in $\mathcal{M}$
+    con numero di vicini in almeno $k$ layer maggiore o uguale a $k$.
+\end{definizione}
+
+\begin{definizione}[layer-agnostic PCI]
+    L'indice $laPCI$ di un nodo $v$ in un layer $l$ è 
+    è il massimo numero $k$ tale che esistono almeno $k$ vicini di $v$ nel layer 
+    $l$ in $\mathcal{M}$
+    con numero di vicini maggiore o uguale a $k$.
+\end{definizione}
+
+
+
+Il calcolo di queste definizioni, è stato fatto utilizzando un algoritmo di complessità 
+$O(N L t \log{t})$, dove $t = max\{\mathcal{M}.outdegree(v) | v \in V\}$ 

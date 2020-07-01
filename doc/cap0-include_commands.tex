@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%
+% definizioni
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%%%%%%%%%%%
+% vref
+\usepackage[italian]{varioref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{url}
+
+
+%%%%%%%%%%%%%%%
+% algoritmi
+\usepackage[ruled,linesnumbered,vlined,scleft,italiano]{algorithm2e}
+\usepackage{eqparbox}
+\newcommand{\algcmnt}[1]{%
+  \texttt{\hfill// \eqparbox{COMMENT}{#1}}%
+}
+\newcommand{\alglcmnt}[1]{%
+  \texttt{
+    \hfill// \begin{minipage}[t]{
+      \eqboxwidth{COMMENT}
+    }#1\strut\end{minipage}
+  }
+}
+\SetKwRepeat{Do}{do}{while}
+% \newcommand{\forcond}{$i=0$ \KwTo $n$}
+% \SetKwProg{Fn}{Function}{}{end}
+% \SetKwFunction{FRecurs}{FnRecursive}%
+\newcommand{\tint}{\texttt{int}}
+\newcommand{\tfloat}{\texttt{float}}
+\newcommand{\tbool}{\texttt{bool}}
+\newcommand{\tzgen}{\textsc{ZipfGenerator}}
+\newcommand{\False}{\texttt{False}}
+\newcommand{\True}{\texttt{True}}
+
+% \usepackage{algorithm}
+% \usepackage{algorithmicx}
+% \usepackage[noend]{algpseudocode}
+% \def\NoNumber#1{{\def\alglinenumber##1{}\State #1}\addtocounter{ALG@line}{-1}}
+% \floatname{algorithm}{}
+\newcommand{\abracks}{[\,]}
+
+%%%%%%%%%%%%%%%%
+% tabelle
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+% \usepackage{caption}
+\usepackage{siunitx} % formattazione numeri 
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\1}[1]{\colorbox{Cerulean!50}{#1}}
+\newcommand{\2}[1]{\colorbox{Cerulean!35}{#1}}
+\newcommand{\3}[1]{\colorbox{Cerulean!20}{#1}}
+
+%%%%%%%%%%%%%%
+% immagini
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+
+
+%%%%%%%%%%%%%%%%
+% definizioni
+
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
+
+% \newcommand{\asd}{\href{asd}}
+
+% definizioni
+\newcommand{\infsp}{\textit{influential spreaders}}
+\newcommand{\layers}{\textit{layers}}
+\newcommand{\muln}{\textit{multilayer network}}
+\newcommand{\mulx}{\textit{multiplex network}}
+\newcommand{\gragg}{\textit{grafo aggregato}}
+\newcommand{\interc}{\textit{inter-connessioni}}
+\newcommand{\spproc}{\textit{spreading process}}
+\newcommand{\epprob}{\textit{epidemic probability}}
+\newcommand{\crepp}{\textit{critical epidemic point}}

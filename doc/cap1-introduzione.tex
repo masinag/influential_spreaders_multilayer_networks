@@ -1,0 +1,38 @@
+\chapter{Introduzione}
+
+Lo studio di un processo di diffusione all'interno di una rete è molto utile per comprendere le dinamiche
+di diversi scenari. Tra questi, la diffusione di una notizia in una rete di contatti, di un virus in una 
+società, una fake news in un social network e l'accumulo di un ritardo nelle stazioni di una rete di trasporti.
+
+Di particolare interesse è l'individuazione dei cosiddetti \infsp, ovvero dei nodi
+che, se infettati, permettono di `contagiare' una grossa parte della rete.
+
+\section{\textit{Influential spreaders} in un grafo}
+
+Poichè i processi di simulazione della diffusione sono computazionalmente costosi, un problema
+di grande importanza è quello di individuare gli \infsp\ analizzando la topologia della rete.
+
+Il problema è stato molto studiato nei grafi `classici', dove i nodi e gli archi che li collegano 
+appartengono alla stessa rete %
+\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}.
+È stato osservato che alcuni algoritmi di centralità forniscono una buona indicazione di 
+quali sono i nodi più influenti nella diffusione. 
+Tra questi, \textit{PageRank}, \textit{Betweenness Centrality} e \textit{k-core} sono algoritmi che richiedono una conoscenza
+globale della topologia della rete, mentre per altri come Degree Centrality o $\mu$-PCI ogni nodo 
+ha bisogno solo di una conoscenza locale della rete.
+
+\section{\textit{Influential spreaders} in una multilayer network}
+
+In molti dei problemi reali i nodi sono collegati tramite diversi tipi di interazioni, che non 
+possono essere rappresentate in un grafo `classico'. 
+Esempi di questo tipo sono la rete dei profili online collegati dalle loro interazioni
+in diversi social networks (follow, amicizie, condivisioni, ecc.) e la rete delle stazioni di 
+una città connesse da tratte di diversi mezzi di trasporto (rete ferroviaria, rete degli autobus, 
+piste ciclabili, ecc.).
+
+Strutture che permettono di rappresentare queste realtà sono le \muln, ossia reti in cui sono 
+presenti differenti tipi di relazione tra i nodi. 
+
+È stata studiata l'individuazione degli \infsp\ in questo tipo di reti, utilizzando 
+algoritmi di centralità definiti su di esse.
+

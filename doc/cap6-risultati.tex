@@ -1,0 +1,69 @@
+\chapter{Risultati}
+
+\section{Metodo di valutazione}
+
+Per ogni rete è stato osservato il numero di nodi infettati da ogni nodo facendo una media di \num{100} simulazioni e 
+ottenendo così un vettore $s$ di $|V|$ elementi, dove $s_i$ rappresenta il numero di nodi 
+infettati in media in uno \spproc\ in cui i nodi inizialmente infetti sono le controparti del 
+nodo~$i$ nei layer in cui esso è presente.
+
+È stato poi calcolato per ogni algoritmo un vettore $a$ dove $a_i$ 
+è il punteggio assegnato dall'algoritmo al nodo~$i$.
+
+Per confrontare i vettori così ottenuti ed assegnare un punteggio ad ogni algoritmo che ne 
+valutasse la capacità di riconoscere gli \infsp\ è stato utilizzato coefficiente \textit{Kendall's}~$\tau$~\cite{kendall:tau}, 
+così definito:
+
+\begin{equation}
+    \tau = \frac{n_c - n_d}{n(n-1)}
+\end{equation}
+
+dove:
+\begin{itemize}
+    \item $n$ è il numero di elementi dei due vettori, ossia il numero di nodi |V|;
+    \item $n_c$ è il numero di coppie concordanti nei due vettori. Una coppia di elementi 
+            indici $i, j$ si dice concordante se $a_i > a_j$ e $s_i > s_j$ oppure se $a_i < a_j$ e $s_i < s_j$;
+    \item $n_d$ è il numero di coppie discordanti nei due vettori. Una coppia di elementi 
+    indici $i, j$ si dice discordante se $a_i > a_j$ e $s_i < s_j$ oppure se $a_i < a_j$ e $s_i > s_j$;    
+\end{itemize}
+
+Se $a_i = a_j$ oppure $s_i = s_j$, la coppia $i, j$ non viene contata.
+
+Il risultato della formula è compreso tra \num{-1.0} e {1.0}
+
+\section{Confronto dei risultati}
+
+Le tabelle \ref{tab:taudln}, \ref{tab:tausln} e \ref{tab:taumux} mostrano i punteggi 
+ottenuti da ogni algoritmo nelle reti DLN, SLN e Multiplex rispettivamente.
+In ogni tabella sono evidenziati per ogni rete i punteggi ottenuti dai \num{3} algoritmi 
+migliori. 
+
+Si può notare che \textit{mlPCI} e \textit{laPCI} sono i due algoritmi che ottengono punteggi buoni 
+su tutte le reti utilizzate, e possono quindi essere considerati un buon metodo per indentificare 
+gli \infsp.
+
+\input{tables/tab_dln}
+\input{tables/tab_sln}
+\input{tables/tab_mux}
+
+\paragraph{Algoritmi applicati al grafo trasposto}
+Le diverse versioni degli algoritmi di \textit{PageRank} e \textit{k-core} sono state applicate anche al grafo trasposto.
+
+Nel caso di \textit{PageRank}, se nella definizione sul grafo originale un nodo è tanto più importante quanto 
+più importanti sono i nodi che hanno un arco verso di esso, applicando l'algoritmo sul grafo trasposto si ottiene
+una definizione per cui un nodo è tanto più importante quanto più importanti sono i nodi verso cui ha un arco.
+
+Per quanto riguarda \textit{k-core}, invece, nella definizione sul grafo originale un \textit{k-core} di un grafo è un sottografo 
+massimale in cui ogni nodo ha almeno \textit{k} archi entranti, applicando l'algoritmo sul grafo trasposto si ottiene 
+una definizione analoga, in cui invece degli archi entranti si considerano gli archi uscenti.
+
+Per entrambi gli algoritmi si è pensato che le definizioni di centralità ottenute applicando l'algoritmo 
+sul grafo trasposto potessero individuare meglio gli \infsp. Le prestazioni di questi algoritmi, indicati 
+con l'indice $^T$, sono mostrate nelle tabelle \ref{tab:taudlnT}, \ref{tab:tauslnT} e \ref{tab:taumuxT}.
+
+In generale, si può osservare come nella maggior parte dei casi questi ottengano risultati migliori se confrontati con 
+la rispettiva versione applicata al grafo originale. 
+
+\input{tables/tab_dln_T}
+\input{tables/tab_sln_T}
+\input{tables/tab_mux_T}

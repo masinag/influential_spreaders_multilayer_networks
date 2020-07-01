@@ -1,0 +1,318 @@
+% book
+% Required fields: author or editor, title, publisher, year. 
+% Optional fields: volume or number, series, address, edition, month, note.
+@book{coulouris,
+  author = {Coulouris  G.  F.,  Dollimore J. e  Kindberg T},
+  title = {Distributed Systems: concepts and Design},
+  publisher = {Addison-Wesley},
+  year = {1994},
+  edition = "second edition"
+
+}
+
+% article
+% Required fields: author, title, journal, year. 
+% Optional fields: volume, number, pages, month, note.
+@article{donoho,
+  author = {Donoho D. L.},
+  title = {Compressed Sensing},
+  journal = {IEEE Trans. Inf. Theory},
+  volume = {52},
+  number = {4},
+  pages = {1289-1306},
+  year = {2006}
+}
+
+% conference
+% same as inproceedings
+% Required fields: author, title, booktitle, year. 
+% Optional fields: editor, volume or number, series, pages, address, month, organization, publisher, note
+@conference{dalal,
+  author = {Dalal N., Triggs B.},
+  title = {Histograms of Oriented Gradients for Human Detection},
+  booktitle = {Computer Vision and Pattern Recognition (CVPR)},
+  address = {San Diego, USA},
+  year = {2005},
+  month = {20-26 June},
+  pages = {886-893}
+}
+
+% website
+% as misc
+% Required fields: none. 
+% Optional fields: author, title, howpublished, month, year, note.
+@misc{ictbusiness,
+  title = {ICT business},
+  howpublished = {http://www.ictbusiness.it/},
+  note = {ultimo accesso 15/06/2015}
+}
+
+
+
+@article{kitsak:infsp,
+author={Kitsak, Maksim
+        and Gallos, Lazaros K.
+        and Havlin, Shlomo
+        and Liljeros, Fredrik
+        and Muchnik, Lev
+        and Stanley, H. Eugene
+        and Makse, Hern{\'a}n A.
+    },
+    title={Identification of influential spreaders in complex networks},
+    journal={Nature Physics},
+    year={2010},
+    month={Nov},
+    day={01},
+    volume={6},
+    number={11},
+    pages={888-893},
+    abstract={Spreading of information, ideas or diseases can be conveniently modelled in the context of complex networks. An analysis now reveals that the most efficient spreaders are not always necessarily the most connected agents in a network. Instead, the position of an agent relative to the hierarchical topological organization of the network might be as important as its connectivity.},
+    issn={1745-2481},
+    doi={10.1038/nphys1746},
+    url={https://doi.org/10.1038/nphys1746},
+}
+
+@article{basaras:infsp,
+author={{Basaras}, P. and {Katsaros}, D. and {Tassiulas}, L.},
+    journal={Computer}, 
+    title={Detecting Influential Spreaders in Complex, Dynamic Networks}, 
+    year={2013},
+    volume={46},
+    number={4},
+    pages={24-29},
+    abstract={A hybrid of node degree and k-shell index is more effective at identifying influential spreaders and has less computational overhead than either of these traditional measures.},
+    keywords={complex networks;invasive software;influential spreader detection;complex networks;dynamic networks;node degree;k-shell index;malware;Complex networks;Computer security;Level measurement;Malware;Social network services;Indexes;security;cybersecurity;influential spreaders;cyberattacks;complex networks;dynamic networks},
+    doi={10.1109/MC.2013.75},
+    ISSN={1558-0814},
+    month={April},
+}
+
+
+@article{pei:infsp,
+    author={Pei, Sen
+    and Muchnik, Lev
+    and Andrade Jr., Jos{\'e} S.
+    and Zheng, Zhiming
+    and Makse, Hern{\'a}n A.},
+    title={Searching for superspreaders of information in real-world social media},
+    journal={Scientific Reports},
+    year={2014},
+    month={Jul},
+    day={03},
+    volume={4},
+    number={1},
+    pages={5547},
+    abstract={A number of predictors have been suggested to detect the most influential spreaders of information in online social media across various domains such as Twitter or Facebook. In particular, degree, PageRank, k-core and other centralities have been adopted to rank the spreading capability of users in information dissemination media. So far, validation of the proposed predictors has been done by simulating the spreading dynamics rather than following real information flow in social networks. Consequently, only model-dependent contradictory results have been achieved so far for the best predictor. Here, we address this issue directly. We search for influential spreaders by following the real spreading dynamics in a wide range of networks. We find that the widely-used degree and PageRank fail in ranking users' influence. We find that the best spreaders are consistently located in the k-core across dissimilar social platforms such as Twitter, Facebook, Livejournal and scientific publishing in the American Physical Society. Furthermore, when the complete global network structure is unavailable, we find that the sum of the nearest neighbors' degree is a reliable local proxy for user's influence. Our analysis provides practical instructions for optimal design of strategies for ``viral'' information dissemination in relevant applications.},
+    issn={2045-2322},
+    doi={10.1038/srep05547},
+    url={https://doi.org/10.1038/srep05547},
+}
+
+@techreport{page:pagerank,
+    number = {1999-66},
+    month = {November},
+    author = {Page, Lawrence and Brin, Sergey and Motwani, Rajeev and Winograd, Terry},
+    title = {The PageRank Citation Ranking: Bringing Order to the Web.},
+    type = {Technical Report},
+    publisher = {Stanford InfoLab},
+    year = {1999},
+    institution = {Stanford InfoLab},
+        url = {http://ilpubs.stanford.edu:8090/422/},
+    abstract = {The importance of a Web page is an inherently subjective matter, which depends on the readers interests, knowledge and attitudes. But there is still much that can be said objectively about the relative importance of Web pages. This paper describes PageRank, a mathod for rating Web pages objectively and mechanically, effectively measuring the human interest and attention devoted to them. We compare PageRank to an idealized random Web surfer. We show how to efficiently compute PageRank for large numbers of pages. And, we show how to apply PageRank to search and to user navigation.},
+}
+
+@article{batagelj:kcore,
+  author    = {Batagelj, Vladimir and Zaversnik, Matjaz},
+  title     = {An O(m) Algorithm for Cores Decomposition of Networks},
+  journal   = {CoRR},
+  volume    = {cs.DS/0310049},
+  year      = {2003},
+  url       = {http://arxiv.org/abs/cs/0310049},
+  timestamp = {Fri, 10 Jan 2020 12:58:26 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/cs-DS-0310049.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+}
+
+@article{halu:addpagerank,
+    author={Halu, Arda
+    and Mondrag{\'o}n, Ra{\'u}l J.
+    and Panzarasa, Pietro
+    and Bianconi, Ginestra},
+    title={Multiplex PageRank},
+    journal={PloS one},
+    year={2013},
+    month={Oct},
+    day={30},
+    publisher={Public Library of Science},
+    volume={8},
+    number={10},
+    pages={e78293-e78293},
+    keywords={Algorithms; Brain/physiology; Humans; *Social Networking; *Social Support; Weights and Measures},
+    abstract={Many complex systems can be described as multiplex networks in which the same nodes can interact with one another in different layers, thus forming a set of interacting and co-evolving networks. Examples of such multiplex systems are social networks where people are involved in different types of relationships and interact through various forms of communication media. The ranking of nodes in multiplex networks is one of the most pressing and challenging tasks that research on complex networks is currently facing. When pairs of nodes can be connected through multiple links and in multiple layers, the ranking of nodes should necessarily reflect the importance of nodes in one layer as well as their importance in other interdependent layers. In this paper, we draw on the idea of biased random walks to define the Multiplex PageRank centrality measure in which the effects of the interplay between networks on the centrality of nodes are directly taken into account. In particular, depending on the intensity of the interaction between layers, we define the Additive, Multiplicative, Combined, and Neutral versions of Multiplex PageRank, and show how each version reflects the extent to which the importance of a node in one layer affects the importance the node can gain in another layer. We discuss these measures and apply them to an online multiplex social network. Findings indicate that taking the multiplex nature of the network into account helps uncover the emergence of rankings of nodes that differ from the rankings obtained from one single layer. Results provide support in favor of the salience of multiplex centrality measures, like Multiplex PageRank, for assessing the prominence of nodes embedded in multiple interacting networks, and for shedding a new light on structural properties that would otherwise remain undetected if each of the interacting networks were analyzed in isolation.},
+    issn={1932-6203},
+    doi={10.1371/journal.pone.0078293},
+    url={https://pubmed.ncbi.nlm.nih.gov/24205186},
+    url={https://doi.org/10.1371/journal.pone.0078293},
+    language={eng}
+}
+
+@article{basaras:infspmul,
+    author={P. {Basaras} and G. {Iosifidis} and D. {Katsaros} and L. {Tassiulas}},
+    journal={IEEE Transactions on Network Science and Engineering}, 
+    title={Identifying Influential Spreaders in Complex Multilayer Networks: A Centrality Perspective}, 
+    year={2019},
+    volume={6},
+    number={1},
+    pages={31-45},
+    abstract={Identifying influential spreaders in complex networks is of paramount importance for understanding and controlling the spreading dynamics. A challenging and yet inadequately explored task is to detect such influential nodes in multilayer networks, i.e., networks that encompass different types of connections (e.g., different relationships) among the nodes, hence facilitating a multilayer structure. Our purpose is to devise a method that can accurately detect nodes able to exert strong influence over the multilayer network; the method will be based solely on local knowledge of a network's topology in order to be fast and scalable due to the huge size of the network, and thus suitable for both real-time applications and offline mining. Based on our belief that a strong influencer is a node positioned in a well-connected neighborhood, we propose a series of methods which capture in a single number the rich inter- and intra-layer connectivity of the node. Our simulations showed that the proposed measures can detect effective spreaders in both real and synthetic networks, under various settings and against various competitors.},
+    keywords={complex networks;graph theory;network theory (graphs);influential nodes;multilayer structure;complex multilayer networks;centrality perspective;spreading dynamics;influential spreaders;network topology;Nonhomogeneous media;Complex networks;Multiplexing;Knowledge engineering;Social network services;Cloning;Centralities;influential spreaders;epidemic spreading;multilayer networks;complex networks},
+    doi={10.1109/TNSE.2017.2775152},
+    ISSN={2327-4697},
+    month={Jan},
+}
+
+@article{dedomenico:versatile,
+    author={De Domenico, Manlio
+        and Sol{\'e}-Ribalta, Albert
+        and Omodei, Elisa
+        and G{\'o}mez, Sergio
+        and Arenas, Alex
+    },
+    title={Ranking in interconnected multilayer networks reveals versatile nodes},
+    journal={Nature Communications},
+    year={2015},
+    month={Apr},
+    day={23},
+    volume={6},
+    number={1},
+    pages={6868},
+    abstract={The determination of the most central agents in complex networks is important because they are responsible for a faster propagation of information, epidemics, failures and congestion, among others. A challenging problem is to identify them in networked systems characterized by different types of interactions, forming interconnected multilayer networks. Here we describe a mathematical framework that allows us to calculate centrality in such networks and rank nodes accordingly, finding the ones that play the most central roles in the cohesion of the whole structure, bridging together different types of relations. These nodes are the most versatile in the multilayer network. We investigate empirical interconnected multilayer networks and show that the approaches based on aggregating---or neglecting---the multilayer structure lead to a wrong identification of the most versatile nodes, overestimating the importance of more marginal agents and demonstrating the power of versatility in predicting their role in diffusive and congestion processes.},
+    issn={2041-1723},
+    doi={10.1038/ncomms7868},
+    url={https://doi.org/10.1038/ncomms7868}
+}
+
+@inproceedings{dedomenico:verbetw,
+    author = {Sol\'{e}-Ribalta, Albert and De Domenico, Manlio and G\'{o}mez, Sergio and Arenas, Alex},
+    title = {Centrality Rankings in Multiplex Networks},
+    year = {2014},
+    isbn = {9781450326223},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2615569.2615687},
+    doi = {10.1145/2615569.2615687},
+    booktitle = {Proceedings of the 2014 ACM Conference on Web Science},
+    pages = {149–155},
+    numpages = {7},
+    keywords = {multiplex networks, multilayer networks, betweenness centrality},
+    location = {Bloomington, Indiana, USA},
+    series = {WebSci ’14}
+}
+
+@article{azimi:multikcore,
+  title = {$k\text{\ensuremath{-}}\mathrm{core}$ percolation on multiplex networks},
+  author = {Azimi-Tafreshi, N. and G\'omez-Garde\~nes, J. and Dorogovtsev, S. N.},
+  journal = {Phys. Rev. E},
+  volume = {90},
+  issue = {3},
+  pages = {032816},
+  numpages = {9},
+  year = {2014},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevE.90.032816},
+  url = {https://link.aps.org/doi/10.1103/PhysRevE.90.032816}
+}
+
+@misc{data:multiplex,
+    author = {CoMuNe Lab, FBK},
+    title = {Datasets Released for Reproducibility},
+    howpublished = {\url{https://comunelab.fbk.eu/data.php}},
+}
+
+@misc{data:multilayer,
+    author       = {Jure Leskovec and Andrej Krevl},
+    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+    howpublished = {\url{http://snap.stanford.edu/data}},
+    month        = jun,
+    year         = 2014
+}
+
+@misc{wiki:zipf,
+    author = {Wikipedia contributors},
+    title = {Zipf's law --- {Wikipedia}{,} The Free Encyclopedia},
+    year = {2020},
+    howpublished = {\url{https://en.wikipedia.org/w/index.php?title=Zipf%27s_law&oldid=955406626}},
+    note = {[Online; accessed 31-May-2020]}
+}
+
+@article{saumell:epidemicsp,
+    title = {Epidemic spreading on interconnected networks},
+    author = {Saumell-Mendiola, Anna and Serrano, M. \'Angeles and Bogu\~n\'a, Mari\'an},
+    journal = {Phys. Rev. E},
+    volume = {86},
+    issue = {2},
+    pages = {026106},
+    numpages = {4},
+    year = {2012},
+    month = {Aug},
+    publisher = {American Physical Society},
+    doi = {10.1103/PhysRevE.86.026106},
+    url = {https://link.aps.org/doi/10.1103/PhysRevE.86.026106}
+}
+
+
+@inproceedings{wang:eigenv,  
+    author={ Wang, Yang and {Chakrabarti}, D. and  Wang, Chenxi and 
+    {Faloutsos}, C.},  
+    booktitle={22nd International Symposium on Reliable Distributed Syst ems, 2003. Proceedings.},   
+    title={Epidemic spreading in real networks: an eigenvalue viewpoint},  
+    year={2003},  
+    pages={25-34},  
+    abstract={How will a virus propagate in a real network? Does an epidemic threshold exist for a finite graph? How long does it take to disinfect a network given particular values of infection rate and virus death rate? We answer the first question by providing equations that accurately model virus propagation in any network including real and synthesized network graphs. We propose a general epidemic threshold condition that applies to arbitrary graphs: we prove that, under reasonable approximations, the epidemic threshold for a network is closely related to the largest eigenvalue of its adjacency matrix. Finally, for the last question, we show that infections tend to zero exponentially below the epidemic threshold. We show that our epidemic threshold model subsumes many known thresholds for special-case graphs (e.g., Erdos-Renyi, BA power-law, homogeneous); we show that the threshold tends to zero for infinite power-law graphs. We show that our threshold condition holds for arbitrary graphs.},  
+    keywords={computer viruses;telecommunication security;eigenvalues and eigenfunctions;computer networks;graph theory;epidemic spreading;eigenvalue viewpoint;epidemic threshold conditions;finite graph;model virus propagation;network graphs;infinite power-law graphs;computer virus;real networks;Intelligent networks;Eigenvalues and eigenfunctions},  
+    doi={10.1109/RELDIS.2003.1238052},  
+    ISSN={1060-9857},  
+    month={Oct},
+}
+
+@article{kendall:tau,
+    author = {Kendall, M. G.},
+    title = "{A new measure of rank correlation}",
+    journal = {Biometrika},
+    volume = {30},
+    number = {1-2},
+    pages = {81-93},
+    year = {1938},
+    month = {06},
+    issn = {0006-3444},
+    doi = {10.1093/biomet/30.1-2.81},
+    url = {https://doi.org/10.1093/biomet/30.1-2.81},
+    eprint = {https://academic.oup.com/biomet/article-pdf/30/1-2/81/423380/30-1-2-81.pdf},
+}
+
+@book{zipf:humanb,
+    author={Zipf, George Kingsley},
+    title={Human behavior and the principle of least effort.},
+    series={Human behavior and the principle of least effort.},
+    year={1949},
+    publisher={Addison-Wesley Press},
+    address={Oxford,  England},
+    pages={xi, 573--xi, 573},
+    abstract={Subtitled "An introduction to human ecology," this work attempts systematically to treat "least effort" (and its derivatives) as the principle underlying a multiplicity of individual and collective behaviors, variously but regularly distributed. The general orientation is quantitative, and the principle is widely interpreted and applied. After a brief elaboration of principles and a brief summary of pertinent studies (mostly in psychology), Part One (Language and the structure of the personality) develops 8 chapters on its theme, ranging from regularities within language per se to material on individual psychology. Part Two (Human relations: a case of intraspecies balance) contains chapters on "The economy of geography," "Intranational and international cooperation and conflict," "The distribution of economic power and social status," and "Prestige values and cultural vogues"---all developed in terms of the central theme. 20 pages of references with some annotation, keyed to the index. (PsycINFO Database Record (c) 2016 APA, all rights reserved)}
+}
+
+@article{chen:infspcompx,
+    author =  {Chen, Duanbing and Lü, Linyuan and Shang, Ming-Sheng and Zhang, Yi-Cheng and Zhou, Tao},
+    title = {Identifying influential nodes in complex networks},
+    journal = {Physica A: Statistical Mechanics and its Applications},
+    volume = {391},
+    number = {4},
+    pages = {1777 - 1787},
+    year = {2012},
+    issn = {0378-4371},
+    doi = {https://doi.org/10.1016/j.physa.2011.09.017},
+    url = {http://www.sciencedirect.com/science/article/pii/S0378437111007333},
+    keywords = {Complex networks, Centrality measures, Influential nodes, Spreading, SIR model},
+    abstract = {Identifying influential nodes that lead to faster and wider spreading in complex networks is of theoretical and practical significance. The degree centrality method is very simple but of little relevance. Global metrics such as betweenness centrality and closeness centrality can better identify influential nodes, but are incapable to be applied in large-scale networks due to the computational complexity. In order to design an effective ranking method, we proposed a semi-local centrality measure as a tradeoff between the low-relevant degree centrality and other time-consuming measures. We use the Susceptible–Infected–Recovered (SIR) model to evaluate the performance by using the spreading rate and the number of infected nodes. Simulations on four real networks show that our method can well identify influential nodes.}
+}

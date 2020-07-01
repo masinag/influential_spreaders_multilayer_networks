@@ -1,0 +1,93 @@
+\chapter{Dataset}
+Queste misure sono state testate su diverse reti con caratteristiche diverse, 
+seguendo una metodologia simile a \cite{basaras:infspmul}:
+\begin{itemize}
+    \item Multiplex Network estratte da dataset biologici e sociali;
+    \item Multilayer Network generate a partire da reti di interazioni in Internet.
+\end{itemize}
+
+\section{Estrazione reti multiplex}
+Le reti indicate in tabella \vref{tab:multiplex} sono state estratte a partire da reti biologiche e
+sociali fornite da \cite{data:multiplex}.
+L'obiettivo era quello di ottenere un dataset simile a quello utilizzato da \cite{basaras:infspmul},
+dove per ogni rete sono indicati i numeri $N$, $E$ ed $|L|$, rispettivamente di nodi, archi e layer estratti.
+
+Per ogni rete, è stato individuato un sottoinsieme $L$ di $|L|$ layer in cui il numero di nodi con una 
+controparte in ogni layer fosse almeno $N$. Per tutte le reti, è  stato trovato un solo sottoinsieme 
+che rispettasse questo criterio.
+
+Dopo aver costruito una sotto-rete formata solo dai layer in $L$, sono stati rimossi i nodi non presenti
+in tutti i layer e gli archi da e verso essi. Dopodichè sono stati rimossi tutti i nodi da cui non arrivava
+nè partiva più nessun arco. Questa procedura è stata applicata ricorsivamente alla sotto-rete ottenuta, 
+finchè non è stato più possibile rimuovere alcun nodo. 
+
+I risultati ottenuti sono stati molto simili a quelli voluti, come si può vedere in tabella \vref{tab:multiplex}.
+
+In queste reti sono state aggiunte \interc\ tra le controparti di ogni nodo in ogni layer.
+
+\input{tables/tab_dataset_mux}
+
+\section{Generazione reti multilayer}
+Sono state generate delle \muln\ partendo da grafi di interazioni su 
+social network e su architetture peer-to-peer, in particolare quelli 
+indicati in tabella \vref{tab:multilayer}, che si possono trovare in \cite{data:multilayer}.
+
+Seguendo l'approccio di \cite{basaras:infspmul}, sono stati generati due tipi di reti:
+\begin{itemize}
+    \item Similar Layers Network(SLN), i cui layer sono i grafi [3-6] della  
+            tabella \vref{tab:multilayer}. In queste reti i layer hanno tutti un numero simile 
+            di nodi e archi;
+    \item Different Layers Networks(DLN), i cui layer sono i grafi [1-3] della tabella 
+        \vref{tab:multilayer}. In queste reti i layer hanno numero di nodi e archi molto differenti.
+\end{itemize}
+
+\paragraph{Generazione delle \interc}
+Per prima cosa, sono state aggiunte \interc\ tra le controparti di ogni nodo in tutti 
+i layer in cui esso è presente.
+
+Quindi, sono state generate casualmente altre \interc\ impostando tre parametri:
+\begin{enumerate}
+    \item il numero di \interc\ uscenti da un nodo in un determinato layer;
+    \item la frequenza con cui un layer viene scelto come layer di destinazione di 
+        una connessione;
+    \item la frequenza con cui un nodo in un certo layer viene scelto come nodo 
+        di destinazione. 
+\end{enumerate}
+Ognuno di questi parametri è stato generato secondo una distribuzione che segue 
+la legge di Zipf \cite{zipf:humanb}, per cui la frequenza di un certo valore è inversamente
+proporzionale al valore stesso. 
+
+Tale distribuzione genera numeri tra 1 ed un valore massimo $m$ con diverse probabilità,
+secondo il valore di una variabile $s \in [0, 1]$
+che regola il grado di `asimmetria' dei valori generati:
+per $s=0$ la probabilità di ogni valore è la stessa, mentre per  
+$s=1$, si ha $\mathcal{P}(1) = 2 \cdot \mathcal{P}(2) = 3 \cdot \mathcal{P}(3) =\dots = m \cdot \mathcal{P}(m)$. 
+
+Le variabili che regolano i tre parametri sono chiamate rispettivamete
+$s_{degree}$, $s_{layer}$, $s_{node}$.
+Per ognuna sono stati sperimentati i valori $0.3$ e $0.8$. 
+Per quanto riguarda il numero di \interc\ di un nodo in un determinato layer
+il valore massimo è stato impostato a $d \cdot \log_2{\sum_{i}{V_i}}$, con 
+$d = 2$. Per gli altri paramentri, invece, tutti i layer devono essere selezionabili
+così come tutti i nodi all'interno di un layer.
+
+La probabilità che un nodo abbia $k$ \interc\ è $\mathcal{P}_{degree}(k)$.
+Per la scelta del layer di destinazione si è operato come segue:
+è stata generata una permutazione casuale dei layer; definita $pos(l)$
+la posizione del layer $l$ nella permutazione, la probabilità che questo venga 
+scelto come layer di destinazione è $\mathcal{P}_{layer}(pos(l))$.
+In modo analogo sono stati permutati i nodi all'interno di ogni layer per determinarne 
+la probabilità di essere scelti come destinazione.
+
+Le reti così generate sono denominate con 
+SLN\large{$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
+oppure
+DLN\large{$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
+
+L'algoritmo \vref{alg:generate} mostra come sono state generate le reti.
+
+\input{algorithms/generate_ml}
+  
+%   $\text{SLN}_d(s_{degree}$, $s_{layer}$, $s_{node})$
+% oppure $\text{DLN}_d(s_{degree}$, $s_{layer}$, $s_{node})$.
+\input{tables/tab_dataset_ml}
