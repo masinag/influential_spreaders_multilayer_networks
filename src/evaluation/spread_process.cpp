@@ -25,10 +25,10 @@ double get_epidemic_threshold(Graph &g){
     int sum_deg = 0, sum_sq_deg = 0;
     for(int d : in_deg) {
         sum_deg += d;
-        sum_sq_deg += d*(d-1);
+        sum_sq_deg += d*d;
     }
-    return (double(sum_deg) / double(g.size()))  / 
-           (double(sum_sq_deg) / double(g.size()));
+    return (double(sum_deg))  / 
+           (double(sum_sq_deg));
 }
 
 // around epidemic threshold of each layer
@@ -68,7 +68,7 @@ int spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep,
         status[node][l] = I;
         infected.push(Node(node, l));
     }
-    int recovered_number = g.layers();
+    int recovered_number = 0;
     while(!infected.empty()){
         // pick a node and spread the infection to its neighbors in all layers 
         int node = infected.front().node;
@@ -82,7 +82,7 @@ int spreading_process(MultilayerNetwork &g, vector<double> &intra_layer_ep,
                 if ((v.layer == layer && inf_prob <= intra_layer_ep[layer]) || // intra-layer link
                     (v.layer != layer && inf_prob <= inter_layer_ep)){ // inter-layer link
                     status[v.node][v.layer] = I;
-                    infected.push(Node(v.node, v.layer));
+                    infected.push(v);
                 }
             }
         }
@@ -95,7 +95,7 @@ vector<int> spreading_processes_SIR(MultilayerNetwork &g, vector<double> &intra_
     double inter_layer_ep){
     vector<int> infected_number(g.nodes(), 0);
     for(int n = 0; n < g.nodes(); n++){
-        infected_number[n] += spreading_process(g, intra_layer_ep, inter_layer_ep, n);
+        infected_number[n] = spreading_process(g, intra_layer_ep, inter_layer_ep, n);
     }
     return infected_number;
 }
@@ -137,10 +137,24 @@ int main(int argc, char const *argv[]){
         ns.push_back(tmp_n);
     }
     string log_file = get_log_file(base);
+    // unordered_set<string> already_done = {
+    //     "SLN_2_0.3_0.3_0.3",
+    //     "SLN_2_0.8_0.8_0.8",
+    //     "DLN_2_0.8_0.3_0.8",
+    //     "DLN_2_0.8_0.8_0.3",
+    //     "SLN_2_0.8_0.3_0.3",
+    //     "SLN_2_0.3_0.8_0.8",
+    //     "DLN_2_0.3_0.8_0.3",
+    //     "DLN_2_0.3_0.3_0.8",
+    //     "SLN_2_0.3_0.8_0.3",
+    //     "SLN_2_0.8_0.3_0.8",
+    //     "DLN_2_0.3_0.8_0.8",
+    //     "DLN_2_0.8_0.8_0.8"
+    // };
 
     for (string& network_path: files){
         string network_name = get_network_name(network_path);
-        
+        // if(already_done.find(network_name) == already_done.end()) continue;
         write_log(log_file, "# " + network_name);
 
         MultilayerNetwork g = readMultilayer(network_path);

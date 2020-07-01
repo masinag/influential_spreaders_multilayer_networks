@@ -1,0 +1,1615 @@
+2020-06-15_13:50:41:160 - # SLN_2_0.3_0.3_0.3
+2020-06-15_13:50:41:420 - Network read
+2020-06-15_13:50:41:420 - inter_layer_ep : 0.015206
+2020-06-15_13:50:41:420 - intra_layer_eps:
+2020-06-15_13:50:41:420 - 0.130400
+2020-06-15_13:50:41:420 - 0.100416
+2020-06-15_13:50:41:420 - 0.113161
+2020-06-15_13:50:41:420 - 0.065595
+2020-06-15_13:50:41:420 - > 1.2ii1.0ij
+2020-06-15_13:50:45:266 - Simulation 1 out of 10 done
+2020-06-15_13:50:49:203 - Simulation 2 out of 10 done
+2020-06-15_13:50:53:169 - Simulation 3 out of 10 done
+2020-06-15_13:50:57:118 - Simulation 4 out of 10 done
+2020-06-15_13:51:01:068 - Simulation 5 out of 10 done
+2020-06-15_13:51:05:022 - Simulation 6 out of 10 done
+2020-06-15_13:51:08:972 - Simulation 7 out of 10 done
+2020-06-15_13:51:12:915 - Simulation 8 out of 10 done
+2020-06-15_13:51:16:866 - Simulation 9 out of 10 done
+2020-06-15_13:51:20:813 - Simulation 10 out of 10 done
+2020-06-15_13:51:20:813 - > 1.4ii1.0ij
+2020-06-15_13:51:24:835 - Simulation 1 out of 10 done
+2020-06-15_13:51:28:852 - Simulation 2 out of 10 done
+2020-06-15_13:51:32:879 - Simulation 3 out of 10 done
+2020-06-15_13:51:36:931 - Simulation 4 out of 10 done
+2020-06-15_13:51:41:026 - Simulation 5 out of 10 done
+2020-06-15_13:51:45:101 - Simulation 6 out of 10 done
+2020-06-15_13:51:49:166 - Simulation 7 out of 10 done
+2020-06-15_13:51:53:228 - Simulation 8 out of 10 done
+2020-06-15_13:51:57:293 - Simulation 9 out of 10 done
+2020-06-15_13:52:01:356 - Simulation 10 out of 10 done
+2020-06-15_13:52:01:356 - > 1.6ii1.0ij
+2020-06-15_13:52:05:782 - Simulation 1 out of 10 done
+2020-06-15_13:52:10:207 - Simulation 2 out of 10 done
+2020-06-15_13:52:14:604 - Simulation 3 out of 10 done
+2020-06-15_13:52:19:006 - Simulation 4 out of 10 done
+2020-06-15_13:52:23:441 - Simulation 5 out of 10 done
+2020-06-15_13:52:27:853 - Simulation 6 out of 10 done
+2020-06-15_13:52:32:253 - Simulation 7 out of 10 done
+2020-06-15_13:52:36:704 - Simulation 8 out of 10 done
+2020-06-15_13:52:41:137 - Simulation 9 out of 10 done
+2020-06-15_13:52:45:567 - Simulation 10 out of 10 done
+2020-06-15_13:52:45:567 - > 1.0ii1.2ij
+2020-06-15_13:52:49:532 - Simulation 1 out of 10 done
+2020-06-15_13:52:53:518 - Simulation 2 out of 10 done
+2020-06-15_13:52:57:542 - Simulation 3 out of 10 done
+2020-06-15_13:53:01:490 - Simulation 4 out of 10 done
+2020-06-15_13:53:05:441 - Simulation 5 out of 10 done
+2020-06-15_13:53:09:383 - Simulation 6 out of 10 done
+2020-06-15_13:53:13:311 - Simulation 7 out of 10 done
+2020-06-15_13:53:17:255 - Simulation 8 out of 10 done
+2020-06-15_13:53:21:202 - Simulation 9 out of 10 done
+2020-06-15_13:53:25:147 - Simulation 10 out of 10 done
+2020-06-15_13:53:25:147 - > 1.0ii1.4ij
+2020-06-15_13:53:29:107 - Simulation 1 out of 10 done
+2020-06-15_13:53:33:064 - Simulation 2 out of 10 done
+2020-06-15_13:53:37:025 - Simulation 3 out of 10 done
+2020-06-15_13:53:40:984 - Simulation 4 out of 10 done
+2020-06-15_13:53:44:941 - Simulation 5 out of 10 done
+2020-06-15_13:53:48:898 - Simulation 6 out of 10 done
+2020-06-15_13:53:52:859 - Simulation 7 out of 10 done
+2020-06-15_13:53:56:810 - Simulation 8 out of 10 done
+2020-06-15_13:54:00:754 - Simulation 9 out of 10 done
+2020-06-15_13:54:04:706 - Simulation 10 out of 10 done
+2020-06-15_13:54:04:706 - > 1.0ii1.6ij
+2020-06-15_13:54:08:681 - Simulation 1 out of 10 done
+2020-06-15_13:54:12:695 - Simulation 2 out of 10 done
+2020-06-15_13:54:16:726 - Simulation 3 out of 10 done
+2020-06-15_13:54:20:738 - Simulation 4 out of 10 done
+2020-06-15_13:54:24:738 - Simulation 5 out of 10 done
+2020-06-15_13:54:28:743 - Simulation 6 out of 10 done
+2020-06-15_13:54:32:748 - Simulation 7 out of 10 done
+2020-06-15_13:54:36:750 - Simulation 8 out of 10 done
+2020-06-15_13:54:40:759 - Simulation 9 out of 10 done
+2020-06-15_13:54:44:771 - Simulation 10 out of 10 done
+2020-06-15_13:54:44:779 - # SLN_2_0.8_0.8_0.8
+2020-06-15_13:54:45:055 - Network read
+2020-06-15_13:54:45:055 - inter_layer_ep : 0.004848
+2020-06-15_13:54:45:055 - intra_layer_eps:
+2020-06-15_13:54:45:055 - 0.130400
+2020-06-15_13:54:45:055 - 0.100416
+2020-06-15_13:54:45:055 - 0.113161
+2020-06-15_13:54:45:055 - 0.065595
+2020-06-15_13:54:45:055 - > 1.2ii1.0ij
+2020-06-15_13:54:49:018 - Simulation 1 out of 10 done
+2020-06-15_13:54:52:977 - Simulation 2 out of 10 done
+2020-06-15_13:54:56:949 - Simulation 3 out of 10 done
+2020-06-15_13:55:00:915 - Simulation 4 out of 10 done
+2020-06-15_13:55:04:889 - Simulation 5 out of 10 done
+2020-06-15_13:55:08:881 - Simulation 6 out of 10 done
+2020-06-15_13:55:12:869 - Simulation 7 out of 10 done
+2020-06-15_13:55:16:884 - Simulation 8 out of 10 done
+2020-06-15_13:55:20:778 - Simulation 9 out of 10 done
+2020-06-15_13:55:24:654 - Simulation 10 out of 10 done
+2020-06-15_13:55:24:654 - > 1.4ii1.0ij
+2020-06-15_13:55:28:578 - Simulation 1 out of 10 done
+2020-06-15_13:55:32:481 - Simulation 2 out of 10 done
+2020-06-15_13:55:36:391 - Simulation 3 out of 10 done
+2020-06-15_13:55:40:286 - Simulation 4 out of 10 done
+2020-06-15_13:55:44:190 - Simulation 5 out of 10 done
+2020-06-15_13:55:48:073 - Simulation 6 out of 10 done
+2020-06-15_13:55:51:972 - Simulation 7 out of 10 done
+2020-06-15_13:55:55:835 - Simulation 8 out of 10 done
+2020-06-15_13:55:59:727 - Simulation 9 out of 10 done
+2020-06-15_13:56:03:632 - Simulation 10 out of 10 done
+2020-06-15_13:56:03:632 - > 1.6ii1.0ij
+2020-06-15_13:56:07:643 - Simulation 1 out of 10 done
+2020-06-15_13:56:11:587 - Simulation 2 out of 10 done
+2020-06-15_13:56:15:562 - Simulation 3 out of 10 done
+2020-06-15_13:56:19:470 - Simulation 4 out of 10 done
+2020-06-15_13:56:23:416 - Simulation 5 out of 10 done
+2020-06-15_13:56:27:470 - Simulation 6 out of 10 done
+2020-06-15_13:56:31:439 - Simulation 7 out of 10 done
+2020-06-15_13:56:35:343 - Simulation 8 out of 10 done
+2020-06-15_13:56:39:219 - Simulation 9 out of 10 done
+2020-06-15_13:56:43:096 - Simulation 10 out of 10 done
+2020-06-15_13:56:43:096 - > 1.0ii1.2ij
+2020-06-15_13:56:46:913 - Simulation 1 out of 10 done
+2020-06-15_13:56:50:743 - Simulation 2 out of 10 done
+2020-06-15_13:56:54:575 - Simulation 3 out of 10 done
+2020-06-15_13:56:58:398 - Simulation 4 out of 10 done
+2020-06-15_13:57:02:239 - Simulation 5 out of 10 done
+2020-06-15_13:57:06:073 - Simulation 6 out of 10 done
+2020-06-15_13:57:09:932 - Simulation 7 out of 10 done
+2020-06-15_13:57:13:779 - Simulation 8 out of 10 done
+2020-06-15_13:57:17:593 - Simulation 9 out of 10 done
+2020-06-15_13:57:21:425 - Simulation 10 out of 10 done
+2020-06-15_13:57:21:425 - > 1.0ii1.4ij
+2020-06-15_13:57:25:233 - Simulation 1 out of 10 done
+2020-06-15_13:57:29:037 - Simulation 2 out of 10 done
+2020-06-15_13:57:32:869 - Simulation 3 out of 10 done
+2020-06-15_13:57:36:716 - Simulation 4 out of 10 done
+2020-06-15_13:57:40:532 - Simulation 5 out of 10 done
+2020-06-15_13:57:44:354 - Simulation 6 out of 10 done
+2020-06-15_13:57:48:162 - Simulation 7 out of 10 done
+2020-06-15_13:57:51:961 - Simulation 8 out of 10 done
+2020-06-15_13:57:55:735 - Simulation 9 out of 10 done
+2020-06-15_13:57:59:513 - Simulation 10 out of 10 done
+2020-06-15_13:57:59:513 - > 1.0ii1.6ij
+2020-06-15_13:58:03:281 - Simulation 1 out of 10 done
+2020-06-15_13:58:07:052 - Simulation 2 out of 10 done
+2020-06-15_13:58:10:823 - Simulation 3 out of 10 done
+2020-06-15_13:58:14:595 - Simulation 4 out of 10 done
+2020-06-15_13:58:18:396 - Simulation 5 out of 10 done
+2020-06-15_13:58:22:203 - Simulation 6 out of 10 done
+2020-06-15_13:58:26:003 - Simulation 7 out of 10 done
+2020-06-15_13:58:29:781 - Simulation 8 out of 10 done
+2020-06-15_13:58:33:582 - Simulation 9 out of 10 done
+2020-06-15_13:58:37:360 - Simulation 10 out of 10 done
+2020-06-15_13:58:37:367 - # DLN_2_0.8_0.3_0.8
+2020-06-15_13:58:37:734 - Network read
+2020-06-15_13:58:37:734 - inter_layer_ep : 0.003601
+2020-06-15_13:58:37:734 - intra_layer_eps:
+2020-06-15_13:58:37:734 - 0.012099
+2020-06-15_13:58:37:734 - 0.007326
+2020-06-15_13:58:37:734 - 0.130400
+2020-06-15_13:58:37:734 - > 1.2ii1.0ij
+2020-06-15_13:59:01:728 - Simulation 1 out of 10 done
+2020-06-15_13:59:26:586 - Simulation 2 out of 10 done
+2020-06-15_13:59:50:868 - Simulation 3 out of 10 done
+2020-06-15_14:00:15:392 - Simulation 4 out of 10 done
+2020-06-15_14:00:39:619 - Simulation 5 out of 10 done
+2020-06-15_14:01:03:668 - Simulation 6 out of 10 done
+2020-06-15_14:01:28:552 - Simulation 7 out of 10 done
+2020-06-15_14:01:54:288 - Simulation 8 out of 10 done
+2020-06-15_14:02:20:123 - Simulation 9 out of 10 done
+2020-06-15_14:02:46:490 - Simulation 10 out of 10 done
+2020-06-15_14:02:46:490 - > 1.4ii1.0ij
+2020-06-15_14:03:13:031 - Simulation 1 out of 10 done
+2020-06-15_14:03:39:343 - Simulation 2 out of 10 done
+2020-06-15_14:04:04:572 - Simulation 3 out of 10 done
+2020-06-15_14:04:30:669 - Simulation 4 out of 10 done
+2020-06-15_14:04:57:954 - Simulation 5 out of 10 done
+2020-06-15_14:05:23:483 - Simulation 6 out of 10 done
+2020-06-15_14:05:47:586 - Simulation 7 out of 10 done
+2020-06-15_14:06:11:728 - Simulation 8 out of 10 done
+2020-06-15_14:06:35:622 - Simulation 9 out of 10 done
+2020-06-15_14:06:59:244 - Simulation 10 out of 10 done
+2020-06-15_14:06:59:245 - > 1.6ii1.0ij
+2020-06-15_14:07:22:889 - Simulation 1 out of 10 done
+2020-06-15_14:07:46:598 - Simulation 2 out of 10 done
+2020-06-15_14:08:10:367 - Simulation 3 out of 10 done
+2020-06-15_14:08:34:355 - Simulation 4 out of 10 done
+2020-06-15_14:08:58:507 - Simulation 5 out of 10 done
+2020-06-15_14:09:22:343 - Simulation 6 out of 10 done
+2020-06-15_14:09:46:000 - Simulation 7 out of 10 done
+2020-06-15_14:10:10:109 - Simulation 8 out of 10 done
+2020-06-15_14:10:34:739 - Simulation 9 out of 10 done
+2020-06-15_14:10:59:285 - Simulation 10 out of 10 done
+2020-06-15_14:10:59:286 - > 1.0ii1.2ij
+2020-06-15_14:11:23:267 - Simulation 1 out of 10 done
+2020-06-15_14:11:47:218 - Simulation 2 out of 10 done
+2020-06-15_14:12:11:361 - Simulation 3 out of 10 done
+2020-06-15_14:12:35:237 - Simulation 4 out of 10 done
+2020-06-15_14:12:59:187 - Simulation 5 out of 10 done
+2020-06-15_14:13:23:134 - Simulation 6 out of 10 done
+2020-06-15_14:13:47:197 - Simulation 7 out of 10 done
+2020-06-15_14:14:11:214 - Simulation 8 out of 10 done
+2020-06-15_14:14:34:991 - Simulation 9 out of 10 done
+2020-06-15_14:14:58:921 - Simulation 10 out of 10 done
+2020-06-15_14:14:58:921 - > 1.0ii1.4ij
+2020-06-15_14:15:22:771 - Simulation 1 out of 10 done
+2020-06-15_14:15:46:817 - Simulation 2 out of 10 done
+2020-06-15_14:16:10:735 - Simulation 3 out of 10 done
+2020-06-15_14:16:34:906 - Simulation 4 out of 10 done
+2020-06-15_14:16:59:548 - Simulation 5 out of 10 done
+2020-06-15_14:17:23:414 - Simulation 6 out of 10 done
+2020-06-15_14:17:47:244 - Simulation 7 out of 10 done
+2020-06-15_14:18:11:177 - Simulation 8 out of 10 done
+2020-06-15_14:18:34:892 - Simulation 9 out of 10 done
+2020-06-15_14:18:58:779 - Simulation 10 out of 10 done
+2020-06-15_14:18:58:779 - > 1.0ii1.6ij
+2020-06-15_14:19:22:754 - Simulation 1 out of 10 done
+2020-06-15_14:19:46:745 - Simulation 2 out of 10 done
+2020-06-15_14:20:10:544 - Simulation 3 out of 10 done
+2020-06-15_14:20:34:488 - Simulation 4 out of 10 done
+2020-06-15_14:20:58:433 - Simulation 5 out of 10 done
+2020-06-15_14:21:22:371 - Simulation 6 out of 10 done
+2020-06-15_14:21:46:091 - Simulation 7 out of 10 done
+2020-06-15_14:22:09:900 - Simulation 8 out of 10 done
+2020-06-15_14:22:33:882 - Simulation 9 out of 10 done
+2020-06-15_14:22:57:668 - Simulation 10 out of 10 done
+2020-06-15_14:22:57:680 - # DLN_2_0.8_0.8_0.3
+2020-06-15_14:22:58:100 - Network read
+2020-06-15_14:22:58:100 - inter_layer_ep : 0.007574
+2020-06-15_14:22:58:100 - intra_layer_eps:
+2020-06-15_14:22:58:100 - 0.012099
+2020-06-15_14:22:58:100 - 0.007326
+2020-06-15_14:22:58:100 - 0.130400
+2020-06-15_14:22:58:100 - > 1.2ii1.0ij
+2020-06-15_14:23:21:871 - Simulation 1 out of 10 done
+2020-06-15_14:23:45:740 - Simulation 2 out of 10 done
+2020-06-15_14:24:09:645 - Simulation 3 out of 10 done
+2020-06-15_14:24:33:644 - Simulation 4 out of 10 done
+2020-06-15_14:24:57:729 - Simulation 5 out of 10 done
+2020-06-15_14:25:21:767 - Simulation 6 out of 10 done
+2020-06-15_14:25:45:803 - Simulation 7 out of 10 done
+2020-06-15_14:26:09:813 - Simulation 8 out of 10 done
+2020-06-15_14:26:33:938 - Simulation 9 out of 10 done
+2020-06-15_14:26:58:117 - Simulation 10 out of 10 done
+2020-06-15_14:26:58:117 - > 1.4ii1.0ij
+2020-06-15_14:27:21:881 - Simulation 1 out of 10 done
+2020-06-15_14:27:45:952 - Simulation 2 out of 10 done
+2020-06-15_14:28:09:962 - Simulation 3 out of 10 done
+2020-06-15_14:28:34:145 - Simulation 4 out of 10 done
+2020-06-15_14:28:58:527 - Simulation 5 out of 10 done
+2020-06-15_14:29:22:629 - Simulation 6 out of 10 done
+2020-06-15_14:29:47:428 - Simulation 7 out of 10 done
+2020-06-15_14:30:12:464 - Simulation 8 out of 10 done
+2020-06-15_14:30:37:592 - Simulation 9 out of 10 done
+2020-06-15_14:31:02:822 - Simulation 10 out of 10 done
+2020-06-15_14:31:02:822 - > 1.6ii1.0ij
+2020-06-15_14:31:28:486 - Simulation 1 out of 10 done
+2020-06-15_14:31:53:276 - Simulation 2 out of 10 done
+2020-06-15_14:32:18:429 - Simulation 3 out of 10 done
+2020-06-15_14:32:43:305 - Simulation 4 out of 10 done
+2020-06-15_14:33:08:064 - Simulation 5 out of 10 done
+2020-06-15_14:33:32:839 - Simulation 6 out of 10 done
+2020-06-15_14:33:57:629 - Simulation 7 out of 10 done
+2020-06-15_14:34:22:388 - Simulation 8 out of 10 done
+2020-06-15_14:34:47:129 - Simulation 9 out of 10 done
+2020-06-15_14:35:12:184 - Simulation 10 out of 10 done
+2020-06-15_14:35:12:184 - > 1.0ii1.2ij
+2020-06-15_14:35:37:898 - Simulation 1 out of 10 done
+2020-06-15_14:36:03:172 - Simulation 2 out of 10 done
+2020-06-15_14:36:28:577 - Simulation 3 out of 10 done
+2020-06-15_14:36:53:881 - Simulation 4 out of 10 done
+2020-06-15_14:37:18:944 - Simulation 5 out of 10 done
+2020-06-15_14:37:44:009 - Simulation 6 out of 10 done
+2020-06-15_14:38:09:351 - Simulation 7 out of 10 done
+2020-06-15_14:38:34:602 - Simulation 8 out of 10 done
+2020-06-15_14:38:59:635 - Simulation 9 out of 10 done
+2020-06-15_14:39:24:725 - Simulation 10 out of 10 done
+2020-06-15_14:39:24:725 - > 1.0ii1.4ij
+2020-06-15_14:39:49:753 - Simulation 1 out of 10 done
+2020-06-15_14:40:14:765 - Simulation 2 out of 10 done
+2020-06-15_14:40:39:896 - Simulation 3 out of 10 done
+2020-06-15_14:41:05:664 - Simulation 4 out of 10 done
+2020-06-15_14:41:30:740 - Simulation 5 out of 10 done
+2020-06-15_14:41:55:864 - Simulation 6 out of 10 done
+2020-06-15_14:42:21:159 - Simulation 7 out of 10 done
+2020-06-15_14:42:46:529 - Simulation 8 out of 10 done
+2020-06-15_14:43:11:987 - Simulation 9 out of 10 done
+2020-06-15_14:43:37:362 - Simulation 10 out of 10 done
+2020-06-15_14:43:37:362 - > 1.0ii1.6ij
+2020-06-15_14:44:02:888 - Simulation 1 out of 10 done
+2020-06-15_14:44:28:363 - Simulation 2 out of 10 done
+2020-06-15_14:44:54:634 - Simulation 3 out of 10 done
+2020-06-15_14:45:19:875 - Simulation 4 out of 10 done
+2020-06-15_14:45:45:036 - Simulation 5 out of 10 done
+2020-06-15_14:46:10:543 - Simulation 6 out of 10 done
+2020-06-15_14:46:35:918 - Simulation 7 out of 10 done
+2020-06-15_14:47:01:203 - Simulation 8 out of 10 done
+2020-06-15_14:47:26:389 - Simulation 9 out of 10 done
+2020-06-15_14:47:51:702 - Simulation 10 out of 10 done
+2020-06-15_14:47:51:719 - # SLN_2_0.8_0.3_0.3
+2020-06-15_14:47:51:964 - Network read
+2020-06-15_14:47:51:964 - inter_layer_ep : 0.020184
+2020-06-15_14:47:51:964 - intra_layer_eps:
+2020-06-15_14:47:51:964 - 0.130400
+2020-06-15_14:47:51:964 - 0.100416
+2020-06-15_14:47:51:964 - 0.113161
+2020-06-15_14:47:51:964 - 0.065595
+2020-06-15_14:47:51:964 - > 1.2ii1.0ij
+2020-06-15_14:47:55:887 - Simulation 1 out of 10 done
+2020-06-15_14:47:59:823 - Simulation 2 out of 10 done
+2020-06-15_14:48:03:781 - Simulation 3 out of 10 done
+2020-06-15_14:48:07:734 - Simulation 4 out of 10 done
+2020-06-15_14:48:11:689 - Simulation 5 out of 10 done
+2020-06-15_14:48:15:620 - Simulation 6 out of 10 done
+2020-06-15_14:48:19:548 - Simulation 7 out of 10 done
+2020-06-15_14:48:23:498 - Simulation 8 out of 10 done
+2020-06-15_14:48:27:424 - Simulation 9 out of 10 done
+2020-06-15_14:48:31:404 - Simulation 10 out of 10 done
+2020-06-15_14:48:31:404 - > 1.4ii1.0ij
+2020-06-15_14:48:35:406 - Simulation 1 out of 10 done
+2020-06-15_14:48:39:348 - Simulation 2 out of 10 done
+2020-06-15_14:48:43:284 - Simulation 3 out of 10 done
+2020-06-15_14:48:47:205 - Simulation 4 out of 10 done
+2020-06-15_14:48:51:117 - Simulation 5 out of 10 done
+2020-06-15_14:48:55:096 - Simulation 6 out of 10 done
+2020-06-15_14:48:59:096 - Simulation 7 out of 10 done
+2020-06-15_14:49:03:143 - Simulation 8 out of 10 done
+2020-06-15_14:49:07:194 - Simulation 9 out of 10 done
+2020-06-15_14:49:11:204 - Simulation 10 out of 10 done
+2020-06-15_14:49:11:204 - > 1.6ii1.0ij
+2020-06-15_14:49:15:351 - Simulation 1 out of 10 done
+2020-06-15_14:49:19:638 - Simulation 2 out of 10 done
+2020-06-15_14:49:23:875 - Simulation 3 out of 10 done
+2020-06-15_14:49:28:091 - Simulation 4 out of 10 done
+2020-06-15_14:49:32:330 - Simulation 5 out of 10 done
+2020-06-15_14:49:36:624 - Simulation 6 out of 10 done
+2020-06-15_14:49:40:953 - Simulation 7 out of 10 done
+2020-06-15_14:49:45:173 - Simulation 8 out of 10 done
+2020-06-15_14:49:49:384 - Simulation 9 out of 10 done
+2020-06-15_14:49:53:637 - Simulation 10 out of 10 done
+2020-06-15_14:49:53:637 - > 1.0ii1.2ij
+2020-06-15_14:49:57:535 - Simulation 1 out of 10 done
+2020-06-15_14:50:01:457 - Simulation 2 out of 10 done
+2020-06-15_14:50:05:396 - Simulation 3 out of 10 done
+2020-06-15_14:50:09:424 - Simulation 4 out of 10 done
+2020-06-15_14:50:13:407 - Simulation 5 out of 10 done
+2020-06-15_14:50:17:432 - Simulation 6 out of 10 done
+2020-06-15_14:50:21:426 - Simulation 7 out of 10 done
+2020-06-15_14:50:25:402 - Simulation 8 out of 10 done
+2020-06-15_14:50:29:344 - Simulation 9 out of 10 done
+2020-06-15_14:50:33:328 - Simulation 10 out of 10 done
+2020-06-15_14:50:33:328 - > 1.0ii1.4ij
+2020-06-15_14:50:37:347 - Simulation 1 out of 10 done
+2020-06-15_14:50:41:355 - Simulation 2 out of 10 done
+2020-06-15_14:50:45:365 - Simulation 3 out of 10 done
+2020-06-15_14:50:49:366 - Simulation 4 out of 10 done
+2020-06-15_14:50:53:384 - Simulation 5 out of 10 done
+2020-06-15_14:50:57:405 - Simulation 6 out of 10 done
+2020-06-15_14:51:01:426 - Simulation 7 out of 10 done
+2020-06-15_14:51:05:434 - Simulation 8 out of 10 done
+2020-06-15_14:51:09:446 - Simulation 9 out of 10 done
+2020-06-15_14:51:13:485 - Simulation 10 out of 10 done
+2020-06-15_14:51:13:485 - > 1.0ii1.6ij
+2020-06-15_14:51:17:530 - Simulation 1 out of 10 done
+2020-06-15_14:51:21:572 - Simulation 2 out of 10 done
+2020-06-15_14:51:25:599 - Simulation 3 out of 10 done
+2020-06-15_14:51:29:621 - Simulation 4 out of 10 done
+2020-06-15_14:51:33:656 - Simulation 5 out of 10 done
+2020-06-15_14:51:37:673 - Simulation 6 out of 10 done
+2020-06-15_14:51:41:692 - Simulation 7 out of 10 done
+2020-06-15_14:51:45:739 - Simulation 8 out of 10 done
+2020-06-15_14:51:49:774 - Simulation 9 out of 10 done
+2020-06-15_14:51:53:806 - Simulation 10 out of 10 done
+2020-06-15_14:51:53:818 - # SLN_2_0.3_0.8_0.8
+2020-06-15_14:51:54:136 - Network read
+2020-06-15_14:51:54:136 - inter_layer_ep : 0.003246
+2020-06-15_14:51:54:136 - intra_layer_eps:
+2020-06-15_14:51:54:136 - 0.130400
+2020-06-15_14:51:54:136 - 0.100416
+2020-06-15_14:51:54:136 - 0.113161
+2020-06-15_14:51:54:136 - 0.065595
+2020-06-15_14:51:54:136 - > 1.2ii1.0ij
+2020-06-15_14:51:58:235 - Simulation 1 out of 10 done
+2020-06-15_14:52:02:331 - Simulation 2 out of 10 done
+2020-06-15_14:52:06:412 - Simulation 3 out of 10 done
+2020-06-15_14:52:10:505 - Simulation 4 out of 10 done
+2020-06-15_14:52:14:584 - Simulation 5 out of 10 done
+2020-06-15_14:52:18:643 - Simulation 6 out of 10 done
+2020-06-15_14:52:22:706 - Simulation 7 out of 10 done
+2020-06-15_14:52:26:798 - Simulation 8 out of 10 done
+2020-06-15_14:52:31:014 - Simulation 9 out of 10 done
+2020-06-15_14:52:35:124 - Simulation 10 out of 10 done
+2020-06-15_14:52:35:124 - > 1.4ii1.0ij
+2020-06-15_14:52:39:232 - Simulation 1 out of 10 done
+2020-06-15_14:52:43:321 - Simulation 2 out of 10 done
+2020-06-15_14:52:47:435 - Simulation 3 out of 10 done
+2020-06-15_14:52:51:529 - Simulation 4 out of 10 done
+2020-06-15_14:52:55:606 - Simulation 5 out of 10 done
+2020-06-15_14:52:59:676 - Simulation 6 out of 10 done
+2020-06-15_14:53:03:755 - Simulation 7 out of 10 done
+2020-06-15_14:53:07:840 - Simulation 8 out of 10 done
+2020-06-15_14:53:11:933 - Simulation 9 out of 10 done
+2020-06-15_14:53:16:031 - Simulation 10 out of 10 done
+2020-06-15_14:53:16:031 - > 1.6ii1.0ij
+2020-06-15_14:53:20:224 - Simulation 1 out of 10 done
+2020-06-15_14:53:24:450 - Simulation 2 out of 10 done
+2020-06-15_14:53:28:640 - Simulation 3 out of 10 done
+2020-06-15_14:53:32:819 - Simulation 4 out of 10 done
+2020-06-15_14:53:36:993 - Simulation 5 out of 10 done
+2020-06-15_14:53:41:143 - Simulation 6 out of 10 done
+2020-06-15_14:53:45:307 - Simulation 7 out of 10 done
+2020-06-15_14:53:49:919 - Simulation 8 out of 10 done
+2020-06-15_14:53:54:344 - Simulation 9 out of 10 done
+2020-06-15_14:53:58:555 - Simulation 10 out of 10 done
+2020-06-15_14:53:58:555 - > 1.0ii1.2ij
+2020-06-15_14:54:02:662 - Simulation 1 out of 10 done
+2020-06-15_14:54:06:749 - Simulation 2 out of 10 done
+2020-06-15_14:54:10:820 - Simulation 3 out of 10 done
+2020-06-15_14:54:14:892 - Simulation 4 out of 10 done
+2020-06-15_14:54:18:951 - Simulation 5 out of 10 done
+2020-06-15_14:54:23:019 - Simulation 6 out of 10 done
+2020-06-15_14:54:27:100 - Simulation 7 out of 10 done
+2020-06-15_14:54:31:160 - Simulation 8 out of 10 done
+2020-06-15_14:54:35:229 - Simulation 9 out of 10 done
+2020-06-15_14:54:39:296 - Simulation 10 out of 10 done
+2020-06-15_14:54:39:296 - > 1.0ii1.4ij
+2020-06-15_14:54:43:353 - Simulation 1 out of 10 done
+2020-06-15_14:54:47:426 - Simulation 2 out of 10 done
+2020-06-15_14:54:51:578 - Simulation 3 out of 10 done
+2020-06-15_14:54:55:785 - Simulation 4 out of 10 done
+2020-06-15_14:55:00:350 - Simulation 5 out of 10 done
+2020-06-15_14:55:04:940 - Simulation 6 out of 10 done
+2020-06-15_14:55:09:161 - Simulation 7 out of 10 done
+2020-06-15_14:55:13:318 - Simulation 8 out of 10 done
+2020-06-15_14:55:17:504 - Simulation 9 out of 10 done
+2020-06-15_14:55:21:739 - Simulation 10 out of 10 done
+2020-06-15_14:55:21:739 - > 1.0ii1.6ij
+2020-06-15_14:55:25:922 - Simulation 1 out of 10 done
+2020-06-15_14:55:30:202 - Simulation 2 out of 10 done
+2020-06-15_14:55:34:446 - Simulation 3 out of 10 done
+2020-06-15_14:55:38:702 - Simulation 4 out of 10 done
+2020-06-15_14:55:42:832 - Simulation 5 out of 10 done
+2020-06-15_14:55:46:941 - Simulation 6 out of 10 done
+2020-06-15_14:55:51:044 - Simulation 7 out of 10 done
+2020-06-15_14:55:55:169 - Simulation 8 out of 10 done
+2020-06-15_14:55:59:315 - Simulation 9 out of 10 done
+2020-06-15_14:56:03:456 - Simulation 10 out of 10 done
+2020-06-15_14:56:03:470 - # DLN_2_0.3_0.8_0.3
+2020-06-15_14:56:04:090 - Network read
+2020-06-15_14:56:04:090 - inter_layer_ep : 0.007356
+2020-06-15_14:56:04:090 - intra_layer_eps:
+2020-06-15_14:56:04:090 - 0.012099
+2020-06-15_14:56:04:090 - 0.007326
+2020-06-15_14:56:04:090 - 0.130400
+2020-06-15_14:56:04:090 - > 1.2ii1.0ij
+2020-06-15_14:56:30:456 - Simulation 1 out of 10 done
+2020-06-15_14:56:57:411 - Simulation 2 out of 10 done
+2020-06-15_14:57:23:750 - Simulation 3 out of 10 done
+2020-06-15_14:57:52:377 - Simulation 4 out of 10 done
+2020-06-15_14:58:20:389 - Simulation 5 out of 10 done
+2020-06-15_14:58:46:538 - Simulation 6 out of 10 done
+2020-06-15_14:59:13:626 - Simulation 7 out of 10 done
+2020-06-15_14:59:40:395 - Simulation 8 out of 10 done
+2020-06-15_15:00:07:293 - Simulation 9 out of 10 done
+2020-06-15_15:00:35:107 - Simulation 10 out of 10 done
+2020-06-15_15:00:35:107 - > 1.4ii1.0ij
+2020-06-15_15:01:01:768 - Simulation 1 out of 10 done
+2020-06-15_15:01:28:487 - Simulation 2 out of 10 done
+2020-06-15_15:01:56:273 - Simulation 3 out of 10 done
+2020-06-15_15:02:22:970 - Simulation 4 out of 10 done
+2020-06-15_15:02:52:870 - Simulation 5 out of 10 done
+2020-06-15_15:03:19:760 - Simulation 6 out of 10 done
+2020-06-15_15:03:48:175 - Simulation 7 out of 10 done
+2020-06-15_15:04:15:513 - Simulation 8 out of 10 done
+2020-06-15_15:04:42:574 - Simulation 9 out of 10 done
+2020-06-15_15:05:09:209 - Simulation 10 out of 10 done
+2020-06-15_15:05:09:209 - > 1.6ii1.0ij
+2020-06-15_15:05:35:854 - Simulation 1 out of 10 done
+2020-06-15_15:06:03:506 - Simulation 2 out of 10 done
+2020-06-15_15:06:33:264 - Simulation 3 out of 10 done
+2020-06-15_15:07:01:384 - Simulation 4 out of 10 done
+2020-06-15_15:07:28:320 - Simulation 5 out of 10 done
+2020-06-15_15:07:56:019 - Simulation 6 out of 10 done
+2020-06-15_15:08:24:997 - Simulation 7 out of 10 done
+2020-06-15_15:08:52:563 - Simulation 8 out of 10 done
+2020-06-15_15:09:19:497 - Simulation 9 out of 10 done
+2020-06-15_15:09:46:300 - Simulation 10 out of 10 done
+2020-06-15_15:09:46:300 - > 1.0ii1.2ij
+2020-06-15_15:10:13:071 - Simulation 1 out of 10 done
+2020-06-15_15:10:41:565 - Simulation 2 out of 10 done
+2020-06-15_15:11:09:492 - Simulation 3 out of 10 done
+2020-06-15_15:11:36:294 - Simulation 4 out of 10 done
+2020-06-15_15:12:03:047 - Simulation 5 out of 10 done
+2020-06-15_15:12:29:735 - Simulation 6 out of 10 done
+2020-06-15_15:12:56:484 - Simulation 7 out of 10 done
+2020-06-15_15:13:24:808 - Simulation 8 out of 10 done
+2020-06-15_15:13:52:991 - Simulation 9 out of 10 done
+2020-06-15_15:14:20:358 - Simulation 10 out of 10 done
+2020-06-15_15:14:20:358 - > 1.0ii1.4ij
+2020-06-15_15:14:47:150 - Simulation 1 out of 10 done
+2020-06-15_15:15:13:843 - Simulation 2 out of 10 done
+2020-06-15_15:15:40:611 - Simulation 3 out of 10 done
+2020-06-15_15:16:07:496 - Simulation 4 out of 10 done
+2020-06-15_15:16:34:812 - Simulation 5 out of 10 done
+2020-06-15_15:17:01:783 - Simulation 6 out of 10 done
+2020-06-15_15:17:28:754 - Simulation 7 out of 10 done
+2020-06-15_15:17:55:576 - Simulation 8 out of 10 done
+2020-06-15_15:18:24:656 - Simulation 9 out of 10 done
+2020-06-15_15:18:51:724 - Simulation 10 out of 10 done
+2020-06-15_15:18:51:724 - > 1.0ii1.6ij
+2020-06-15_15:19:18:470 - Simulation 1 out of 10 done
+2020-06-15_15:19:46:449 - Simulation 2 out of 10 done
+2020-06-15_15:20:13:253 - Simulation 3 out of 10 done
+2020-06-15_15:20:40:126 - Simulation 4 out of 10 done
+2020-06-15_15:21:06:630 - Simulation 5 out of 10 done
+2020-06-15_15:21:33:289 - Simulation 6 out of 10 done
+2020-06-15_15:21:59:973 - Simulation 7 out of 10 done
+2020-06-15_15:22:26:470 - Simulation 8 out of 10 done
+2020-06-15_15:22:52:980 - Simulation 9 out of 10 done
+2020-06-15_15:23:19:756 - Simulation 10 out of 10 done
+2020-06-15_15:23:19:775 - # DLN_2_0.3_0.3_0.8
+2020-06-15_15:23:20:350 - Network read
+2020-06-15_15:23:20:350 - inter_layer_ep : 0.002545
+2020-06-15_15:23:20:350 - intra_layer_eps:
+2020-06-15_15:23:20:350 - 0.012099
+2020-06-15_15:23:20:350 - 0.007326
+2020-06-15_15:23:20:350 - 0.130400
+2020-06-15_15:23:20:350 - > 1.2ii1.0ij
+2020-06-15_15:23:47:022 - Simulation 1 out of 10 done
+2020-06-15_15:24:13:625 - Simulation 2 out of 10 done
+2020-06-15_15:24:40:970 - Simulation 3 out of 10 done
+2020-06-15_15:25:10:124 - Simulation 4 out of 10 done
+2020-06-15_15:25:39:840 - Simulation 5 out of 10 done
+2020-06-15_15:26:09:521 - Simulation 6 out of 10 done
+2020-06-15_15:26:39:760 - Simulation 7 out of 10 done
+2020-06-15_15:27:09:211 - Simulation 8 out of 10 done
+2020-06-15_15:27:40:009 - Simulation 9 out of 10 done
+2020-06-15_15:28:10:899 - Simulation 10 out of 10 done
+2020-06-15_15:28:10:899 - > 1.4ii1.0ij
+2020-06-15_15:28:41:993 - Simulation 1 out of 10 done
+2020-06-15_15:29:12:342 - Simulation 2 out of 10 done
+2020-06-15_15:29:43:741 - Simulation 3 out of 10 done
+2020-06-15_15:30:13:780 - Simulation 4 out of 10 done
+2020-06-15_15:30:42:608 - Simulation 5 out of 10 done
+2020-06-15_15:31:11:207 - Simulation 6 out of 10 done
+2020-06-15_15:31:39:902 - Simulation 7 out of 10 done
+2020-06-15_15:32:07:415 - Simulation 8 out of 10 done
+2020-06-15_15:32:36:688 - Simulation 9 out of 10 done
+2020-06-15_15:33:07:453 - Simulation 10 out of 10 done
+2020-06-15_15:33:07:453 - > 1.6ii1.0ij
+2020-06-15_15:33:38:797 - Simulation 1 out of 10 done
+2020-06-15_15:34:09:066 - Simulation 2 out of 10 done
+2020-06-15_15:34:37:504 - Simulation 3 out of 10 done
+2020-06-15_15:35:05:342 - Simulation 4 out of 10 done
+2020-06-15_15:35:34:386 - Simulation 5 out of 10 done
+2020-06-15_15:36:02:894 - Simulation 6 out of 10 done
+2020-06-15_15:36:30:262 - Simulation 7 out of 10 done
+2020-06-15_15:36:57:377 - Simulation 8 out of 10 done
+2020-06-15_15:37:23:604 - Simulation 9 out of 10 done
+2020-06-15_15:37:49:778 - Simulation 10 out of 10 done
+2020-06-15_15:37:49:778 - > 1.0ii1.2ij
+2020-06-15_15:38:15:976 - Simulation 1 out of 10 done
+2020-06-15_15:38:42:242 - Simulation 2 out of 10 done
+2020-06-15_15:39:08:557 - Simulation 3 out of 10 done
+2020-06-15_15:39:35:088 - Simulation 4 out of 10 done
+2020-06-15_15:40:01:509 - Simulation 5 out of 10 done
+2020-06-15_15:40:27:962 - Simulation 6 out of 10 done
+2020-06-15_15:40:54:830 - Simulation 7 out of 10 done
+2020-06-15_15:41:21:945 - Simulation 8 out of 10 done
+2020-06-15_15:41:48:351 - Simulation 9 out of 10 done
+2020-06-15_15:42:14:626 - Simulation 10 out of 10 done
+2020-06-15_15:42:14:626 - > 1.0ii1.4ij
+2020-06-15_15:42:41:839 - Simulation 1 out of 10 done
+2020-06-15_15:43:10:080 - Simulation 2 out of 10 done
+2020-06-15_15:43:37:717 - Simulation 3 out of 10 done
+2020-06-15_15:44:07:331 - Simulation 4 out of 10 done
+2020-06-15_15:44:35:646 - Simulation 5 out of 10 done
+2020-06-15_15:45:02:748 - Simulation 6 out of 10 done
+2020-06-15_15:45:30:789 - Simulation 7 out of 10 done
+2020-06-15_15:45:58:868 - Simulation 8 out of 10 done
+2020-06-15_15:46:25:927 - Simulation 9 out of 10 done
+2020-06-15_15:46:52:632 - Simulation 10 out of 10 done
+2020-06-15_15:46:52:632 - > 1.0ii1.6ij
+2020-06-15_15:47:19:733 - Simulation 1 out of 10 done
+2020-06-15_15:47:46:598 - Simulation 2 out of 10 done
+2020-06-15_15:48:16:115 - Simulation 3 out of 10 done
+2020-06-15_15:48:46:386 - Simulation 4 out of 10 done
+2020-06-15_15:49:15:132 - Simulation 5 out of 10 done
+2020-06-15_15:49:44:508 - Simulation 6 out of 10 done
+2020-06-15_15:50:15:531 - Simulation 7 out of 10 done
+2020-06-15_15:50:42:850 - Simulation 8 out of 10 done
+2020-06-15_15:51:09:668 - Simulation 9 out of 10 done
+2020-06-15_15:51:38:093 - Simulation 10 out of 10 done
+2020-06-15_15:51:38:118 - # SLN_2_0.3_0.8_0.3
+2020-06-15_15:51:38:553 - Network read
+2020-06-15_15:51:38:553 - inter_layer_ep : 0.014876
+2020-06-15_15:51:38:553 - intra_layer_eps:
+2020-06-15_15:51:38:553 - 0.130400
+2020-06-15_15:51:38:553 - 0.100416
+2020-06-15_15:51:38:553 - 0.113161
+2020-06-15_15:51:38:553 - 0.065595
+2020-06-15_15:51:38:553 - > 1.2ii1.0ij
+2020-06-15_15:51:43:311 - Simulation 1 out of 10 done
+2020-06-15_15:51:48:179 - Simulation 2 out of 10 done
+2020-06-15_15:51:53:137 - Simulation 3 out of 10 done
+2020-06-15_15:51:58:691 - Simulation 4 out of 10 done
+2020-06-15_15:52:03:281 - Simulation 5 out of 10 done
+2020-06-15_15:52:07:730 - Simulation 6 out of 10 done
+2020-06-15_15:52:12:162 - Simulation 7 out of 10 done
+2020-06-15_15:52:16:607 - Simulation 8 out of 10 done
+2020-06-15_15:52:21:102 - Simulation 9 out of 10 done
+2020-06-15_15:52:25:599 - Simulation 10 out of 10 done
+2020-06-15_15:52:25:599 - > 1.4ii1.0ij
+2020-06-15_15:52:30:283 - Simulation 1 out of 10 done
+2020-06-15_15:52:35:131 - Simulation 2 out of 10 done
+2020-06-15_15:52:40:129 - Simulation 3 out of 10 done
+2020-06-15_15:52:44:678 - Simulation 4 out of 10 done
+2020-06-15_15:52:49:019 - Simulation 5 out of 10 done
+2020-06-15_15:52:53:585 - Simulation 6 out of 10 done
+2020-06-15_15:52:58:165 - Simulation 7 out of 10 done
+2020-06-15_15:53:02:691 - Simulation 8 out of 10 done
+2020-06-15_15:53:07:176 - Simulation 9 out of 10 done
+2020-06-15_15:53:11:548 - Simulation 10 out of 10 done
+2020-06-15_15:53:11:548 - > 1.6ii1.0ij
+2020-06-15_15:53:16:255 - Simulation 1 out of 10 done
+2020-06-15_15:53:21:016 - Simulation 2 out of 10 done
+2020-06-15_15:53:25:956 - Simulation 3 out of 10 done
+2020-06-15_15:53:30:872 - Simulation 4 out of 10 done
+2020-06-15_15:53:36:203 - Simulation 5 out of 10 done
+2020-06-15_15:53:41:226 - Simulation 6 out of 10 done
+2020-06-15_15:53:45:915 - Simulation 7 out of 10 done
+2020-06-15_15:53:50:408 - Simulation 8 out of 10 done
+2020-06-15_15:53:55:046 - Simulation 9 out of 10 done
+2020-06-15_15:53:59:597 - Simulation 10 out of 10 done
+2020-06-15_15:53:59:597 - > 1.0ii1.2ij
+2020-06-15_15:54:04:145 - Simulation 1 out of 10 done
+2020-06-15_15:54:08:395 - Simulation 2 out of 10 done
+2020-06-15_15:54:12:557 - Simulation 3 out of 10 done
+2020-06-15_15:54:16:734 - Simulation 4 out of 10 done
+2020-06-15_15:54:20:936 - Simulation 5 out of 10 done
+2020-06-15_15:54:25:176 - Simulation 6 out of 10 done
+2020-06-15_15:54:29:362 - Simulation 7 out of 10 done
+2020-06-15_15:54:33:859 - Simulation 8 out of 10 done
+2020-06-15_15:54:38:333 - Simulation 9 out of 10 done
+2020-06-15_15:54:42:700 - Simulation 10 out of 10 done
+2020-06-15_15:54:42:700 - > 1.0ii1.4ij
+2020-06-15_15:54:47:712 - Simulation 1 out of 10 done
+2020-06-15_15:54:52:411 - Simulation 2 out of 10 done
+2020-06-15_15:54:57:052 - Simulation 3 out of 10 done
+2020-06-15_15:55:01:601 - Simulation 4 out of 10 done
+2020-06-15_15:55:06:204 - Simulation 5 out of 10 done
+2020-06-15_15:55:10:819 - Simulation 6 out of 10 done
+2020-06-15_15:55:15:526 - Simulation 7 out of 10 done
+2020-06-15_15:55:20:205 - Simulation 8 out of 10 done
+2020-06-15_15:55:24:511 - Simulation 9 out of 10 done
+2020-06-15_15:55:28:691 - Simulation 10 out of 10 done
+2020-06-15_15:55:28:691 - > 1.0ii1.6ij
+2020-06-15_15:55:33:025 - Simulation 1 out of 10 done
+2020-06-15_15:55:37:585 - Simulation 2 out of 10 done
+2020-06-15_15:55:42:284 - Simulation 3 out of 10 done
+2020-06-15_15:55:46:758 - Simulation 4 out of 10 done
+2020-06-15_15:55:51:447 - Simulation 5 out of 10 done
+2020-06-15_15:55:55:991 - Simulation 6 out of 10 done
+2020-06-15_15:56:00:811 - Simulation 7 out of 10 done
+2020-06-15_15:56:05:454 - Simulation 8 out of 10 done
+2020-06-15_15:56:09:996 - Simulation 9 out of 10 done
+2020-06-15_15:56:15:270 - Simulation 10 out of 10 done
+2020-06-15_15:56:15:281 - # SLN_2_0.8_0.3_0.8
+2020-06-15_15:56:15:560 - Network read
+2020-06-15_15:56:15:560 - inter_layer_ep : 0.005386
+2020-06-15_15:56:15:560 - intra_layer_eps:
+2020-06-15_15:56:15:560 - 0.130400
+2020-06-15_15:56:15:560 - 0.100416
+2020-06-15_15:56:15:560 - 0.113161
+2020-06-15_15:56:15:560 - 0.065595
+2020-06-15_15:56:15:560 - > 1.2ii1.0ij
+2020-06-15_15:56:19:934 - Simulation 1 out of 10 done
+2020-06-15_15:56:24:696 - Simulation 2 out of 10 done
+2020-06-15_15:56:29:578 - Simulation 3 out of 10 done
+2020-06-15_15:56:34:398 - Simulation 4 out of 10 done
+2020-06-15_15:56:38:915 - Simulation 5 out of 10 done
+2020-06-15_15:56:43:399 - Simulation 6 out of 10 done
+2020-06-15_15:56:48:017 - Simulation 7 out of 10 done
+2020-06-15_15:56:52:748 - Simulation 8 out of 10 done
+2020-06-15_15:56:57:518 - Simulation 9 out of 10 done
+2020-06-15_15:57:02:191 - Simulation 10 out of 10 done
+2020-06-15_15:57:02:191 - > 1.4ii1.0ij
+2020-06-15_15:57:07:012 - Simulation 1 out of 10 done
+2020-06-15_15:57:11:824 - Simulation 2 out of 10 done
+2020-06-15_15:57:16:601 - Simulation 3 out of 10 done
+2020-06-15_15:57:21:223 - Simulation 4 out of 10 done
+2020-06-15_15:57:25:612 - Simulation 5 out of 10 done
+2020-06-15_15:57:29:828 - Simulation 6 out of 10 done
+2020-06-15_15:57:34:500 - Simulation 7 out of 10 done
+2020-06-15_15:57:38:960 - Simulation 8 out of 10 done
+2020-06-15_15:57:43:429 - Simulation 9 out of 10 done
+2020-06-15_15:57:47:925 - Simulation 10 out of 10 done
+2020-06-15_15:57:47:925 - > 1.6ii1.0ij
+2020-06-15_15:57:52:352 - Simulation 1 out of 10 done
+2020-06-15_15:57:56:909 - Simulation 2 out of 10 done
+2020-06-15_15:58:01:504 - Simulation 3 out of 10 done
+2020-06-15_15:58:06:081 - Simulation 4 out of 10 done
+2020-06-15_15:58:10:711 - Simulation 5 out of 10 done
+2020-06-15_15:58:15:358 - Simulation 6 out of 10 done
+2020-06-15_15:58:19:795 - Simulation 7 out of 10 done
+2020-06-15_15:58:24:177 - Simulation 8 out of 10 done
+2020-06-15_15:58:28:678 - Simulation 9 out of 10 done
+2020-06-15_15:58:33:247 - Simulation 10 out of 10 done
+2020-06-15_15:58:33:247 - > 1.0ii1.2ij
+2020-06-15_15:58:37:448 - Simulation 1 out of 10 done
+2020-06-15_15:58:41:544 - Simulation 2 out of 10 done
+2020-06-15_15:58:45:672 - Simulation 3 out of 10 done
+2020-06-15_15:58:49:796 - Simulation 4 out of 10 done
+2020-06-15_15:58:54:313 - Simulation 5 out of 10 done
+2020-06-15_15:58:58:654 - Simulation 6 out of 10 done
+2020-06-15_15:59:02:984 - Simulation 7 out of 10 done
+2020-06-15_15:59:07:231 - Simulation 8 out of 10 done
+2020-06-15_15:59:11:443 - Simulation 9 out of 10 done
+2020-06-15_15:59:15:730 - Simulation 10 out of 10 done
+2020-06-15_15:59:15:730 - > 1.0ii1.4ij
+2020-06-15_15:59:20:080 - Simulation 1 out of 10 done
+2020-06-15_15:59:24:334 - Simulation 2 out of 10 done
+2020-06-15_15:59:28:620 - Simulation 3 out of 10 done
+2020-06-15_15:59:32:930 - Simulation 4 out of 10 done
+2020-06-15_15:59:37:293 - Simulation 5 out of 10 done
+2020-06-15_15:59:42:305 - Simulation 6 out of 10 done
+2020-06-15_15:59:47:223 - Simulation 7 out of 10 done
+2020-06-15_15:59:51:995 - Simulation 8 out of 10 done
+2020-06-15_15:59:56:475 - Simulation 9 out of 10 done
+2020-06-15_16:00:01:091 - Simulation 10 out of 10 done
+2020-06-15_16:00:01:091 - > 1.0ii1.6ij
+2020-06-15_16:00:05:847 - Simulation 1 out of 10 done
+2020-06-15_16:00:10:302 - Simulation 2 out of 10 done
+2020-06-15_16:00:14:743 - Simulation 3 out of 10 done
+2020-06-15_16:00:19:184 - Simulation 4 out of 10 done
+2020-06-15_16:00:23:760 - Simulation 5 out of 10 done
+2020-06-15_16:00:28:213 - Simulation 6 out of 10 done
+2020-06-15_16:00:32:806 - Simulation 7 out of 10 done
+2020-06-15_16:00:36:962 - Simulation 8 out of 10 done
+2020-06-15_16:00:41:094 - Simulation 9 out of 10 done
+2020-06-15_16:00:45:195 - Simulation 10 out of 10 done
+2020-06-15_16:00:45:205 - # DLN_2_0.3_0.8_0.8
+2020-06-15_16:00:45:799 - Network read
+2020-06-15_16:00:45:799 - inter_layer_ep : 0.002501
+2020-06-15_16:00:45:799 - intra_layer_eps:
+2020-06-15_16:00:45:799 - 0.012099
+2020-06-15_16:00:45:799 - 0.007326
+2020-06-15_16:00:45:799 - 0.130400
+2020-06-15_16:00:45:799 - > 1.2ii1.0ij
+2020-06-15_16:01:12:025 - Simulation 1 out of 10 done
+2020-06-15_16:01:38:152 - Simulation 2 out of 10 done
+2020-06-15_16:02:04:493 - Simulation 3 out of 10 done
+2020-06-15_16:02:33:908 - Simulation 4 out of 10 done
+2020-06-15_16:03:02:207 - Simulation 5 out of 10 done
+2020-06-15_16:03:31:204 - Simulation 6 out of 10 done
+2020-06-15_16:03:58:005 - Simulation 7 out of 10 done
+2020-06-15_16:04:25:795 - Simulation 8 out of 10 done
+2020-06-15_16:04:53:522 - Simulation 9 out of 10 done
+2020-06-15_16:05:21:144 - Simulation 10 out of 10 done
+2020-06-15_16:05:21:144 - > 1.4ii1.0ij
+2020-06-15_16:05:49:393 - Simulation 1 out of 10 done
+2020-06-15_16:06:18:301 - Simulation 2 out of 10 done
+2020-06-15_16:06:45:984 - Simulation 3 out of 10 done
+2020-06-15_16:07:12:851 - Simulation 4 out of 10 done
+2020-06-15_16:07:40:425 - Simulation 5 out of 10 done
+2020-06-15_16:08:07:600 - Simulation 6 out of 10 done
+2020-06-15_16:08:34:781 - Simulation 7 out of 10 done
+2020-06-15_16:09:01:933 - Simulation 8 out of 10 done
+2020-06-15_16:09:27:697 - Simulation 9 out of 10 done
+2020-06-15_16:09:53:610 - Simulation 10 out of 10 done
+2020-06-15_16:09:53:610 - > 1.6ii1.0ij
+2020-06-15_16:10:21:414 - Simulation 1 out of 10 done
+2020-06-15_16:10:48:436 - Simulation 2 out of 10 done
+2020-06-15_16:11:15:521 - Simulation 3 out of 10 done
+2020-06-15_16:11:42:358 - Simulation 4 out of 10 done
+2020-06-15_16:12:11:119 - Simulation 5 out of 10 done
+2020-06-15_16:12:39:763 - Simulation 6 out of 10 done
+2020-06-15_16:13:07:374 - Simulation 7 out of 10 done
+2020-06-15_16:13:34:110 - Simulation 8 out of 10 done
+2020-06-15_16:14:00:902 - Simulation 9 out of 10 done
+2020-06-15_16:14:29:157 - Simulation 10 out of 10 done
+2020-06-15_16:14:29:157 - > 1.0ii1.2ij
+2020-06-15_16:14:58:520 - Simulation 1 out of 10 done
+2020-06-15_16:15:27:158 - Simulation 2 out of 10 done
+2020-06-15_16:15:57:285 - Simulation 3 out of 10 done
+2020-06-15_16:16:26:889 - Simulation 4 out of 10 done
+2020-06-15_16:16:54:726 - Simulation 5 out of 10 done
+2020-06-15_16:17:22:338 - Simulation 6 out of 10 done
+2020-06-15_16:17:49:994 - Simulation 7 out of 10 done
+2020-06-15_16:18:16:958 - Simulation 8 out of 10 done
+2020-06-15_16:18:45:957 - Simulation 9 out of 10 done
+2020-06-15_16:19:13:524 - Simulation 10 out of 10 done
+2020-06-15_16:19:13:524 - > 1.0ii1.4ij
+2020-06-15_16:19:41:067 - Simulation 1 out of 10 done
+2020-06-15_16:20:07:889 - Simulation 2 out of 10 done
+2020-06-15_16:20:34:807 - Simulation 3 out of 10 done
+2020-06-15_16:21:02:581 - Simulation 4 out of 10 done
+2020-06-15_16:21:29:914 - Simulation 5 out of 10 done
+2020-06-15_16:21:59:556 - Simulation 6 out of 10 done
+2020-06-15_16:22:29:123 - Simulation 7 out of 10 done
+2020-06-15_16:22:55:440 - Simulation 8 out of 10 done
+2020-06-15_16:23:22:224 - Simulation 9 out of 10 done
+2020-06-15_16:23:50:931 - Simulation 10 out of 10 done
+2020-06-15_16:23:50:931 - > 1.0ii1.6ij
+2020-06-15_16:24:20:639 - Simulation 1 out of 10 done
+2020-06-15_16:24:49:896 - Simulation 2 out of 10 done
+2020-06-15_16:25:18:711 - Simulation 3 out of 10 done
+2020-06-15_16:25:49:269 - Simulation 4 out of 10 done
+2020-06-15_16:26:18:562 - Simulation 5 out of 10 done
+2020-06-15_16:26:46:928 - Simulation 6 out of 10 done
+2020-06-15_16:27:12:845 - Simulation 7 out of 10 done
+2020-06-15_16:27:38:061 - Simulation 8 out of 10 done
+2020-06-15_16:28:03:105 - Simulation 9 out of 10 done
+2020-06-15_16:28:28:348 - Simulation 10 out of 10 done
+2020-06-15_16:28:28:363 - # DLN_2_0.8_0.8_0.8
+2020-06-15_16:28:28:875 - Network read
+2020-06-15_16:28:28:875 - inter_layer_ep : 0.003555
+2020-06-15_16:28:28:875 - intra_layer_eps:
+2020-06-15_16:28:28:875 - 0.012099
+2020-06-15_16:28:28:875 - 0.007326
+2020-06-15_16:28:28:875 - 0.130400
+2020-06-15_16:28:28:875 - > 1.2ii1.0ij
+2020-06-15_16:28:54:256 - Simulation 1 out of 10 done
+2020-06-15_16:29:19:738 - Simulation 2 out of 10 done
+2020-06-15_16:29:45:267 - Simulation 3 out of 10 done
+2020-06-15_16:30:10:425 - Simulation 4 out of 10 done
+2020-06-15_16:30:35:566 - Simulation 5 out of 10 done
+2020-06-15_16:31:00:703 - Simulation 6 out of 10 done
+2020-06-15_16:31:26:070 - Simulation 7 out of 10 done
+2020-06-15_16:31:51:320 - Simulation 8 out of 10 done
+2020-06-15_16:32:16:511 - Simulation 9 out of 10 done
+2020-06-15_16:32:41:889 - Simulation 10 out of 10 done
+2020-06-15_16:32:41:889 - > 1.4ii1.0ij
+2020-06-15_16:33:07:071 - Simulation 1 out of 10 done
+2020-06-15_16:33:32:420 - Simulation 2 out of 10 done
+2020-06-15_16:33:57:704 - Simulation 3 out of 10 done
+2020-06-15_16:34:22:982 - Simulation 4 out of 10 done
+2020-06-15_16:34:48:524 - Simulation 5 out of 10 done
+2020-06-15_16:35:13:933 - Simulation 6 out of 10 done
+2020-06-15_16:35:39:764 - Simulation 7 out of 10 done
+2020-06-15_16:36:05:118 - Simulation 8 out of 10 done
+2020-06-15_16:36:31:388 - Simulation 9 out of 10 done
+2020-06-15_16:36:57:789 - Simulation 10 out of 10 done
+2020-06-15_16:36:57:789 - > 1.6ii1.0ij
+2020-06-15_16:37:23:739 - Simulation 1 out of 10 done
+2020-06-15_16:37:49:754 - Simulation 2 out of 10 done
+2020-06-15_16:38:17:361 - Simulation 3 out of 10 done
+2020-06-15_16:38:44:638 - Simulation 4 out of 10 done
+2020-06-15_16:39:11:186 - Simulation 5 out of 10 done
+2020-06-15_16:39:37:629 - Simulation 6 out of 10 done
+2020-06-15_16:40:03:994 - Simulation 7 out of 10 done
+2020-06-15_16:40:30:265 - Simulation 8 out of 10 done
+2020-06-15_16:40:56:736 - Simulation 9 out of 10 done
+2020-06-15_16:41:23:195 - Simulation 10 out of 10 done
+2020-06-15_16:41:23:195 - > 1.0ii1.2ij
+2020-06-15_16:41:49:396 - Simulation 1 out of 10 done
+2020-06-15_16:42:15:581 - Simulation 2 out of 10 done
+2020-06-15_16:42:41:857 - Simulation 3 out of 10 done
+2020-06-15_16:43:08:130 - Simulation 4 out of 10 done
+2020-06-15_16:43:34:320 - Simulation 5 out of 10 done
+2020-06-15_16:44:00:565 - Simulation 6 out of 10 done
+2020-06-15_16:44:26:736 - Simulation 7 out of 10 done
+2020-06-15_16:44:52:862 - Simulation 8 out of 10 done
+2020-06-15_16:45:19:038 - Simulation 9 out of 10 done
+2020-06-15_16:45:45:188 - Simulation 10 out of 10 done
+2020-06-15_16:45:45:188 - > 1.0ii1.4ij
+2020-06-15_16:46:11:342 - Simulation 1 out of 10 done
+2020-06-15_16:46:37:537 - Simulation 2 out of 10 done
+2020-06-15_16:47:03:629 - Simulation 3 out of 10 done
+2020-06-15_16:47:29:732 - Simulation 4 out of 10 done
+2020-06-15_16:47:55:933 - Simulation 5 out of 10 done
+2020-06-15_16:48:22:217 - Simulation 6 out of 10 done
+2020-06-15_16:48:49:933 - Simulation 7 out of 10 done
+2020-06-15_16:49:15:521 - Simulation 8 out of 10 done
+2020-06-15_16:49:41:262 - Simulation 9 out of 10 done
+2020-06-15_16:50:06:769 - Simulation 10 out of 10 done
+2020-06-15_16:50:06:769 - > 1.0ii1.6ij
+2020-06-15_16:50:32:230 - Simulation 1 out of 10 done
+2020-06-15_16:50:57:824 - Simulation 2 out of 10 done
+2020-06-15_16:51:24:142 - Simulation 3 out of 10 done
+2020-06-15_16:51:51:017 - Simulation 4 out of 10 done
+2020-06-15_16:52:17:800 - Simulation 5 out of 10 done
+2020-06-15_16:52:45:245 - Simulation 6 out of 10 done
+2020-06-15_16:53:12:074 - Simulation 7 out of 10 done
+2020-06-15_16:53:39:086 - Simulation 8 out of 10 done
+2020-06-15_16:54:05:885 - Simulation 9 out of 10 done
+2020-06-15_16:54:32:832 - Simulation 10 out of 10 done
+2020-06-15_16:54:32:851 - # SLN_2_0.8_0.8_0.3
+2020-06-15_16:54:33:125 - Network read
+2020-06-15_16:54:33:125 - inter_layer_ep : 0.019573
+2020-06-15_16:54:33:125 - intra_layer_eps:
+2020-06-15_16:54:33:125 - 0.130400
+2020-06-15_16:54:33:125 - 0.100416
+2020-06-15_16:54:33:125 - 0.113161
+2020-06-15_16:54:33:125 - 0.065595
+2020-06-15_16:54:33:125 - > 1.2ii1.0ij
+2020-06-15_16:54:37:201 - Simulation 1 out of 10 done
+2020-06-15_16:54:41:264 - Simulation 2 out of 10 done
+2020-06-15_16:54:45:377 - Simulation 3 out of 10 done
+2020-06-15_16:54:49:545 - Simulation 4 out of 10 done
+2020-06-15_16:54:53:661 - Simulation 5 out of 10 done
+2020-06-15_16:54:57:817 - Simulation 6 out of 10 done
+2020-06-15_16:55:02:218 - Simulation 7 out of 10 done
+2020-06-15_16:55:06:544 - Simulation 8 out of 10 done
+2020-06-15_16:55:10:809 - Simulation 9 out of 10 done
+2020-06-15_16:55:15:096 - Simulation 10 out of 10 done
+2020-06-15_16:55:15:096 - > 1.4ii1.0ij
+2020-06-15_16:55:19:455 - Simulation 1 out of 10 done
+2020-06-15_16:55:24:495 - Simulation 2 out of 10 done
+2020-06-15_16:55:29:245 - Simulation 3 out of 10 done
+2020-06-15_16:55:33:828 - Simulation 4 out of 10 done
+2020-06-15_16:55:38:350 - Simulation 5 out of 10 done
+2020-06-15_16:55:42:871 - Simulation 6 out of 10 done
+2020-06-15_16:55:47:638 - Simulation 7 out of 10 done
+2020-06-15_16:55:52:681 - Simulation 8 out of 10 done
+2020-06-15_16:55:57:705 - Simulation 9 out of 10 done
+2020-06-15_16:56:02:390 - Simulation 10 out of 10 done
+2020-06-15_16:56:02:390 - > 1.6ii1.0ij
+2020-06-15_16:56:07:188 - Simulation 1 out of 10 done
+2020-06-15_16:56:12:301 - Simulation 2 out of 10 done
+2020-06-15_16:56:17:084 - Simulation 3 out of 10 done
+2020-06-15_16:56:21:714 - Simulation 4 out of 10 done
+2020-06-15_16:56:26:303 - Simulation 5 out of 10 done
+2020-06-15_16:56:30:926 - Simulation 6 out of 10 done
+2020-06-15_16:56:35:509 - Simulation 7 out of 10 done
+2020-06-15_16:56:40:031 - Simulation 8 out of 10 done
+2020-06-15_16:56:44:524 - Simulation 9 out of 10 done
+2020-06-15_16:56:49:024 - Simulation 10 out of 10 done
+2020-06-15_16:56:49:024 - > 1.0ii1.2ij
+2020-06-15_16:56:53:304 - Simulation 1 out of 10 done
+2020-06-15_16:56:57:576 - Simulation 2 out of 10 done
+2020-06-15_16:57:01:860 - Simulation 3 out of 10 done
+2020-06-15_16:57:06:148 - Simulation 4 out of 10 done
+2020-06-15_16:57:10:384 - Simulation 5 out of 10 done
+2020-06-15_16:57:14:772 - Simulation 6 out of 10 done
+2020-06-15_16:57:19:415 - Simulation 7 out of 10 done
+2020-06-15_16:57:23:998 - Simulation 8 out of 10 done
+2020-06-15_16:57:28:454 - Simulation 9 out of 10 done
+2020-06-15_16:57:32:914 - Simulation 10 out of 10 done
+2020-06-15_16:57:32:914 - > 1.0ii1.4ij
+2020-06-15_16:57:37:285 - Simulation 1 out of 10 done
+2020-06-15_16:57:41:609 - Simulation 2 out of 10 done
+2020-06-15_16:57:45:969 - Simulation 3 out of 10 done
+2020-06-15_16:57:50:245 - Simulation 4 out of 10 done
+2020-06-15_16:57:54:598 - Simulation 5 out of 10 done
+2020-06-15_16:57:59:060 - Simulation 6 out of 10 done
+2020-06-15_16:58:03:516 - Simulation 7 out of 10 done
+2020-06-15_16:58:07:823 - Simulation 8 out of 10 done
+2020-06-15_16:58:12:451 - Simulation 9 out of 10 done
+2020-06-15_16:58:17:181 - Simulation 10 out of 10 done
+2020-06-15_16:58:17:182 - > 1.0ii1.6ij
+2020-06-15_16:58:21:845 - Simulation 1 out of 10 done
+2020-06-15_16:58:26:550 - Simulation 2 out of 10 done
+2020-06-15_16:58:31:268 - Simulation 3 out of 10 done
+2020-06-15_16:58:36:232 - Simulation 4 out of 10 done
+2020-06-15_16:58:41:310 - Simulation 5 out of 10 done
+2020-06-15_16:58:46:101 - Simulation 6 out of 10 done
+2020-06-15_16:58:50:925 - Simulation 7 out of 10 done
+2020-06-15_16:58:55:721 - Simulation 8 out of 10 done
+2020-06-15_16:59:00:671 - Simulation 9 out of 10 done
+2020-06-15_16:59:05:412 - Simulation 10 out of 10 done
+2020-06-15_16:59:05:432 - # DLN_2_0.3_0.3_0.3
+2020-06-15_16:59:06:104 - Network read
+2020-06-15_16:59:06:104 - inter_layer_ep : 0.007255
+2020-06-15_16:59:06:104 - intra_layer_eps:
+2020-06-15_16:59:06:104 - 0.012099
+2020-06-15_16:59:06:104 - 0.007326
+2020-06-15_16:59:06:104 - 0.130400
+2020-06-15_16:59:06:104 - > 1.2ii1.0ij
+2020-06-15_16:59:33:538 - Simulation 1 out of 10 done
+2020-06-15_17:00:01:822 - Simulation 2 out of 10 done
+2020-06-15_17:00:29:199 - Simulation 3 out of 10 done
+2020-06-15_17:00:56:468 - Simulation 4 out of 10 done
+2020-06-15_17:01:23:548 - Simulation 5 out of 10 done
+2020-06-15_17:01:50:869 - Simulation 6 out of 10 done
+2020-06-15_17:02:19:085 - Simulation 7 out of 10 done
+2020-06-15_17:02:46:728 - Simulation 8 out of 10 done
+2020-06-15_17:03:13:482 - Simulation 9 out of 10 done
+2020-06-15_17:03:40:428 - Simulation 10 out of 10 done
+2020-06-15_17:03:40:428 - > 1.4ii1.0ij
+2020-06-15_17:04:06:983 - Simulation 1 out of 10 done
+2020-06-15_17:04:33:539 - Simulation 2 out of 10 done
+2020-06-15_17:05:02:008 - Simulation 3 out of 10 done
+2020-06-15_17:05:28:632 - Simulation 4 out of 10 done
+2020-06-15_17:05:56:197 - Simulation 5 out of 10 done
+2020-06-15_17:06:24:510 - Simulation 6 out of 10 done
+2020-06-15_17:06:52:133 - Simulation 7 out of 10 done
+2020-06-15_17:07:21:501 - Simulation 8 out of 10 done
+2020-06-15_17:07:49:617 - Simulation 9 out of 10 done
+2020-06-15_17:08:16:707 - Simulation 10 out of 10 done
+2020-06-15_17:08:16:707 - > 1.6ii1.0ij
+2020-06-15_17:08:43:118 - Simulation 1 out of 10 done
+2020-06-15_17:09:09:134 - Simulation 2 out of 10 done
+2020-06-15_17:09:35:311 - Simulation 3 out of 10 done
+2020-06-15_17:10:02:554 - Simulation 4 out of 10 done
+2020-06-15_17:10:29:910 - Simulation 5 out of 10 done
+2020-06-15_17:10:56:908 - Simulation 6 out of 10 done
+2020-06-15_17:11:23:791 - Simulation 7 out of 10 done
+2020-06-15_17:11:50:480 - Simulation 8 out of 10 done
+2020-06-15_17:12:17:100 - Simulation 9 out of 10 done
+2020-06-15_17:12:43:981 - Simulation 10 out of 10 done
+2020-06-15_17:12:43:981 - > 1.0ii1.2ij
+2020-06-15_17:13:10:526 - Simulation 1 out of 10 done
+2020-06-15_17:13:36:985 - Simulation 2 out of 10 done
+2020-06-15_17:14:03:267 - Simulation 3 out of 10 done
+2020-06-15_17:14:29:899 - Simulation 4 out of 10 done
+2020-06-15_17:14:56:335 - Simulation 5 out of 10 done
+2020-06-15_17:15:22:626 - Simulation 6 out of 10 done
+2020-06-15_17:15:49:015 - Simulation 7 out of 10 done
+2020-06-15_17:16:15:674 - Simulation 8 out of 10 done
+2020-06-15_17:16:42:317 - Simulation 9 out of 10 done
+2020-06-15_17:17:08:728 - Simulation 10 out of 10 done
+2020-06-15_17:17:08:728 - > 1.0ii1.4ij
+2020-06-15_17:17:35:089 - Simulation 1 out of 10 done
+2020-06-15_17:18:01:428 - Simulation 2 out of 10 done
+2020-06-15_17:18:27:990 - Simulation 3 out of 10 done
+2020-06-15_17:18:53:798 - Simulation 4 out of 10 done
+2020-06-15_17:19:19:545 - Simulation 5 out of 10 done
+2020-06-15_17:19:45:263 - Simulation 6 out of 10 done
+2020-06-15_17:20:11:206 - Simulation 7 out of 10 done
+2020-06-15_17:20:37:061 - Simulation 8 out of 10 done
+2020-06-15_17:21:02:950 - Simulation 9 out of 10 done
+2020-06-15_17:21:29:035 - Simulation 10 out of 10 done
+2020-06-15_17:21:29:035 - > 1.0ii1.6ij
+2020-06-15_17:21:55:502 - Simulation 1 out of 10 done
+2020-06-15_17:22:25:131 - Simulation 2 out of 10 done
+2020-06-15_17:22:51:438 - Simulation 3 out of 10 done
+2020-06-15_17:23:17:642 - Simulation 4 out of 10 done
+2020-06-15_17:23:44:111 - Simulation 5 out of 10 done
+2020-06-15_17:24:10:224 - Simulation 6 out of 10 done
+2020-06-15_17:24:36:410 - Simulation 7 out of 10 done
+2020-06-15_17:25:02:506 - Simulation 8 out of 10 done
+2020-06-15_17:25:28:588 - Simulation 9 out of 10 done
+2020-06-15_17:25:54:403 - Simulation 10 out of 10 done
+2020-06-15_17:25:54:417 - # DLN_2_0.8_0.3_0.3
+2020-06-15_17:25:54:863 - Network read
+2020-06-15_17:25:54:863 - inter_layer_ep : 0.007484
+2020-06-15_17:25:54:863 - intra_layer_eps:
+2020-06-15_17:25:54:863 - 0.012099
+2020-06-15_17:25:54:863 - 0.007326
+2020-06-15_17:25:54:863 - 0.130400
+2020-06-15_17:25:54:863 - > 1.2ii1.0ij
+2020-06-15_17:26:20:663 - Simulation 1 out of 10 done
+2020-06-15_17:26:46:689 - Simulation 2 out of 10 done
+2020-06-15_17:27:12:927 - Simulation 3 out of 10 done
+2020-06-15_17:27:39:056 - Simulation 4 out of 10 done
+2020-06-15_17:28:05:154 - Simulation 5 out of 10 done
+2020-06-15_17:28:31:382 - Simulation 6 out of 10 done
+2020-06-15_17:28:57:569 - Simulation 7 out of 10 done
+2020-06-15_17:29:23:652 - Simulation 8 out of 10 done
+2020-06-15_17:29:49:913 - Simulation 9 out of 10 done
+2020-06-15_17:30:15:998 - Simulation 10 out of 10 done
+2020-06-15_17:30:15:998 - > 1.4ii1.0ij
+2020-06-15_17:30:42:137 - Simulation 1 out of 10 done
+2020-06-15_17:31:08:193 - Simulation 2 out of 10 done
+2020-06-15_17:31:34:365 - Simulation 3 out of 10 done
+2020-06-15_17:32:00:478 - Simulation 4 out of 10 done
+2020-06-15_17:32:26:700 - Simulation 5 out of 10 done
+2020-06-15_17:32:53:513 - Simulation 6 out of 10 done
+2020-06-15_17:33:21:491 - Simulation 7 out of 10 done
+2020-06-15_17:33:49:329 - Simulation 8 out of 10 done
+2020-06-15_17:34:17:014 - Simulation 9 out of 10 done
+2020-06-15_17:34:45:868 - Simulation 10 out of 10 done
+2020-06-15_17:34:45:868 - > 1.6ii1.0ij
+2020-06-15_17:35:14:546 - Simulation 1 out of 10 done
+2020-06-15_17:35:42:561 - Simulation 2 out of 10 done
+2020-06-15_17:36:10:031 - Simulation 3 out of 10 done
+2020-06-15_17:36:37:306 - Simulation 4 out of 10 done
+2020-06-15_17:37:04:727 - Simulation 5 out of 10 done
+2020-06-15_17:37:32:388 - Simulation 6 out of 10 done
+2020-06-15_17:37:59:689 - Simulation 7 out of 10 done
+2020-06-15_17:38:27:007 - Simulation 8 out of 10 done
+2020-06-15_17:38:53:938 - Simulation 9 out of 10 done
+2020-06-15_17:39:20:714 - Simulation 10 out of 10 done
+2020-06-15_17:39:20:714 - > 1.0ii1.2ij
+2020-06-15_17:39:48:308 - Simulation 1 out of 10 done
+2020-06-15_17:40:16:709 - Simulation 2 out of 10 done
+2020-06-15_17:40:45:346 - Simulation 3 out of 10 done
+2020-06-15_17:41:12:452 - Simulation 4 out of 10 done
+2020-06-15_17:41:40:360 - Simulation 5 out of 10 done
+2020-06-15_17:42:07:347 - Simulation 6 out of 10 done
+2020-06-15_17:42:34:466 - Simulation 7 out of 10 done
+2020-06-15_17:43:01:468 - Simulation 8 out of 10 done
+2020-06-15_17:43:29:201 - Simulation 9 out of 10 done
+2020-06-15_17:43:54:197 - Simulation 10 out of 10 done
+2020-06-15_17:43:54:197 - > 1.0ii1.4ij
+2020-06-15_17:44:19:014 - Simulation 1 out of 10 done
+2020-06-15_17:44:43:603 - Simulation 2 out of 10 done
+2020-06-15_17:45:08:604 - Simulation 3 out of 10 done
+2020-06-15_17:45:33:800 - Simulation 4 out of 10 done
+2020-06-15_17:45:59:322 - Simulation 5 out of 10 done
+2020-06-15_17:46:24:810 - Simulation 6 out of 10 done
+2020-06-15_17:46:50:511 - Simulation 7 out of 10 done
+2020-06-15_17:47:17:121 - Simulation 8 out of 10 done
+2020-06-15_17:47:43:913 - Simulation 9 out of 10 done
+2020-06-15_17:48:09:778 - Simulation 10 out of 10 done
+2020-06-15_17:48:09:778 - > 1.0ii1.6ij
+2020-06-15_17:48:35:636 - Simulation 1 out of 10 done
+2020-06-15_17:49:01:095 - Simulation 2 out of 10 done
+2020-06-15_17:49:26:537 - Simulation 3 out of 10 done
+2020-06-15_17:49:52:049 - Simulation 4 out of 10 done
+2020-06-15_17:50:17:049 - Simulation 5 out of 10 done
+2020-06-15_17:50:42:193 - Simulation 6 out of 10 done
+2020-06-15_17:51:08:072 - Simulation 7 out of 10 done
+2020-06-15_17:51:33:764 - Simulation 8 out of 10 done
+2020-06-15_17:51:59:240 - Simulation 9 out of 10 done
+2020-06-15_17:52:24:651 - Simulation 10 out of 10 done
+2020-06-15_17:52:24:663 - # SLN_2_0.3_0.3_0.8
+2020-06-15_17:52:24:921 - Network read
+2020-06-15_17:52:24:921 - inter_layer_ep : 0.003555
+2020-06-15_17:52:24:921 - intra_layer_eps:
+2020-06-15_17:52:24:921 - 0.130400
+2020-06-15_17:52:24:921 - 0.100416
+2020-06-15_17:52:24:921 - 0.113161
+2020-06-15_17:52:24:921 - 0.065595
+2020-06-15_17:52:24:921 - > 1.2ii1.0ij
+2020-06-15_17:52:28:929 - Simulation 1 out of 10 done
+2020-06-15_17:52:32:901 - Simulation 2 out of 10 done
+2020-06-15_17:52:36:864 - Simulation 3 out of 10 done
+2020-06-15_17:52:40:828 - Simulation 4 out of 10 done
+2020-06-15_17:52:44:799 - Simulation 5 out of 10 done
+2020-06-15_17:52:48:788 - Simulation 6 out of 10 done
+2020-06-15_17:52:52:768 - Simulation 7 out of 10 done
+2020-06-15_17:52:56:757 - Simulation 8 out of 10 done
+2020-06-15_17:53:00:746 - Simulation 9 out of 10 done
+2020-06-15_17:53:04:745 - Simulation 10 out of 10 done
+2020-06-15_17:53:04:745 - > 1.4ii1.0ij
+2020-06-15_17:53:08:737 - Simulation 1 out of 10 done
+2020-06-15_17:53:12:772 - Simulation 2 out of 10 done
+2020-06-15_17:53:16:886 - Simulation 3 out of 10 done
+2020-06-15_17:53:20:934 - Simulation 4 out of 10 done
+2020-06-15_17:53:24:894 - Simulation 5 out of 10 done
+2020-06-15_17:53:28:835 - Simulation 6 out of 10 done
+2020-06-15_17:53:32:943 - Simulation 7 out of 10 done
+2020-06-15_17:53:37:038 - Simulation 8 out of 10 done
+2020-06-15_17:53:41:110 - Simulation 9 out of 10 done
+2020-06-15_17:53:45:124 - Simulation 10 out of 10 done
+2020-06-15_17:53:45:124 - > 1.6ii1.0ij
+2020-06-15_17:53:49:234 - Simulation 1 out of 10 done
+2020-06-15_17:53:53:327 - Simulation 2 out of 10 done
+2020-06-15_17:53:57:418 - Simulation 3 out of 10 done
+2020-06-15_17:54:01:429 - Simulation 4 out of 10 done
+2020-06-15_17:54:05:441 - Simulation 5 out of 10 done
+2020-06-15_17:54:09:667 - Simulation 6 out of 10 done
+2020-06-15_17:54:13:872 - Simulation 7 out of 10 done
+2020-06-15_17:54:18:040 - Simulation 8 out of 10 done
+2020-06-15_17:54:22:239 - Simulation 9 out of 10 done
+2020-06-15_17:54:26:282 - Simulation 10 out of 10 done
+2020-06-15_17:54:26:282 - > 1.0ii1.2ij
+2020-06-15_17:54:30:207 - Simulation 1 out of 10 done
+2020-06-15_17:54:34:146 - Simulation 2 out of 10 done
+2020-06-15_17:54:38:063 - Simulation 3 out of 10 done
+2020-06-15_17:54:42:006 - Simulation 4 out of 10 done
+2020-06-15_17:54:45:966 - Simulation 5 out of 10 done
+2020-06-15_17:54:49:905 - Simulation 6 out of 10 done
+2020-06-15_17:54:53:840 - Simulation 7 out of 10 done
+2020-06-15_17:54:57:779 - Simulation 8 out of 10 done
+2020-06-15_17:55:01:730 - Simulation 9 out of 10 done
+2020-06-15_17:55:05:678 - Simulation 10 out of 10 done
+2020-06-15_17:55:05:678 - > 1.0ii1.4ij
+2020-06-15_17:55:09:619 - Simulation 1 out of 10 done
+2020-06-15_17:55:13:561 - Simulation 2 out of 10 done
+2020-06-15_17:55:17:496 - Simulation 3 out of 10 done
+2020-06-15_17:55:21:455 - Simulation 4 out of 10 done
+2020-06-15_17:55:25:392 - Simulation 5 out of 10 done
+2020-06-15_17:55:29:314 - Simulation 6 out of 10 done
+2020-06-15_17:55:33:243 - Simulation 7 out of 10 done
+2020-06-15_17:55:37:205 - Simulation 8 out of 10 done
+2020-06-15_17:55:41:255 - Simulation 9 out of 10 done
+2020-06-15_17:55:45:415 - Simulation 10 out of 10 done
+2020-06-15_17:55:45:415 - > 1.0ii1.6ij
+2020-06-15_17:55:49:496 - Simulation 1 out of 10 done
+2020-06-15_17:55:53:632 - Simulation 2 out of 10 done
+2020-06-15_17:55:57:741 - Simulation 3 out of 10 done
+2020-06-15_17:56:01:841 - Simulation 4 out of 10 done
+2020-06-15_17:56:05:934 - Simulation 5 out of 10 done
+2020-06-15_17:56:10:035 - Simulation 6 out of 10 done
+2020-06-15_17:56:14:059 - Simulation 7 out of 10 done
+2020-06-15_17:56:17:998 - Simulation 8 out of 10 done
+2020-06-15_17:56:21:944 - Simulation 9 out of 10 done
+2020-06-15_17:56:25:917 - Simulation 10 out of 10 done
+2020-06-15_17:56:25:926 - # drosophila_genetic_multiplex
+2020-06-15_17:56:25:930 - Network read
+2020-06-15_17:56:25:930 - inter_layer_ep : 0.097829
+2020-06-15_17:56:25:930 - intra_layer_eps:
+2020-06-15_17:56:25:930 - 0.240053
+2020-06-15_17:56:25:930 - 0.099983
+2020-06-15_17:56:25:930 - > 1.2ii1.0ij
+2020-06-15_17:56:25:998 - Simulation 1 out of 10 done
+2020-06-15_17:56:26:066 - Simulation 2 out of 10 done
+2020-06-15_17:56:26:133 - Simulation 3 out of 10 done
+2020-06-15_17:56:26:201 - Simulation 4 out of 10 done
+2020-06-15_17:56:26:269 - Simulation 5 out of 10 done
+2020-06-15_17:56:26:337 - Simulation 6 out of 10 done
+2020-06-15_17:56:26:404 - Simulation 7 out of 10 done
+2020-06-15_17:56:26:472 - Simulation 8 out of 10 done
+2020-06-15_17:56:26:540 - Simulation 9 out of 10 done
+2020-06-15_17:56:26:608 - Simulation 10 out of 10 done
+2020-06-15_17:56:26:608 - > 1.4ii1.0ij
+2020-06-15_17:56:26:676 - Simulation 1 out of 10 done
+2020-06-15_17:56:26:744 - Simulation 2 out of 10 done
+2020-06-15_17:56:26:813 - Simulation 3 out of 10 done
+2020-06-15_17:56:26:882 - Simulation 4 out of 10 done
+2020-06-15_17:56:26:950 - Simulation 5 out of 10 done
+2020-06-15_17:56:27:018 - Simulation 6 out of 10 done
+2020-06-15_17:56:27:087 - Simulation 7 out of 10 done
+2020-06-15_17:56:27:154 - Simulation 8 out of 10 done
+2020-06-15_17:56:27:223 - Simulation 9 out of 10 done
+2020-06-15_17:56:27:291 - Simulation 10 out of 10 done
+2020-06-15_17:56:27:291 - > 1.6ii1.0ij
+2020-06-15_17:56:27:360 - Simulation 1 out of 10 done
+2020-06-15_17:56:27:429 - Simulation 2 out of 10 done
+2020-06-15_17:56:27:497 - Simulation 3 out of 10 done
+2020-06-15_17:56:27:565 - Simulation 4 out of 10 done
+2020-06-15_17:56:27:634 - Simulation 5 out of 10 done
+2020-06-15_17:56:27:702 - Simulation 6 out of 10 done
+2020-06-15_17:56:27:771 - Simulation 7 out of 10 done
+2020-06-15_17:56:27:840 - Simulation 8 out of 10 done
+2020-06-15_17:56:27:910 - Simulation 9 out of 10 done
+2020-06-15_17:56:27:979 - Simulation 10 out of 10 done
+2020-06-15_17:56:27:979 - > 1.0ii1.2ij
+2020-06-15_17:56:28:047 - Simulation 1 out of 10 done
+2020-06-15_17:56:28:115 - Simulation 2 out of 10 done
+2020-06-15_17:56:28:183 - Simulation 3 out of 10 done
+2020-06-15_17:56:28:252 - Simulation 4 out of 10 done
+2020-06-15_17:56:28:320 - Simulation 5 out of 10 done
+2020-06-15_17:56:28:388 - Simulation 6 out of 10 done
+2020-06-15_17:56:28:456 - Simulation 7 out of 10 done
+2020-06-15_17:56:28:524 - Simulation 8 out of 10 done
+2020-06-15_17:56:28:592 - Simulation 9 out of 10 done
+2020-06-15_17:56:28:661 - Simulation 10 out of 10 done
+2020-06-15_17:56:28:661 - > 1.0ii1.4ij
+2020-06-15_17:56:28:731 - Simulation 1 out of 10 done
+2020-06-15_17:56:28:801 - Simulation 2 out of 10 done
+2020-06-15_17:56:28:871 - Simulation 3 out of 10 done
+2020-06-15_17:56:28:942 - Simulation 4 out of 10 done
+2020-06-15_17:56:29:011 - Simulation 5 out of 10 done
+2020-06-15_17:56:29:082 - Simulation 6 out of 10 done
+2020-06-15_17:56:29:152 - Simulation 7 out of 10 done
+2020-06-15_17:56:29:221 - Simulation 8 out of 10 done
+2020-06-15_17:56:29:290 - Simulation 9 out of 10 done
+2020-06-15_17:56:29:358 - Simulation 10 out of 10 done
+2020-06-15_17:56:29:358 - > 1.0ii1.6ij
+2020-06-15_17:56:29:427 - Simulation 1 out of 10 done
+2020-06-15_17:56:29:495 - Simulation 2 out of 10 done
+2020-06-15_17:56:29:564 - Simulation 3 out of 10 done
+2020-06-15_17:56:29:632 - Simulation 4 out of 10 done
+2020-06-15_17:56:29:701 - Simulation 5 out of 10 done
+2020-06-15_17:56:29:769 - Simulation 6 out of 10 done
+2020-06-15_17:56:29:838 - Simulation 7 out of 10 done
+2020-06-15_17:56:29:907 - Simulation 8 out of 10 done
+2020-06-15_17:56:29:975 - Simulation 9 out of 10 done
+2020-06-15_17:56:30:044 - Simulation 10 out of 10 done
+2020-06-15_17:56:30:044 - # NYClimateMarch2014_multiplex
+2020-06-15_17:56:30:074 - Network read
+2020-06-15_17:56:30:074 - inter_layer_ep : 0.005260
+2020-06-15_17:56:30:074 - intra_layer_eps:
+2020-06-15_17:56:30:074 - 0.008070
+2020-06-15_17:56:30:074 - 0.006761
+2020-06-15_17:56:30:074 - 0.048504
+2020-06-15_17:56:30:074 - > 1.2ii1.0ij
+2020-06-15_17:56:30:694 - Simulation 1 out of 10 done
+2020-06-15_17:56:31:315 - Simulation 2 out of 10 done
+2020-06-15_17:56:31:934 - Simulation 3 out of 10 done
+2020-06-15_17:56:32:555 - Simulation 4 out of 10 done
+2020-06-15_17:56:33:180 - Simulation 5 out of 10 done
+2020-06-15_17:56:33:804 - Simulation 6 out of 10 done
+2020-06-15_17:56:34:430 - Simulation 7 out of 10 done
+2020-06-15_17:56:35:055 - Simulation 8 out of 10 done
+2020-06-15_17:56:35:696 - Simulation 9 out of 10 done
+2020-06-15_17:56:36:360 - Simulation 10 out of 10 done
+2020-06-15_17:56:36:360 - > 1.4ii1.0ij
+2020-06-15_17:56:37:044 - Simulation 1 out of 10 done
+2020-06-15_17:56:37:753 - Simulation 2 out of 10 done
+2020-06-15_17:56:38:433 - Simulation 3 out of 10 done
+2020-06-15_17:56:39:082 - Simulation 4 out of 10 done
+2020-06-15_17:56:39:716 - Simulation 5 out of 10 done
+2020-06-15_17:56:40:347 - Simulation 6 out of 10 done
+2020-06-15_17:56:40:977 - Simulation 7 out of 10 done
+2020-06-15_17:56:41:615 - Simulation 8 out of 10 done
+2020-06-15_17:56:42:247 - Simulation 9 out of 10 done
+2020-06-15_17:56:42:883 - Simulation 10 out of 10 done
+2020-06-15_17:56:42:883 - > 1.6ii1.0ij
+2020-06-15_17:56:43:523 - Simulation 1 out of 10 done
+2020-06-15_17:56:44:159 - Simulation 2 out of 10 done
+2020-06-15_17:56:44:803 - Simulation 3 out of 10 done
+2020-06-15_17:56:45:442 - Simulation 4 out of 10 done
+2020-06-15_17:56:46:078 - Simulation 5 out of 10 done
+2020-06-15_17:56:46:710 - Simulation 6 out of 10 done
+2020-06-15_17:56:47:341 - Simulation 7 out of 10 done
+2020-06-15_17:56:47:973 - Simulation 8 out of 10 done
+2020-06-15_17:56:48:605 - Simulation 9 out of 10 done
+2020-06-15_17:56:49:237 - Simulation 10 out of 10 done
+2020-06-15_17:56:49:237 - > 1.0ii1.2ij
+2020-06-15_17:56:49:873 - Simulation 1 out of 10 done
+2020-06-15_17:56:50:502 - Simulation 2 out of 10 done
+2020-06-15_17:56:51:130 - Simulation 3 out of 10 done
+2020-06-15_17:56:51:761 - Simulation 4 out of 10 done
+2020-06-15_17:56:52:391 - Simulation 5 out of 10 done
+2020-06-15_17:56:53:024 - Simulation 6 out of 10 done
+2020-06-15_17:56:53:651 - Simulation 7 out of 10 done
+2020-06-15_17:56:54:289 - Simulation 8 out of 10 done
+2020-06-15_17:56:54:929 - Simulation 9 out of 10 done
+2020-06-15_17:56:55:568 - Simulation 10 out of 10 done
+2020-06-15_17:56:55:568 - > 1.0ii1.4ij
+2020-06-15_17:56:56:205 - Simulation 1 out of 10 done
+2020-06-15_17:56:56:843 - Simulation 2 out of 10 done
+2020-06-15_17:56:57:489 - Simulation 3 out of 10 done
+2020-06-15_17:56:58:162 - Simulation 4 out of 10 done
+2020-06-15_17:56:58:838 - Simulation 5 out of 10 done
+2020-06-15_17:56:59:515 - Simulation 6 out of 10 done
+2020-06-15_17:57:00:192 - Simulation 7 out of 10 done
+2020-06-15_17:57:00:849 - Simulation 8 out of 10 done
+2020-06-15_17:57:01:502 - Simulation 9 out of 10 done
+2020-06-15_17:57:02:165 - Simulation 10 out of 10 done
+2020-06-15_17:57:02:165 - > 1.0ii1.6ij
+2020-06-15_17:57:02:842 - Simulation 1 out of 10 done
+2020-06-15_17:57:03:517 - Simulation 2 out of 10 done
+2020-06-15_17:57:04:205 - Simulation 3 out of 10 done
+2020-06-15_17:57:04:928 - Simulation 4 out of 10 done
+2020-06-15_17:57:05:615 - Simulation 5 out of 10 done
+2020-06-15_17:57:06:323 - Simulation 6 out of 10 done
+2020-06-15_17:57:07:042 - Simulation 7 out of 10 done
+2020-06-15_17:57:07:717 - Simulation 8 out of 10 done
+2020-06-15_17:57:08:389 - Simulation 9 out of 10 done
+2020-06-15_17:57:09:048 - Simulation 10 out of 10 done
+2020-06-15_17:57:09:051 - # homo_genetic_multiplex
+2020-06-15_17:57:09:102 - Network read
+2020-06-15_17:57:09:102 - inter_layer_ep : 0.018111
+2020-06-15_17:57:09:102 - intra_layer_eps:
+2020-06-15_17:57:09:102 - 0.022615
+2020-06-15_17:57:09:102 - 0.025292
+2020-06-15_17:57:09:102 - 0.065388
+2020-06-15_17:57:09:102 - > 1.2ii1.0ij
+2020-06-15_17:57:09:682 - Simulation 1 out of 10 done
+2020-06-15_17:57:10:244 - Simulation 2 out of 10 done
+2020-06-15_17:57:10:805 - Simulation 3 out of 10 done
+2020-06-15_17:57:11:373 - Simulation 4 out of 10 done
+2020-06-15_17:57:11:953 - Simulation 5 out of 10 done
+2020-06-15_17:57:12:520 - Simulation 6 out of 10 done
+2020-06-15_17:57:13:083 - Simulation 7 out of 10 done
+2020-06-15_17:57:13:633 - Simulation 8 out of 10 done
+2020-06-15_17:57:14:178 - Simulation 9 out of 10 done
+2020-06-15_17:57:14:721 - Simulation 10 out of 10 done
+2020-06-15_17:57:14:721 - > 1.4ii1.0ij
+2020-06-15_17:57:15:287 - Simulation 1 out of 10 done
+2020-06-15_17:57:15:858 - Simulation 2 out of 10 done
+2020-06-15_17:57:16:427 - Simulation 3 out of 10 done
+2020-06-15_17:57:16:996 - Simulation 4 out of 10 done
+2020-06-15_17:57:17:571 - Simulation 5 out of 10 done
+2020-06-15_17:57:18:171 - Simulation 6 out of 10 done
+2020-06-15_17:57:18:762 - Simulation 7 out of 10 done
+2020-06-15_17:57:19:343 - Simulation 8 out of 10 done
+2020-06-15_17:57:19:929 - Simulation 9 out of 10 done
+2020-06-15_17:57:20:506 - Simulation 10 out of 10 done
+2020-06-15_17:57:20:506 - > 1.6ii1.0ij
+2020-06-15_17:57:21:118 - Simulation 1 out of 10 done
+2020-06-15_17:57:21:716 - Simulation 2 out of 10 done
+2020-06-15_17:57:22:324 - Simulation 3 out of 10 done
+2020-06-15_17:57:22:927 - Simulation 4 out of 10 done
+2020-06-15_17:57:23:558 - Simulation 5 out of 10 done
+2020-06-15_17:57:24:187 - Simulation 6 out of 10 done
+2020-06-15_17:57:24:795 - Simulation 7 out of 10 done
+2020-06-15_17:57:25:400 - Simulation 8 out of 10 done
+2020-06-15_17:57:25:994 - Simulation 9 out of 10 done
+2020-06-15_17:57:26:647 - Simulation 10 out of 10 done
+2020-06-15_17:57:26:647 - > 1.0ii1.2ij
+2020-06-15_17:57:27:220 - Simulation 1 out of 10 done
+2020-06-15_17:57:27:815 - Simulation 2 out of 10 done
+2020-06-15_17:57:28:407 - Simulation 3 out of 10 done
+2020-06-15_17:57:28:981 - Simulation 4 out of 10 done
+2020-06-15_17:57:29:552 - Simulation 5 out of 10 done
+2020-06-15_17:57:30:105 - Simulation 6 out of 10 done
+2020-06-15_17:57:30:656 - Simulation 7 out of 10 done
+2020-06-15_17:57:31:203 - Simulation 8 out of 10 done
+2020-06-15_17:57:31:762 - Simulation 9 out of 10 done
+2020-06-15_17:57:32:326 - Simulation 10 out of 10 done
+2020-06-15_17:57:32:326 - > 1.0ii1.4ij
+2020-06-15_17:57:32:887 - Simulation 1 out of 10 done
+2020-06-15_17:57:33:432 - Simulation 2 out of 10 done
+2020-06-15_17:57:33:982 - Simulation 3 out of 10 done
+2020-06-15_17:57:34:562 - Simulation 4 out of 10 done
+2020-06-15_17:57:35:145 - Simulation 5 out of 10 done
+2020-06-15_17:57:35:712 - Simulation 6 out of 10 done
+2020-06-15_17:57:36:270 - Simulation 7 out of 10 done
+2020-06-15_17:57:36:820 - Simulation 8 out of 10 done
+2020-06-15_17:57:37:361 - Simulation 9 out of 10 done
+2020-06-15_17:57:37:902 - Simulation 10 out of 10 done
+2020-06-15_17:57:37:902 - > 1.0ii1.6ij
+2020-06-15_17:57:38:442 - Simulation 1 out of 10 done
+2020-06-15_17:57:38:981 - Simulation 2 out of 10 done
+2020-06-15_17:57:39:519 - Simulation 3 out of 10 done
+2020-06-15_17:57:40:066 - Simulation 4 out of 10 done
+2020-06-15_17:57:40:625 - Simulation 5 out of 10 done
+2020-06-15_17:57:41:173 - Simulation 6 out of 10 done
+2020-06-15_17:57:41:723 - Simulation 7 out of 10 done
+2020-06-15_17:57:42:272 - Simulation 8 out of 10 done
+2020-06-15_17:57:42:826 - Simulation 9 out of 10 done
+2020-06-15_17:57:43:373 - Simulation 10 out of 10 done
+2020-06-15_17:57:43:375 - # MoscowAthletics2013_multiplex
+2020-06-15_17:57:43:402 - Network read
+2020-06-15_17:57:43:403 - inter_layer_ep : 0.006386
+2020-06-15_17:57:43:403 - intra_layer_eps:
+2020-06-15_17:57:43:403 - 0.008946
+2020-06-15_17:57:43:403 - 0.007499
+2020-06-15_17:57:43:403 - 0.021235
+2020-06-15_17:57:43:403 - > 1.2ii1.0ij
+2020-06-15_17:57:44:079 - Simulation 1 out of 10 done
+2020-06-15_17:57:44:740 - Simulation 2 out of 10 done
+2020-06-15_17:57:45:402 - Simulation 3 out of 10 done
+2020-06-15_17:57:46:079 - Simulation 4 out of 10 done
+2020-06-15_17:57:46:748 - Simulation 5 out of 10 done
+2020-06-15_17:57:47:419 - Simulation 6 out of 10 done
+2020-06-15_17:57:48:093 - Simulation 7 out of 10 done
+2020-06-15_17:57:48:766 - Simulation 8 out of 10 done
+2020-06-15_17:57:49:438 - Simulation 9 out of 10 done
+2020-06-15_17:57:50:114 - Simulation 10 out of 10 done
+2020-06-15_17:57:50:114 - > 1.4ii1.0ij
+2020-06-15_17:57:50:784 - Simulation 1 out of 10 done
+2020-06-15_17:57:51:475 - Simulation 2 out of 10 done
+2020-06-15_17:57:52:154 - Simulation 3 out of 10 done
+2020-06-15_17:57:52:826 - Simulation 4 out of 10 done
+2020-06-15_17:57:53:498 - Simulation 5 out of 10 done
+2020-06-15_17:57:54:164 - Simulation 6 out of 10 done
+2020-06-15_17:57:54:831 - Simulation 7 out of 10 done
+2020-06-15_17:57:55:499 - Simulation 8 out of 10 done
+2020-06-15_17:57:56:172 - Simulation 9 out of 10 done
+2020-06-15_17:57:56:877 - Simulation 10 out of 10 done
+2020-06-15_17:57:56:877 - > 1.6ii1.0ij
+2020-06-15_17:57:57:558 - Simulation 1 out of 10 done
+2020-06-15_17:57:58:238 - Simulation 2 out of 10 done
+2020-06-15_17:57:58:913 - Simulation 3 out of 10 done
+2020-06-15_17:57:59:600 - Simulation 4 out of 10 done
+2020-06-15_17:58:00:290 - Simulation 5 out of 10 done
+2020-06-15_17:58:01:013 - Simulation 6 out of 10 done
+2020-06-15_17:58:01:743 - Simulation 7 out of 10 done
+2020-06-15_17:58:02:528 - Simulation 8 out of 10 done
+2020-06-15_17:58:03:284 - Simulation 9 out of 10 done
+2020-06-15_17:58:03:994 - Simulation 10 out of 10 done
+2020-06-15_17:58:03:994 - > 1.0ii1.2ij
+2020-06-15_17:58:04:688 - Simulation 1 out of 10 done
+2020-06-15_17:58:05:388 - Simulation 2 out of 10 done
+2020-06-15_17:58:06:075 - Simulation 3 out of 10 done
+2020-06-15_17:58:06:756 - Simulation 4 out of 10 done
+2020-06-15_17:58:07:451 - Simulation 5 out of 10 done
+2020-06-15_17:58:08:187 - Simulation 6 out of 10 done
+2020-06-15_17:58:08:899 - Simulation 7 out of 10 done
+2020-06-15_17:58:09:584 - Simulation 8 out of 10 done
+2020-06-15_17:58:10:278 - Simulation 9 out of 10 done
+2020-06-15_17:58:10:969 - Simulation 10 out of 10 done
+2020-06-15_17:58:10:969 - > 1.0ii1.4ij
+2020-06-15_17:58:11:652 - Simulation 1 out of 10 done
+2020-06-15_17:58:12:327 - Simulation 2 out of 10 done
+2020-06-15_17:58:13:000 - Simulation 3 out of 10 done
+2020-06-15_17:58:13:696 - Simulation 4 out of 10 done
+2020-06-15_17:58:14:368 - Simulation 5 out of 10 done
+2020-06-15_17:58:15:035 - Simulation 6 out of 10 done
+2020-06-15_17:58:15:714 - Simulation 7 out of 10 done
+2020-06-15_17:58:16:381 - Simulation 8 out of 10 done
+2020-06-15_17:58:17:052 - Simulation 9 out of 10 done
+2020-06-15_17:58:17:720 - Simulation 10 out of 10 done
+2020-06-15_17:58:17:720 - > 1.0ii1.6ij
+2020-06-15_17:58:18:388 - Simulation 1 out of 10 done
+2020-06-15_17:58:19:073 - Simulation 2 out of 10 done
+2020-06-15_17:58:19:743 - Simulation 3 out of 10 done
+2020-06-15_17:58:20:415 - Simulation 4 out of 10 done
+2020-06-15_17:58:21:083 - Simulation 5 out of 10 done
+2020-06-15_17:58:21:754 - Simulation 6 out of 10 done
+2020-06-15_17:58:22:427 - Simulation 7 out of 10 done
+2020-06-15_17:58:23:102 - Simulation 8 out of 10 done
+2020-06-15_17:58:23:773 - Simulation 9 out of 10 done
+2020-06-15_17:58:24:456 - Simulation 10 out of 10 done
+2020-06-15_17:58:24:458 - # sacchpomb_genetic_multiplex
+2020-06-15_17:58:24:467 - Network read
+2020-06-15_17:58:24:467 - inter_layer_ep : 0.025196
+2020-06-15_17:58:24:467 - intra_layer_eps:
+2020-06-15_17:58:24:467 - 0.316243
+2020-06-15_17:58:24:467 - 0.097931
+2020-06-15_17:58:24:467 - 0.030510
+2020-06-15_17:58:24:467 - > 1.2ii1.0ij
+2020-06-15_17:58:24:510 - Simulation 1 out of 10 done
+2020-06-15_17:58:24:549 - Simulation 2 out of 10 done
+2020-06-15_17:58:24:589 - Simulation 3 out of 10 done
+2020-06-15_17:58:24:626 - Simulation 4 out of 10 done
+2020-06-15_17:58:24:667 - Simulation 5 out of 10 done
+2020-06-15_17:58:24:708 - Simulation 6 out of 10 done
+2020-06-15_17:58:24:746 - Simulation 7 out of 10 done
+2020-06-15_17:58:24:787 - Simulation 8 out of 10 done
+2020-06-15_17:58:24:826 - Simulation 9 out of 10 done
+2020-06-15_17:58:24:865 - Simulation 10 out of 10 done
+2020-06-15_17:58:24:865 - > 1.4ii1.0ij
+2020-06-15_17:58:24:913 - Simulation 1 out of 10 done
+2020-06-15_17:58:24:961 - Simulation 2 out of 10 done
+2020-06-15_17:58:25:010 - Simulation 3 out of 10 done
+2020-06-15_17:58:25:057 - Simulation 4 out of 10 done
+2020-06-15_17:58:25:107 - Simulation 5 out of 10 done
+2020-06-15_17:58:25:155 - Simulation 6 out of 10 done
+2020-06-15_17:58:25:203 - Simulation 7 out of 10 done
+2020-06-15_17:58:25:252 - Simulation 8 out of 10 done
+2020-06-15_17:58:25:300 - Simulation 9 out of 10 done
+2020-06-15_17:58:25:349 - Simulation 10 out of 10 done
+2020-06-15_17:58:25:349 - > 1.6ii1.0ij
+2020-06-15_17:58:25:409 - Simulation 1 out of 10 done
+2020-06-15_17:58:25:469 - Simulation 2 out of 10 done
+2020-06-15_17:58:25:530 - Simulation 3 out of 10 done
+2020-06-15_17:58:25:591 - Simulation 4 out of 10 done
+2020-06-15_17:58:25:651 - Simulation 5 out of 10 done
+2020-06-15_17:58:25:713 - Simulation 6 out of 10 done
+2020-06-15_17:58:25:774 - Simulation 7 out of 10 done
+2020-06-15_17:58:25:838 - Simulation 8 out of 10 done
+2020-06-15_17:58:25:900 - Simulation 9 out of 10 done
+2020-06-15_17:58:25:963 - Simulation 10 out of 10 done
+2020-06-15_17:58:25:963 - > 1.0ii1.2ij
+2020-06-15_17:58:25:997 - Simulation 1 out of 10 done
+2020-06-15_17:58:26:030 - Simulation 2 out of 10 done
+2020-06-15_17:58:26:064 - Simulation 3 out of 10 done
+2020-06-15_17:58:26:097 - Simulation 4 out of 10 done
+2020-06-15_17:58:26:130 - Simulation 5 out of 10 done
+2020-06-15_17:58:26:164 - Simulation 6 out of 10 done
+2020-06-15_17:58:26:198 - Simulation 7 out of 10 done
+2020-06-15_17:58:26:231 - Simulation 8 out of 10 done
+2020-06-15_17:58:26:265 - Simulation 9 out of 10 done
+2020-06-15_17:58:26:298 - Simulation 10 out of 10 done
+2020-06-15_17:58:26:298 - > 1.0ii1.4ij
+2020-06-15_17:58:26:332 - Simulation 1 out of 10 done
+2020-06-15_17:58:26:365 - Simulation 2 out of 10 done
+2020-06-15_17:58:26:400 - Simulation 3 out of 10 done
+2020-06-15_17:58:26:434 - Simulation 4 out of 10 done
+2020-06-15_17:58:26:470 - Simulation 5 out of 10 done
+2020-06-15_17:58:26:506 - Simulation 6 out of 10 done
+2020-06-15_17:58:26:542 - Simulation 7 out of 10 done
+2020-06-15_17:58:26:578 - Simulation 8 out of 10 done
+2020-06-15_17:58:26:614 - Simulation 9 out of 10 done
+2020-06-15_17:58:26:650 - Simulation 10 out of 10 done
+2020-06-15_17:58:26:650 - > 1.0ii1.6ij
+2020-06-15_17:58:26:687 - Simulation 1 out of 10 done
+2020-06-15_17:58:26:724 - Simulation 2 out of 10 done
+2020-06-15_17:58:26:760 - Simulation 3 out of 10 done
+2020-06-15_17:58:26:798 - Simulation 4 out of 10 done
+2020-06-15_17:58:26:835 - Simulation 5 out of 10 done
+2020-06-15_17:58:26:870 - Simulation 6 out of 10 done
+2020-06-15_17:58:26:906 - Simulation 7 out of 10 done
+2020-06-15_17:58:26:940 - Simulation 8 out of 10 done
+2020-06-15_17:58:26:975 - Simulation 9 out of 10 done
+2020-06-15_17:58:27:010 - Simulation 10 out of 10 done
+2020-06-15_17:58:27:011 - # sacchcere_genetic_multiplex
+2020-06-15_17:58:27:117 - Network read
+2020-06-15_17:58:27:117 - inter_layer_ep : 0.009358
+2020-06-15_17:58:27:117 - intra_layer_eps:
+2020-06-15_17:58:27:117 - 0.027652
+2020-06-15_17:58:27:117 - 0.038978
+2020-06-15_17:58:27:117 - 0.075113
+2020-06-15_17:58:27:117 - 0.033094
+2020-06-15_17:58:27:117 - 0.013251
+2020-06-15_17:58:27:117 - > 1.2ii1.0ij
+2020-06-15_17:58:27:613 - Simulation 1 out of 10 done
+2020-06-15_17:58:28:108 - Simulation 2 out of 10 done
+2020-06-15_17:58:28:615 - Simulation 3 out of 10 done
+2020-06-15_17:58:29:109 - Simulation 4 out of 10 done
+2020-06-15_17:58:29:612 - Simulation 5 out of 10 done
+2020-06-15_17:58:30:136 - Simulation 6 out of 10 done
+2020-06-15_17:58:30:646 - Simulation 7 out of 10 done
+2020-06-15_17:58:31:145 - Simulation 8 out of 10 done
+2020-06-15_17:58:31:644 - Simulation 9 out of 10 done
+2020-06-15_17:58:32:140 - Simulation 10 out of 10 done
+2020-06-15_17:58:32:140 - > 1.4ii1.0ij
+2020-06-15_17:58:32:907 - Simulation 1 out of 10 done
+2020-06-15_17:58:33:791 - Simulation 2 out of 10 done
+2020-06-15_17:58:34:678 - Simulation 3 out of 10 done
+2020-06-15_17:58:35:660 - Simulation 4 out of 10 done
+2020-06-15_17:58:36:708 - Simulation 5 out of 10 done
+2020-06-15_17:58:37:491 - Simulation 6 out of 10 done
+2020-06-15_17:58:38:301 - Simulation 7 out of 10 done
+2020-06-15_17:58:39:108 - Simulation 8 out of 10 done
+2020-06-15_17:58:39:899 - Simulation 9 out of 10 done
+2020-06-15_17:58:40:697 - Simulation 10 out of 10 done
+2020-06-15_17:58:40:697 - > 1.6ii1.0ij
+2020-06-15_17:58:42:019 - Simulation 1 out of 10 done
+2020-06-15_17:58:43:368 - Simulation 2 out of 10 done
+2020-06-15_17:58:44:644 - Simulation 3 out of 10 done
+2020-06-15_17:58:45:960 - Simulation 4 out of 10 done
+2020-06-15_17:58:47:252 - Simulation 5 out of 10 done
+2020-06-15_17:58:48:591 - Simulation 6 out of 10 done
+2020-06-15_17:58:49:853 - Simulation 7 out of 10 done
+2020-06-15_17:58:51:099 - Simulation 8 out of 10 done
+2020-06-15_17:58:52:368 - Simulation 9 out of 10 done
+2020-06-15_17:58:53:621 - Simulation 10 out of 10 done
+2020-06-15_17:58:53:621 - > 1.0ii1.2ij
+2020-06-15_17:58:54:009 - Simulation 1 out of 10 done
+2020-06-15_17:58:54:399 - Simulation 2 out of 10 done
+2020-06-15_17:58:54:789 - Simulation 3 out of 10 done
+2020-06-15_17:58:55:174 - Simulation 4 out of 10 done
+2020-06-15_17:58:55:559 - Simulation 5 out of 10 done
+2020-06-15_17:58:55:945 - Simulation 6 out of 10 done
+2020-06-15_17:58:56:336 - Simulation 7 out of 10 done
+2020-06-15_17:58:56:727 - Simulation 8 out of 10 done
+2020-06-15_17:58:57:120 - Simulation 9 out of 10 done
+2020-06-15_17:58:57:513 - Simulation 10 out of 10 done
+2020-06-15_17:58:57:513 - > 1.0ii1.4ij
+2020-06-15_17:58:57:905 - Simulation 1 out of 10 done
+2020-06-15_17:58:58:297 - Simulation 2 out of 10 done
+2020-06-15_17:58:58:691 - Simulation 3 out of 10 done
+2020-06-15_17:58:59:099 - Simulation 4 out of 10 done
+2020-06-15_17:58:59:498 - Simulation 5 out of 10 done
+2020-06-15_17:58:59:889 - Simulation 6 out of 10 done
+2020-06-15_17:59:00:291 - Simulation 7 out of 10 done
+2020-06-15_17:59:00:694 - Simulation 8 out of 10 done
+2020-06-15_17:59:01:101 - Simulation 9 out of 10 done
+2020-06-15_17:59:01:505 - Simulation 10 out of 10 done
+2020-06-15_17:59:01:505 - > 1.0ii1.6ij
+2020-06-15_17:59:01:912 - Simulation 1 out of 10 done
+2020-06-15_17:59:02:315 - Simulation 2 out of 10 done
+2020-06-15_17:59:02:714 - Simulation 3 out of 10 done
+2020-06-15_17:59:03:111 - Simulation 4 out of 10 done
+2020-06-15_17:59:03:512 - Simulation 5 out of 10 done
+2020-06-15_17:59:03:913 - Simulation 6 out of 10 done
+2020-06-15_17:59:04:338 - Simulation 7 out of 10 done
+2020-06-15_17:59:04:787 - Simulation 8 out of 10 done
+2020-06-15_17:59:05:215 - Simulation 9 out of 10 done
+2020-06-15_17:59:05:643 - Simulation 10 out of 10 done
