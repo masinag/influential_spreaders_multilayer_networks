@@ -28,7 +28,7 @@
 \usepackage[utf8x]{inputenc} % per Linux (richiede il pacchetto unicode);
 %\usepackage[applemac]{inputenc} % per Mac.
 
-\input{cap0-include_commands}
+\input{_include_commands}
 
 
 \singlespacing
@@ -100,8 +100,6 @@
       \titlespacing*{\section}{0pt}{0.20in}{0.02in}
       \titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
       
-      % sommario
-      \input{sommario}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Nota
@@ -123,6 +121,8 @@
       %
       % \input oppure \include
       %
+      \input{cap0-sommario}
+
       \input{cap1-introduzione}
 
       \input{cap2-definizioni}

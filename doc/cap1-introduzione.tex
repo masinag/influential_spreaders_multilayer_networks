@@ -1,20 +1,47 @@
 \chapter{Introduzione}
 
-Lo studio di un processo di diffusione all'interno di una rete è molto utile per comprendere le dinamiche
-di diversi scenari. Tra questi, la diffusione di una notizia in una rete di contatti, di un virus in una 
-società, una fake news in un social network e l'accumulo di un ritardo nelle stazioni di una rete di trasporti.
+Le reti permettono di modellare una grande quantità di sistemi in cui diverse entità,
+anche dette nodi, sono legate tra loro mediante delle relazioni.
+Esempi di questo tipo sono le reti di interazione sociale, in cui le persone sono legate 
+da relazioni di amicizia, di collaborazione o di contatto sui social networks, 
+le reti dei trasporti, come quello ferroviario o quello aereo
+che collegano diverse città, e le reti biologiche, come quella alimentare o
+quella delle interazioni tra molecole all'interno di un organismo.
 
+Utilizzando questi modelli è particolarmente utile lo studio dei processi di diffusione
+all'interno delle reti per comprendere le dinamiche di diversi scenari.
+Tra questi, la diffusione di un virus in una società, di una notizia in una rete di contatti, 
+una fake news in un social network e l'accumulo di un ritardo nelle stazioni di una rete 
+dei trasporti.
+
+In questi processi, inizialmente un nodo o un ristretto gruppo di nodi sono infetti. In
+ogni instante un nodo infetto può contagiare con una certa probabilità i nodi con cui 
+è in relazione.
 Di particolare interesse è l'individuazione dei cosiddetti \infsp, ovvero dei nodi
 che, se infettati, permettono di `contagiare' una grossa parte della rete.
+Tali nodi, infatti, possono essere sfruttati per garantire una efficace diffusione 
+di un'informazione nella rete o, al contrario, per evitarne la propagazione.
+Ad esempio, per diffondere una notizia importante in un social network sarà opportuno che 
+venga pubblicata da un account molto seguito, mentre per fermare un'epidemia 
+può essere utile isolare i luoghi o le persone che hanno un ruolo più centrale
+nella società.
+
 
 \section{\textit{Influential spreaders} in un grafo}
 
-Poichè i processi di simulazione della diffusione sono computazionalmente costosi, un problema
-di grande importanza è quello di individuare gli \infsp\ analizzando la topologia della rete.
+Generalmente, una rete viene modellata tramite un grafo, ossia una struttura in cui i 
+nodi sono connessi tramite archi se tra loro esiste una relazione.
 
-Il problema è stato molto studiato nei grafi `classici', dove i nodi e gli archi che li collegano 
-appartengono alla stessa rete %
-\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}.
+Il modo più affidabile per l'individuazione degli \infsp\ in un grafo consiste nel 
+simulare il processo di diffusione partendo da ogni nodo, classificando come nodi più 
+influenti quelli da cui si riesce ad infettare la porzione di rete maggiore.
+Tuttavia, poichè la trasmissione dell'infezione tra un nodo e un suo vicino è probabilistica,
+occorrerebbe effettuare un gran numero di simulazioni prima di avere una stima accurata 
+dell'influenza di un nodo sulla rete e ciò rende questo metodo computazionalmente 
+molto costoso.
+
+Un problema molto studiato è quello dell'individuazione degli \infsp\ tramite l'analisi della 
+topologia delle rete\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}.
 È stato osservato che alcuni algoritmi di centralità forniscono una buona indicazione di 
 quali sono i nodi più influenti nella diffusione. 
 Tra questi, \textit{PageRank}, \textit{Betweenness Centrality} e \textit{k-core} sono algoritmi che richiedono una conoscenza
@@ -23,16 +50,16 @@ ha bisogno solo di una conoscenza locale della rete.
 
 \section{\textit{Influential spreaders} in una multilayer network}
 
-In molti dei problemi reali i nodi sono collegati tramite diversi tipi di interazioni, che non 
+In molti dei problemi reali i nodi sono collegati tramite diversi tipi di relazioni, che non 
 possono essere rappresentate in un grafo `classico'. 
 Esempi di questo tipo sono la rete dei profili online collegati dalle loro interazioni
 in diversi social networks (follow, amicizie, condivisioni, ecc.) e la rete delle stazioni di 
 una città connesse da tratte di diversi mezzi di trasporto (rete ferroviaria, rete degli autobus, 
 piste ciclabili, ecc.).
 
-Strutture che permettono di rappresentare queste realtà sono le \muln, ossia reti in cui sono 
+Strutture che permettono di rappresentare queste realtà sono le \mulns, ossia reti in cui sono 
 presenti differenti tipi di relazione tra i nodi. 
 
 È stata studiata l'individuazione degli \infsp\ in questo tipo di reti, utilizzando 
-algoritmi di centralità definiti su di esse.
+algoritmi di centralità definiti per esse.
 
