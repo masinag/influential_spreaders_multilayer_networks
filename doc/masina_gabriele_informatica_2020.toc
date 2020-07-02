@@ -1,37 +1,37 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{Sommario}{2}{chapter*.2}% 
-\contentsline {chapter}{\numberline {1}Introduzione}{2}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}\textit {Influential spreaders} in un grafo}{2}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}\textit {Influential spreaders} in una multilayer network}{3}{section.1.2}% 
-\contentsline {chapter}{\numberline {2}Definizioni}{3}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}Algoritmi utilizzati}{3}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Algoritmi sul grafo aggregato}{5}{section.3.1}% 
-\contentsline {subsection}{\numberline {3.1.1}PageRank}{5}{subsection.3.1.1}% 
-\contentsline {subsection}{\numberline {3.1.2}k-core}{5}{subsection.3.1.2}% 
-\contentsline {subsection}{\numberline {3.1.3}Degree}{5}{subsection.3.1.3}% 
-\contentsline {subsection}{\numberline {3.1.4}Algoritmi applicati su ogni layer}{5}{subsection.3.1.4}% 
-\contentsline {subsection}{\numberline {3.1.5}Additive PageRank}{5}{subsection.3.1.5}% 
-\contentsline {subsection}{\numberline {3.1.6}SumCore}{6}{subsection.3.1.6}% 
-\contentsline {subsection}{\numberline {3.1.7}Algoritmi applicati sull'intera struttura}{6}{subsection.3.1.7}% 
-\contentsline {subsection}{\numberline {3.1.8}Versatility PageRank}{6}{subsection.3.1.8}% 
-\contentsline {subsection}{\numberline {3.1.9}Versatility Betweenness Centrality}{6}{subsection.3.1.9}% 
-\contentsline {subsection}{\numberline {3.1.10}Multiplex k-core}{7}{subsection.3.1.10}% 
-\contentsline {subsection}{\numberline {3.1.11}Power Community Index}{7}{subsection.3.1.11}% 
-\contentsline {chapter}{\numberline {4}Dataset}{7}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Estrazione reti multiplex}{7}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Generazione reti multilayer}{8}{section.4.2}% 
-\contentsline {paragraph}{Generazione delle \textit {inter-connessioni}}{8}{paragraph*.3}% 
-\contentsline {chapter}{\numberline {5}Simulazioni}{10}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Probablit\IeC {\`a} di contagio}{10}{section.5.1}% 
-\contentsline {chapter}{\numberline {6}Risultati}{11}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Metodo di valutazione}{11}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Confronto dei risultati}{11}{section.6.2}% 
-\contentsline {paragraph}{Algoritmi applicati al grafo trasposto}{11}{paragraph*.4}% 
-\contentsline {chapter}{Bibliografia}{13}{table.6.6}% 
-\contentsline {chapter}{\numberline {A}Titolo primo allegato}{16}{appendix.Alph1}% 
-\contentsline {section}{\numberline {A.1}Titolo}{16}{section.Alph1.1}% 
-\contentsline {subsection}{\numberline {A.1.1}Sottotitolo}{16}{subsection.Alph1.1.1}% 
-\contentsline {chapter}{\numberline {B}Titolo secondo allegato}{17}{appendix.Alph2}% 
-\contentsline {section}{\numberline {B.1}Titolo}{17}{section.Alph2.1}% 
-\contentsline {subsection}{\numberline {B.1.1}Sottotitolo}{17}{subsection.Alph2.1.1}% 
+\contentsline {chapter}{Sommario}{2}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introduzione}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}\textit {Influential spreaders} in un grafo}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}\textit {Influential spreaders} in una multilayer network}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Definizioni}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Algoritmi utilizzati}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Algoritmi sul grafo aggregato}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}\textit {PageRank}}{5}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}\textit {k-core}}{5}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}\degree }{6}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Algoritmi applicati su ogni layer}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}\textit {additive~PageRank}}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}\textit {sumCore}}{6}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Algoritmi applicati sull'intera struttura}{6}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\textit {versatility~PageRank}}{6}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}\textit {versatility~Betweenness~Centrality}}{7}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}\textit {multiplex k-core}}{7}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}\textit {Power Community Index}}{7}{subsection.3.3.4}
+\contentsline {chapter}{\numberline {4}Dataset}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Estrazione reti multiplex}{8}{section.4.1}
+\contentsline {section}{\numberline {4.2}Generazione reti multilayer}{8}{section.4.2}
+\contentsline {paragraph}{Generazione delle \textit {inter-connessioni}}{8}{paragraph*.3}
+\contentsline {chapter}{\numberline {5}Simulazioni}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Probablità di contagio}{9}{section.5.1}
+\contentsline {chapter}{\numberline {6}Risultati}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Metodo di valutazione}{11}{section.6.1}
+\contentsline {section}{\numberline {6.2}Confronto dei risultati}{11}{section.6.2}
+\contentsline {paragraph}{Algoritmi applicati al grafo trasposto}{12}{paragraph*.4}
+\contentsline {chapter}{Bibliografia}{13}{table.6.6}
+\contentsline {chapter}{\numberline {A}Titolo primo allegato}{17}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Titolo}{17}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Sottotitolo}{17}{subsection.Alph1.1.1}
+\contentsline {chapter}{\numberline {B}Titolo secondo allegato}{18}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Titolo}{18}{section.Alph2.1}
+\contentsline {subsection}{\numberline {B.1.1}Sottotitolo}{18}{subsection.Alph2.1.1}
