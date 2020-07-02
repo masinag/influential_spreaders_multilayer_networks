@@ -80,13 +80,13 @@
     
     
           
-    % gruppo per definizone di successione capitoli senza interruzione di pagina
+    % gruppo per definizione di successione capitoli senza interruzione di pagina
     \begingroup
       % nessuna interruzione di pagina tra capitoli
       % ridefinizione dei comandi di clear page
       \renewcommand{\cleardoublepage}{} 
       \renewcommand{\clearpage}{} 
-      % redefinizione del formato del titolo del capitolo
+      % ridefinizione del formato del titolo del capitolo
       % da formato
       %   Capitolo X
       %   Titolo capitolo
@@ -121,17 +121,23 @@
       %
       % \input oppure \include
       %
+      \newpage
       \input{cap0-sommario}
-
+      \newpage
       \input{cap1-introduzione}
+      \newpage
 
       \input{cap2-definizioni}
+      \newpage
 
       \input{cap3-algoritmi}
+      \newpage
       
       \input{cap4-dataset}
 
+      \newpage
       \input{cap5-simulazioni}
+      \newpage
 
       \input{cap6-risultati}
       
@@ -175,10 +181,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 
-    \titleformat{\chapter}
-        {\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
-    % sezione Allegati - opzionale
-    \appendix
-    \input{allegati}
+    % \titleformat{\chapter}
+    %     {\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
+    % % sezione Allegati - opzionale
+    % \appendix
+    % \input{allegati}
 
 \end{document}

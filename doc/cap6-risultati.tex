@@ -10,8 +10,9 @@ nodo~$i$ nei layer in cui esso è presente.
 È stato poi calcolato per ogni algoritmo un vettore $a$ dove $a_i$ 
 è il punteggio assegnato dall'algoritmo al nodo~$i$.
 
-Per confrontare i vettori così ottenuti ed assegnare un punteggio ad ogni algoritmo che ne 
-valutasse la capacità di riconoscere gli \infsp\ è stato utilizzato coefficiente \textit{Kendall's}~$\tau$~\cite{kendall:tau}, 
+Per assegnare ad ogni algoritmo un valore che ne rispecchi la capacità di riconoscere 
+gli \infsp\ sono stati confrontati i vettori $s$ e $a$ utilizzando il coefficiente 
+\textit{Kendall's}~$\tau$~\cite{kendall:tau}, 
 così definito:
 
 \begin{equation}
@@ -29,7 +30,7 @@ dove:
 
 Se $a_i = a_j$ oppure $s_i = s_j$, la coppia $i, j$ non viene contata.
 
-Il risultato della formula è compreso tra \num{-1.0} e {1.0}
+Il risultato della formula è compreso tra \num{-1.0} e {1.0}.
 
 \section{Confronto dei risultati}
 
@@ -39,8 +40,11 @@ In ogni tabella sono evidenziati per ogni rete i punteggi ottenuti dai \num{3} a
 migliori. 
 
 Si può notare che \textit{mlPCI} e \textit{laPCI} sono i due algoritmi che ottengono punteggi buoni 
-su tutte le reti utilizzate, e possono quindi essere considerati un buon metodo per indentificare 
-gli \infsp.
+su tutte le reti utilizzate, e possono quindi essere considerati un buon metodo per identificare 
+gli \infsp. 
+Altri algoritmi come \textit{alPCI} e \textit{aggDeg} sebbene ottengano ottimi risultati su
+particolari tipi di rete, ottengono scarsi risultati sugli altri; non sono pertanto da 
+considerare affidabili per l'individuazione degli \infsp.
 
 \input{tables/tab_dln}
 \input{tables/tab_sln}

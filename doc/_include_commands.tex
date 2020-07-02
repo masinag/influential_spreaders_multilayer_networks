@@ -19,6 +19,11 @@
 
 \usepackage{url}
 
+\usepackage{enumitem}
+\setlist[itemize]{ topsep=0pt}
+\setlist[description]{ topsep=0pt}
+\setlist[enumerate]{ topsep=0pt}
+
 
 %%%%%%%%%%%%%%%
 % algoritmi
@@ -70,6 +75,7 @@
 \usepackage{graphics}
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
 
 
 %%%%%%%%%%%%%%%%
@@ -87,7 +93,12 @@
 \newcommand{\layers}{\textit{layers}}
 \newcommand{\muln}{\textit{multilayer network}}
 \newcommand{\mulns}{\textit{multilayer networks}}
+\newcommand{\Mulns}{\textit{Multilayer networks}}
+
 \newcommand{\mulx}{\textit{multiplex network}}
+\newcommand{\mulxs}{\textit{multiplex networks}}
+\newcommand{\Mulxs}{\textit{Multiplex networks}}
+
 \newcommand{\gragg}{\textit{grafo aggregato}}
 \newcommand{\interc}{\textit{inter-connessioni}}
 \newcommand{\spproc}{\textit{spreading process}}
@@ -100,7 +111,7 @@
 \newcommand{\degree}{\textit{degree}}
 % \newcommand{\centr}{\textit{centrality}}
 \newcommand{\addPageRank}{\textit{additive~PageRank}}
-\newcommand{\sumCore}{\textit{sumCore}}
+\newcommand{\sumCore}{\textit{sum k-core}}
 \newcommand{\verPageRank}{\textit{versatility~PageRank}}
 \newcommand{\verBetweennessCentrality}{\textit{versatility~Betweenness~Centrality}}
 \newcommand{\multiCore}{\textit{multiplex k-core}}

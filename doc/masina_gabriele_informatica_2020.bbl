@@ -28,6 +28,11 @@ FBK CoMuNe~Lab.
 \newblock Datasets released for reproducibility.
 \newblock \url{https://comunelab.fbk.eu/data.php}.
 
+\bibitem{dedomenico:structred}
+Manlio De~Domenico, Vincenzo Nicosia, Alexandre Arenas, and Vito Latora.
+\newblock Structural reducibility of multilayer networks.
+\newblock {\em Nature Communications}, 6(1):6864, 2015.
+
 \bibitem{dedomenico:versatile}
 Manlio De~Domenico, Albert Sol{\'e}-Ribalta, Elisa Omodei, Sergio G{\'o}mez,
   and Alex Arenas.
@@ -79,6 +84,14 @@ Albert Sol\'{e}-Ribalta, Manlio De~Domenico, Sergio G\'{o}mez, and Alex Arenas.
 \newblock In {\em Proceedings of the 2014 ACM Conference on Web Science},
   WebSci ’14, page 149–155, New York, NY, USA, 2014. Association for
   Computing Machinery.
+
+\bibitem{stark:biogrid}
+Chris Stark, Bobby-Joe Breitkreutz, Teresa Reguly, Lorrie Boucher, Ashton
+  Breitkreutz, and Mike Tyers.
+\newblock Biogrid: a general repository for interaction datasets.
+\newblock {\em Nucleic acids research}, 34(Database issue):D535--D539, Jan
+  2006.
+\newblock 34 (1).
 
 \bibitem{wang:eigenv}
 Yang Wang, D.~{Chakrabarti}, Chenxi Wang, and C.~{Faloutsos}.
