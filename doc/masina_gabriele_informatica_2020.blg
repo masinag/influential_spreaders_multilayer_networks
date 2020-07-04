@@ -1,46 +1,51 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: masina_gabriele_informatica_2020.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-You've used 16 entries,
+Warning--I'm ignoring stark:biogrid's extra "note" field
+--line 340 of file biblio.bib
+Warning--I'm ignoring stark:biogrid's extra "note" field
+--line 341 of file biblio.bib
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            607 strings with 6889 characters,
-and the built_in function-call counts, 5624 in all, are:
-= -- 532
-> -- 310
+            624 strings with 7396 characters,
+and the built_in function-call counts, 6483 in all, are:
+= -- 615
+> -- 366
 < -- 3
-+ -- 124
-- -- 106
-* -- 431
-:= -- 955
-add.period$ -- 50
-call.type$ -- 16
-change.case$ -- 100
++ -- 146
+- -- 126
+* -- 509
+:= -- 1105
+add.period$ -- 59
+call.type$ -- 18
+change.case$ -- 116
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 198
-empty$ -- 406
-format.name$ -- 106
-if$ -- 1165
+cite$ -- 18
+duplicate$ -- 220
+empty$ -- 459
+format.name$ -- 126
+if$ -- 1333
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 14
-newline$ -- 83
-num.names$ -- 32
-pop$ -- 93
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 96
+num.names$ -- 36
+pop$ -- 106
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 99
 quote$ -- 0
-skip$ -- 148
+skip$ -- 158
 stack$ -- 0
-substring$ -- 285
-swap$ -- 43
+substring$ -- 338
+swap$ -- 45
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 70
 warning$ -- 0
-while$ -- 44
-width$ -- 18
-write$ -- 179
+while$ -- 51
+width$ -- 20
+write$ -- 207
+(There were 2 warnings)

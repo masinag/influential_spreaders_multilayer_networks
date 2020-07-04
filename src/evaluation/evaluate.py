@@ -76,7 +76,7 @@ def write_rankings(net, lambda_dir, ktt):
             f.write("%s %f\n" % (name, score))
 
 if __name__ == "__main__":
-    # for each dataset output the kendall's Tau
+    # for each dataset output the Kendall's $\tau$
     for dir in DATASETS_DIRS:
         for net in os.listdir(dir):
             net = net.rstrip('.edges')

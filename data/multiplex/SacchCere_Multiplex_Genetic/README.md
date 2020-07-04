@@ -113,4 +113,6 @@ If you find any error in the dataset or you have questions, please contact
 	Universitat Rovira i Virgili 
 	Tarragona (Spain)
 
-email: <manlio.dedomenico@urv.cat>web: <http://deim.urv.cat/~manlio.dedomenico/>
+email: <manlio.dedomenico@urv.cat>
+
+web: <http://deim.urv.cat/~manlio.dedomenico/>

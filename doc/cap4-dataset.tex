@@ -2,24 +2,95 @@
 Queste misure sono state testate su diverse reti con caratteristiche diverse, 
 seguendo una metodologia simile a \cite{basaras:infspmul}:
 \begin{itemize}
-    \item Multiplex Network estratte da dataset biologici e sociali;
-    \item Multilayer Network generate a partire da reti di interazioni in Internet.
+    \item \Mulxs\ estratte da dataset biologici e sociali;
+    \item \Mulns\ generate a partire da reti di interazioni in Internet.
 \end{itemize}
 
-\section{Estrazione reti multiplex}
+\section{\Mulxs}
+\subsection{Descrizione dei dataset}
 Le reti indicate in tabella \vref{tab:multiplex} sono state estratte a partire da reti biologiche e
 sociali fornite da \cite{data:multiplex}.
-L'obiettivo era quello di ottenere un dataset simile a quello utilizzato da \cite{basaras:infspmul},
-dove per ogni rete sono indicati i numeri $N$, $E$ ed $|L|$, rispettivamente di nodi, archi e layer estratti.
+In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{dedomenico:structred}:
+\begin{description}
+    \item[Drosophila] \mulx\ delle interazioni genetiche e proteiche di 
+    Drosophila Melanogaster. I layer rappresentano:
+    \begin{enumerate}
+        \item Direct interaction;
+        \item Suppressive genetic interaction defined by inequality;
+        \item Additive genetic interaction defined by inequality;
+        \item Physical association;
+        \item Colocalization;
+        \item Association;
+        \item Synthetic genetic interaction defined by inequality.
+    \end{enumerate} 
+    
+    \item[Homo] \mulx\ delle interazioni genetiche e proteiche di 
+    Homo Sapiens. I layer rappresentano:
+    \begin{enumerate}
+        \item Direct interaction;
+        \item Physical association;
+        \item Suppressive genetic interaction defined by inequality;
+        \item Association;
+        \item Colocalization;
+        \item Additive genetic interaction defined by inequality;
+        \item Synthetic genetic interaction defined by inequality.
+    \end{enumerate} 
+    \item[MA2013] \mulx\ che rappresenta differenti tipi di relazioni sociali 
+        tra utenti di Twitter durante i campionati del mondo di atletica leggera 
+        di Mosca 2013.
+        I layer rappresentano:
+        \begin{enumerate}
+            \item Retweet;
+            \item Mentions;
+            \item Replies.
+        \end{enumerate}
+    \item[NYCM2014] \mulx\ che rappresenta differenti tipi di relazioni sociali 
+        tra utenti di Twitter durante la Marcia per il Clima svoltasi a New York nel 2014.
+        I layer rappresentano:
+        \begin{enumerate}
+            \item Retweet;
+            \item Mentions;
+            \item Replies.
+        \end{enumerate}
+    \item[SacchCere] \mulx\ delle interazioni genetiche e proteiche di 
+        Saccharomyces Cerevisiae. I layer rappresentano:
+        \begin{enumerate}
+            \item Physical association;
+            \item Suppressive genetic interaction defined by inequality;
+            \item Direct interaction;
+            \item Synthetic genetic interaction defined by inequality;
+            \item Association;
+            \item Colocalization;
+            \item Additive genetic interaction defined by inequality.
+        \end{enumerate} 
+    \item[SacchPomb] \mulx\ delle interazioni genetiche e proteiche di 
+        Saccharomyces Pombe. I layer rappresentano:
+        \begin{enumerate}
+            \item Direct interaction;
+            \item Colocalization;
+            \item Physical association;
+            \item Suppressive genetic interaction defined by inequality;
+            \item Synthetic genetic interaction defined by inequality;
+            \item Additive genetic interaction defined by inequality;
+            \item Association.
+        \end{enumerate} 
+\end{description}
 
-Per ogni rete, è stato individuato un sottoinsieme $L$ di $|L|$ layer in cui il numero di nodi con una 
-controparte in ogni layer fosse almeno $N$. Per tutte le reti, è  stato trovato un solo sottoinsieme 
+\subsection{Estrazione delle \mulxs}
+L'obiettivo era quello di ottenere un dataset simile a quello utilizzato da \cite{basaras:infspmul},
+dove da ogni rete viene estratta una sottorete in cui ogni nodo è presente in tutti i layer.
+Nell'articolo sono indicati per ogni rete i numeri $N$, $E$ ed $|L|$, rispettivamente di nodi, 
+archi e layer estratti.
+
+Per ogni rete, è stato individuato un sottoinsieme $L$ di $|L|$ layers con
+numero di nodi con una controparte in ogni layer maggiore o uguale a $N$. 
+Per tutte le reti, è  stato trovato un solo sottoinsieme 
 che rispettasse questo criterio.
 
-Dopo aver costruito una sotto-rete formata solo dai layer in $L$, sono stati rimossi i nodi non presenti
-in tutti i layer e gli archi da e verso essi. Dopodichè sono stati rimossi tutti i nodi da cui non arrivava
-nè partiva più nessun arco. Questa procedura è stata applicata ricorsivamente alla sotto-rete ottenuta, 
-finchè non è stato più possibile rimuovere alcun nodo. 
+Dopo aver costruito una sottorete formata solo dai layer in $L$, sono stati rimossi i nodi non presenti
+in tutti i layer e gli archi da e verso essi. Dopodiché sono stati rimossi tutti i nodi da cui non arrivava
+né partiva più nessun arco. Questa procedura è stata applicata ricorsivamente alla sottorete ottenuta, 
+finché non è stato più possibile rimuovere alcun nodo. 
 
 I risultati ottenuti sono stati molto simili a quelli voluti, come si può vedere in tabella \vref{tab:multiplex}.
 
@@ -28,9 +99,37 @@ In queste reti sono state aggiunte \interc\ tra le controparti di ogni nodo in o
 \input{tables/tab_dataset_mux}
 
 \section{Generazione reti multilayer}
-Sono state generate delle \muln\ partendo da grafi di interazioni su 
-social network e su architetture peer-to-peer, in particolare quelli 
+
+\subsection{Descrizione dei dataset}
+Sono state generate delle \muln\ partendo da grafi di ottenuti da 
+diverse applicazioni peer-to-peer, in particolare quelli 
 indicati in tabella \vref{tab:multilayer}, che si possono trovare in \cite{data:multilayer}.
+
+I grafi utilizzati sono:
+\begin{description}
+    \item[wiki-Vote] Grafo delle votazioni per le elezioni degli amministratori 
+    di Wikipedia svoltesi fino al gennaio 2008.
+    I nodi del grafo rappresentano utenti di Wikipedia, la metà circa sono 
+    admin mentre gli altri sono utenti ordinari, e un arco diretto dal nodo 
+    $i$ al nodo $j$ indica che l'utente $i$ ha votato per l'utente $j$;
+
+    \item[cit-HepTh] Grafo delle citazioni tra articoli sul sito arXiv
+    pubblicati tra gennaio 1993 e aprile 2003.
+    Se un paper $i$ cita un paper $j$, il grafo contiene un arco diretto 
+    da $i$ a $j$. Non è contenuta alcuna informazione riguardo articoli non 
+    presenti sul sito;
+
+    \item[p2p-Gnutella04\textnormal{,} p2p-Gnutella05\textnormal{,} p2p-Gnutella06\textnormal{,} p2p-Gnutella08] 
+    Grafi che rappresentano `istantanee' della rete di file sharing peer-to-peer Gnutella, nell'agosto 2002.
+    In questi grafi i nodi rappresentano gli host della rete Gnutella e gli archi 
+    rappresentano connessioni tra gli host.
+
+\end{description}
+
+\input{tables/tab_dataset_ml}
+
+
+\subsection{Generazione delle \mulns}
 
 Seguendo l'approccio di \cite{basaras:infspmul}, sono stati generati due tipi di reti:
 \begin{itemize}
@@ -38,10 +137,10 @@ Seguendo l'approccio di \cite{basaras:infspmul}, sono stati generati due tipi di
             tabella \vref{tab:multilayer}. In queste reti i layer hanno tutti un numero simile 
             di nodi e archi;
     \item Different Layers Networks(DLN), i cui layer sono i grafi [1-3] della tabella 
-        \vref{tab:multilayer}. In queste reti i layer hanno numero di nodi e archi molto differenti.
+        \ref{tab:multilayer}. In queste reti i layer hanno numero di nodi e archi molto differenti.
 \end{itemize}
 
-\paragraph{Generazione delle \interc}
+
 Per prima cosa, sono state aggiunte \interc\ tra le controparti di ogni nodo in tutti 
 i layer in cui esso è presente.
 
@@ -57,37 +156,50 @@ Ognuno di questi parametri è stato generato secondo una distribuzione che segue
 la legge di Zipf \cite{zipf:humanb}, per cui la frequenza di un certo valore è inversamente
 proporzionale al valore stesso. 
 
-Tale distribuzione genera numeri tra 1 ed un valore massimo $m$ con diverse probabilità,
+Tale distribuzione genera numeri tra 1 ed un valore massimo $m$ (escluso) con diverse probabilità,
 secondo il valore di una variabile $s \in [0, 1]$
-che regola il grado di `asimmetria' dei valori generati:
-per $s=0$ la probabilità di ogni valore è la stessa, mentre per  
-$s=1$, si ha $\mathcal{P}(1) = 2 \cdot \mathcal{P}(2) = 3 \cdot \mathcal{P}(3) =\dots = m \cdot \mathcal{P}(m)$. 
+che regola il grado di `asimmetria' dei valori generati, in particolare:
+\begin{itemize}
+    \item per $s=0$ la probabilità $\mathcal{P}$ di ogni valore è la stessa;  
+    \item per $s=1$ si ha $\mathcal{P}(0) = 2 \cdot \mathcal{P}(1) = 3 \cdot \mathcal{P}(2) =\dots = m \cdot \mathcal{P}(m-1)$. 
+\end{itemize}
 
-Le variabili che regolano i tre parametri sono chiamate rispettivamete
-$s_{degree}$, $s_{layer}$, $s_{node}$.
+Le variabili che regolano i tre parametri sono chiamate rispettivamente
+$s_{degree}$, $s_{layer}$, $s_{node}$. La probabilità che un nodo abbia $k$ \interc\ è $\mathcal{P}_{degree}(k)$.
 Per ognuna sono stati sperimentati i valori $0.3$ e $0.8$. 
 Per quanto riguarda il numero di \interc\ di un nodo in un determinato layer
 il valore massimo è stato impostato a $d \cdot \log_2{\sum_{i}{V_i}}$, con 
-$d = 2$. Per gli altri paramentri, invece, tutti i layer devono essere selezionabili
+$d = 2$. Per gli altri parametri, invece, tutti i layer devono essere selezionabili
 così come tutti i nodi all'interno di un layer.
 
-La probabilità che un nodo abbia $k$ \interc\ è $\mathcal{P}_{degree}(k)$.
-Per la scelta del layer di destinazione si è operato come segue:
-è stata generata una permutazione casuale dei layer; definita $pos(l)$
-la posizione del layer $l$ nella permutazione, la probabilità che questo venga 
-scelto come layer di destinazione è $\mathcal{P}_{layer}(pos(l))$.
-In modo analogo sono stati permutati i nodi all'interno di ogni layer per determinarne 
-la probabilità di essere scelti come destinazione.
+L'algoritmo \vref{alg:generate} mostra come sono state generate le reti.
+Nell'algoritmo gli oggetti della classe \tzgen\ sono generatori di numeri 
+casuali secondo una distribuzione che segue la legge di Zipf. È stato utilizzato 
+un generatore per ognuno dei tre parametri, in particolare:
+\begin{enumerate}
+    \item $degree\_generator$ genera numeri tra 0 e $max\_interconnectons - 1$
+        con $s = s_{degree}$ che vengono utilizzati direttamente per definire il 
+        numero di \interc\ uscenti da ogni nodo;
+    \item $layer\_generator$ genera numeri tra 0 e $L - 1$, dove $L$ è il 
+        numero di layers, con $s = s_{layer}$. Questi numeri vengono utilizzati 
+        come indice per scegliere il layer di destinazione all'interno di una 
+        permutazione dei layer $perm\_l$;
+    \item $node\_generators$ è un vettore di generatori in cui 
+        l'$i$-esimo elemento $node\_generators[i]$ genera numeri 
+        tra 0 e $V_i - 1$, dove $V_i$ è il numero di nodi dell'$i$-esimo layer, 
+        con $s = s_{node}$. Questi numeri vengono utilizzati 
+        come indice per scegliere il nodo di destinazione all'interno 
+        di una permutazione dei nodi del layer $i$ selezionato 
+        chiamata $perm\_n[i]$.
+\end{enumerate}
 
 Le reti così generate sono denominate con 
-SLN\large{$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
+SLN{\Large$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
 oppure
-DLN\large{$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
+DLN{\Large$_{ s_{degree}\text{,}s_{layer}\text{,}s_{node}}$}
 
-L'algoritmo \vref{alg:generate} mostra come sono state generate le reti.
 
 \input{algorithms/generate_ml}
   
 %   $\text{SLN}_d(s_{degree}$, $s_{layer}$, $s_{node})$
 % oppure $\text{DLN}_d(s_{degree}$, $s_{layer}$, $s_{node})$.
-\input{tables/tab_dataset_ml}

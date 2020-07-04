@@ -1,33 +1,55 @@
+\setlength{\parskip}{1em}
+
 \chapter*{Sommario} % senza numerazione
 \label{sommario}
 
 \addcontentsline{toc}{chapter}{Sommario} % da aggiungere comunque all'indice
 
-la diffusione di una notizia in un social network, la diffusione di un'epidemia
-in una rete di contatti 
-Gli influential spreaders in una rete sono quei nodi che, se infettati, 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nunc 
-orci. Aliquam nec nisl vitae sapien pulvinar dictum quis non urna. 
-Suspendisse at dui a erat aliquam vestibulum. Quisque ultrices pellentesque pellentesque. 
-Pellentesque egestas quam sed blandit tempus. Sed congue nec risus posuere
- euismod. Maecenas ut lacus id mauris sagittis egestas a eu dui. 
- Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
- per inceptos himenaeos. Pellentesque at ultrices tellus. Ut eu purus 
- eget sem iaculis ultricies sed non lorem. Curabitur gravida dui eget ex 
- vestibulum venenatis. Phasellus gravida tellus velit, non eleifend justo 
- lobortis eget.
+Diversi sistemi reali possono essere modellati tramite una rete in cui
+le entità, sono legate se tra loro c'è una relazione. 
+In particolare in molti casi le relazioni tra queste entità possono essere 
+di varia natura. Questo tipo di sistema può essere rappresentato usando una 
+\muln.
 
+Lo scopo di questa tesi è l'individuazione degli \infsp\ in una \muln, 
+ovvero di quei nodi nella rete che durante un processo di diffusione 
+permettono di infettare la porzione di rete maggiore. 
+Questi nodi sono particolarmente utili in quanto possono essere sfruttati per 
+massimizzare la diffusione di un'informazione all'interno della rete o, al contrario, 
+isolati se si vuole che l'informazione resti il più possibile confinata.
 
-  Sommario è un breve riassunto del lavoro svolto dove si descrive l'obiettivo, l'oggetto della tesi, le 
-metodologie e le tecniche usate, i dati elaborati e la spiegazione delle conclusioni alle quali siete arrivati.  
+% \\[1em]
+Tali nodi sono facilmente identificabili simulando i processi di diffusione, 
+che però risultano computazionalmente molto costosi e quindi 
+non applicabili a reti molto grandi.
+Pertanto l'obiettivo è stato quello di individuarli analizzando la topologia 
+della rete.
+% \\[1em]
+Una fase di ricerca iniziale ha permesso di raccogliere, studiare 
+e successivamente implementare diversi 
+algoritmi di centralità già utilizzati per risolvere questo problema 
+sia in grafi che in \mulns.
 
-Il sommario dell’elaborato consiste al massimo di 3 pagine e deve contenere le seguenti informazioni:
-\begin{itemize}
-  \item contesto e motivazioni 
-  \item breve riassunto del problema affrontato
-  \item tecniche utilizzate e/o sviluppate
-  \item risultati raggiunti, sottolineando il contributo personale del laureando/a
-\end{itemize}
+Questi algoritmi sono stati applicati a diversi tipi di reti \textit{multilayer}:
+reti \textit{multiplex} estratte a partire da dataset biologici e 
+sociali reali e reti \textit{multilayer} generate casualmente 
+a partire da grafi derivati da applicazioni peer-to-peer.
+
+I valori di centralità dei nodi restituiti da ogni algoritmo sono stati 
+confrontati con quelli reali, ottenuti simulando dei processi di diffusione
+nelle varie reti. In questo modo è stato possibile assegnare ad ogni algoritmo
+un punteggio ottenuto su ciascuna rete e individuare così quali algoritmi
+possono essere utilizzati per trovare gli \infsp\ in una \muln.
+Due due gli algoritmi testati hanno ottenuto buone performance su tutte le 
+reti analizzate, mentre le prestazioni degli altri sono state scarse o altalenanti.
+
+% Il sommario dell’elaborato consiste al massimo di 3 pagine e deve contenere le seguenti informazioni:
+% \begin{itemize}
+%   \item contesto e motivazioni 
+%   \item breve riassunto del problema affrontato
+%   \item tecniche utilizzate e/o sviluppate
+%   \item risultati raggiunti, sottolineando il contributo personale del laureando/a
+% \end{itemize}
 
 
 

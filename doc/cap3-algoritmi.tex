@@ -11,7 +11,7 @@ Questi possono essere divisi in tre categorie:
 \end{itemize}
 
 \section{Algoritmi sul grafo aggregato}
-Diverse misure di centralità sono utilizzate per l'individuazione degli \infsp\ in grafi 
+Diverse misure di centralità sono utilizzate per identificare degli \infsp\ in grafi 
 `classici' ad un solo layer, detti anche \textit{monoplex}~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
 Essendo definite per grafi ad un solo layer, sono state applicate al \gragg\
 derivato da ogni \muln. 
@@ -21,7 +21,7 @@ Le misure utilizzate sono state \PageRank~\cite{page:pagerank},
 
 % PAGE RANK
 
-\subsection{\PageRank}
+\subsection{\PageRank~(\textit{aggPR})}
 \label{alg:pagerank}
 \begin{definizione}[\PageRank]
     \label{def:pagerank}
@@ -37,7 +37,7 @@ Le misure utilizzate sono state \PageRank~\cite{page:pagerank},
 Questa misura di centralità fu originariamente definita per misurare l'importanza di una pagina web. 
 Secondo questo criterio, una pagina è tanto più importante quante più pagine importanti hanno un link 
 verso di essa. 
-\PageRank\ può essere visto come un modello di comportamente di un utente che, trovandosi inizialmente
+\PageRank\ può essere visto come un modello di comportamento di un utente che, trovandosi inizialmente
 in una pagina casuale, continua a visitare i link che trova, ma occasionalmente riparte da un'altra 
 pagina casuale.
 Il parametro $\alpha$ è detto $damping factor$ e regola la probabilità che si riparta da una pagina 
@@ -64,12 +64,12 @@ PR_i(v)&= \alpha \sum_{w : v \in G.adj(w)}
 (1-\alpha)\frac{1}{|V|}
     \end{split}
 \end{equation}
-finchè $||PR_{i} - PR_{i-1}||_1 < \epsilon$. Secondo \cite{page:pagerank} il numero di iterazioni 
+finché $||PR_{i} - PR_{i-1}||_1 < \epsilon$. Secondo \cite{page:pagerank} il numero di iterazioni 
 è proporzionale a $\log{|V|}$. Dunque, la complessità dell'algoritmo è $O((|V| + |E|)\log{|V|})$.
 
 % K-CORE
 
-\subsection{\kcore}
+\subsection{\kcore~(\textit{aggCore})}
 \begin{definizione}[\kcore]
     \label{def:kcore}
     Dato un grafo $G=(V, E)$, un \kcore\ di $G$ è un sottografo $G'=(V',E')$
@@ -84,7 +84,7 @@ nella rete, e quindi un potenziale \textit{influential spreader}.
 Per il calcolo di questa misura è stato utilizzato l'algoritmo definito in~\cite{batagelj:kcore}
 con complessità $O(|V| + |E|)$.
 
-\subsection{\degree}
+\subsection{\degree~(\textit{aggDeg})}
 Questa misura di centralità assegna ad ogni nodo un valore pari al suo \textit{outdegree}, 
 per cui un nodo con tanti vicini si assume possa avere una certa rilevanza in un 
 processo di diffusione.
@@ -96,7 +96,7 @@ dei nodi in ogni layer separatamente e poi sommando i punteggi ottenuti in ogni 
 In questa categoria rientrano \addPageRank~\cite{halu:addpagerank} 
 e \sumCore~\cite{basaras:infspmul}
 
-\subsection{\addPageRank}
+\subsection{\addPageRank~(\textit{addPR})}
 \begin{definizione}[\addPageRank]
     Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
     ed un ordinamento dei layer $(X_1, \dots, X_{L})$, l'\addPageRank\
@@ -121,10 +121,10 @@ autovalore più grande significa maggiore capacità di diffusione~\cite{wang:eig
 
 Come algoritmo, è stato utilizzato un approccio analogo a quello della versione classica di 
 PageRank descritto in~\vref{alg:pagerank}.
-Poichè è necessario calcolare il PageRank su ogni layer, il costo dell'algoritmo è 
+Poiché è necessario calcolare il PageRank su ogni layer, il costo dell'algoritmo è 
 $O(\sum_{i}((|V_i| + |E_i|)log(|V_i|)))$, assumendo che i layer siano già ordinati.
 
-\subsection{\sumCore}
+\subsection{\sumCore~(\textit{sumCore})}
 Questa misura è stata ottenuta calcolando il valore di \kcore di ogni nodo in 
 ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer.
 Pertanto la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
@@ -142,7 +142,7 @@ Quelle implementate sono
 \alPCI~\cite{basaras:infspmul},
 \lsPCI~\cite{basaras:infspmul}.
 
-\subsection{\verPageRank}
+\subsection{\verPageRank~(\textit{verPR})}
 \begin{definizione}[\verPageRank]
     Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$,
     si definisce \verPageRank\ di un nodo $v \in V_l$ in un layer $l$
@@ -167,7 +167,7 @@ in tutti i layer.
 Questa definizione è stata calcolata in modo analogo alla definizione \vref{alg:pagerank},
 dunque la complessità è $O((N + E)\log(N))$.
 
-\subsection{\verBetweennessCentrality}
+\subsection{\verBetweennessCentrality~(\textit{verBC})}
 
 \begin{definizione}[\verBetweennessCentrality]
     Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, la 
@@ -183,7 +183,7 @@ dunque la complessità è $O((N + E)\log(N))$.
 Questa misura è stata calcolata con l'algoritmo definito in \cite{dedomenico:verbetw}, 
 con complessità $O\left(|V|\left(N+E\right)\right)$.
 
-\subsection{\multiCore}
+\subsection{\multiCore~(\textit{multiCore})}
 
 \begin{definizione}[\multiCore]
     Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, il \multiCore\ è
@@ -194,7 +194,7 @@ con complessità $O\left(|V|\left(N+E\right)\right)$.
 Questa misura è stata calcolata estendendo l'algoritmo definito in \cite{batagelj:kcore} per 
 adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$.
 
-\subsection{\PCI}
+\subsection{\PCI~(\textit{PCI})}
 \begin{definizione}
     Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, 
     l'indice $mlPCI_n$ di un nodo $v$ in un layer $l$ 
