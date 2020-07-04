@@ -78,21 +78,26 @@ def plot_lines(df, net_type, param, palette, markers, base):
     nets = df[NET_F].unique()
 
     g = sns.relplot(x=param, y=SCORE_F, col=NET_F, hue=ALG_F, data=df, kind='line', style=ALG_F, dashes=False, col_order=sorted(nets),
-        legend='full', col_wrap=2, markers=markers, palette=palette, height=3, aspect=1.2, facet_kws={'sharey': True, 'sharex': True})
+        legend='full', col_wrap=2, markers=markers, palette=palette, height=3, aspect=1.2, facet_kws={'sharey': True})
     g.set_titles("{col_name}")
     g.set_xlabels("$\\lambda_{%s}~/~\\lambda_c$" % (param))
     # xticks = [f'{x//10}.{x%10}' for x in g.get_xticklabels()]
     # g.set_xticklabels(xticks)
     # print([x.get_text() for x in g.axes.flat[-1].get_xticklabels()])
     xticks = []
-    for x in g.axes.flat[-1].get_xticklabels():
-        n = x.get_text().split('{')[1]
-        n = n.split('}')[0]
-        n = int(n)
-        xticks.append('$\\mathdefault{%d.%d}' % (n // 10, n % 10))
+
+    for i, x in enumerate(g.axes.flat[-1].get_xticklabels()):
+        if i % 2 == 0:
+            xticks.append('')
+        else:
+            n = x.get_text().split('{')[1]
+            n = n.split('}')[0]
+            n = int(n)
+            xticks.append('$\\mathdefault{%d.%d}' % (n // 10, n % 10))
     
     # xticks = [f'$\\mathdefault{x.get_text().split('{')[1]}$' for x in g.axes.flat[-1].get_xticklabels()]
-    # print(xticks)
+    
+    print(xticks)
     g.set_xticklabels(xticks)
     
     for ax in g.axes.flatten():
@@ -211,5 +216,6 @@ if __name__ == "__main__":
     import sys
     base = sys.argv[0]
     base = base[:base.rfind('/') + 1]
+    assert(len(sys.argv)>1)
     plot_stats(base, int(sys.argv[1]) if len(sys.argv) > 1 else -1)
     

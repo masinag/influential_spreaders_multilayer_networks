@@ -12,7 +12,7 @@ Le reti indicate in tabella \vref{tab:multiplex} sono state estratte a partire d
 sociali fornite da \cite{data:multiplex}.
 In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{dedomenico:structred}:
 \begin{description}
-    \item[Drosophila] \mulx\ delle interazioni genetiche e proteiche di 
+    \item[Drosophila]: \mulx\ delle interazioni genetiche e proteiche di 
     Drosophila Melanogaster. I layer rappresentano:
     \begin{enumerate}
         \item Direct interaction;
@@ -24,7 +24,7 @@ In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{d
         \item Synthetic genetic interaction defined by inequality.
     \end{enumerate} 
     
-    \item[Homo] \mulx\ delle interazioni genetiche e proteiche di 
+    \item[Homo]: \mulx\ delle interazioni genetiche e proteiche di 
     Homo Sapiens. I layer rappresentano:
     \begin{enumerate}
         \item Direct interaction;
@@ -35,7 +35,7 @@ In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{d
         \item Additive genetic interaction defined by inequality;
         \item Synthetic genetic interaction defined by inequality.
     \end{enumerate} 
-    \item[MA2013] \mulx\ che rappresenta differenti tipi di relazioni sociali 
+    \item[MA2013]: \mulx\ che rappresenta differenti tipi di relazioni sociali 
         tra utenti di Twitter durante i campionati del mondo di atletica leggera 
         di Mosca 2013.
         I layer rappresentano:
@@ -44,7 +44,7 @@ In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{d
             \item Mentions;
             \item Replies.
         \end{enumerate}
-    \item[NYCM2014] \mulx\ che rappresenta differenti tipi di relazioni sociali 
+    \item[NYCM2014]: \mulx\ che rappresenta differenti tipi di relazioni sociali 
         tra utenti di Twitter durante la Marcia per il Clima svoltasi a New York nel 2014.
         I layer rappresentano:
         \begin{enumerate}
@@ -52,7 +52,7 @@ In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{d
             \item Mentions;
             \item Replies.
         \end{enumerate}
-    \item[SacchCere] \mulx\ delle interazioni genetiche e proteiche di 
+    \item[SacchCere]: \mulx\ delle interazioni genetiche e proteiche di 
         Saccharomyces Cerevisiae. I layer rappresentano:
         \begin{enumerate}
             \item Physical association;
@@ -63,7 +63,7 @@ In particolare i dataset di partenza sono i seguenti~\cite{stark:biogrid}\cite{d
             \item Colocalization;
             \item Additive genetic interaction defined by inequality.
         \end{enumerate} 
-    \item[SacchPomb] \mulx\ delle interazioni genetiche e proteiche di 
+    \item[SacchPomb]: \mulx\ delle interazioni genetiche e proteiche di 
         Saccharomyces Pombe. I layer rappresentano:
         \begin{enumerate}
             \item Direct interaction;
@@ -92,13 +92,13 @@ in tutti i layer e gli archi da e verso essi. Dopodiché sono stati rimossi tutt
 né partiva più nessun arco. Questa procedura è stata applicata ricorsivamente alla sottorete ottenuta, 
 finché non è stato più possibile rimuovere alcun nodo. 
 
-I risultati ottenuti sono stati molto simili a quelli voluti, come si può vedere in tabella \vref{tab:multiplex}.
+I risultati ottenuti sono stati molto simili a quelli voluti, come si può vedere nella tabella \vref{tab:multiplex}.
 
 In queste reti sono state aggiunte \interc\ tra le controparti di ogni nodo in ogni layer.
 
 \input{tables/tab_dataset_mux}
 
-\section{Generazione reti multilayer}
+\section{\Mulns}
 
 \subsection{Descrizione dei dataset}
 Sono state generate delle \muln\ partendo da grafi di ottenuti da 
@@ -107,20 +107,20 @@ indicati in tabella \vref{tab:multilayer}, che si possono trovare in \cite{data:
 
 I grafi utilizzati sono:
 \begin{description}
-    \item[wiki-Vote] Grafo delle votazioni per le elezioni degli amministratori 
+    \item[wiki-Vote]: grafo delle votazioni per le elezioni degli amministratori 
     di Wikipedia svoltesi fino al gennaio 2008.
-    I nodi del grafo rappresentano utenti di Wikipedia, la metà circa sono 
-    admin mentre gli altri sono utenti ordinari, e un arco diretto dal nodo 
+    I nodi del grafo rappresentano utenti di Wikipedia, di cui la metà circa sono 
+    amministratori mentre gli altri sono utenti ordinari, e un arco diretto dal nodo 
     $i$ al nodo $j$ indica che l'utente $i$ ha votato per l'utente $j$;
 
-    \item[cit-HepTh] Grafo delle citazioni tra articoli sul sito arXiv
+    \item[cit-HepTh]: grafo delle citazioni tra articoli sul sito arXiv
     pubblicati tra gennaio 1993 e aprile 2003.
     Se un paper $i$ cita un paper $j$, il grafo contiene un arco diretto 
     da $i$ a $j$. Non è contenuta alcuna informazione riguardo articoli non 
     presenti sul sito;
 
-    \item[p2p-Gnutella04\textnormal{,} p2p-Gnutella05\textnormal{,} p2p-Gnutella06\textnormal{,} p2p-Gnutella08] 
-    Grafi che rappresentano `istantanee' della rete di file sharing peer-to-peer Gnutella, nell'agosto 2002.
+    \item[p2p-Gnutella04\textnormal{,} p2p-Gnutella05\textnormal{,} p2p-Gnutella06\textnormal{,} p2p-Gnutella08]: 
+    grafi che rappresentano `istantanee' della rete di file sharing peer-to-peer Gnutella, nell'agosto 2002.
     In questi grafi i nodi rappresentano gli host della rete Gnutella e gli archi 
     rappresentano connessioni tra gli host.
 
@@ -133,17 +133,16 @@ I grafi utilizzati sono:
 
 Seguendo l'approccio di \cite{basaras:infspmul}, sono stati generati due tipi di reti:
 \begin{itemize}
-    \item Similar Layers Network(SLN), i cui layer sono i grafi [3-6] della  
+    \item Similar Layers Network (SLN), i cui layer sono i grafi [3-6] della  
             tabella \vref{tab:multilayer}. In queste reti i layer hanno tutti un numero simile 
             di nodi e archi;
-    \item Different Layers Networks(DLN), i cui layer sono i grafi [1-3] della tabella 
+    \item Different Layers Networks (DLN), i cui layer sono i grafi [1-3] della tabella 
         \ref{tab:multilayer}. In queste reti i layer hanno numero di nodi e archi molto differenti.
 \end{itemize}
 
 
 Per prima cosa, sono state aggiunte \interc\ tra le controparti di ogni nodo in tutti 
 i layer in cui esso è presente.
-
 Quindi, sono state generate casualmente altre \interc\ impostando tre parametri:
 \begin{enumerate}
     \item il numero di \interc\ uscenti da un nodo in un determinato layer;
@@ -155,7 +154,6 @@ Quindi, sono state generate casualmente altre \interc\ impostando tre parametri:
 Ognuno di questi parametri è stato generato secondo una distribuzione che segue 
 la legge di Zipf \cite{zipf:humanb}, per cui la frequenza di un certo valore è inversamente
 proporzionale al valore stesso. 
-
 Tale distribuzione genera numeri tra 1 ed un valore massimo $m$ (escluso) con diverse probabilità,
 secondo il valore di una variabile $s \in [0, 1]$
 che regola il grado di `asimmetria' dei valori generati, in particolare:
@@ -165,7 +163,8 @@ che regola il grado di `asimmetria' dei valori generati, in particolare:
 \end{itemize}
 
 Le variabili che regolano i tre parametri sono chiamate rispettivamente
-$s_{degree}$, $s_{layer}$, $s_{node}$. La probabilità che un nodo abbia $k$ \interc\ è $\mathcal{P}_{degree}(k)$.
+$s_{degree}$, $s_{layer}$, $s_{node}$. 
+% La probabilità che un nodo abbia $k$ \interc\ è $\mathcal{P}_{degree}(k)$.
 Per ognuna sono stati sperimentati i valori $0.3$ e $0.8$. 
 Per quanto riguarda il numero di \interc\ di un nodo in un determinato layer
 il valore massimo è stato impostato a $d \cdot \log_2{\sum_{i}{V_i}}$, con 
@@ -189,7 +188,7 @@ un generatore per ognuno dei tre parametri, in particolare:
         tra 0 e $V_i - 1$, dove $V_i$ è il numero di nodi dell'$i$-esimo layer, 
         con $s = s_{node}$. Questi numeri vengono utilizzati 
         come indice per scegliere il nodo di destinazione all'interno 
-        di una permutazione dei nodi del layer $i$ selezionato 
+        di una permutazione dei nodi del layer $i$ selezionato, 
         chiamata $perm\_n[i]$.
 \end{enumerate}
 

@@ -1,8 +1,12 @@
 \chapter{Introduzione}
 
-Le reti permettono di rappresentare una grande quantità di sistemi in cui diverse entità 
-sono legate tra loro mediante delle relazioni.
-Esempi di questo tipo sono le reti di interazione sociale, in cui le persone sono legate 
+Una rete è una struttura in cui sono presenti diverse entità connesse tra loro da legami 
+di qualche tipo. Diverse realtà possono essere modellate utilizzando una rete:
+% Una grande quantità di sistemi del mondo possono essere visti come una rete, ossia una struttura 
+% in cui diverse entità sono legate tra loro tramite relazioni. 
+% % Le reti permettono di rappresentare una grande quantità di sistemi in cui diverse entità 
+% % sono legate tra loro mediante delle relazioni.
+esempi di questo tipo sono le reti di interazione sociale, in cui le persone sono legate 
 da relazioni di amicizia, di collaborazione o di contatto sui social networks, 
 le reti dei trasporti, come quelle ferroviaria e aerea
 che collegano diverse città, e le reti biologiche, come quella alimentare o
@@ -29,11 +33,11 @@ nella società.
 
 \section{\textit{Influential spreaders} in un grafo}
 
-Generalmente, una rete viene modellata tramite un grafo, ossia una struttura in cui i 
-nodi sono connessi tramite archi se tra loro esiste una relazione.
+Generalmente, una rete viene modellata con un grafo, ossia una struttura in cui i 
+nodi sono connessi da un arco se tra loro esiste una relazione.
 
 Il modo più affidabile per l'individuazione degli \infsp\ in un grafo consiste nel 
-simulare il processo di diffusione, detto anche \spproc, partendo da ogni nodo e 
+simulare un processo di diffusione, detto anche \spproc, partendo da ogni nodo e 
 classificare come nodi più 
 influenti quelli da cui si riesce ad infettare la porzione di rete maggiore.
 Tuttavia, poiché la trasmissione tra un nodo e un suo vicino è probabilistica,
@@ -52,8 +56,8 @@ ha bisogno solo di una conoscenza locale.
 
 \section{\textit{Influential spreaders} in una multilayer network}
 
-In molti degli scenari reali, però, i nodi sono collegati tramite diversi tipi di relazione, che non 
-possono essere rappresentati con un grafo. 
+In molti degli scenari reali, però, i nodi sono potenzialmente collegati da diversi tipi di relazione, che non 
+possono essere rappresentati in un grafo. 
 Tra questi troviamo la rete dei profili online collegati dalle loro interazioni
 in diversi social networks (follow, amicizie, condivisioni, ecc.) e la rete delle stazioni di 
 una città connesse da tratte di diversi mezzi di trasporto (rete ferroviaria, rete degli autobus, 
@@ -62,7 +66,7 @@ piste ciclabili, ecc.).
 Strutture che permettono di rappresentare queste realtà sono le \mulns, ossia reti in cui sono 
 presenti differenti tipi di relazione tra i nodi. Fornendo un modello più fedele 
 delle reti reali, la loro analisi può dare risultati più accurati rispetto 
-a quelli ottenibili modellando la realtà con un grafo.
+a quelli ottenibili rappresentando la realtà con un grafo.
 
 In questa tesi si affronterà il problema dell'individuazione degli \infsp\ in 
 una \muln, calcolando diverse misure di centralità e confrontando i 

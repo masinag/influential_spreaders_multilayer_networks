@@ -9,7 +9,6 @@ nodo~$i$ nei layer in cui esso è presente.
 
 È stato poi calcolato per ogni algoritmo un vettore $a$ dove $a_i$ 
 è il punteggio assegnato dall'algoritmo al nodo~$i$.
-
 Per assegnare ad ogni algoritmo un valore che ne rispecchi la capacità di riconoscere 
 gli \infsp\ sono stati confrontati i vettori $s$ e $a$ utilizzando il coefficiente 
 \textit{Kendall's}~$\tau$~\cite{kendall:tau}, 
@@ -21,7 +20,7 @@ così definito:
 
 dove:
 \begin{itemize}
-    \item $n$ è il numero di elementi dei due vettori, ossia il numero di nodi |V|;
+    \item $n$ è il numero di elementi dei due vettori, ossia il numero di nodi $|V|$;
     \item $n_c$ è il numero di coppie concordanti nei due vettori. Una coppia di elementi 
             indici $i, j$ si dice concordante se $a_i > a_j$ e $s_i > s_j$ oppure se $a_i < a_j$ e $s_i < s_j$;
     \item $n_d$ è il numero di coppie discordanti nei due vettori. Una coppia di elementi 
@@ -33,6 +32,8 @@ Se $a_i = a_j$ oppure $s_i = s_j$, la coppia $i, j$ non viene contata.
 Il risultato della formula è compreso tra \num{-1.0} e {1.0}.
 
 \section{Confronto dei risultati}
+
+\subsection{Risultati al \crepp}
 
 Le tabelle \ref{tab:taudln}, \ref{tab:tausln} e \ref{tab:taumux} mostrano i punteggi 
 ottenuti da ogni algoritmo nelle reti DLN, SLN e multiplex rispettivamente.
@@ -78,11 +79,11 @@ la rispettiva versione applicata al grafo originale.
 Dopo aver osservato le prestazioni dei diversi algoritmi con l'\epprob\ impostata al valore del \crepp\ come 
 descritto nella sezione \vref{sec:epprob}, si è osservato il loro comportamento al variare di questa variabile.
 In particolare i grafici \ref{chart:dlnii}, \ref{chart:slnii} e \ref{chart:muxii} mostrano le performance dei 
-migliori 5 algoritmi al variare dell'\epprob\ tra nodi dello stesso layer $\lambda_{ii}$ rispettivamente nelle 
+migliori cinque algoritmi al variare dell'\epprob\ tra nodi dello stesso layer $\lambda_{ii}$ rispettivamente nelle 
 reti SLN, DLN e multiplex, mentre in \ref{chart:dlnij}, \ref{chart:slnij} e \ref{chart:muxij} il parametro che varia è $\lambda_{ij}$, ossia
 la probabilità di contagio tra nodi in layer differenti.
 Ogni parametro è stato moltiplicato per un fattore $k = \frac{\lambda}{\lambda_c}$ dove $\lambda_c$ è il valore del relativo \crepp.
-Sono stati testati valore di $k$ pari a \num{1.2}, \num{1.4} e \num{1.6}.
+Sono stati testati valori di $k$ pari a \num{1.2}, \num{1.4} e \num{1.6}.
 
 Si può osservare come al variare di $lambda_{ii}$ si ottengano variazioni di punteggio piuttosto consistenti, in particolare nelle 
 reti SLN, mentre variando $lambda_{ij}$ i punteggi sono abbastanza regolari.
@@ -143,7 +144,7 @@ permutati.
     
     \centering
     \resizebox{\textwidth}{!}{\input{img/variation/multiplex_ij.pgf}}
-    
+
     \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti multiplex al variare di $\lambda_{ij}$}
     \label{chart:muxij}
 \end{figure}

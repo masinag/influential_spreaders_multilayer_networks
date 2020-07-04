@@ -1,7 +1,7 @@
 \chapter{Algoritmi utilizzati}
 Dopo una fase di ricerca, sono stati selezionati ed implementati alcuni algoritmi di centralità solitamente usati per 
-l'individuazione degli \infsp. Tali algoritmi assegnano ad ogni nodo un valore proporzionale alla sua centralità e 
-quindi all'influenza esercitata da tale nodo sulla rete.
+l'individuazione degli \infsp. Tali algoritmi assegnano ad ogni nodo un valore proporzionale alla sua centralità 
+secondo metriche differenti e quindi all'influenza esercitata da tale nodo sulla rete.
 
 Questi possono essere divisi in tre categorie:
 \begin{itemize}
@@ -12,7 +12,7 @@ Questi possono essere divisi in tre categorie:
 
 \section{Algoritmi sul grafo aggregato}
 Diverse misure di centralità sono utilizzate per identificare degli \infsp\ in grafi 
-`classici' ad un solo layer, detti anche \textit{monoplex}~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
+`classici', detti anche \textit{monoplex} siccome hanno un solo layer~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
 Essendo definite per grafi ad un solo layer, sono state applicate al \gragg\
 derivato da ogni \muln. 
 Le misure utilizzate sono state \PageRank~\cite{page:pagerank}, 
@@ -40,10 +40,10 @@ verso di essa.
 \PageRank\ può essere visto come un modello di comportamento di un utente che, trovandosi inizialmente
 in una pagina casuale, continua a visitare i link che trova, ma occasionalmente riparte da un'altra 
 pagina casuale.
-Il parametro $\alpha$ è detto $damping factor$ e regola la probabilità che si riparta da una pagina 
-casuale ed è stato impostato a \num{0.85}.
+Il parametro $\alpha$, detto $damping factor$, regola la probabilità che si continui la navigazione dei link
+ed è stato impostato a \num{0.85}.
 
-Analogamente può essere utilizzata per misurare più genericamente l'influenza di un nodo 
+Analogamente, questo algoritmo può essere utilizzato per misurare più genericamente l'influenza di un nodo 
 in un grafo.
 
 Questa definizione ricorsiva è stata così calcolata in modo iterativo: 
@@ -114,18 +114,18 @@ addPR_l(v)&= \alpha \sum_{w : v \in X_l.adj(w)}
 
 \end{definizione}
 
-Questa estensione dell'algoritmo di PageRank alle \muln\ richiede un ordinamento
+Questa estensione dell'algoritmo di \PageRank\ alle \muln\ richiede un ordinamento
 dei layer. Come fatto in \cite{basaras:infspmul}, i layer sono stati ordinati per valore
 dell'autovalore di modulo massimo della rispettiva matrice di adiacenza. Infatti, 
 autovalore più grande significa maggiore capacità di diffusione~\cite{wang:eigenv}.
 
 Come algoritmo, è stato utilizzato un approccio analogo a quello della versione classica di 
-PageRank descritto in~\vref{alg:pagerank}.
-Poiché è necessario calcolare il PageRank su ogni layer, il costo dell'algoritmo è 
+\PageRank\ descritto in~\vref{alg:pagerank}.
+Poiché è necessario calcolare il \PageRank\ su ogni layer, il costo dell'algoritmo è 
 $O(\sum_{i}((|V_i| + |E_i|)log(|V_i|)))$, assumendo che i layer siano già ordinati.
 
 \subsection{\sumCore~(\textit{sumCore})}
-Questa misura è stata ottenuta calcolando il valore di \kcore di ogni nodo in 
+Questa misura è stata ottenuta calcolando il valore di \kcore\ di ogni nodo in 
 ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer.
 Pertanto la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
 
@@ -137,9 +137,9 @@ Quelle implementate sono
 \verPageRank~\cite{dedomenico:versatile},
 \verBetweennessCentrality~\cite{dedomenico:versatile} \cite{dedomenico:verbetw},
 \multiCore~\cite{azimi:multikcore} e le diverse varianti di \PCI: 
-\mlPCI~\cite{basaras:infspmul},
-\laPCI~\cite{basaras:infspmul},
-\alPCI~\cite{basaras:infspmul},
+\mlPCI,
+\laPCI,
+\alPCI,
 \lsPCI~\cite{basaras:infspmul}.
 
 \subsection{\verPageRank~(\textit{verPR})}
