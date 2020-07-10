@@ -1,0 +1,219 @@
+\chapter{Risultati sperimentali}
+Per valutare se un algoritmo possa essere utilizzato per riconoscere gli influential spreaders, 
+sono stati confrontati i valori di centralità che assegna ai vari nodi con la frazione di 
+rete infettata da essi simulando un processo di diffusione.
+
+\section{Simulazioni}
+Per ogni rete è stato simulato uno \spproc, ossia un processo di diffusione, per capire l'influenza 
+di ogni nodo sulla rete. Poiché il contagio tra un nodo infetto e i propri vicini avviene in modo 
+probabilistico, per ottenere un risultato adeguato è stata fatta una media di \num{100} simulazioni per ogni rete.
+
+\subsection{Spreading process}
+Lo spreading process utilizzato segue il modello \emph{SIR}, in cui un nodo può essere in tre stati:
+\begin{description}
+    \item[\emph{Susceptible} (\emph{S})] : vulnerabile ad essere infettato;
+    \item[\emph{Infectious} (\emph{I})] : infetto. Un nodo in questo stato può contagiare
+        i propri vicini con una certa probabilità;
+    \item[\emph{Recovered} (\emph{R})] : guarito. Una volta in questo stato, un nodo non può più essere
+        infettato.
+\end{description}
+Per misurare l'influenza di un nodo $v$ sulla rete, inizialmente tutti i nodi si trovano nello stato \emph{S}, 
+eccetto le controparti del nodo $v$ nei layer in cui è presente, che si trovano nello stato \emph{I}.
+Ad ogni istante un nodo nello stato \emph{I} può infettare con una certa probabilità ognuno dei suoi nodi vicini 
+nello stato \emph{S}. Una volta utilizzata la possibilità di contagiare ogni vicino, il nodo passa allo stato \emph{R}.
+Il processo termina quando nessun nodo si trova nello stato \emph{I}.
+La porzione di rete infettata dal nodo $v$ corrisponde al numero di nodi che al termine del processo si trovano nello 
+stato \emph{R}.
+
+\subsection{Probabilità di contagio}
+\label{sec:epprob}
+Un valore da impostare in uno spreading process è la probabilità $\lambda$ che un nodo nello stato \emph{I}
+ha di contagiare i propri vicini nello stato \emph{S}, detta \emph{epidemic probability}.
+La scelta del valore di $\lambda$ è molto importante per riconoscere gli influential spreaders, 
+in quanto con un valore troppo alto si osserverebbe la diffusione dell'infezione in tutta la 
+rete indipendentemente dal nodo inizialmente infetto, mentre con un valore troppo basso l'epidemia 
+non riuscirebbe ad espandersi nemmeno dai nodi più influenti. 
+
+In un grafo monoplex $G$ il valore di \emph{critical epidemic point}
+\begin{equation*}
+    \lambda_c = \frac{\langle k  \rangle}{\langle k^2 \rangle}
+\end{equation*}
+dove $k$ è l'$\mathit{outdegree}$ di un nodo, rappresenta un'approssimazione della soglia per 
+cui, indipendentemente dal nodo da cui parte l'epidemia, se $\lambda > \lambda_c$ essa riesce 
+a diffondersi in gran parte della rete, mentre se $\lambda < \lambda_c$ essa rimane confinata 
+in una piccola parte della rete~\cite{saumell:epidemicsp}.
+
+Seguendo quanto fatto da Basaras et al., la \epprob\ $\lambda_{ii}$ da un nodo nel 
+layer $i$ ad uno dello stesso layer è stata impostata al critical epidemic point del layer $G_i$, 
+mentre $\lambda_{ij}$ tra nodi in layer diversi è stata impostata al critical epidemic point del grafo 
+aggregato~\cite{basaras:infspmul}. 
+
+Questi valori rispecchiano l'intuizione secondo cui il contagio si trasmette 
+più facilmente tra nodi sullo stesso layer. Questo succede per esempio nel caso dei social 
+network, in cui diverse piattaforme tendono a mostrare in maniera minore contenuti con
+collegamenti a piattaforme concorrenti, e nel caso dei ritardi accumulati da 
+una stazione in una rete dei trasporti, che possono trasmettersi facilmente alle stazioni vicine 
+nella stessa rete (ad esempio la rete ferroviaria), ma anche, indirettamente e presumibilmente in maniera
+minore, a stazioni di reti dei trasporti differenti (ad esempio la rete degli autobus).
+
+\section{Valutazione degli algoritmi}
+I risultati delle simulazioni sono stati confrontati con i punteggi di centralità
+assegnati da ogni algoritmo. In questo modo è stato possibile identificare quali algoritmi 
+possono essere utilizzati per riconoscere influential spreaders.
+
+\subsection{Metodo di valutazione}
+Per ogni rete è stato osservato il numero di nodi infettati da ogni nodo durante le simulazioni, 
+ottenendo così un vettore $s$ di $|V|$ elementi, dove $s_i$ rappresenta il numero di nodi 
+infettati in media in uno spreading process in cui i nodi inizialmente infetti sono le controparti del 
+nodo~$i$ nei layer in cui esso è presente.
+
+È stato poi calcolato per ogni algoritmo un vettore $a$ dove $a_i$ 
+è il punteggio assegnato dall'algoritmo al nodo~$i$.
+Per assegnare ad ogni algoritmo un valore che ne rispecchi la capacità di riconoscere 
+gli influential spreaders sono stati confrontati i vettori $s$ e $a$ utilizzando il coefficiente 
+\textit{Kendall's}~$\tau$~\cite{kendall:tau}, 
+così definito:
+
+\begin{equation}
+    \tau = \frac{n_c - n_d}{n(n-1)}
+\end{equation}
+
+dove:
+\begin{itemize}
+    \setlength\itemsep{0pt}
+    \item $n$ è il numero di elementi dei due vettori, ossia il numero di nodi $|V|$;
+    \item $n_c$ è il numero di coppie concordanti nei due vettori. Una coppia di elementi 
+            indici $i, j$ si dice concordante se $a_i > a_j$ e $s_i > s_j$ oppure se $a_i < a_j$ e $s_i < s_j$;
+    \item $n_d$ è il numero di coppie discordanti nei due vettori. Una coppia di elementi 
+    indici $i, j$ si dice discordante se $a_i > a_j$ e $s_i < s_j$ oppure se $a_i < a_j$ e $s_i > s_j$;    
+\end{itemize}
+
+Se $a_i = a_j$ oppure $s_i = s_j$, la coppia $i, j$ non viene contata.
+
+Il risultato della formula è compreso tra \num{-1.0} e {1.0}.
+
+\subsection{Confronto dei risultati}
+
+Sono state osservate le prestazioni dei vari algoritmi impostando la epidemic probability
+al critical epidemic point. È stato così possibile decidere quali algoritmi sono adatti 
+all'individuazione degli influential spreaders. In seguito si è osservato 
+l'andamento delle prestazioni dei diversi algoritmi al variare della 
+probabilità di contagio.
+
+\subsubsection{Risultati al critical epidemic point}
+
+Inizialmente è stata impostata la epidemic probability al critical epidemic point come 
+descritto nella Sezione~\vref{sec:epprob}.
+Le Tabelle \ref{tab:taudln}, \ref{tab:tausln} e \ref{tab:taumux} mostrano i punteggi 
+ottenuti da ogni algoritmo nelle reti DLN, SLN e multiplex rispettivamente.
+In ogni tabella sono evidenziati per ogni rete i punteggi ottenuti dai tre algoritmi 
+migliori. 
+
+Si può notare che mlPCI e laPCI sono i due algoritmi che ottengono punteggi buoni 
+su tutte le reti utilizzate, e possono quindi essere considerati un buon metodo per identificare 
+gli influential spreaders. 
+Altri algoritmi come alPCI e aggDeg, sebbene ottengano ottimi risultati su
+particolari tipi di rete, ottengono scarsi risultati sugli altri; non sono pertanto da 
+considerare affidabili per l'individuazione degli influential spreaders.
+
+\input{tables/tab_dln}
+\input{tables/tab_sln}
+\input{tables/tab_mux}
+
+\paragraph{Algoritmi applicati alla rete trasposta}
+Le diverse versioni degli algoritmi di \PageRank\ e \kcore\ sono state applicate anche alla rete trasposta.
+
+Nel caso di \PageRank, se nella definizione originale un nodo è tanto più importante quanto 
+più importanti sono i nodi che hanno un arco verso di esso, applicando l'algoritmo alla rete trasposta si ottiene
+una definizione per cui un nodo è tanto più importante quanto più importanti sono i nodi verso cui ha un arco.
+
+Per quanto riguarda \kcore, invece, nella definizione originale un \kcore\ di un grafo è un sottografo 
+massimale in cui ogni nodo ha almeno $k$ archi entranti, applicando l'algoritmo al grafo trasposto si ottiene 
+una definizione analoga, in cui invece degli archi entranti si considerano gli archi uscenti.
+
+Per entrambi gli algoritmi si è pensato che le definizioni di centralità ottenute applicando l'algoritmo 
+alla rete trasposta potessero individuare meglio gli influential spreaders. Le prestazioni di questi algoritmi, indicati 
+con l'indice $^T$, sono mostrate nelle Tabelle \ref{tab:taudlnT}, \ref{tab:tauslnT} e \ref{tab:taumuxT}.
+
+In generale, si può osservare come nella maggior parte dei casi questi ottengano risultati migliori se confrontati con 
+la rispettiva versione applicata alla rete originale. 
+
+\input{tables/tab_dln_T}
+\input{tables/tab_sln_T}
+\input{tables/tab_mux_T}
+
+
+\subsubsection{Variazione della epidemic probability}
+
+I grafici nelle Figure~\ref{chart:dlnii},~\ref{chart:slnii} e~\ref{chart:muxii} mostrano le performance dei 
+migliori cinque algoritmi al variare della epidemic probability tra nodi dello stesso layer $\lambda_{ii}$ rispettivamente nelle 
+reti SLN, DLN e multiplex, mentre nelle Figure~\ref{chart:dlnij},~\ref{chart:slnij} e~\ref{chart:muxij} il parametro 
+che varia è $\lambda_{ij}$, ossia
+la probabilità di contagio tra nodi in layer differenti.
+Ogni parametro è stato moltiplicato per un fattore $k = \frac{\lambda}{\lambda_c}$ dove $\lambda_c$ è il valore del relativo 
+critical epidemic point.
+Sono stati testati valori di $k$ pari a \num{1.2}, \num{1.4} e \num{1.6}.
+
+Si può osservare come al variare di $\lambda_{ii}$ si ottengano variazioni di punteggio piuttosto consistenti, in particolare nelle 
+reti SLN, mentre variando $\lambda_{ij}$ i punteggi sono abbastanza regolari.
+In generale, anche aumentando la epidemic probability, non si osservano grandi cambiamenti nella classifica degli algoritmi migliori.
+Nella quasi totalità dei casi, le prime tre posizioni risultano occupate dagli stessi algoritmi, anche se talvolta 
+permutati. Ciò conferma ulteriormente la bontà degli algoritmi individuati.
+
+%%%%%%%%%%%%%%%%%% II
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/dln_ii.pgf}}
+    
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti DLN al variare di $\lambda_{ii}$}
+    \label{chart:dlnii}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/sln_ii.pgf}}
+    
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti SLN al variare di $\lambda_{ii}$}
+    \label{chart:slnii}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/multiplex_ii.pgf}}
+    
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti multiplex al variare di $\lambda_{ii}$}
+    \label{chart:muxii}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%% IJ
+
+
+\begin{figure}
+    
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/dln_ij.pgf}}
+    
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti DLN al variare di $\lambda_{ij}$}
+    \label{chart:dlnij}
+\end{figure}
+
+
+\begin{figure}
+    
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/sln_ij.pgf}}
+    
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti SLN al variare di $\lambda_{ij}$}
+    \label{chart:slnij}
+\end{figure}
+
+\begin{figure}
+    
+    \centering
+    \resizebox{\textwidth}{!}{\input{img/variation/multiplex_ij.pgf}}
+
+    \caption{Punteggi ottenuti dai migliori cinque algoritmi su reti multiplex al variare di $\lambda_{ij}$}
+    \label{chart:muxij}
+\end{figure}

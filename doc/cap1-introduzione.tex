@@ -7,7 +7,7 @@ di qualche tipo. Diverse realtà possono essere modellate utilizzando una rete:
 % % Le reti permettono di rappresentare una grande quantità di sistemi in cui diverse entità 
 % % sono legate tra loro mediante delle relazioni.
 esempi di questo tipo sono le reti di interazione sociale, in cui le persone sono legate 
-da relazioni di amicizia, di collaborazione o di contatto sui social networks, 
+da relazioni di amicizia, di collaborazione o di contatto sui social network, 
 le reti dei trasporti, come quelle ferroviaria e aerea
 che collegano diverse città, e le reti biologiche, come quella alimentare o
 quella delle interazioni tra molecole all'interno di un organismo.
@@ -19,10 +19,10 @@ una fake news in un social network e l'accumulo di un ritardo nelle stazioni di 
 dei trasporti.
 
 In questi processi, inizialmente un nodo (così sono chiamate le entità all'interno di una rete) 
-è infetto; in ogni instante un nodo infetto può contagiare con una certa probabilità i 
+è `infetto'; in ogni instante un nodo infetto può `contagiare' con una certa probabilità i 
 nodi con cui è in relazione rendendoli a loro volta infetti.
 Di particolare interesse è l'individuazione dei cosiddetti \infsp, ovvero dei nodi
-che, se infettati, permettono di `contagiare' una grossa parte della rete.
+che, se infettati, permettono di contagiare una grossa parte della rete.
 Tali nodi, infatti, possono essere sfruttati per garantire una efficace diffusione 
 di un'informazione nella rete o, al contrario, per evitarne la propagazione.
 Ad esempio, per diffondere una notizia importante in un social network sarà opportuno che 
@@ -31,12 +31,12 @@ può essere utile isolare i luoghi o le persone che hanno un ruolo più centrale
 nella società.
 
 
-\section{\textit{Influential spreaders} in un grafo}
+\section{Influential spreaders in un grafo}
 
 Generalmente, una rete viene modellata con un grafo, ossia una struttura in cui i 
 nodi sono connessi da un arco se tra loro esiste una relazione.
 
-Il modo più affidabile per l'individuazione degli \infsp\ in un grafo consiste nel 
+Il modo più affidabile per l'individuazione degli influential spreaders in un grafo consiste nel 
 simulare un processo di diffusione, detto anche \spproc, partendo da ogni nodo e 
 classificare come nodi più 
 influenti quelli da cui si riesce ad infettare la porzione di rete maggiore.
@@ -45,29 +45,29 @@ occorrerebbe effettuare un gran numero di simulazioni prima di avere una stima a
 dell'influenza di un nodo sulla rete e ciò rende questo metodo computazionalmente 
 molto costoso.
 
-Un problema molto studiato è quello dell'individuazione degli \infsp\ tramite l'analisi della 
+Un problema molto studiato è quello dell'individuazione degli influential spreaders tramite l'analisi della 
 topologia delle rete.
 Diversi studi mostrano come alcuni algoritmi di centralità possono fornire una buona indicazione di 
 quali sono i nodi più influenti nella diffusione~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}.
 Tra questi, alcuni richiedono una conoscenza globale della topologia della rete come
-\PageRank, \textit{Betweenness Centrality} e \kcore, 
-mentre per altri come Degree Centrality o $\mu$-PCI ogni nodo 
+\emph{\PageRank}, \emph{Betweenness Centrality} e \emph{\kcore}, 
+mentre per altri come \emph{\degree} o \emph{$\mu$-PCI} ogni nodo 
 ha bisogno solo di una conoscenza locale.
 
-\section{\textit{Influential spreaders} in una multilayer network}
+\section{Influential spreaders in una multilayer network}
 
-In molti degli scenari reali, però, i nodi sono potenzialmente collegati da diversi tipi di relazione, che non 
-possono essere rappresentati in un grafo. 
+In molti degli scenari reali, tuttavia, i nodi sono potenzialmente collegati da diversi tipi di relazione, che non 
+possono essere rappresentati in un singolo grafo. 
 Tra questi troviamo la rete dei profili online collegati dalle loro interazioni
-in diversi social networks (follow, amicizie, condivisioni, ecc.) e la rete delle stazioni di 
+in diversi social network (follow, amicizie, condivisioni, ecc.) e la rete delle stazioni di 
 una città connesse da tratte di diversi mezzi di trasporto (rete ferroviaria, rete degli autobus, 
 piste ciclabili, ecc.).
 
-Strutture che permettono di rappresentare queste realtà sono le \mulns, ossia reti in cui sono 
+Strutture che permettono di rappresentare queste realtà sono dette \muln, ossia reti in cui sono 
 presenti differenti tipi di relazione tra i nodi. Fornendo un modello più fedele 
 delle reti reali, la loro analisi può dare risultati più accurati rispetto 
 a quelli ottenibili rappresentando la realtà con un grafo.
 
-In questa tesi si affronterà il problema dell'individuazione degli \infsp\ in 
-una \muln, calcolando diverse misure di centralità e confrontando i 
-risultati con quelli ottenuti simulando degli \spprocs.
+In questa tesi viene affrontato il problema dell'individuazione degli influential spreaders in 
+una multilayer network, calcolando diverse misure di centralità e confrontando i 
+risultati con quelli ottenuti simulando degli spreading process.

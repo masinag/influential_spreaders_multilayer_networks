@@ -6,14 +6,14 @@
 \addcontentsline{toc}{chapter}{Sommario} % da aggiungere comunque all'indice
 
 Diversi sistemi reali possono essere modellati tramite una rete, in cui
-le entità, o nodi, sono legate se tra loro c'è una relazione.
+le entità, o \nodi, sono legate se tra loro c'è una relazione.
 Attualmente, nella maggior parte dei casi una rete è rappresentata utilizzando 
 un \grafo, dove è previsto un unico tipo di collegamento tra le entità.
 In molti casi, però, le relazioni tra i nodi possono essere di varia natura. 
 Questo tipo di sistema può essere rappresentato utilizzando una 
 \muln.
 
-Lo scopo di questa tesi è l'individuazione degli \infsp\ in una \muln, 
+Lo scopo di questa tesi è l'individuazione degli \infsp\ in una multilayer network, 
 ovvero di quei nodi che durante un processo di diffusione di 
 un'informazione nella rete permettono di raggiungere la porzione di rete maggiore. 
 Questi nodi sono particolarmente utili in quanto possono essere sfruttati per 
@@ -31,24 +31,24 @@ e di conseguenza il tempo richiesto.
 Una fase di ricerca iniziale ha permesso di raccogliere, studiare 
 e successivamente implementare diversi 
 algoritmi di centralità già utilizzati per risolvere questo problema, 
-sia in \grafi\ che in \mulns.
+sia in grafi che in multilayer network.
 
-Questi algoritmi sono stati applicati a diversi tipi di reti \textit{multilayer}:
-reti \textit{multiplex} estratte a partire da dataset biologici e 
-sociali reali e reti \textit{multilayer} generate casualmente 
+Questi algoritmi sono stati applicati a diversi tipi di reti multilayer:
+reti multiplex estratte a partire da dataset biologici e 
+sociali e reti multilayer generate casualmente 
 a partire da grafi derivati da applicazioni peer-to-peer.
 
 I valori di centralità dei nodi restituiti da ogni algoritmo sono stati 
 confrontati con quelli reali, ottenuti simulando dei processi di diffusione
 nelle varie reti. In questo modo è stato possibile assegnare ad ogni algoritmo
 un punteggio ottenuto su ciascuna rete e individuare così quali algoritmi
-possono essere utilizzati per trovare gli \infsp\ in una \muln.
-Due degli algoritmi testati hanno ottenuto buone performance su tutte le 
+possono essere utilizzati per trovare gli influential spreaders in una multilayer network.
+Due degli algoritmi testati hanno ottenuto buone performance su tutte le
 reti analizzate, mentre le prestazioni degli altri sono state scarse o altalenanti.
 
 % Il sommario dell’elaborato consiste al massimo di 3 pagine e deve contenere le seguenti informazioni:
 % \begin{itemize}
-%   \item contesto e motivazioni 
+%   \item contesto e motivazioni
 %   \item breve riassunto del problema affrontato
 %   \item tecniche utilizzate e/o sviluppate
 %   \item risultati raggiunti, sottolineando il contributo personale del laureando/a

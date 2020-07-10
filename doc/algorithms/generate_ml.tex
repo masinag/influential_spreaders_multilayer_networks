@@ -2,6 +2,7 @@
 % \SetKwProg{Fn}{dsadsadas}{dsadad}
 % \SetKwFunction{FRecurs}{generate\_multilayer}%
 \SetKwFor{For}{for }{ \textbf{do}}{}{}%
+\SetKwFor{ForEach}{foreach }{ \textbf{do}}{}{}%
 \SetKwFor{If}{if }{ \textbf{then}}{}{}%
 \SetKwFor{While}{while }{ \textbf{do}}{}{}%
 % \SetKwIF{If}{ElseIf}{Else}{if}{\{}{elif}{else\{}{}%
@@ -25,60 +26,60 @@
     \SetStartEndCondition{ }{}{}%
     \DontPrintSemicolon
     \Input{
-        \textsc{Graph} $layers$\abracks \algcmnt{grafi usati come layers} \\ 
-        \tint\ $perm\_l$\abracks \algcmnt{posizione di ogni layer nella permutazione}\\
-        \tint\ $perm\_n$\abracks \abracks \algcmnt{posizione di un nodo nella permutazione di ogni layer}\\
-        \tint\ $d $\\
-        \tfloat\ $s\_degree$ \\
-        \tfloat\ $s\_layer$ \\
-        \tfloat\ $s\_node$ \\
+        \textsc{Graph} $\mathit{layers}$\abracks \algcmnt{grafi usati come layers} \\ 
+        \tint\ $\mathit{perm\_l}$\abracks \algcmnt{posizione di ogni layer nella permutazione}\\
+        \tint\ $\mathit{perm\_n}$\abracks \abracks \algcmnt{posizione di un nodo nella permutazione di ogni layer}\\
+        \tint\ $\mathit{d}$\\
+        \tfloat\ $\mathit{s\_degree}$ \\
+        \tfloat\ $\mathit{s\_layer}$ \\
+        \tfloat\ $\mathit{s\_node}$ \\
     }
     
-    \tint\ $total\_nodes = 0$\;
-    \For{$i = 0$ \KwTo $layers.size()$} {
-            $total\_nodes = total\_nodes + layers[i].nodes().size()$\;
+    \tint\ $\mathit{total\_nodes} = 0$\;
+    \For{$i = 0$ \KwTo $\mathit{layers}.\mathit{size()}$} {
+            $\mathit{total\_nodes} = \mathit{total\_nodes} + \mathit{layers}[i].\mathit{nodes()}.\mathit{size()}$\;
     }
-    \tint\ $max\_interconnections = d \cdot \lfloor\log_{2}{(total\_nodes)}\rfloor$\;
+    \tint\ $\mathit{max\_interconnections} = \mathit{d} \cdot \lfloor\log_{2}{(\mathit{total\_nodes})}\rfloor$\;
     \BlankLine
     
     \tcp{I due parametri della classe \textsc{ZipfGenerator} regolano rispettivamente \\
     il massimo della distribuzione e il grado di asimmetria}
-    \tzgen\ $degree\_generator(max\_interconnections, s\_degree)$\;
-    \tzgen\ $layer\_generator(layers.size(), s\_layer)$\;
-    \tzgen\ $node\_generators[0\dots layers.size() - 1]$\;
-    \For{$l = 0$ \KwTo $layers.size() - 1$}{
-        $node\_generators[l] = $ \tzgen $(layers[l].size(), s\_degree)$\;
+    \tzgen\ $\mathit{degree\_generator}(\mathit{max\_interconnections}, \mathit{s\_degree})$\;
+    \tzgen\ $\mathit{layer\_generator}(\mathit{layers.size()}, \mathit{s\_layer})$\;
+    \tzgen\ $\mathit{node\_generators}[0\dots \mathit{layers}.\mathit{size}() - 1]$\;
+    \For{$l = 0$ \KwTo $\mathit{layers}.\mathit{size}() - 1$}{
+        $\mathit{node\_generators}[l] = $ \tzgen $(\mathit{layers}[l].\mathit{size}(), \mathit{s\_degree})$\;
     }
     \BlankLine
 
     \textsc{MultilayerNetwork} $m$\;
 
 
-    \For {$l = 0$ \KwTo $layers.size() - 1$}{
-        \ForEach {$n \in layers[l]$}{
+    \For {$l = 0$ \KwTo $\mathit{layers}.\mathit{size}() - 1$}{
+        \ForEach {$n \in \mathit{layers}[l]$ }{
             \tcp*{intra-connessioni}
-            \For {$v \in layers[l].adj(n)$}{
-                $m.add\_edge(n, l, v, l)$\;
+            \For {$v \in \mathit{layers}[l].\mathit{adj}(n)$}{
+                $m.\mathit{add\_edge}(n, l, v, l)$\;
             }
             \tcp*{inter-connessioni tra un nodo e le sue controparti negli altri layer}
-            \For {$j = 0$ \KwTo $layers.size() - 1$}{ 
-                \If {$ j \neq l$ \textup{\textbf{and}} $n \in layers[j].nodes()$} {
-                    $m.add\_edge(n, l, n, j)$\;
+            \For {$j = 0$ \KwTo $\mathit{layers}.\mathit{size}() - 1$}{ 
+                \If {$ j \neq l$ \textup{\textbf{and}} $n \in \mathit{layers}[j].\mathit{nodes}()$} {
+                    $m.\mathit{add\_edge}(n, l, n, j)$\;
                 }
             }
             \tcp*{Generazione inter-connessioni casuali}
-            \tint\ $degree = degree\_generator.next()$\;
-            \For {$i = 1$ \KwTo $degree$}{
-                \tbool\ $added = \False$\;
-                \While{\textup{\textbf{not}} $added$}{
-                    \tint\ $l\_dest = l\_index[layer\_generator.next()]$\;
-                    \While {$l\_dest == l$} {
-                        $l\_dest = l\_index[layer\_generator.next()]$\;
+            \tint\ $\mathit{degree} = \mathit{degree\_generator}.\mathit{next}()$\;
+            \For {$i = 1$ \KwTo $\mathit{degree}$}{
+                \tbool\ $\mathit{added} = \False$\;
+                \While{\textup{\textbf{not}} $\mathit{added}$}{
+                    \tint\ $\mathit{l\_dest} = \mathit{l\_index}[\mathit{layer\_generator}.\mathit{next}()]$\;
+                    \While {$\mathit{l\_dest} == l$} {
+                        $\mathit{l\_dest} = \mathit{l\_index}[\mathit{layer\_generator}.\mathit{next}()]$\;
                     }
-                    \tint\ $n\_dest= n\_index[l\_dest][node\_generators[l\_dest].next()]$\;
-                    \If{\textup{\textbf{not}} $m.has\_edge(n, l, n\_dest, l\_dest)$}{
-                        $added = \True$\;
-                        $m.add\_edge(n, l, n\_dest, l\_dest)$\;
+                    \tint\ $\mathit{n\_dest}= \mathit{n\_index}[\mathit{l\_dest}][\mathit{node\_generators}[\mathit{l\_dest}].\mathit{next}()]$\;
+                    \If{\textup{\textbf{not}} $m.\mathit{has\_edge}(n, l, \mathit{n\_dest}, \mathit{l\_dest})$}{
+                        $\mathit{added} = \True$\;
+                        $m.\mathit{add\_edge}(n, l, \mathit{n\_dest}, \mathit{l\_dest})$\;
                     }
                 }
             }

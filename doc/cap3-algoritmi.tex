@@ -1,36 +1,36 @@
 \chapter{Algoritmi utilizzati}
 Dopo una fase di ricerca, sono stati selezionati ed implementati alcuni algoritmi di centralità solitamente usati per 
-l'individuazione degli \infsp. Tali algoritmi assegnano ad ogni nodo un valore proporzionale alla sua centralità 
+l'individuazione degli influential spreaders. Tali algoritmi assegnano ad ogni nodo un valore proporzionale alla sua centralità 
 secondo metriche differenti e quindi all'influenza esercitata da tale nodo sulla rete.
 
 Questi possono essere divisi in tre categorie:
 \begin{itemize}
-\item algoritmi applicati sul grafo aggregato;
-\item algoritmi applicati separatamente su ogni layer;
-\item algoritmi applicati sull'intera struttura \textit{multilayer}.
+\item algoritmi applicati al grafo aggregato;
+\item algoritmi applicati separatamente ad ogni layer;
+\item algoritmi applicati all'intera struttura multilayer.
 \end{itemize}
 
-\section{Algoritmi sul grafo aggregato}
-Diverse misure di centralità sono utilizzate per identificare degli \infsp\ in grafi 
+\section{Algoritmi applicati al grafo aggregato}
+Diverse misure di centralità sono utilizzate per identificare gli influential spreaders in grafi 
 `classici', detti anche \textit{monoplex} siccome hanno un solo layer~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
-Essendo definite per grafi ad un solo layer, sono state applicate al \gragg\
-derivato da ogni \muln. 
-Le misure utilizzate sono state \PageRank~\cite{page:pagerank}, 
-\kcore~\cite{batagelj:kcore} e 
-\degree.
+Essendo definite per grafi ad un solo layer, sono state applicate al grafo aggregato
+derivato da ogni multilayer network. 
+Le misure utilizzate sono state \emph{\PageRank}~\cite{page:pagerank}, 
+\emph{\kcore}~\cite{batagelj:kcore} e 
+\emph{\degree}.
 
 % PAGE RANK
 
-\subsection{\PageRank~(\textit{aggPR})}
+\subsection{\PageRank~(aggPR)}
 \label{alg:pagerank}
 \begin{definizione}[\PageRank]
     \label{def:pagerank}
-    Dato un grafo $G=(V, E)$, il valore di \PageRank\ di un nodo $v$ è definito come
-    \begin{equation}
-        PR(v) = \alpha\sum_{w : v \in G.adj(w)}
-        \frac{PR(w)}{G.outdegree(w)} + 
+    Dato un grafo $G=(V, E)$, il valore di \emph{PageRank} di un nodo $v$ è definito come
+    \begin{equation*}
+        \mathit{PR}(v) = \alpha\sum_{w : v \in G.\mathit{adj}(w)}
+        \frac{\mathit{PR}(w)}{G.\mathit{outdegree}(w)} + 
         (1-\alpha)\frac{1}{|V|}
-    \end{equation}
+    \end{equation*}
     con $0 \le \alpha \le 1$.
 \end{definizione}
 
@@ -40,164 +40,159 @@ verso di essa.
 \PageRank\ può essere visto come un modello di comportamento di un utente che, trovandosi inizialmente
 in una pagina casuale, continua a visitare i link che trova, ma occasionalmente riparte da un'altra 
 pagina casuale.
-Il parametro $\alpha$, detto $damping factor$, regola la probabilità che si continui la navigazione dei link
+Il parametro $\alpha$, detto \emph{damping factor}, regola la probabilità che si continui la navigazione dei link
 ed è stato impostato a \num{0.85}.
-
 Analogamente, questo algoritmo può essere utilizzato per misurare più genericamente l'influenza di un nodo 
 in un grafo.
 
 Questa definizione ricorsiva è stata così calcolata in modo iterativo: 
 
-% \begin{equation}
+% \begin{equation*}
 %     \begin{split}
 % PR_0(v)&= PR(v) \text{ in } X_1 \\
 % addPR_l(v)&= \alpha \sum_{w : v \in X_l.adj(w)} 
 %         \frac{addPR_l(w)}{X_l.outdegree(w)} + 
 %         (1-\alpha)\frac{addPR_{l-1}(v)}{|V| \langle addPR_{l-1} \rangle}
 %     \end{split}
-% \end{equation}
-\begin{equation}
+% \end{equation*}
+\begin{equation*}
     \begin{split}
-PR_0(v)&= \frac{1}{n}\\
-PR_i(v)&= \alpha \sum_{w : v \in G.adj(w)} 
-\frac{PR_{i-1}(w)}{G.outdegree(w)} + 
+\mathit{PR}_0(v)&= \frac{1}{n}\\
+\mathit{PR}_i(v)&= \alpha \sum_{w : v \in G.\mathit{adj}(w)} 
+\frac{\mathit{PR}_{i-1}(w)}{G.\mathit{outdegree(}w)} + 
 (1-\alpha)\frac{1}{|V|}
     \end{split}
-\end{equation}
-finché $||PR_{i} - PR_{i-1}||_1 < \epsilon$. Secondo \cite{page:pagerank} il numero di iterazioni 
-è proporzionale a $\log{|V|}$. Dunque, la complessità dell'algoritmo è $O((|V| + |E|)\log{|V|})$.
+\end{equation*}
+finché $||\mathit{PR}_{i} - \mathit{PR}_{i-1}||_1 < \epsilon$. Il numero di iterazioni 
+è proporzionale a $\log{|V|}$~\cite{page:pagerank}. Dunque, la complessità dell'algoritmo è $O((|V| + |E|)\log{|V|})$.
 
 % K-CORE
 
-\subsection{\kcore~(\textit{aggCore})}
+\subsection{\emph{k}-core~(aggCore)}
 \begin{definizione}[\kcore]
     \label{def:kcore}
-    Dato un grafo $G=(V, E)$, un \kcore\ di $G$ è un sottografo $G'=(V',E')$
+    Dato un grafo $G=(V, E)$, un \emph{k-core} di $G$ è un sottografo $G'=(V',E')$
     tale che 
-    \begin{equation}
-        G'.indegree(v) \geq k \quad \forall v \in V'
-    \end{equation}
+    \begin{equation*}
+        G'.\mathit{indegree}(v) \geq k \quad \forall v \in V'
+    \end{equation*}
 \end{definizione}
 
-Un nodo appartenente ad un \textit{k-core} con $k$ elevato è considerato un nodo centrale 
-nella rete, e quindi un potenziale \textit{influential spreader}.
-Per il calcolo di questa misura è stato utilizzato l'algoritmo definito in~\cite{batagelj:kcore}
-con complessità $O(|V| + |E|)$.
+Un nodo appartenente ad un \kcore\ con $k$ elevato è considerato un nodo centrale 
+nella rete, e quindi potenzialmente classificato tra gli influential spreaders.
+Questa definizione può essere calcolata con complessità $O(|V| + |E|)$~\cite{batagelj:kcore}.
 
-\subsection{\degree~(\textit{aggDeg})}
-Questa misura di centralità assegna ad ogni nodo un valore pari al suo \textit{outdegree}, 
+\subsection{Degree~(aggDeg)}
+Questa misura di centralità assegna ad ogni nodo un valore pari al suo $\mathit{outdegree}$, 
 per cui un nodo con tanti vicini si assume possa avere una certa rilevanza in un 
 processo di diffusione.
 Può essere calcolata con complessità $O(|V|)$.
 
-\section{Algoritmi applicati su ogni layer}
+\section{Algoritmi applicati ad ogni layer}
 Alcune delle misure sono state estese alle reti multilayer calcolando la centralità
 dei nodi in ogni layer separatamente e poi sommando i punteggi ottenuti in ogni layer.
-In questa categoria rientrano \addPageRank~\cite{halu:addpagerank} 
-e \sumCore~\cite{basaras:infspmul}
+In questa categoria rientrano \emph{\addPageRank}~\cite{halu:addpagerank} 
+e \emph{\sumCore}~\cite{basaras:infspmul}.
 
-\subsection{\addPageRank~(\textit{addPR})}
+\subsection{Additive PageRank~(addPR)}
 \begin{definizione}[\addPageRank]
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
-    ed un ordinamento dei layer $(X_1, \dots, X_{L})$, l'\addPageRank\
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
+    ed un ordinamento dei layer $(X_1, \dots, X_{L})$, l'\emph{additive PageRank}
     di un nodo $v \in V$ è il valore 
-    $addPR(v) = addPR_L(v)$, dove:
+    $\mathit{addPR}(v) = \mathit{addPR}_L(v)$, dove:
 
-    \begin{equation}
+    \begin{equation*}
         \begin{split}
-addPR_1(v)&= PR(v) \text{ in } X_1 \\
-addPR_l(v)&= \alpha \sum_{w : v \in X_l.adj(w)} 
-            \frac{addPR_l(w)}{X_l.outdegree(w)} + 
-            (1-\alpha)\frac{addPR_{l-1}(v)}{|V| \langle addPR_{l-1} \rangle}
+\mathit{addPR}_1(v)&= \mathit{PR}(v) \text{ in } X_1 \\
+\mathit{addPR}_l(v)&= \alpha \sum_{w : v \in X_l.\mathit{adj}(w)} 
+            \frac{\mathit{addPR}_l(w)}{X_l.\mathit{outdegree}(w)} + 
+            (1-\alpha)\frac{\mathit{addPR}_{l-1}(v)}{|V| \langle \mathit{addPR}_{l-1} \rangle}
         \end{split}
-    \end{equation}
+    \end{equation*}
 
 \end{definizione}
 
-Questa estensione dell'algoritmo di \PageRank\ alle \muln\ richiede un ordinamento
-dei layer. Come fatto in \cite{basaras:infspmul}, i layer sono stati ordinati per valore
-dell'autovalore di modulo massimo della rispettiva matrice di adiacenza. Infatti, 
+Questa estensione dell'algoritmo di \PageRank\ alle reti multilayer richiede un ordinamento
+dei layer. I layer sono stati ordinati per valore
+dell'autovalore di modulo massimo della rispettiva matrice di adiacenza~\cite{basaras:infspmul}. Infatti, 
 autovalore più grande significa maggiore capacità di diffusione~\cite{wang:eigenv}.
 
 Come algoritmo, è stato utilizzato un approccio analogo a quello della versione classica di 
-\PageRank\ descritto in~\vref{alg:pagerank}.
+\PageRank\ descritto nella Sezione~\vref{alg:pagerank}.
 Poiché è necessario calcolare il \PageRank\ su ogni layer, il costo dell'algoritmo è 
-$O(\sum_{i}((|V_i| + |E_i|)log(|V_i|)))$, assumendo che i layer siano già ordinati.
+$O(\sum_{i}((|V_i| + |E_i|)\log{|V_i|}))$, assumendo che i layer siano già ordinati.
 
-\subsection{\sumCore~(\textit{sumCore})}
+\subsection{Sum \emph{k}-core~(sumCore)}
 Questa misura è stata ottenuta calcolando il valore di \kcore\ di ogni nodo in 
 ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer.
 Pertanto la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
 
-\section{Algoritmi applicati sull'intera struttura}
-Diverse misure definite originariamente per grafi \textit{monoplex} sono state estese a 
-reti \textit{multilayer}. Queste, al contrario di quelle presentate nelle sezioni precedenti,
-tengono conto della struttura a più livelli della rete ed in particolare delle \interc.
+\section{Algoritmi applicati all'intera struttura multilayer}
+Diverse misure definite originariamente per grafi monoplex sono state estese a 
+reti multilayer. Queste, al contrario di quelle presentate nelle sezioni precedenti,
+tengono conto della struttura a più livelli della rete ed in particolare delle inter-connessioni.
 Quelle implementate sono 
-\verPageRank~\cite{dedomenico:versatile},
-\verBetweennessCentrality~\cite{dedomenico:versatile} \cite{dedomenico:verbetw},
-\multiCore~\cite{azimi:multikcore} e le diverse varianti di \PCI: 
-\mlPCI,
-\laPCI,
-\alPCI,
-\lsPCI~\cite{basaras:infspmul}.
+\emph{\verPageRank}~\cite{dedomenico:versatile},
+\emph{\verBetweennessCentrality}~\cite{dedomenico:versatile} \cite{dedomenico:verbetw},
+\emph{\multiCore}~\cite{azimi:multikcore} e le diverse varianti di \emph{\PCI}: 
+\emph{\mlPCI},
+\emph{\laPCI},
+\emph{\alPCI},
+\emph{\lsPCI}~\cite{basaras:infspmul}.
 
-\subsection{\verPageRank~(\textit{verPR})}
+\subsection{Versatility PageRank~(verPR)}
 \begin{definizione}[\verPageRank]
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$,
-    si definisce \verPageRank\ di un nodo $v \in V_l$ in un layer $l$
-    il valore:
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$,
+    si definisce il valore di \mbox{\emph{\verPageRank}} di un nodo $v \in V_l$ in un layer $l$
+    come:
 
-    \begin{equation}
-        PR(v, l) = 
+    \begin{equation*}
+        \mathit{verPR}(v, l) = 
         \alpha \biggl( 
-            \sum_{w : v \in G_l.adj(w)} \frac{PR(w, l)}{\mathcal{M}.outdegree(w, l)} +
-            \sum_{j \neq l}^{}\sum_{w : (w, v) \in E_{jl}} \frac{PR(w, j)}{\mathcal{M}.outdegree(w, j)} 
+            \sum_{w : v \in G_l.\mathit{adj}(w)} \frac{\mathit{verPR}(w, l)}{\mathcal{M}.\mathit{outdegree}(w, l)} +
+            \sum_{j \neq l}^{}\sum_{w : (w, v) \in E_{jl}} \frac{\mathit{verPR}(w, j)}{\mathcal{M}.\mathit{outdegree}(w, j)} 
         \biggr) + (1-\alpha)\frac{1}{N}
-    \end{equation}
-    dove $\mathcal{M}.outdegree(w, l)$ è la somma del numero di archi uscenti da $w$ nel layer $l$
-    e del numero di \interc\ uscenti da $w$ nel layer $l$.
+    \end{equation*}
+    dove $\mathcal{M}.\mathit{outdegree}(w, l)$ è la somma del numero di archi e di inter-connessioni uscenti da $w$ nel layer $l$.
 
 \end{definizione}
 
-La definizione originale in \cite{dedomenico:versatile} utilizzava un tensore 4-dimensionale per 
-rappresentare la rete. Qui è stata generalizzata, anche prevedendo che un nodo possa non comparire 
+La definizione originale utilizzava un tensore 4-dimensionale per 
+rappresentare la rete~\cite{dedomenico:versatile}. Qui è stata generalizzata, anche prevedendo che un nodo possa non comparire 
 in tutti i layer.
+Questa definizione è stata calcolata in un modo analogo a quello descritto nella Sezione \ref{alg:pagerank},
+dunque la complessità è $O((N + E)\log{N})$.
 
-Questa definizione è stata calcolata in modo analogo alla definizione \vref{alg:pagerank},
-dunque la complessità è $O((N + E)\log(N))$.
-
-\subsection{\verBetweennessCentrality~(\textit{verBC})}
+\subsection{Versatility Betweenness Centrality~(verBC)}
 
 \begin{definizione}[\verBetweennessCentrality]
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, la 
-    \verBetweennessCentrality\ di un nodo $v$ è il valore 
-    \begin{equation}
-        BC(v) = \sum_{s, t \in V} \frac{\sigma_{st}(v)}{\sigma_{st}}
-    \end{equation}
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, la 
+    \emph{\verBetweennessCentrality} di un nodo $v$ è il valore 
+    \begin{equation*}
+        \mathit{verBC}(v) = \sum_{s, t \in V} \frac{\sigma_{st}(v)}{\sigma_{st}}
+    \end{equation*}
     dove $\sigma_{st}$ è il numero di percorsi minimi tra il nodo $s$ ed il nodo $t$
     indipendentemente dal layer, e $\sigma_{st}(v)$ è il numero di questi che passa 
     per il nodo $v$ in qualche layer.
 \end{definizione}
+Questa misura è può essere calcolata con un algoritmo di 
+complessità $O\left(|V|\left(N+E\right)\right)$~\cite{dedomenico:verbetw}.
 
-Questa misura è stata calcolata con l'algoritmo definito in \cite{dedomenico:verbetw}, 
-con complessità $O\left(|V|\left(N+E\right)\right)$.
-
-\subsection{\multiCore~(\textit{multiCore})}
+\subsection{Multiplex \emph{k}-core~(multiCore)}
 
 \begin{definizione}[\multiCore]
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, il \multiCore\ è
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, il \emph{\multiCore} è
     il più grande sottografo per cui ogni nodo è raggiunto in ogni layer da almeno $k$ archi o
-    \interc.
+    inter-connessioni.
 \end{definizione}
 
-Questa misura è stata calcolata estendendo l'algoritmo definito in \cite{batagelj:kcore} per 
-adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$.
+Questa misura è stata calcolata estendendo l'algoritmo descritto da Batagelj e Zaversnik per calcolare 
+il k-core di un grafo per adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$~\cite{batagelj:kcore}.
 
-\subsection{\PCI~(\textit{PCI})}
+\subsection{\PCI~(PCI)}
 \begin{definizione}
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, 
-    l'indice $mlPCI_n$ di un nodo $v$ in un layer $l$ 
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, 
+    l'indice $\mathit{mlPCI}_n$ di un nodo $v$ in un layer $l$ 
     è il massimo numero $k$ tale che esistono almeno $k$ vicini di $v$ nel layer $l$ in $\mathcal{M}$
     con numero di vicini in almeno $n$ layer maggiore o uguale a $k$.
 \end{definizione}
@@ -205,28 +200,28 @@ adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$.
 Da questa definizione si ricavano le seguenti:
 
 \begin{definizione}[\mlPCI]
-    L'indice $mlPCI$ di un nodo $v$ in un layer $l$ è definito come 
-    \begin{equation}
-        mlPCI(v, l) = \sum_{n=1}^L mlPCI_n(v, l)
-    \end{equation}
+    L'indice $\mathit{mlPCI}$ di un nodo $v$ in un layer $l$ è definito come 
+    \begin{equation*}
+        \mathit{mlPCI}(v, l) = \sum_{n=1}^L \mathit{mlPCI}_n(v, l)
+    \end{equation*}
 \end{definizione}
 
 \begin{definizione}[\alPCI]
-    L'indice $alPCI$ di un nodo $v$ in un layer $l$ è definito come 
-    \begin{equation}
-        alPCI(v, l) = mlPCI_L(v, l)
-    \end{equation}
+    L'indice $\mathit{alPCI}$ di un nodo $v$ in un layer $l$ è definito come 
+    \begin{equation*}
+        \mathit{alPCI}(v, l) = \mathit{mlPCI}_L(v, l)
+    \end{equation*}
 \end{definizione}
 
 
 \begin{definizione}[\lsPCI]
-    L'indice $lsPCI$ di un nodo $v$ in un layer $l$ è il massimo numero $k$ 
+    L'indice $\mathit{lsPCI}$ di un nodo $v$ in un layer $l$ è il massimo numero $k$ 
     tale che esistono almeno $k$ vicini di $v$ nel layer $l$ in $\mathcal{M}$
     con numero di vicini in almeno $k$ layer maggiore o uguale a $k$.
 \end{definizione}
 
 \begin{definizione}[\laPCI]
-    L'indice $laPCI$ di un nodo $v$ in un layer $l$ è 
+    L'indice $\mathit{laPCI}$ di un nodo $v$ in un layer $l$ 
     è il massimo numero $k$ tale che esistono almeno $k$ vicini di $v$ nel layer 
     $l$ in $\mathcal{M}$
     con numero di vicini maggiore o uguale a $k$.
@@ -234,5 +229,5 @@ Da questa definizione si ricavano le seguenti:
 
 
 
-Il calcolo di queste definizioni, è stato fatto utilizzando un algoritmo di complessità 
-$O(N L t \log{t})$, dove $t = \max{\{\mathcal{M}.outdegree(v)\,|\,v \in V\}}$ 
+Il calcolo di queste definizioni è stato fatto utilizzando un algoritmo di complessità 
+$O(NLt\log{t})$, dove $t = \max{\{\mathcal{M}.\mathit{outdegree}(v)\,|\,v \in V\}}$ 

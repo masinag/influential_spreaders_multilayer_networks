@@ -1,10 +1,10 @@
 \chapter{Definizioni}
 
-\begin{definizione}[Multilayer Network] 
+\begin{definizione}[Multilayer network] 
     \label{def:muln}
     Una \muln\ è una coppia $(\mathcal{G}, \mathcal{E} )$ dove
-    $\mathcal{G} = \{G_i \mid i \in \{1, 2, \dots L\}\}$ è un insieme di \textit{grafi} 
-    detti \layers\ dove un nodo può appartenere ad uno o più \layers\ ed 
+    $\mathcal{G} = \{G_i \mid i \in \{1, 2, \dots L\}\}$ è un insieme di grafi
+    detti \layer\ dove un nodo può appartenere ad uno o più layer ed 
     $\mathcal{E} = \{E_{ij} \subseteq V_i~\times~V_j \mid i,j \in \{1, 2, \dots, L\}, i \neq j\}$
     è l'insieme delle \interc\ tra nodi appartenenti a layer differenti.
 \end{definizione}
@@ -14,56 +14,57 @@
 %     \def\svgheight{\columnwidth}
 %     \input{img/mlexample.pdf_tex}
 % \end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[height=0.3\textheight]{img/mlexample1.pdf}
-    \caption{Rappresentazione di una \muln\ con tre layer: L1, L2 e L3.
-    In rosso sono evidenziate le \interc, ossia gli archi che collegano nodi in 
-    layer differenti.}
-    \label{fig:mlexample}
-\end{figure}
+
 % 
 
 \begin{definizione}
-    Data una \muln\ $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
+    Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$ 
     indichiamo con $|V|$ il numero totale di nodi, ossia la cardinalità dell'insieme $V = \bigcup\limits_{i} V_i$,
     con $N$ la somma del numero di nodi di ogni layer, ossia $N = \sum_{i}{|V_i|}$
     e con $E$ il numero totale di archi, $E = \sum_{i} |E_i| + \sum_{i \neq j} |E_{ij}|$.    
 \end{definizione}
 
-\begin{definizione}[Multiplex Network] 
+\begin{definizione}[Multiplex network] 
     \label{def:mulx}
-    Una \mulx\ è un tipo di \muln\ dove le uniche \interc\ ammesse sono tra un 
+    Una \mulx\ è un tipo di multilayer network dove le uniche inter-connessioni ammesse sono tra un 
     nodo e le sue controparti negli altri layer, ossia 
     $E_{ij} \subseteq \{ (v,v) \mid v \in {V_i \cap V_j} \} $
 \end{definizione}
 
-\begin{figure}
-    \centering
-    \includegraphics[height=0.3\textheight]{img/muxexample1.pdf}
-    \caption{Rappresentazione di una \mulx\ con due layer: L1 e L2. In questo 
-    tipo di rete le uniche \interc\ possibili sono tra un nodo e le sue controparti 
-    negli altri layer.}
-    \label{fig:muxexample}
-\end{figure}
+
 
 \begin{definizione}[Grafo aggregato] 
     \label{def:gragg}
-    Sia $\mathcal{M} = (\mathcal{G}, \mathcal{E} )$ una \muln. 
-    Definiamo il \gragg\ $G_{agg} = (V_{agg}, E_{agg})$ derivato
-    da $\mathcal{M}$ dove $V_{agg} = V$ ed 
-    $E_{agg} = \biggl( \bigcup\limits_{i} E_{i} \biggr) \cup 
+    Sia $\mathcal{M} = (\mathcal{G}, \mathcal{E} )$ una multilayer network. 
+    Il \gragg\ derivato da $\mathcal{M}$ è il grafo 
+    $G_{\mathit{agg}} = (V_{\mathit{agg}}, E_{\mathit{agg}})$  dove $V_{\mathit{agg}} = V$ ed 
+    $E_{\mathit{agg}} = \biggl( \bigcup\limits_{i} E_{i} \biggr) \cup 
                     \biggl( \bigcup\limits_{i \neq j} E_{ij} \biggr)$
 \end{definizione}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.3\textheight]{img/mlexample1.pdf}
+    \caption{Rappresentazione di una multilayer network con tre layer: L1, L2 e L3.
+    In rosso sono evidenziate le inter-connessioni, ossia gli archi che collegano nodi in 
+    layer differenti.}
+    \label{fig:mlexample}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.3\textheight]{img/muxexample1.pdf}
+    \caption{Rappresentazione di una multiplex network con due layer: L1 e L2. In questo 
+    tipo di rete le uniche inter-connessioni possibili sono tra un nodo e le sue controparti 
+    negli altri layer.}
+    \label{fig:muxexample}
+\end{figure}
 
 % 15865384615384615
 \begin{figure}
     \centering
     \includegraphics[height=0.15865384615384615\textheight]{img/aggexample1.pdf}
-    \caption{Grafo aggregato derivato dalla \muln\ rappresentata in figura \ref{fig:mlexample}.}
+    \caption{Grafo aggregato derivato dalla multilayer network rappresentata in Figura \ref{fig:mlexample}.}
     \label{fig:graggexample}
 \end{figure}
-
-
-
 %[height=0.15865384615384615\textheight]

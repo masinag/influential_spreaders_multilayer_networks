@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % formato FRONTE RETRO
-\documentclass[epsfig,a4paper,11pt,titlepage,twoside,openany]{book}
+\documentclass[epsfig,a4paper,11pt,titlepage,twoside,openany,hidelinks]{book}
 \usepackage{epsfig}
 \usepackage{plain}
 \usepackage{setspace}
@@ -30,6 +30,7 @@
 
 \input{_include_commands}
 
+\usepackage[a-1b]{pdfx}
 
 \singlespacing
 
@@ -136,10 +137,10 @@
       \input{cap4-dataset}
 
       \newpage
-      \input{cap5-simulazioni}
+      \input{cap5-risultati_sperimentali}
       \newpage
 
-      \input{cap6-risultati}
+      % \input{cap6-risultati}
       
       
     \endgroup
