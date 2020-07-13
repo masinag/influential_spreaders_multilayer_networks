@@ -12,12 +12,12 @@ Questi possono essere divisi in tre categorie:
 
 \section{Algoritmi applicati al grafo aggregato}
 Diverse misure di centralità sono utilizzate per identificare gli influential spreaders in grafi 
-`classici', detti anche \textit{monoplex} siccome hanno un solo layer~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}. 
+`classici', detti anche \textit{monoplex} siccome hanno un solo layer~\cite{basaras:infsp}\cite{kitsak:infsp}\cite{pei:infsp}. 
 Essendo definite per grafi ad un solo layer, sono state applicate al grafo aggregato
 derivato da ogni multilayer network. 
 Le misure utilizzate sono state \emph{\PageRank}~\cite{page:pagerank}, 
 \emph{\kcore}~\cite{batagelj:kcore} e 
-\emph{\degree}.
+\emph{Degree Centrality}.
 
 % PAGE RANK
 
@@ -40,10 +40,10 @@ verso di essa.
 \PageRank\ può essere visto come un modello di comportamento di un utente che, trovandosi inizialmente
 in una pagina casuale, continua a visitare i link che trova, ma occasionalmente riparte da un'altra 
 pagina casuale.
-Il parametro $\alpha$, detto \emph{damping factor}, regola la probabilità che si continui la navigazione dei link
-ed è stato impostato a \num{0.85}.
 Analogamente, questo algoritmo può essere utilizzato per misurare più genericamente l'influenza di un nodo 
 in un grafo.
+Il parametro $\alpha$, detto \emph{damping factor}, regola la probabilità che si continui la navigazione dei link
+ed è stato impostato a \num{0.85}.
 
 Questa definizione ricorsiva è stata così calcolata in modo iterativo: 
 
@@ -63,7 +63,7 @@ Questa definizione ricorsiva è stata così calcolata in modo iterativo:
 (1-\alpha)\frac{1}{|V|}
     \end{split}
 \end{equation*}
-finché $||\mathit{PR}_{i} - \mathit{PR}_{i-1}||_1 < \epsilon$. Il numero di iterazioni 
+finché $||\mathit{PR}_{i} - \mathit{PR}_{i-1}||_1 < \epsilon$. Secondo Page et al., il numero di iterazioni 
 è proporzionale a $\log{|V|}$~\cite{page:pagerank}. Dunque, la complessità dell'algoritmo è $O((|V| + |E|)\log{|V|})$.
 
 % K-CORE
@@ -77,12 +77,11 @@ finché $||\mathit{PR}_{i} - \mathit{PR}_{i-1}||_1 < \epsilon$. Il numero di ite
         G'.\mathit{indegree}(v) \geq k \quad \forall v \in V'
     \end{equation*}
 \end{definizione}
-
 Un nodo appartenente ad un \kcore\ con $k$ elevato è considerato un nodo centrale 
 nella rete, e quindi potenzialmente classificato tra gli influential spreaders.
 Questa definizione può essere calcolata con complessità $O(|V| + |E|)$~\cite{batagelj:kcore}.
 
-\subsection{Degree~(aggDeg)}
+\subsection{Degree Centrality~(aggDeg)}
 Questa misura di centralità assegna ad ogni nodo un valore pari al suo $\mathit{outdegree}$, 
 per cui un nodo con tanti vicini si assume possa avere una certa rilevanza in un 
 processo di diffusione.
@@ -113,9 +112,11 @@ e \emph{\sumCore}~\cite{basaras:infspmul}.
 \end{definizione}
 
 Questa estensione dell'algoritmo di \PageRank\ alle reti multilayer richiede un ordinamento
-dei layer. I layer sono stati ordinati per valore
-dell'autovalore di modulo massimo della rispettiva matrice di adiacenza~\cite{basaras:infspmul}. Infatti, 
-autovalore più grande significa maggiore capacità di diffusione~\cite{wang:eigenv}.
+dei layer. I layer sono stati ordinati in modo decrescente per autovalore di modulo massimo della rispettiva matrice di adiacenza~\cite{basaras:infspmul}, 
+guidati dal fatto che autovalore più grande significa maggiore capacità di diffusione~\cite{wang:eigenv}.
+Infatti, per questa definizione i layer ultimi nell'ordinamento incidono maggiormente nel calcolo del valore 
+finale; inoltre, nei layer con capacità di diffusione molto elevata non è facile riconoscere gli influential spreaders, in quanto
+si riesce a raggiungere una vasta porzione di rete indipendentemente dal nodo di partenza.  
 
 Come algoritmo, è stato utilizzato un approccio analogo a quello della versione classica di 
 \PageRank\ descritto nella Sezione~\vref{alg:pagerank}.
@@ -124,8 +125,8 @@ $O(\sum_{i}((|V_i| + |E_i|)\log{|V_i|}))$, assumendo che i layer siano già ordi
 
 \subsection{Sum \emph{k}-core~(sumCore)}
 Questa misura è stata ottenuta calcolando il valore di \kcore\ di ogni nodo in 
-ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer.
-Pertanto la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
+ogni layer, quindi sommando i valori ottenuti da un nodo in tutti i layer in cui è presente.
+Pertanto, la complessità del calcolo è pari a $O(\sum_{i}(|V_i| + |E_i|)$.
 
 \section{Algoritmi applicati all'intera struttura multilayer}
 Diverse misure definite originariamente per grafi monoplex sono state estese a 
@@ -133,7 +134,7 @@ reti multilayer. Queste, al contrario di quelle presentate nelle sezioni precede
 tengono conto della struttura a più livelli della rete ed in particolare delle inter-connessioni.
 Quelle implementate sono 
 \emph{\verPageRank}~\cite{dedomenico:versatile},
-\emph{\verBetweennessCentrality}~\cite{dedomenico:versatile} \cite{dedomenico:verbetw},
+\emph{\verBetweennessCentrality}~\cite{dedomenico:versatile}\cite{dedomenico:verbetw},
 \emph{\multiCore}~\cite{azimi:multikcore} e le diverse varianti di \emph{\PCI}: 
 \emph{\mlPCI},
 \emph{\laPCI},
@@ -175,8 +176,9 @@ dunque la complessità è $O((N + E)\log{N})$.
     indipendentemente dal layer, e $\sigma_{st}(v)$ è il numero di questi che passa 
     per il nodo $v$ in qualche layer.
 \end{definizione}
-Questa misura è può essere calcolata con un algoritmo di 
-complessità $O\left(|V|\left(N+E\right)\right)$~\cite{dedomenico:verbetw}.
+
+L'algoritmo descritto da Ribalta et al. permette di calcolare questa definizione con complessità
+$O\left(|V|\left(N+E\right)\right)$~\cite{dedomenico:verbetw}.
 
 \subsection{Multiplex \emph{k}-core~(multiCore)}
 
@@ -187,7 +189,7 @@ complessità $O\left(|V|\left(N+E\right)\right)$~\cite{dedomenico:verbetw}.
 \end{definizione}
 
 Questa misura è stata calcolata estendendo l'algoritmo descritto da Batagelj e Zaversnik per calcolare 
-il k-core di un grafo per adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$~\cite{batagelj:kcore}.
+il $k$-core di un grafo per adattarlo a questa definizione, ottenendo una complessità di $O(N + E)$~\cite{batagelj:kcore}.
 
 \subsection{\PCI~(PCI)}
 \begin{definizione}

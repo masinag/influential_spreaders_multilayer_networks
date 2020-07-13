@@ -6,21 +6,23 @@ rete infettata da essi simulando un processo di diffusione.
 \section{Simulazioni}
 Per ogni rete è stato simulato uno \spproc, ossia un processo di diffusione, per capire l'influenza 
 di ogni nodo sulla rete. Poiché il contagio tra un nodo infetto e i propri vicini avviene in modo 
-probabilistico, per ottenere un risultato adeguato è stata fatta una media di \num{100} simulazioni per ogni rete.
+probabilistico, per ottenere un risultato adeguatamente accurato è stata fatta una media di \num{100} simulazioni per ogni rete.
 
 \subsection{Spreading process}
-Lo spreading process utilizzato segue il modello \emph{SIR}, in cui un nodo può essere in tre stati:
-\begin{description}
-    \item[\emph{Susceptible} (\emph{S})] : vulnerabile ad essere infettato;
-    \item[\emph{Infectious} (\emph{I})] : infetto. Un nodo in questo stato può contagiare
-        i propri vicini con una certa probabilità;
-    \item[\emph{Recovered} (\emph{R})] : guarito. Una volta in questo stato, un nodo non può più essere
+Lo spreading process utilizzato segue il modello \emph{SIR}, in cui un nodo in un certo layer può essere in 
+uno dei seguenti tre stati:
+\begin{itemize}
+    \item \emph{Susceptible} (\emph{S}): vulnerabile ad essere infettato;
+    \item \emph{Infectious} (\emph{I}): infetto. Un nodo in questo stato può contagiare
+        i propri vicini nello stato \emph{S} con una certa probabilità;
+    \item \emph{Recovered} (\emph{R}): guarito. Una volta in questo stato, un nodo non può più essere
         infettato.
-\end{description}
+\end{itemize}
 Per misurare l'influenza di un nodo $v$ sulla rete, inizialmente tutti i nodi si trovano nello stato \emph{S}, 
 eccetto le controparti del nodo $v$ nei layer in cui è presente, che si trovano nello stato \emph{I}.
-Ad ogni istante un nodo nello stato \emph{I} può infettare con una certa probabilità ognuno dei suoi nodi vicini 
-nello stato \emph{S}. Una volta utilizzata la possibilità di contagiare ogni vicino, il nodo passa allo stato \emph{R}.
+Ad ogni istante un nodo nello stato \emph{I} può infettare con una certa probabilità ognuno dei suoi vicini 
+nello stato \emph{S}, ovvero i nodi verso cui ha un arco o una intra-connessione. 
+Una volta utilizzata la possibilità di contagiare ogni vicino, il nodo passa allo stato \emph{R}.
 Il processo termina quando nessun nodo si trova nello stato \emph{I}.
 La porzione di rete infettata dal nodo $v$ corrisponde al numero di nodi che al termine del processo si trovano nello 
 stato \emph{R}.
@@ -30,7 +32,7 @@ stato \emph{R}.
 Un valore da impostare in uno spreading process è la probabilità $\lambda$ che un nodo nello stato \emph{I}
 ha di contagiare i propri vicini nello stato \emph{S}, detta \emph{epidemic probability}.
 La scelta del valore di $\lambda$ è molto importante per riconoscere gli influential spreaders, 
-in quanto con un valore troppo alto si osserverebbe la diffusione dell'infezione in tutta la 
+in quanto con un valore troppo alto si osserverebbe la diffusione del contagio in tutta la 
 rete indipendentemente dal nodo inizialmente infetto, mentre con un valore troppo basso l'epidemia 
 non riuscirebbe ad espandersi nemmeno dai nodi più influenti. 
 
@@ -49,7 +51,7 @@ mentre $\lambda_{ij}$ tra nodi in layer diversi è stata impostata al critical e
 aggregato~\cite{basaras:infspmul}. 
 
 Questi valori rispecchiano l'intuizione secondo cui il contagio si trasmette 
-più facilmente tra nodi sullo stesso layer. Questo succede per esempio nel caso dei social 
+più facilmente tra nodi nello stesso layer. Questo succede per esempio nel caso dei social 
 network, in cui diverse piattaforme tendono a mostrare in maniera minore contenuti con
 collegamenti a piattaforme concorrenti, e nel caso dei ritardi accumulati da 
 una stazione in una rete dei trasporti, che possono trasmettersi facilmente alle stazioni vicine 
@@ -110,7 +112,7 @@ In ogni tabella sono evidenziati per ogni rete i punteggi ottenuti dai tre algor
 migliori. 
 
 Si può notare che mlPCI e laPCI sono i due algoritmi che ottengono punteggi buoni 
-su tutte le reti utilizzate, e possono quindi essere considerati un buon metodo per identificare 
+su tutte le reti utilizzate, e possono quindi essere considerati un metodo efficace per identificare 
 gli influential spreaders. 
 Altri algoritmi come alPCI e aggDeg, sebbene ottengano ottimi risultati su
 particolari tipi di rete, ottengono scarsi risultati sugli altri; non sono pertanto da 
@@ -128,14 +130,13 @@ più importanti sono i nodi che hanno un arco verso di esso, applicando l'algori
 una definizione per cui un nodo è tanto più importante quanto più importanti sono i nodi verso cui ha un arco.
 
 Per quanto riguarda \kcore, invece, nella definizione originale un \kcore\ di un grafo è un sottografo 
-massimale in cui ogni nodo ha almeno $k$ archi entranti, applicando l'algoritmo al grafo trasposto si ottiene 
+massimale in cui ogni nodo ha almeno $k$ archi entranti; applicando l'algoritmo al grafo trasposto si ottiene 
 una definizione analoga, in cui invece degli archi entranti si considerano gli archi uscenti.
 
 Per entrambi gli algoritmi si è pensato che le definizioni di centralità ottenute applicando l'algoritmo 
 alla rete trasposta potessero individuare meglio gli influential spreaders. Le prestazioni di questi algoritmi, indicati 
 con l'indice $^T$, sono mostrate nelle Tabelle \ref{tab:taudlnT}, \ref{tab:tauslnT} e \ref{tab:taumuxT}.
-
-In generale, si può osservare come nella maggior parte dei casi questi ottengano risultati migliori se confrontati con 
+In generale, si può osservare come, nella maggior parte dei casi, questi ottengano risultati migliori se confrontati con 
 la rispettiva versione applicata alla rete originale. 
 
 \input{tables/tab_dln_T}

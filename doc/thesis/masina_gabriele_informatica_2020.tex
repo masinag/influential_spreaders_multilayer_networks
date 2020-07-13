@@ -28,7 +28,7 @@
 \usepackage[utf8x]{inputenc} % per Linux (richiede il pacchetto unicode);
 %\usepackage[applemac]{inputenc} % per Mac.
 
-\input{_include_commands}
+\input{chapters/_include_commands}
 
 \usepackage[a-1b]{pdfx}
 
@@ -40,7 +40,7 @@
 
   % nessuna numerazione
   \pagenumbering{gobble} 
-  \input{pagina_iniziale}
+  \input{chapters/pagina_iniziale}
 
   \clearpage
  
@@ -51,7 +51,9 @@
 %% Sezione Ringraziamenti opzionale
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \input{ringraziamenti}
+  \setlength{\parskip}{1em}
+  \input{chapters/ringraziamenti}
+  \setlength{\parskip}{0em}
   \clearpage
   \pagestyle{plain} % nessuna intestazione e pie pagina con numero al centro
 
@@ -123,24 +125,24 @@
       % \input oppure \include
       %
       \newpage
-      \input{cap0-sommario}
+      \input{chapters/cap0-sommario}
       \newpage
-      \input{cap1-introduzione}
-      \newpage
-
-      \input{cap2-definizioni}
+      \input{chapters/cap1-introduzione}
       \newpage
 
-      \input{cap3-algoritmi}
+      \input{chapters/cap2-definizioni}
+      \newpage
+
+      \input{chapters/cap3-algoritmi}
       \newpage
       
-      \input{cap4-dataset}
+      \input{chapters/cap4-dataset}
 
       \newpage
-      \input{cap5-risultati_sperimentali}
+      \input{chapters/cap5-risultati_sperimentali}
       \newpage
 
-      % \input{cap6-risultati}
+      % \input{chapters/cap6-risultati}
       
       
     \endgroup
@@ -152,7 +154,7 @@
     \addcontentsline{toc}{chapter}{Bibliografia}
     % stile con ordinamento alfabetico in funzione degli autori
     \bibliographystyle{plain}
-    \bibliography{biblio}
+    \bibliography{chapters/biblio}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Nota
@@ -186,6 +188,6 @@
     %     {\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
     % % sezione Allegati - opzionale
     % \appendix
-    % \input{allegati}
+    % \input{chapters/allegati}
 
 \end{document}

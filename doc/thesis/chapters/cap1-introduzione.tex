@@ -1,12 +1,12 @@
 \chapter{Introduzione}
 
 Una rete è una struttura in cui sono presenti diverse entità connesse tra loro da legami 
-di qualche tipo. Diverse realtà possono essere modellate utilizzando una rete:
+di qualche tipo. Molte realtà possono essere modellate utilizzando una rete:
 % Una grande quantità di sistemi del mondo possono essere visti come una rete, ossia una struttura 
 % in cui diverse entità sono legate tra loro tramite relazioni. 
 % % Le reti permettono di rappresentare una grande quantità di sistemi in cui diverse entità 
 % % sono legate tra loro mediante delle relazioni.
-esempi di questo tipo sono le reti di interazione sociale, in cui le persone sono legate 
+alcuni esempi sono le reti di interazione sociale, in cui le persone sono legate 
 da relazioni di amicizia, di collaborazione o di contatto sui social network, 
 le reti dei trasporti, come quelle ferroviaria e aerea
 che collegano diverse città, e le reti biologiche, come quella alimentare o
@@ -15,15 +15,15 @@ quella delle interazioni tra molecole all'interno di un organismo.
 Utilizzando questi modelli è particolarmente utile lo studio dei processi di diffusione
 di un'informazione in una rete per comprendere le dinamiche di diversi scenari.
 Tra questi, la diffusione di un virus in una società, di una notizia in una rete di contatti, 
-una fake news in un social network e l'accumulo di un ritardo nelle stazioni di una rete 
+di una fake news in un social network e l'accumulo di un ritardo nelle stazioni di una rete 
 dei trasporti.
 
-In questi processi, inizialmente un nodo (così sono chiamate le entità all'interno di una rete) 
+In questi processi, inizialmente un \emph{nodo} (così sono chiamate le entità all'interno di una rete) 
 è `infetto'; in ogni instante un nodo infetto può `contagiare' con una certa probabilità i 
-nodi con cui è in relazione rendendoli a loro volta infetti.
+nodi con cui è in relazione, rendendoli a loro volta infetti.
 Di particolare interesse è l'individuazione dei cosiddetti \infsp, ovvero dei nodi
 che, se infettati, permettono di contagiare una grossa parte della rete.
-Tali nodi, infatti, possono essere sfruttati per garantire una efficace diffusione 
+Tali nodi, infatti, possono essere sfruttati per garantire un'efficace diffusione 
 di un'informazione nella rete o, al contrario, per evitarne la propagazione.
 Ad esempio, per diffondere una notizia importante in un social network sarà opportuno che 
 questa venga pubblicata da un account molto seguito, mentre per fermare un'epidemia 
@@ -33,8 +33,8 @@ nella società.
 
 \section{Influential spreaders in un grafo}
 
-Generalmente, una rete viene modellata con un grafo, ossia una struttura in cui i 
-nodi sono connessi da un arco se tra loro esiste una relazione.
+Generalmente, una rete viene modellata con un \emph{grafo}, ossia una struttura in cui i 
+\emph{nodi} sono connessi da un \emph{arco} se tra loro esiste una relazione.
 
 Il modo più affidabile per l'individuazione degli influential spreaders in un grafo consiste nel 
 simulare un processo di diffusione, detto anche \spproc, partendo da ogni nodo e 
@@ -48,10 +48,10 @@ molto costoso.
 Un problema molto studiato è quello dell'individuazione degli influential spreaders tramite l'analisi della 
 topologia delle rete.
 Diversi studi mostrano come alcuni algoritmi di centralità possono fornire una buona indicazione di 
-quali sono i nodi più influenti nella diffusione~\cite{kitsak:infsp}\cite{basaras:infsp}\cite{pei:infsp}.
+quali sono i nodi più influenti nella diffusione~\cite{basaras:infsp}\cite{kitsak:infsp}\cite{pei:infsp}.
 Tra questi, alcuni richiedono una conoscenza globale della topologia della rete come
 \emph{\PageRank}, \emph{Betweenness Centrality} e \emph{\kcore}, 
-mentre per altri come \emph{\degree} o \emph{$\mu$-PCI} ogni nodo 
+mentre per altri come \emph{Degree Centrality} o \emph{$\mu$-PCI} ogni nodo 
 ha bisogno solo di una conoscenza locale.
 
 \section{Influential spreaders in una multilayer network}
