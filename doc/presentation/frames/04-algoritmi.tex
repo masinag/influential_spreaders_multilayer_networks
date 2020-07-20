@@ -1,0 +1,45 @@
+\begin{frame}
+    \frametitle{Algoritmi di centralità}
+
+
+    \begin{alertblock}{Obiettivo}
+        Simulare gli spreading process è computazionalmente costoso.
+        Si è cercato di individuare gli influential spreaders usando algoritmi di centralità
+    \end{alertblock}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+        % \pause
+        \begin{block}{Sul grafo aggregato}
+            \begin{itemize}
+                \item PageRank
+                \item $k$-core
+                \item Degree Centrality
+            \end{itemize}
+        \end{block}
+        % \pause
+
+        \begin{block}{Separatamente su ogni layer}
+            \begin{itemize}
+                \item Additive PageRank
+                \item Sum $k$-core
+            \end{itemize}
+        \end{block}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        % \pause
+
+    \begin{block}{Sull'intera struttura multilayer}
+        \begin{itemize}
+            \item Versatility PageRank
+            \item Versatility Betweenness Centrality
+            \item Multiplex $k$-core
+            \item Minimal-layers PCI
+            \item All-layers PCI
+            \item Layer-symmetric PCI
+            \item Layer-agnostic PCI
+        \end{itemize}       
+    \end{block}
+\end{column}
+\end{columns}
+
+\end{frame}

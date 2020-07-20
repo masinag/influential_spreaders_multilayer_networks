@@ -1,0 +1,76 @@
+\begin{frame}
+    \frametitle{Algoritmi di centralità}
+
+    % \begin{definizione}
+    %     Data una multilayer network $\mathcal{M}=(\mathcal{G}, \mathcal{E})$, 
+    %     l'indice 
+    % \end{definizione}
+    
+    % Da questa definizione si ricavano le seguenti:
+    
+    % \begin{definizione}[\mlPCI]
+    %     L'indice $\mathit{mlPCI}$ di un nodo $v$ in un layer $l$ è definito come 
+    %     \begin{equation*}
+    %         \mathit{mlPCI}(v, l) = \sum_{n=1}^L \mathit{mlPCI}_n(v, l)
+    %     \end{equation*}
+    % \end{definizione}
+    
+    % \begin{definizione}[\alPCI]
+    %     L'indice $\mathit{alPCI}$ di un nodo $v$ in un layer $l$ è definito come 
+    %     \begin{equation*}
+    %         \mathit{alPCI}(v, l) = \mathit{mlPCI}_L(v, l)
+    %     \end{equation*}
+    % \end{definizione}
+    
+    
+    % \begin{definizione}[\lsPCI]
+    %     L'indice $\mathit{lsPCI}$ di un nodo $v$ in un layer $l$ è il massimo numero $k$ 
+    %     tale che esistono almeno $k$ vicini di $v$ nel layer $l$ in $\mathcal{M}$
+    %     con numero di vicini in almeno $k$ layer maggiore o uguale a $k$.
+    % \end{definizione}
+    
+    % \begin{definizione}[\laPCI]
+    %     L'indice $\mathit{laPCI}$ di un nodo $v$ in un layer $l$ 
+    %     è il massimo numero $k$ tale che esistono almeno $k$ vicini di $v$ nel layer 
+    %     $l$ in $\mathcal{M}$
+    %     con numero di vicini maggiore o uguale a $k$.
+    % \end{definizione}
+    \begin{block}{Power Community Index}
+        $\mathit{mlPCI}_n$($v$, $l$) è il massimo numero $k$ tale che esistono almeno 
+        $k$ vicini di $v$ nel layer $l$ con numero di vicini in almeno $n$ layer maggiore o uguale a $k$
+    \end{block}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{block}{minimal-layers PCI}
+                $\sum_{n=1}^L \mathit{mlPCI}_n(v, l)$
+            \end{block}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{block}{all-layers PCI}
+                $n = L$
+            \end{block}
+        \end{column}
+    \end{columns}  
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{block}{layer-symmetric PCI}
+                $n = k$
+            \end{block}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{block}{layer-agnostic PCI}
+                L'informazione dei layer viene ignorata
+            \end{block}
+        \end{column}
+    \end{columns}    
+    
+
+    
+
+    
+
+
+
+    
+
+\end{frame}

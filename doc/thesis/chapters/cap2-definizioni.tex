@@ -14,7 +14,6 @@
 %     \def\svgheight{\columnwidth}
 %     \input{img/mlexample.pdf_tex}
 % \end{figure}
-
 % 
 
 \begin{definizione}
@@ -28,7 +27,7 @@
     \label{def:mulx}
     Una \mulx\ è un tipo di multilayer network dove le uniche inter-connessioni ammesse sono tra un 
     nodo e le sue controparti negli altri layer, ossia 
-    $E_{ij} \subseteq \{ (v,v) \mid v \in {V_i \cap V_j} \} $
+    $E_{ij} \subseteq \{ (v,v) \mid v \in {V_i \cap V_j} \} $.
 \end{definizione}
 
 
@@ -39,7 +38,7 @@
     Il \gragg\ derivato da $\mathcal{M}$ è il grafo 
     $G_{\mathit{agg}} = (V_{\mathit{agg}}, E_{\mathit{agg}})$  dove $V_{\mathit{agg}} = V$ ed 
     $E_{\mathit{agg}} = \biggl( \bigcup\limits_{i} E_{i} \biggr) \cup 
-                    \biggl( \bigcup\limits_{i \neq j} E_{ij} \biggr)$
+                    \biggl( \bigcup\limits_{i \neq j} E_{ij} \biggr)$.
 \end{definizione}
 
 \begin{figure}[h]

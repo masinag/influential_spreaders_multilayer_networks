@@ -1,19 +1,87 @@
-\documentclass{beamer}
+\documentclass[xcolor={dvipsnames, table}]{beamer}
 \usepackage[italian]{babel}
 
+\usepackage{graphicx}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\title{I numeri primi sono infiniti}
-\author[Euclide]{Euclide di Alessandria \\
-    \texttt{euclide@alessandria.edu}}
-\date[VII SINP]{VII Simposio Internazionale sui Numeri Primi}
-\institute[UniAlessandria]{Università di Alessandria}
-\logo{
-    \includegraphics[width=15mm]{sigillo}}
+%%%%%%%%%%%%
+% font
+
+% \usefonttheme{professionalfonts}
+% \usefonttheme{serif}
+% \usepackage{fontspec}
+% \setmainfont{Helvetica Neue}
+% \setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+
+%%%%%%%%%%%%%%%%
+% tabelle
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\centerv}[1]{\begin{tabular}{@{}l@{}} #1 \end{tabular}}
+\usepackage{tikz}
+
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+% \usepackage{caption}
+\usepackage{siunitx} % formattazione numeri 
+% \usepackage[dvipsnames, table]{xcolor}
+\newcommand{\Fst}[1]{\cellcolor{CornflowerBlue!70}{#1}}
+\newcommand{\Snd}[1]{\cellcolor{CornflowerBlue!50}{#1}}
+\newcommand{\Trd}[1]{\cellcolor{CornflowerBlue!30}{#1}}
+
+\title{Influential spreaders in multilayer networks}
+\author[Gabriele Masina]{%
+    \texorpdfstring{%
+        \begin{columns}
+            \column{.5\linewidth}
+            \centering
+            {\scriptsize Supervisore} \\ Alberto Montresor
+            \column{.5\linewidth}
+            \centering
+            {\scriptsize Laureando} \\ Gabriele Masina
+        \end{columns}
+    }{Gabriele Masina}
+}
+% \author{Gabriele Masina}
+
+\institute[UniTN]{
+    \texorpdfstring{%
+        \includegraphics[width=0.3  \textwidth]{img/marchio_unitrento_colore_it_v2.eps}
+        % \includegraphics[width=.44\textwidth]{../img/logo.png}
+    }{Università di Trento}\\[1em]
+    Dipartimento di Ingegneria e Scienza dell’Informazione \\[1em] 
+    Corso di Laurea in Informatica
+}
+\date[A.A 2019/2020]{Trento, Luglio 2020}
+% \date[VII SINP]{VII Simposio Internazionale sui Numeri Primi}
+% \institute[UNITN]{Università di Trento}
+% \logo{
+%     \includegraphics[width=15mm]{sigillo}}
 \usetheme{CambridgeUS}
 % \useoutertheme[right]{sidebar}
 % \usetheme{Madrid}
-\usecolortheme{beaver}
+% \usecolortheme{lily}
+\makeatletter
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.283333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.433333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.283333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \end{beamercolorbox}}%
+    \vskip0pt%
+}
+\makeatother
 
 
 % default
@@ -39,45 +107,30 @@
 \theoremstyle{definition}
 \newtheorem{definizione}{Definizione}
 
-\theoremstyle{plain}
-\newtheorem{teorema}{Teorema}
 \begin{document}
 \begin{frame}
     \maketitle
 \end{frame}
-\begin{frame}
-    \frametitle{Piano della presentazione}
-    \tableofcontents
-\end{frame}
-\section{Introduzione}
-\begin{frame}
-    \frametitle{Che cosa sono i numeri primi?}
-    \begin{definizione}Un 
-    \alert{numero primo} è un intero $>1$ che ha esattamente due divisori positivi.
-\end{definizione}
-\end{frame}
-\section{L'infinità dei primi}
-\begin{frame}
-    \frametitle{I numeri primi sono infiniti}
-    \framesubtitle{Ne diamo una dimostrazione diretta}
-    \begin{teorema}Non esiste un primo maggiore di tutti gli altri.
-\end{teorema}
-    \pause
-    \begin{proof}
-    \begin{enumerate}[<+->]
-    \item Sia dato un elenco di primi.
-    \item Sia $q$ il loro prodotto.
-    \item Allora $q+1$ è divisibile per un primo $p$ che non compare nell'elenco. 
-    \qedhere
-\end{enumerate}
-\end{proof}
-\end{frame}
-\section{Problemi aperti}
-\begin{frame}
-    \frametitle{Che cosa c'è ancora da fare?}
-    \begin{block}{Problemi risolti}Quanti sono i numeri primi?
-\end{block}
-    \begin{block}{Problemi aperti}Un numero pari $>2$ è sempre la somma di due primi?
-\end{block}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Piano della presentazione}
+%     \tableofcontents
+% \end{frame}
+\section{Definizione del problema}
+\include{frames/01-reti}
+\include{frames/02-multilayer}
+\include{frames/03-spreaders}
+
+\section{Risultati sperimentali}
+\include{frames/04-algoritmi}
+\include{frames/04a-algoritmi}
+\include{frames/05-dataset}
+\include{frames/05a-process}
+\include{frames/05b-valutazione}
+\include{frames/06a-risultati}
+\include{frames/06b-risultati}
+\include{frames/06c-risultati}
+\include{frames/06d-risultati}
+\include{frames/07-sommario}
+\include{frames/08-ringraziamenti}
+
 \end{document}

@@ -1,0 +1,20 @@
+\begin{frame}
+    \frametitle{Metodo di valutazione}
+    \begin{block}{Confronto dei risultati}
+        I vettori $S$ (simulazioni) ed $A$ (algoritmo) ottenuti sono stati confrontati usando il coefficiente \alert{Kendall's Tau}: 
+        \begin{equation*}
+            \tau = \frac{n_c - n_d}{n(n-1)}
+        \end{equation*}
+
+        \begin{itemize}
+            \item $n_c$ è il numero di coppie \emph{concordanti} nei due vettori \\
+                \quad ($A_i > A_j$ e $S_i > S_j$) oppure ($A_i < A_j$ e $S_i < S_j$)
+            \item $n_d$ è il numero di coppie \emph{discordanti} nei due vettori \\
+                \quad ($A_i > A_j$ e $S_i < S_j$) oppure ($A_i < A_j$ e $S_i > S_j$) 
+            \item Se $A_i = A_j$ oppure $S_i = S_j$ la coppia $i, j$ non viene contata.
+        \end{itemize}
+        
+        
+        
+    \end{block}
+\end{frame}

@@ -1,0 +1,26 @@
+\begin{frame}
+    \frametitle{Risultati}
+    \begin{center}
+      \begin{tikzpicture}
+          \node[anchor=south west,inner sep=0] at (0,0) {
+        \resizebox*{\textwidth}{!}{\input{tables/whole}}};
+    % \draw<1>[red,ultra thick,rounded corners] (1.6,1) rectangle (\textheight-1cm,5);
+    \draw<1>[transparent,thick] (0,1) rectangle (12,1.35);
+    \draw<2->[red,thick] (0,1.05) rectangle (12.0,1.30);
+    \draw<2->[red,thick] (0,0.68) rectangle (12.0,0.92);
+\end{tikzpicture}
+\end{center}
+
+
+
+    \begin{block}{Osservazione}
+        Due algoritmi hanno mostrato una buona capacità di riconoscere gli
+        influential spreaders in tutte le reti analizzate:
+        \begin{itemize}
+          \item \textbf<2->{layer-agnostic Power Community Index}
+          \item \textbf<2->{minimal-layers Power Community Index}
+        \end{itemize}
+     \end{block}
+  
+    
+\end{frame}
